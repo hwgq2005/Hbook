@@ -399,53 +399,44 @@ textarea {
 .form-horizontal .control-group:after {
 	clear: both;
 }
-/*button[type="button"] {
+button[type="button"] {
 	border: none;
-}*/
-.btn{
-	background: #f3f3f3;
-	padding: 9px 30px;
-	color: #000;
+}
+.btn {
+	background: #E4E4E4;
+	padding: 6px 20px;
+	color: #666;
 	font-size: 13px;
 	display: inline-block;
 	line-height: 20px;
-	border:1px solid #d7d7d7;
-}
-.btn-primary,.btn-success,.btn-info,.btn-warning,.btn-danger,.btn-black,.btn-link,.btn-pale-green{
-	padding: 10px 30px;
-	border:none!important;
-}
-.btn-mini{
-	padding: 4px 12px;
-}
-.btn-radius{
-	border-radius: 3px;
+	/*border: 1px solid #ccc ;*/
 }
 
-.btn:hover{
-	background-color: #ebebeb;
+.btn-large {
+	padding: 10px 30px;
 }
-.btn-pale-green{
-	background: #00ABA9;
+.btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger, .btn-black, .btn-link,.btn-grey,.btn-bgrey ,.btn-violet{
+	border: none ;
+}
+.btn:hover {
+	background-color: #CFCFCF;
+}
+.btn-primary ,.primary-info{
+	background: #66CCFF;
 	color: #fff;
-}
-.btn-primary {
-	background: #1476e5;
-	color: #fff;
-}
-.btn-pale-green:hover{
-	background: #05A0A0;
 }
 .btn-primary:hover {
-	background: #0262d0;
+	background: #5DBAE8;
 }
-.btn-success {
+
+.btn-success , .success-info{
 	color: #fff;
-	background: #62c462;
+	background: #33CCCC;
 }
 .btn-success:hover {
-	background: #51a351;
+	background: #2EBABA;
 }
+
 .btn-info {
 	color: #fff;
 	background: #49AFCD;
@@ -453,27 +444,47 @@ textarea {
 .btn-info:hover {
 	background: #3998B4;
 }
-.btn-warning {
-	background: #FFBA00;
+
+.btn-warning  , .warning-info{
+	background: #F3D261;
 	color: #fff;
 }
 .btn-warning:hover {
-	background: #E8AA08;
+	background: #DDBF58;
 }
-.btn-danger {
-	background: #E1544F;
+
+.btn-danger , .danger-info{
+	background: #FF9999;
 	color: #fff;
 }
 .btn-danger:hover {
-	background: #CB4640;
+	background: #E88B8B;
 }
-.btn-black {
-	background: #393939;
+
+.btn-grey ,.grey-info{
+	background: #666666;
+	color: #fff;
+}
+.btn-grey:hover {
+	background: #5D5D5D;
+}
+
+.btn-black ,.black-info{
+	background: #525252;
 	color: #fff;
 }
 .btn-black:hover {
-	background: #212121;
+	background: #3E3E3E;
 }
+
+.btn-violet ,.violet-info{
+	background: #8089C1;
+	color: #fff;
+}
+.btn-violet:hover {
+	background: #69709E;
+}
+
 .btn-link {
 	background: none;
 	color: #005580;
@@ -481,6 +492,17 @@ textarea {
 .btn-link:hover {
 	background: none;
 	color: #0D79AF;
+}
+.btn-bgrey ,.bgrey-info{
+	background: #E4E4E4;
+	color:#666;
+}
+.btn-bgrey:hover{
+	background: #CFCFCF;
+
+}
+.btn-raduis{
+	border-radius: 16px;
 }
 label {
 	margin-bottom: 5px;
