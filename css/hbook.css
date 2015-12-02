@@ -327,28 +327,49 @@ IE TIP
 }
 
 /* ------------------------------------page------------------------------------ */
-.page {
-	font-size: 0;
+.jpage {
+    padding: 15px 20px;
+    text-align: left;
+    color: #ccc;
+    text-align: left;
 }
-.page a {
-	padding: 5px 10px;
-	display: inline-block;
-	background: #EFEFEF;
-	color: #8c8c8c;
-	border: 1px solid #B6B6B6;
-	margin-left: 10px;
-	font-size: 14px;
+.jpage a ,.jpage span.current{
+    display: inline-block;
+    color: #428bca;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    margin: 0 2px;
+    vertical-align: middle;
+    font-size: 12px;
 }
-.page .active {
-	background: #4393E3;
-	color: #fff;
+.jpage a:hover {
+    text-decoration: none;
+    background: #eee;
 }
-.page .hidden {
-	display: none;
+.jpage span.current{
+    color: #fff;
+    background-color: #428bca;
+    border: 1px solid #428bca;
 }
-.page a:hover {
-	background: #4393E3;
-	color: #fff;
+.jpage span.disabled {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    margin: 0 2px;
+    color: #bfbfbf;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    cursor: not-allowed;
+    color: #999;
+    font-size: 12px;
+}
+.gotoInput {
+    padding: 5px;
+    width: 30px;
+    border: 1px solid #ddd;
 }
 
 /* ------------------------------------form------------------------------------ */
@@ -411,7 +432,9 @@ button[type="button"] {
 	line-height: 20px;
 	/*border: 1px solid #ccc ;*/
 }
-
+.btn-mini{
+	padding: 4px 12px;
+}
 .btn-large {
 	padding: 10px 30px;
 }
@@ -699,16 +722,16 @@ input[type="radio"] {
 	transition: width 0.6s ease;
 }
 .progress .bar-primary {
-	background: #1476E5;
+	background: #66CCFF;
 }
 .progress .bar-success {
-	background: #62c462;
+	background: #2EBABA
 }
 .progress .bar-warning {
-	background: #FFBA00;
+	background: #DDBF58;
 }
 .progress .bar-danger {
-	background: #E1544F;
+	background: #E88B8B;
 }
 
 

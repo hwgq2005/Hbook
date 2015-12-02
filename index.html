@@ -321,16 +321,7 @@
 	            <h1>分页</h1>
 	        </div>
 	        <div class="docs-example">
-	        	<div class="page" >
-					    <a href="#" >首页</a>
-					    <a href="#" >上一页</a>
-					    <a class="active"> 1</a>
-					    <a  href="#">2</a>
-					    <a  href="#">3</a>
-					    <a  href="#"> 4</a>
-					    <a href="#" >下一页</a>
-					    <a href="#" >尾页 </a>
-				</div>
+	        	<div class="jpage"></div>
 	         </div>
 <pre class="prettyprint linenums">
 &lt;div class="page " &gt;
@@ -371,7 +362,7 @@
 				      <label class="checkbox">
 				        <input type="checkbox"> Remember me
 				      </label>
-				     	<a href="#" class="btn btn-mini btn-orange">login</a>
+				     	<a href="#" class="btn btn-mini btn-success">login</a>
 				    </div>
 				  </div>
 				</form>
@@ -486,7 +477,7 @@
 							</label>
 							<div class="controls">
 								<div class="add-img">
-									<a href="javascript:;"  class="btn btn-primary">添加封面</a>
+									<a href="javascript:;"  class="btn btn-success">添加封面</a>
 									<span>支持jpg、jpeg、png、gif格式;建议尺寸640*480px;</span>
 									<input type="file"  placeholder="60天">
 								</div>
@@ -587,7 +578,7 @@
 	            <h1>弹出框</h1>
 	        </div>
 	        <div class="docs-example">
-	        	<a href="#modal" class="btn btn-primary"  role="button"  data-toggle="modal"  style="padding:8px 30px;">点击演示</a>
+	        	<a href="#modal" class="btn btn-success"  role="button"  data-toggle="modal"  style="padding:8px 30px;">点击演示</a>
 	        	
 	        </div>
         </section>
@@ -779,7 +770,7 @@
 	  </div>
 		<div class="modal-footer">
 			    <a href="#" class="btn btn-mini"  data-dismiss="modal" aria-hidden="true">关闭</a>
-			    <a href="#" class="btn btn-mini btn-primary"  data-dismiss="modal" aria-hidden="true">Save changes</a>
+			    <a href="#" class="btn btn-mini btn-success"  data-dismiss="modal" aria-hidden="true">Save changes</a>
 		</div>
 	</div>
 	<!--model end-->
@@ -790,6 +781,7 @@
 	<script src="js/bootstrap-transition.js"></script>	
 	<script src="js/jquery.scrollTo.js"></script>
 	<script src="js/owl-carousel/owl.carousel.js"></script>	
+	<script src="js/jquery.page.js"></script>	
 	<script src="js/modal.js"></script>
 	<script src="js/bootstrap-tooltip.js"></script>
 	<script src="js/bootstrap-popover.js"></script>
@@ -815,6 +807,16 @@
 			 
 			    });
 			    $('#example').popover('show');
+
+		        $(".jpage").createPage({
+		            pageCount:26,  
+		            current:1,
+		            showNum:10,
+		            callback:function(tPage,sNum){
+		                console.log(tPage);
+		               
+		            }
+		        });
 			});
 	</script>
  </body>
