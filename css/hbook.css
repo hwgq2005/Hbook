@@ -32,13 +32,12 @@ IE TIP
 	text-align: center;
 	padding:20px;
 }
-.tab-menu:before,.tab-menu:after,.page:before,
-.page:after {
+.tab-menu:before,.tab-menu:after{
 	display: table;
 	line-height: 0;
 	content: "";
 }
-.tab-menu:after,.page:after {
+.tab-menu:after{
 	clear: both;
 }
 .center {
@@ -274,13 +273,13 @@ IE TIP
 	text-align: center;
 }
 .tab-menu li a:hover{
-	color:#1476E5;
+	color:#2EBABA;
 	background: #fff;
 	border-bottom: 1px solid #fff;
 }
 .tab-menu li a.selected {
 	background: #fff;
-	color:#1476E5;
+	color:#2EBABA;
 	border-bottom: 1px solid #fff;
 }
 /* ------------------------------------table------------------------------------ */
@@ -334,40 +333,33 @@ IE TIP
     color: #ccc;
     text-align: left;
 }
-.jpage a ,.jpage span.current{
-    display: inline-block;
-    color: #428bca;
-    height: 25px;
-    line-height: 25px;
-    padding: 0 10px;
-    border: 1px solid #ddd;
-    margin: 0 2px;
-    vertical-align: middle;
-    font-size: 12px;
+.jpage a {
+	color: #33CCCC;
 }
 .jpage a:hover {
     text-decoration: none;
     background: #eee;
 }
-.jpage span.current{
-    color: #fff;
-    background-color: #428bca;
-    border: 1px solid #428bca;
-}
-.jpage span.disabled {
+.jpage a ,.jpage span.current,.jpage span.disabled{
     display: inline-block;
     height: 25px;
     line-height: 25px;
-    padding: 0 10px;
     margin: 0 2px;
-    color: #bfbfbf;
+    padding: 2px 12px;
     border: 1px solid #ddd;
     vertical-align: middle;
+    font-size: 14px;
+}
+.jpage span.current{
+    color: #fff;
+    background-color: #33CCCC;
+    border: 1px solid #33CCCC;
+}
+.jpage span.disabled {
     cursor: not-allowed;
     color: #999;
-    font-size: 12px;
 }
-.gotoInput {
+.jpage .gotoInput {
     padding: 5px;
     width: 30px;
     border: 1px solid #ddd;
@@ -423,6 +415,13 @@ textarea {
 }
 button[type="button"] {
 	border: none;
+}
+.label{
+	font-size: 12px;
+    color: #fff;
+    padding: 1px 3px;
+    display: inline-block;
+    background: #E4E4E4;
 }
 .btn {
 	background: #E4E4E4;
@@ -609,10 +608,10 @@ input[type="password"] {
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus {
-	border-color: rgba(82, 168, 236, 0.8);
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	border-color: rgba(46,193,193, 0.8);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(46,193,193, 0.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(46,193,193, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(46,193,193, 0.6);
 	outline: 0;
 	outline: thin dotted \9; /* IE6-9 */
 }
@@ -1198,4 +1197,124 @@ button.close {
 	margin-top: 3px;
 	background-position: -240px 0;
 
+}
+
+
+/* ------------------------------------ 图文列表 ------------------------------------ */
+.list-c {
+}
+.list-c .list-c-ul {
+    font-size: 0;
+}
+.list-c .list-c-ul li {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+}
+.list-c .list-c-ul li .icon-operation {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 12px;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -ms-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear;
+    color:#999;
+}
+.list-c .list-c-ul li .icon-operation i{
+	display: block;
+}
+.list-c .list-c-ul li:hover {
+    background: #FAFAFA;
+}
+.list-c .list-c-ul li:hover .icon-operation{
+	opacity: 1;
+}
+.around {
+    padding:20px;
+}
+.around .left-mark {
+    width: 160px;
+    height: 110px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.around .right-summary .topic-tit a{
+	color:#000;
+	font-size: 16px;
+	margin-right:5px;
+}
+.around .left-mark .tip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #66CCFF;
+    color: #fff;
+    padding: 3px 10px;
+    display: block;
+    font-size: 12px;
+}
+.around .left-mark img {
+    max-width: 100%;
+}
+.around .right-summary {
+    margin-left: 180px;
+
+}
+.msg {
+    margin: 10px 0;
+}
+.msg.right-bottom{
+	text-align: right;
+}
+.msg.right-bottom span{
+	margin-left:10px;
+}
+.msg a {
+    display: inline-block;
+    position: relative;
+}
+.msg img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.msg span {
+    color: #999;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.msg span i {
+    font-weight: 700;
+    color: #666;
+    display: inline-block;
+    margin-left: 3px;
+}
+.msg .name {
+    color: #000;
+    font-weight: 700;
+    margin: 0 5px;
+}
+.msg .span-1, .msg .span-2 {
+    margin: 0 10px;
+    color: #E4E4E4;
+}
+.around .right-summary .right-summary-p {
+    display: block;
+    font-size: 12px;
+    height: 38px;
+    line-height:18px;
+    /*min-height: 19px;*/
+    /*max-height: 34px;*/
+    overflow: hidden;
+}
+.around .right-summary .right-summary-p  a{
+	color: #333;
 }

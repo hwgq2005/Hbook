@@ -38,7 +38,9 @@
 			 	<a href="javascript:;" data-id="pro-input">表单</a>
 			 	<a href="javascript:;" data-id="pro-btn">按钮</a>
 			 	<a href="javascript:;" data-id="pro-fade">弹出框</a>
+			 	<a href="javascript:;" data-id="pro-tooltip">提示工具</a>
 			 	<a href="javascript:;" data-id="pro-scrollbar">进度条</a>
+			 	<a href="javascript:;" data-id="pro-list">图文</a>
 			 	<a href="javascript:;" data-id="pro-comment">评论</a>
 			 	<a href="javascript:;" data-id="pro-slide">幻灯片</a>
 			 </div>
@@ -339,21 +341,21 @@
 				  <div class="control-group">
 				    <label class="control-label" for="inputEmail">Email</label>
 				    <div class="controls">
-				      <input type="text" id="inputEmail" placeholder="Email" class="input-small">
+				      <input type="text" id="inputEmail" placeholder="Email" class="input-large">
 				    </div>
 				  </div>
-				  <div class="control-group">
+				  <div class="control-group" style="margin-bottom:10px;">
 				    <label class="control-label" for="inputPassword">Password</label>
 				    <div class="controls">
-				      <input type="password" id="inputPassword" placeholder="Password" class="input-small">
+				      <input type="password" id="inputPassword" placeholder="Password" class="input-large">
 				    </div>
 				  </div>
 				  <div class="control-group">
 				    <div class="controls">
-				      <label class="checkbox">
-				        <input type="checkbox"> Remember me
-				      </label>
-				     	<a href="#" class="btn btn-mini btn-success">login</a>
+				     <!--  <label class="checkbox">
+				        <input type="checkbox"> 记住我
+				      </label> -->
+				     	<a href="#" class="btn btn-mini btn-success">登录</a>
 				    </div>
 				  </div>
 				</form>
@@ -474,7 +476,7 @@
 								</div>
 
 							  	<ul class="upload-img">
-							  		<li style="margin-bottom:0;"><img src="images/demo.jpg" alt=""></li>
+							  		<li style="margin-bottom:0;"><img src="images/3.jpg" alt=""></li>
 							  	</ul>
 								<div class="clear"></div>
 							</div>
@@ -574,7 +576,18 @@
 	        </div>
         </section>
 
-        	<!-- 进度条 -->
+         <!-- 提示工具 -->
+		<section class="section" id="pro-fade">
+			<div class="page-header">
+	            <h1>提示工具</h1>
+	        </div>
+	        <div class="docs-example">
+	        	<span data-toggle="tooltip" data-id="336" data-placement="left" title="" data-original-title="hello,word">这是个提示</span>
+	        	
+	        </div>
+        </section>
+
+        <!-- 进度条 -->
 		<section class="section" id="pro-scrollbar">
 			<div class="page-header" >
 	            <h1>进度条</h1>
@@ -639,6 +652,126 @@
 	         </div>
         </section>
 
+       <!-- 图文列表 -->
+		<section class="section" id="pro-list">
+			<div class="page-header" >
+	            <h1>图文</h1>
+	        </div>
+	        <div class="docs-example">
+	        	<div class="list-c">
+	        		<ul class="list-c-ul clearfix">
+	        			<li> 
+						   <div class="around "> 
+							    <div class="left-mark"> 
+							     <a href="#" ><img src="images/1.jpg" alt="" /> </a> 
+							     <!-- <div class="tip ">类型</div> -->
+							    </div> 
+							    <div class="right-summary ">
+							      <div class="topic-tit">
+							      		<a href="#" >哈哈哈哈</a> <i class="label danger-info">产品经理</i>
+							      </div>
+							      
+							      <p class="msg"> 
+								      <a href="#"> <img src="images/photo.jpg" alt="" /> <span class="name">aaa</span> </a> 
+								      
+						      		  <span class="time">. 2015-12-02 21:21:24</span> 
+						      		  <span class="span-1">|</span> <span class="red">阅读<i>1</i></span> 
+						      		  <span class="span-2">/</span> <span class="comment">评论<i>0</i></span> 
+						      		  <span class="span-2">/</span> <span class="collection">点赞<i>0</i></span> 
+								      
+							      </p> 
+							      <p class="right-summary-p"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </p> 
+							    </div> 
+						   </div> 
+						   <div class="icon-operation"> 
+						    	<i class="icon-24 icon-collection" data-toggle="tooltip" data-id="245" data-placement="left" title="" data-original-title="收藏">收藏</i> 
+						   </div> 
+						</li>
+						<li> 
+						   <div class="around "> 
+							    <div class="left-mark"> 
+							     <a href="#" ><img src="images/2.jpg" alt="" /> </a> 
+							     <!-- <div class="tip ">类型</div> -->
+							    </div> 
+							    <div class="right-summary ">
+							      <div class="topic-tit">
+							      		<a href="#" >哈哈哈哈</a> <i class="label warning-info">设计师</i>
+							      </div>
+							      
+							      <p class="msg"> 
+								      <a href="#"> <img src="images/photo.jpg" alt="" /> <span class="name">aaa</span> </a> 
+								      
+						      		  <span class="time">. 2015-12-02 21:21:24</span> 
+						      		  <span class="span-1">|</span> <span class="red">阅读<i>1</i></span> 
+						      		  <span class="span-2">/</span> <span class="comment">评论<i>0</i></span> 
+						      		  <span class="span-2">/</span> <span class="collection">点赞<i>0</i></span> 
+								      
+							      </p> 
+							      <p class="right-summary-p"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </p> 
+							    </div> 
+						   </div> 
+						  
+						</li>
+
+						<li> 
+						   <div class="around "> 
+							    <div class="left-mark"> 
+							     <a href="#" ><img src="images/3.jpg" alt="" /> </a> 
+							     <!-- <div class="tip ">类型</div> -->
+							    </div> 
+							    <div class="right-summary ">
+							      <div class="topic-tit">
+							      		<a href="#" >哈哈哈哈</a> <i class="label success-info">前端开发</i>
+							      </div>
+							      
+							      <p class="msg"> 
+								      <a href="#"> <img src="images/photo.jpg" alt="" /> <span class="name">aaa</span> </a> 
+								      
+						      		  <span class="time">. 2015-12-02 21:21:24</span> 
+						      		  <span class="span-1">|</span> <span class="red">阅读<i>1</i></span> 
+						      		  <span class="span-2">/</span> <span class="comment">评论<i>0</i></span> 
+						      		  <span class="span-2">/</span> <span class="collection">点赞<i>0</i></span> 
+								      
+							      </p> 
+							      <p class="right-summary-p"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </p> 
+							    </div> 
+						   </div> 
+						  
+						</li>
+						<li> 
+						   <div class="around "> 
+							    <div class="left-mark"> 
+							     <a href="#" ><img src="images/3.jpg" alt="" /> </a> 
+							     <!-- <div class="tip ">类型</div> -->
+							    </div> 
+							    <div class="right-summary ">
+							      <div class="topic-tit">
+							      		<a href="#" >哈哈哈哈</a> <i class="label success-info">前端开发</i>
+							      </div>
+							   
+							      <p class="right-summary-p"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </p> 
+							       <p class="msg right-bottom"> 
+								      <a href="#"> <img src="images/photo.jpg" alt="" /> <span class="name">aaa</span> </a> 
+								      
+						      		  <span class="time">. 2015-12-02 21:21:24</span> 
+						      		  <span class="span-1">|</span> <span class="red">阅读<i>1</i></span> 
+						      		  <span class="span-2">/</span> <span class="comment">评论<i>0</i></span> 
+						      		  <span class="span-2">/</span> <span class="collection">点赞<i>0</i></span> 
+								      
+							      </p> 
+							    </div> 
+						   </div> 
+						  
+						</li>
+	        		</ul>
+	        	</div>
+	        </div>
+<pre class="prettyprint linenums">
+暂无
+</pre>   
+        </section>
+
+
         <!-- 评论 -->
 		<section class="section" id="pro-comment">
 			<div class="page-header" >
@@ -647,7 +780,7 @@
 	        <div class="docs-example">
 	        		<div class="author">
 						<div class="author-img">
-							<img src="images/touxiang.jpg" alt="">
+							<img src="images/photo.jpg" alt="">
 						</div>
 						<div class="author-msg">
 							<p>产品尺寸，有效净化面积、所需时间等？</p>
@@ -664,7 +797,7 @@
 					</div>
 					<div class="author other">
 						<div class="author-img">
-							<img src="images/touxiang.jpg" alt="">
+							<img src="images/photo.jpg" alt="">
 						</div>
 						<div class="author-msg">
 							<span>白造型 <i class="time">1天前</i></span>
@@ -679,7 +812,7 @@
 					</div>
 					<div class="author other">
 						<div class="author-img">
-							<img src="images/touxiang.jpg" alt="">
+							<img src="images/photo.jpg" alt="">
 						</div>
 						<div class="author-msg">
 							<span>白造型 <i class="time">1天前</i><i class="item-sponsor">项目发起人</i></span>
@@ -692,7 +825,7 @@
 					</div>
 					<div class="author other">
 						<div class="author-img">
-							<img src="images/touxiang.jpg" alt="">
+							<img src="images/photo.jpg" alt="">
 						</div>
 						<div class="author-msg">
 							<span>白造型 <i class="time">1天前</i><i class="item-sponsor">项目发起人</i></span>
@@ -708,7 +841,7 @@
 <pre class="prettyprint linenums">
 &lt;div class="author other"&gt;
 	&lt;div class="author-img"&gt;
-		&lt;img src="images/touxiang.jpg" alt=""&gt;
+		&lt;img src="images/photo.jpg" alt=""&gt;
 	&lt;/div&gt;
 	&lt;div class="author-msg"&gt;
 		&lt;span&gt;白造型 &lt;i class="time"&gt;1天前&lt;/i&gt;&lt;/span&gt;
@@ -732,9 +865,9 @@
 	        <div class="docs-example">
 
 	        	<div id="owl-demo" class="owl-carousel" style="width:500px;">
-	                <div class="item"><img src="images/1.jpg" ></div>
-	                <div class="item"><img src="images/2.jpg" ></div>
-	                <div class="item"><img src="images/3.jpg" ></div>
+	                <div class="item"><img src="images/slide1.jpg" ></div>
+	                <div class="item"><img src="images/slide2.jpg" ></div>
+	                <div class="item"><img src="images/slide3.jpg" ></div>
 		        </div>
 	         </div>
 <pre class="prettyprint linenums">
