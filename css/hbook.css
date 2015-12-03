@@ -393,7 +393,7 @@ IE TIP
 	background: #fff;
 	border-bottom: 1px solid #fff;
 }
-.tab-menu li a.selected {
+.tab-menu li a.active {
 	background: #fff;
 	color:#2EBABA;
 	border-bottom: 1px solid #fff;
