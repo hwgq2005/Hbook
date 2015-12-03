@@ -1126,73 +1126,7 @@ button.close {
 	border-left-color: #fff;
 	border-right-width: 0
 }
-/* ------------------------------------comment ------------------------------------ */
-.author {
-	padding: 20px 0 10px;
-	border-bottom: 1px dotted #DDD;
-	min-height: 80px;
-}
-.author .author-img {
-	width: 50px;
-	float: left;
-}
-.author .author-img img {
-	width: 50px;
-	height: 50px;
-	vertical-align: middle;
-}
-.author .author-msg {
-	margin-left: 60px;
-}
-.author .author-msg p {
-	font-size: 18px;
-	margin-bottom: 5px;
-}
-.author .author-msg span {
-	color: #1476e5;
-}
-.author .author-msg .grade {
-	margin-bottom: -2px;
-	margin-left: 5px;
-	width: 18px;
-	height: 16px;
-}
-.author-c {
-	padding: 20px 0;
-	border-bottom: 1px dotted #DDD;
-}
-.author-c .share {
-	margin-top: 30px;
-}
-.good-com {
-	text-align: right;
-}
-.good-com a {
-	margin-left: 10px;
-	color: #1476e5;
-}
-.good-com a:hover {
-	color: #0754aa;
-}
-.other .author-msg p {
-	margin-top: 10px;
-	font-size: 14px;
-}
-.other span .time {
-	color: #b3b3b3;
-}
-.other span .item-sponsor {
-	font-size: 12px;
-	color: #fff;
-	background: #A5C4E7;
-	padding: 0 3px;
-	margin-left: 5px;
-}
-.other .reply {
-	margin: 10px 0;
-	padding: 10px;
-	background: #F6F6F6;
-}
+
 
 /* ------------------------------------上传图片 ------------------------------------ */
 .add-img {
@@ -1379,6 +1313,10 @@ button.close {
     margin-left: 180px;
 
 }
+.around .right-summary .right-summary-line {
+    border-bottom: 1px solid #EEEEEE;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
 .msg {
     margin: 10px 0;
 }
@@ -1417,10 +1355,77 @@ button.close {
     font-size: 12px;
     height: 38px;
     line-height:18px;
+    margin-top: 10px;
     /*min-height: 19px;*/
     /*max-height: 34px;*/
     overflow: hidden;
 }
 .around .right-summary .right-summary-p  a{
 	color: #333;
+}
+
+/* ------------------------------------ 评论 ------------------------------------ */
+.comment-box .comment-list {
+    margin-top: 20px;
+    background: #F7F7F7;
+    padding: 20px
+}
+
+.comment-box .comment-list .around {
+    padding: 10px 0;
+}
+.comment-box .comment-list .around .msg{
+	margin:0;
+}
+.comment-box .comment-list .left-mark{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+.comment-box .comment-list .right-summary {
+    position: relative;
+    margin:0 0 0 68px;
+    padding-bottom: 26px;
+    border-bottom: 1px dotted #E4E4E4;
+}
+.comment-box .comment-list .right-summary .operation {
+    position: absolute;
+    top: 0;
+    right: 5px;
+   
+}
+
+.comment-box .comment-list .msg .name {
+    margin: 0 10px 0 0;
+}
+.comment-box .comment-list  .right-summary-p {
+    margin-top: 10px;
+    white-space: normal;
+    height: auto;
+}
+.comment-box .comment-list  .right-summary-p img{
+    vertical-align: inherit;
+    max-width: 100%;
+}
+.comment-box .comment-list .right-summary  .other-comment {
+    margin: 20px 0 0 30px;
+    background: #F2F2F2;
+    border-left: 2px solid #ccc;
+    padding: 20px 20px 0 20px;
+}
+.comment-box .comment-list .right-summary  .other-comment .more-comment {
+    
+    position: relative;
+    text-align: right;
+}
+.comment-box .comment-list .right-summary  .other-comment .more-comment .more {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    display: block;
+    padding: 10px 0 20px;
+    color: #333;
+}
+.comment-box .comment-list .right-summary .reply-dialog {
+    margin-top: 20px;
 }
