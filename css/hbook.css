@@ -1282,6 +1282,7 @@ button.close {
 }
 .around {
     padding:20px;
+    position: relative;
 }
 .around .left-mark {
     width: 160px;
@@ -1313,9 +1314,13 @@ button.close {
     margin-left: 180px;
 
 }
-.around .right-summary .right-summary-line {
+.around .right-summary-line {
     border-bottom: 1px solid #EEEEEE;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 200px;
 }
 .msg {
     margin: 10px 0;

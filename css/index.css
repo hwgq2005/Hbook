@@ -3,7 +3,7 @@ body { color: #4B4B4B; padding-top: 40px !important; }
 .header, .content { width: 1024px; margin: 0 auto; }
 .header .nav a { color: #d1d1d1; }
 .header .nav a:hover { color: #fff; }
-.content { padding: 50px 0; }
+.content { padding: 50px 0 0; }
 .banner { background: #F7A22E; height: 220px; text-align: center; padding: 80px 0 150px; color: #fff; }
 .banner .title { font-size: 100px; }
 .banner p { font-size: 30px; }
@@ -19,6 +19,13 @@ body { color: #4B4B4B; padding-top: 40px !important; }
 .docs-example-mt { padding-top: 30px; }
 .docs-example-scrollbar .progress { margin-bottom: 10px; }
 .docs-input input[type=text] { display: block; margin-bottom: 10px; }
+footer{
+	width: 1024px;
+    margin: 0 auto;
+    padding: 20px 0 30px;
+    color:#999;
+    text-align: center;
+}
 /* ---------------------------------code color------------------------------------- */
 .com { color: #93a1a1; }
 .lit { color: #195f91; }
