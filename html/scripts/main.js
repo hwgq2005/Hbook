@@ -10,25 +10,52 @@ define([
 	'prettify',
 	'scroll',
 	'tooltip',
+	'modal',
+	'transition',
 	'carousel',
 	'jpage',
 	'ejs',
 	'text!../template/index.ejs'
-], function($, prettify, scroll, tooltip, carousel, jpage, EJS, indexTmp) {
-	var init = function() {
-		var proScroll = function() {
-			$('#header .nav a').click(function() {
-				var action = $(this).attr('data-id');
-				$.scrollTo('#' + action, 500)
-			})
-		}
-		proScroll();
+], function($, prettify, scroll, tooltip, modal, transition, carousel, jpage, EJS, indexTmp) {
+
+	var index={};
+
+	//初始化模板
+	index.initlalize=function(){
+		this.template();
+		prettyPrint();
+	}
+	
+	//加载模板
+	index.template=function(){
+		$('#header .nav a').click(function() {
+			var action = $(this).attr('data-id');
+			$.scrollTo('#' + action, 500)
+		})
 		var data = {
 			num: 5
 		}
 		var _html = ejs.render(indexTmp, data);
 		$('#content').html(_html);
-		prettyPrint();
+		$('[data-toggle="tooltip"]').tooltip();
+		this.page();
+		this.carousel();
+	}
+
+	//分页
+	index.page=function(){
+		$(".jpage").createPage({
+			pageCount: 26,
+			current: 1,
+			showNum: 10,
+			callback: function(tPage, sNum) {
+				console.log(tPage);
+			}
+		});
+	}
+
+	//轮播
+	index.carousel=function(){
 		$("#owl-demo").owlCarousel({
 			slideSpeed: 300,
 			paginationSpeed: 400,
@@ -39,18 +66,6 @@ define([
 			itemsTablet: false,
 			itemsMobile: false
 		});
-		// $('#example').popover('show');
-		$('[data-toggle="tooltip"]').tooltip();
-		$(".jpage").createPage({
-			pageCount: 26,
-			current: 1,
-			showNum: 10,
-			callback: function(tPage, sNum) {
-				console.log(tPage);
-			}
-		});
-	};
-	return {
-		initlalize: init
 	}
+	return index;
 });

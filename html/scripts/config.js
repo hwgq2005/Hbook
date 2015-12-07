@@ -6,42 +6,56 @@
  */
 
 require.config({
-	baseUrl:'html/scripts',
+	baseUrl: 'html/scripts',
 	paths: {
 		'jquery': 'lib/jquery',
-		'ejs':'lib/ejs.min',
-		'text':'lib/text',
-		'prettify':'component/prettify',
-		'transition':'component/bootstrap-transition',
-		'scroll':'component/jquery.scrollTo',
-		'carousel':'component/owl-carousel/owl.carousel',
-		'jpage':'component/jquery.page',
-		'modal':'component/modal',
-		'tooltip':'component/tooltip',
-		'popover':'component/bootstrap-popover'
+		'ejs': 'lib/ejs.min',
+		'text': 'lib/text',
+		'prettify': 'component/prettify',
+		'transition': 'component/bootstrap-transition',
+		'scroll': 'component/jquery.scrollTo',
+		'carousel': 'component/owl-carousel/owl.carousel',
+		'jpage': 'component/jquery.page',
+		'modal': 'component/modal',
+		'tooltip': 'component/tooltip',
+		'popover': 'component/bootstrap-popover'
 	},
 	shim: {
 		jquery: {
 			exports: '$'
 		},
-		tooltip:{
+		tooltip: {
 			deps: ['jquery'],
 			exports: 'tooltip'
 		},
-		carousel:{
+		modal: {
 			deps: ['jquery'],
+			exports: 'modal'
+		},
+		transition: {
+			deps: ['jquery', 'modal'],
+			exports: 'transition'
+		},
+		carousel: {
+			deps: ['jquery', 'css!component/owl-carousel/owl.carousel'],
 			exports: 'carousel'
 		},
-		jpage:{
+		jpage: {
 			deps: ['jquery'],
 			exports: 'jpage'
 		},
-		scroll:{
+		scroll: {
 			deps: ['jquery'],
 			exports: 'scroll'
 		}
+	},
+	map: {
+		'*': {
+			'css': 'lib/css'
+		}
 	}
+
 });
-require(['main'],function(index){
+require(['main'], function(index) {
 	index.initlalize();
 })
