@@ -25,7 +25,7 @@ define([
 		this.template();
 		prettyPrint();
 	}
-	
+
 	//加载模板
 	index.template=function(){
 		$('#header .nav a').click(function() {
@@ -67,5 +67,6 @@ define([
 			itemsMobile: false
 		});
 	}
+	
 	return index;
 });
