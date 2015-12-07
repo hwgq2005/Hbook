@@ -60,13 +60,13 @@ define([
 			slideSpeed: 300,
 			paginationSpeed: 400,
 			autoPlay: true,
-			items: 1,
+			items: 1, 
 			itemsDesktop: false,
 			itemsDesktopSmall: false,
 			itemsTablet: false,
 			itemsMobile: false
 		});
 	}
-	
+
 	return index;
 });
