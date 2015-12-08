@@ -19,7 +19,7 @@ define([
 	'text!../template/index.ejs',
 	'test'
 ], function(require,$, prettify, scroll, tooltip, modal, transition, carousel, jpage, EJS, indexTmp) {
-	
+
 	var index={};
 
 	//初始化模板
@@ -40,13 +40,13 @@ define([
 		var _html = ejs.render(indexTmp, data);
 		$('#content').html(_html);
 		$('[data-toggle="tooltip"]').tooltip();
-		this.page();
-		this.carousel();
+		this.page('.jpage');
+		this.carousel('#owl-demo');
 	}
 
 	//分页
-	index.page=function(){
-		$(".jpage").createPage({
+	index.page=function(element){
+		$(element).createPage({
 			pageCount: 26,
 			current: 1,
 			showNum: 10,
@@ -57,8 +57,8 @@ define([
 	}
 
 	//轮播
-	index.carousel=function(){
-		$("#owl-demo").owlCarousel({
+	index.carousel=function(element){
+		$(element).owlCarousel({
 			slideSpeed: 300,
 			paginationSpeed: 400,
 			autoPlay: true,
