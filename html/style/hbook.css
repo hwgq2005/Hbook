@@ -461,10 +461,10 @@ IE TIP
     height: 25px;
     line-height: 25px;
     margin: 0 2px;
-    padding: 2px 12px;
+    padding: 0 10px;
     border: 1px solid #ddd;
     vertical-align: middle;
-    font-size: 14px;
+    font-size: 12px;
 }
 .jpage span.current{
     color: #fff;
