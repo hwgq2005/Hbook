@@ -1,0 +1,158 @@
+/**
+ *
+ * @authors H君
+ * @date    2015-07-14 14:02:03
+ * @version $Id$
+ */
+
+//    js/dev.js：指定确切的文件名。
+//    js/*.js：某个目录所有后缀名为js的文件。
+//    js/**/*.js：某个目录及其所有子目录中的所有后缀名为js的文件。
+//    !js/dev.js：除了js/dev.js以外的所有文件。
+//    *.+(js|css)：匹配项目根目录下，所有后缀名为js或css的文件。
+
+
+
+//引入gulp插件node模块
+var gulp = require('gulp'),
+		template = require('gulp-template'),
+		sass = require('gulp-ruby-sass'),
+		autoprefixer = require('gulp-autoprefixer'),
+		//gminifycss = require('gulp-minify-css'),
+		compass = require("gulp-compass"),
+		jshint = require('gulp-jshint'),
+		sourcemaps = require('gulp-sourcemaps'),
+		minicss = require('gulp-mini-css'),
+		connect = require('gulp-connect'),
+		rename = require('gulp-rename'),
+		uglify = require('gulp-uglify'),
+		imagemin = require('gulp-imagemin'),
+		concat = require('gulp-concat'),
+		livereload = require('gulp-livereload'),
+		notify = require('gulp-notify');
+
+//Gulp 仅有 5 个方法就能组合出你需要的任务流程：task, run, watch, src, dest
+
+
+// 定义web模块,类似于全局的http-server
+gulp.task('http-server', function() {
+	connect.server({
+		livereload: true
+	});
+});
+
+gulp.task('html', function() {
+	return gulp.src('./dev/*.html')
+		.pipe(template({srcName: 'pro'}))
+		.pipe(gulp.dest('./pro/'));
+});
+
+//gulp.task(name, fn)gulp模块的task方法，用于定义具体的任务。它的第一个参数是任务名，第二个参数是任务函数。
+gulp.task('uglify', function() {
+
+	//gulp.src(glob)返回了一个可读的stream，如此行返回了./js/*.js下的全部
+	gulp.src('./dev/js/*.js')
+		.pipe(uglify())
+		//gulp.dest(glob)返回一个可写的stream，如此行是将文件流写入到 ./dist/js 里的对应路径下            
+		.pipe(gulp.dest('./pro/js'))
+		.pipe(notify({
+				message: '可以了 ok !'
+		}))
+})
+
+// 创建Compass任务
+gulp.task('compass', function() {
+	gulp.src('./dev/sass/main.scss')
+		.pipe(compass({
+			comments: false,
+			css: './dev/css',
+			sass: './dev/sass',
+			image: './dev/images'
+		}))
+		.pipe(minicss())
+		.pipe(gulp.dest('./pro/css'));
+
+});
+
+//压缩样式
+gulp.task('minicss', function() {
+	gulp.src('./dev/css/*.css')
+		.pipe(minicss())
+		.pipe(gulp.dest('./pro/css'))
+})
+
+//编译sass
+gulp.task("sass", function() {
+	return sass('sass')
+		.on('error', function(err) {
+			console.error('Error!', err.message);
+		})
+		.pipe(gulp.dest('css'));
+
+})
+
+//检查js
+gulp.task("jshint", function() {
+	gulp.src("./dev/js/.js")
+		.pipe(jshint())
+		.pipe(jshint.reporter('default')); //导入到模块任务里面
+})
+
+// 合并、压缩文件
+gulp.task('scripts', function() {
+	gulp.src('./dev/js/*.js')
+		// .pipe(concat('all.js'))
+		.pipe(gulp.dest('./pro/js'))
+		// .pipe(rename('all.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('./pro/js'))
+		.pipe(livereload())
+});
+
+//压缩图片
+gulp.task('imagemin', function() {
+	gulp.src('./dev/images/*.*')
+		.pipe(imagemin())
+		.pipe(gulp.dest('./pro/images'))
+		.pipe(notify({
+			message: 'compress ok !'
+		}))
+})
+
+// 检测HTML变化并刷新
+// gulp.task("html", function() {
+// 	// gulp.src('*.*')
+// 	// 	.pipe(livereload());
+
+// 	gulp.src('./dev/*.html')
+// 		.pipe(gulp.dest('./pro/'))
+// })
+
+//定义名为"watch"的任务
+gulp.task('watch', function() {
+	gulp.watch('./dev/images/*.*');
+	gulp.watch('./dev/js/*.js');
+	gulp.watch('./sass/*.scss');
+	gulp.watch('./dev/css/*.css');
+})
+
+
+//每个gulpfile.js里都应当有一个dafault任务，它是缺省任务入口（类似C语言的main()入口），运行gulp的时候实际只是调用该任务（从而来调用其它的任务）
+gulp.task('default', function() {
+	//gulp.run(tasks)表示运行对应的任务，这里表示执行名
+	gulp.run('uglify', 'imagemin', 'compass', 'html');
+	//执行'watch'监听任务
+	// gulp.run('watch');
+	// 监听文件变化
+	gulp.watch([
+		'*.*',
+		'./dev/*.html',
+		'./dev/sass/**',
+		'./dev/images/**',
+		'./dev/css/*.css',
+		'./dev/js/*.js'
+	], function() {
+		livereload.listen();
+		gulp.run('jshint', 'html', 'compass', 'imagemin', 'scripts');
+	});
+})
