@@ -1,11 +1,12 @@
 /**
  * 
- * @authors H君
+ * @authors H君 (262281610@qq.com)
  * @date    2015-12-07 11:03:23
  * @version 1.0
  */
 
 define([
+	'require',
 	'jquery',
 	'prettify',
 	'scroll',
@@ -15,9 +16,10 @@ define([
 	'carousel',
 	'jpage',
 	'ejs',
-	'text!../template/index.ejs'
-], function($, prettify, scroll, tooltip, modal, transition, carousel, jpage, EJS, indexTmp) {
-
+	'text!../template/index.ejs',
+	'test'
+], function(require,$, prettify, scroll, tooltip, modal, transition, carousel, jpage, EJS, indexTmp) {
+	
 	var index={};
 
 	//初始化模板
