@@ -16,8 +16,7 @@ define([
 	'carousel',
 	'jpage',
 	'ejs',
-	'text!../template/index.ejs',
-	'test'
+	'text!../template/index.ejs'
 ], function(require,$, prettify, scroll, tooltip, modal, transition, carousel, jpage, EJS, indexTmp) {
 
 	var index={};

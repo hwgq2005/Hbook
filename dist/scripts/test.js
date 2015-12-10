@@ -1,1 +1,0 @@
-define({name:"hwg",age:24});

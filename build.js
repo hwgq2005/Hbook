@@ -1,17 +1,17 @@
 {
     //应用程序的目录（即<root>）。
-    appDir: './',
+    appDir: 'dev',
 
     //相对于appDir，代表查找文件的锚点
-    baseUrl:'html/scripts',
+    baseUrl:'scripts',
 
     //这是一个输出目录，所有的应用程序文件将会被复制到该文件夹下。
-    dir: 'dist',
+    dir: 'dist-build',
 
     //一个包含多个对象的数组。每个对象代表一个将被优化的模块（module）。
     modules:[
         {
-            name:'../../app'
+            name:'../app'
         }
     ],
 
@@ -26,12 +26,12 @@
 
     //模块（modules）的相对目录。
     paths: {
-        'jquery': 'lib/jquery',
-        'ejs': 'lib/ejs.min',
-        'text': 'lib/text',
+        'jquery': 'lib/jquery/dist/jquery.min',
+        'ejs': 'lib/ejs/ejs.min',
+        'text': 'lib/text/text',
         'prettify': 'component/prettify',
         'transition': 'component/bootstrap-transition',
-        'scroll': 'component/jquery.scrollTo',
+        'scroll': 'lib/jquery.scrollTo/jquery.scrollTo.min',
         'carousel': 'component/owl-carousel/owl.carousel',
         'jpage': 'component/jquery.page',
         'modal': 'component/modal',
@@ -60,7 +60,7 @@
             exports: 'transition'
         },
         carousel: {
-            deps: ['jquery', 'css!component/owl-carousel/owl.carousel'],
+            deps: ['jquery', 'css!../style/owl.carousel'],
             exports: 'carousel'
         },
         jpage: {
@@ -74,7 +74,7 @@
     },
     map: {
         '*': {
-            'css': 'lib/css'
+            'css': 'lib/require-css/css'
         }
     },
 

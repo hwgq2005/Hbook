@@ -8,12 +8,12 @@
 require.config({
 	baseUrl: 'scripts',
 	paths: {
-		'jquery': 'lib/jquery',
-		'ejs': 'lib/ejs.min',
-		'text': 'lib/text',
+		'jquery': 'lib/jquery/dist/jquery.min',
+		'ejs': 'lib/ejs/ejs.min',
+		'text': 'lib/text/text',
 		'prettify': 'component/prettify',
 		'transition': 'component/bootstrap-transition',
-		'scroll': 'component/jquery.scrollTo',
+		'scroll': 'lib/jquery.scrollTo/jquery.scrollTo.min',
 		'carousel': 'component/owl-carousel/owl.carousel',
 		'jpage': 'component/jquery.page',
 		'modal': 'component/modal',
@@ -51,7 +51,7 @@ require.config({
 	},
 	map: {
 		'*': {
-			'css': 'lib/css'
+			'css': 'lib/require-css/css'
 		}
 	}
 

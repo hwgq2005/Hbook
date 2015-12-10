@@ -1,0 +1,21 @@
+{
+  "directory" : "dev/scripts/lib",
+  "analytics": false,
+  "timeout": 120000,
+  "ignore": [
+    ".git",
+    ".gitattributes",
+    ".gitignore",
+    "bower.json",
+    "cheatsheet.html",
+    "/src",
+    "*.md",
+    "*.txt",
+    "*.json",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

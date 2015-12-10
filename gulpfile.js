@@ -27,6 +27,8 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	uglify = require('gulp-uglify'),
 	imagemin = require('gulp-imagemin'),
+	gulpif = require('gulp-if'),
+	clean = require('gulp-clean'),
 	concat = require('gulp-concat'),
 	livereload = require('gulp-livereload'),
 	notify = require('gulp-notify');
@@ -39,6 +41,11 @@ gulp.task('http-server', function() {
 	connect.server({
 		livereload: true
 	});
+});
+gulp.task('clean', function () {
+	return gulp.src('./dev/scripts/lib/jquery/src/', {read: false})
+    .pipe(clean());
+ 
 });
 
 gulp.task('html', function() {
@@ -59,6 +66,7 @@ gulp.task('uglify', function() {
 
 	//gulp.src(glob)返回了一个可读的stream，如此行返回了./js/*.js下的全部
 	gulp.src('./dev/scripts/**/*.js')
+
 		.pipe(uglify())
 		//gulp.dest(glob)返回一个可写的stream，如此行是将文件流写入到 ./dist/js 里的对应路径下            
 		.pipe(gulp.dest('./dist/scripts/'))
@@ -118,7 +126,7 @@ gulp.task('scripts', function() {
 
 //压缩图片
 gulp.task('imagemin', function() {
-	gulp.src('./dev/images/*.*')
+	gulp.src('./dev/images/**/*.*')
 		.pipe(imagemin())
 		.pipe(gulp.dest('./dist/images'))
 		.pipe(notify({
@@ -148,12 +156,11 @@ gulp.task('watch', function() {
 //每个gulpfile.js里都应当有一个dafault任务，它是缺省任务入口（类似C语言的main()入口），运行gulp的时候实际只是调用该任务（从而来调用其它的任务）
 gulp.task('default', function() {
 	//gulp.run(tasks)表示运行对应的任务，这里表示执行名
-	gulp.run('uglify', 'imagemin', 'compass' , 'minicss', 'html');
+	gulp.run('clean','html','ejs', 'compass', 'minicss', 'imagemin', 'scripts','uglify');
 	//执行'watch'监听任务
 	// gulp.run('watch');
 	// 监听文件变化
 	gulp.watch([
-		'*.*',
 		'./dev/*.html',
 		'./dev/template/*.ejs',
 		'./dev/sass/**',
@@ -162,6 +169,6 @@ gulp.task('default', function() {
 		'./dev/scripts/*.js'
 	], function() {
 		livereload.listen();
-		gulp.run('jshint', 'html', 'ejs', 'compass', 'minicss', 'imagemin', 'scripts');
+		gulp.run('clean','html','ejs', 'compass', 'minicss', 'imagemin', 'scripts','uglify');
 	});
 })
