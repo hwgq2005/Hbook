@@ -1,0 +1,69 @@
+<!doctype html>
+<html  lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="Hbook,致力于前端开发推广。">
+	<meta name="description" content="Hbook,致力于前端开发推广。">
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/hbook.css">
+	<link rel="Shortcut Icon" href="images/icon.ico">
+	<title>Hbook</title>
+ </head>
+ <body >
+	<!--[if lte IE 6]>
+	<div id="ie6-warning">您正在使用 Internet Explorer 6，在本页面的显示效果可能有差异。建议您升级到 <a href="http://www.microsoft.com/china/windows/internet-explorer/" target="_blank">Internet Explorer 8、9、10、11</a> 或以下浏览器： <a href="http://www.mozillaonline.com/" target="_blank">Firefox</a> / <a href="http://www.google.com/chrome/?hl=zh-CN">Chrome</a> / <a href="http://www.apple.com.cn/safari/" target="_blank">Safari</a> / <a href="http://www.operachina.com/" target="_blank">Opera</a>
+	</div>
+	<script type="text/javascript">
+		function position_fixed(el, eltop, elleft){
+		// check if this is IE6
+		if(!window.XMLHttpRequest)
+		window.onscroll = function(){
+		el.style.top = (document.documentElement.scrollTop + eltop)+"px";
+		el.style.left = (document.documentElement.scrollLeft + elleft)+"px";
+		}
+		else el.style.position = "fixed";
+		}
+		position_fixed(document.getElementById("ie6-warning"),0, 0);
+	</script>
+	<![endif]-->
+
+	<!-- header begin -->
+	<header class="container">
+		<div class="header" id="header">
+			<div class="nav">
+			 	<a href="index.html" >首页</a>
+			 	<a href="javascript:;" data-id="pro-nav">导航</a>
+			 	<a href="javascript:;" data-id="pro-table">表格</a>
+			 	<a href="javascript:;" data-id="pro-page">分页</a>
+			 	<a href="javascript:;" data-id="pro-input">表单</a>
+			 	<a href="javascript:;" data-id="pro-btn">按钮</a>
+			 	<a href="javascript:;" data-id="pro-fade">弹出框</a>
+			 	<a href="javascript:;" data-id="pro-tooltip">提示工具</a>
+			 	<a href="javascript:;" data-id="pro-scrollbar">进度条</a>
+			 	<a href="javascript:;" data-id="pro-list">图文</a>
+			 	<a href="javascript:;" data-id="pro-comment">评论</a>
+			 	<a href="javascript:;" data-id="pro-slide">幻灯片</a>
+			 </div>
+		</div>
+	</header>
+	<!-- header end -->
+
+	<!-- banner begin -->
+	<div class="banner">
+		<h1 class="title">Hbook</h1>
+		<p>最简洁、最直观的前端框架。</p>
+		<a href="#" class="download">Hbook (v1.0)</a>
+	</div>
+	<!-- banner end -->
+
+	<!-- content begin -->
+	<div class="content" id="content"></div>
+	<!-- content end -->
+
+	<!-- footer begin -->
+	<footer>H君</footer>
+	<!-- footer end -->
+
+	<script data-main="app" src="require.js"></script> 
+ </body>
+</html>

@@ -6,7 +6,7 @@
  */
 
 require.config({
-	baseUrl: 'html/scripts',
+	baseUrl: 'scripts',
 	paths: {
 		'jquery': 'lib/jquery',
 		'ejs': 'lib/ejs.min',
@@ -37,7 +37,7 @@ require.config({
 			exports: 'transition'
 		},
 		carousel: {
-			deps: ['jquery', 'css!component/owl-carousel/owl.carousel'],
+			deps: ['jquery', 'css!../style/owl.carousel'],
 			exports: 'carousel'
 		},
 		jpage: {

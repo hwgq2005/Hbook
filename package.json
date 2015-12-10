@@ -1,7 +1,9 @@
 {
   "name": "app",
   "version": "0.1.0",
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-ejs": "^1.2.1"
+  },
   "scripts": {
     "start": "node server.js"
   },
