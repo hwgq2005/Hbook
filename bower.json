@@ -1,12 +1,4 @@
 {
-  "analytics": true,
-  "timeout": 120000,
-  "registry": {
-    "search": [
-      "http://localhost:8000",
-      "https://bower.herokuapp.com"
-    ]
-  },
   "name": "app",
   "description": "demo",
   "version": "1.1.0",
@@ -21,8 +13,9 @@
     "web",
     "development"
   ],
-  "homepage": "http://www.onenexusproject.com/",
-  
+  "ignore": [
+    "*.json"
+  ],
   "dependencies": {
     "jquery": "~2.1.4",
     "require-css": "~0.1.8",

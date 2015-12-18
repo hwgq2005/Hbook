@@ -115,7 +115,8 @@ gulp.task("jshint", function() {
 
 // 合并、压缩文件
 gulp.task('scripts', function() {
-	gulp.src('./dev/scripts/*.js')
+	gulp.src('./dev/scripts/**/*.js')
+	// gulp.src('./dev/scripts/*.js')
 		// .pipe(concat('all.js'))
 		.pipe(gulp.dest('./dist/scripts'))
 		// .pipe(rename('all.min.js'))
@@ -156,7 +157,7 @@ gulp.task('watch', function() {
 //每个gulpfile.js里都应当有一个dafault任务，它是缺省任务入口（类似C语言的main()入口），运行gulp的时候实际只是调用该任务（从而来调用其它的任务）
 gulp.task('default', function() {
 	//gulp.run(tasks)表示运行对应的任务，这里表示执行名
-	gulp.run('clean','html','ejs', 'compass', 'minicss', 'imagemin', 'scripts','uglify');
+	gulp.run('clean','html','ejs', 'compass', 'minicss', 'imagemin','scripts');
 	//执行'watch'监听任务
 	// gulp.run('watch');
 	// 监听文件变化
@@ -169,6 +170,6 @@ gulp.task('default', function() {
 		'./dev/scripts/*.js'
 	], function() {
 		livereload.listen();
-		gulp.run('clean','html','ejs', 'compass', 'minicss', 'imagemin', 'scripts','uglify');
+		gulp.run('clean','html','ejs', 'compass', 'minicss', 'imagemin', 'scripts');
 	});
 })
