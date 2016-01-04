@@ -15,12 +15,11 @@ define([
 	'transition',
 	'carousel',
 	'jpage',
-	'ejs',
-	'text!../template/index.ejs'
-], function(require,$, prettify, scroll, tooltip, modal, transition, carousel, jpage, EJS, indexTmp) {
+	// 'ejs',
+	'rejs!../template/index'
+], function(require,$, prettify, scroll, tooltip, modal, transition, carousel, jpage, indexTmp) {
 
 	var index={};
-
 	//初始化模板
 	index.initlalize=function(){
 		this.template();
@@ -34,9 +33,11 @@ define([
 			$.scrollTo('#' + action, 500)
 		})
 		var data = {
-			num: 5
+			name: 'Hbook',
+			num:100
 		}
-		var _html = ejs.render(indexTmp, data);
+		// var _html = ejs.render(indexTmp(), data);
+		var _html = indexTmp(data);
 		$('#content').html(_html);
 		$('[data-toggle="tooltip"]').tooltip();
 		this.page('.jpage');

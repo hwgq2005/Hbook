@@ -11,6 +11,7 @@ require.config({
 		'jquery': 'lib/jquery/dist/jquery.min',
 		'ejs': 'lib/ejs/ejs.min',
 		'text': 'lib/text/text',
+		'rejs': "lib/rejs",
 		'prettify': 'component/prettify',
 		'transition': 'component/bootstrap-transition',
 		'scroll': 'lib/jquery.scrollTo/jquery.scrollTo.min',
@@ -47,7 +48,12 @@ require.config({
 		scroll: {
 			deps: ['jquery'],
 			exports: 'scroll'
-		}
+		},
+		
+	    ejs: {
+	      exports: 'ejs'
+	    }
+		 
 	},
 	map: {
 		'*': {

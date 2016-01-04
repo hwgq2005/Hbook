@@ -20,7 +20,6 @@
     "jquery": "~2.1.4",
     "require-css": "~0.1.8",
     "requirejs": "~2.1.22",
-    "ejs": "~1.0.0",
     "text": "~2.0.14",
     "jquery.scrollTo": "~2.1.2"
   },
