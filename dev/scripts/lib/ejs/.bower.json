@@ -10,5 +10,6 @@
   },
   "_source": "git://github.com/visionmedia/ejs.git",
   "_target": "~1.0.0",
-  "_originalSource": "ejs"
+  "_originalSource": "ejs",
+  "_direct": true
 }

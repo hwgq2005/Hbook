@@ -238,11 +238,11 @@
         if (prevHoverState == 'out') that.leave(that)
       }
 
-      $.support.transition && this.$tip.hasClass('fade') ?
-        $tip
-          .one('bsTransitionEnd', complete)
-          .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
-        complete()
+      // $.support.transition && this.$tip.hasClass('fade') ?
+      //   $tip
+      //     .one('bsTransitionEnd', complete)
+      //     .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
+      //   complete()
     }
   }
 
@@ -329,11 +329,11 @@
 
     $tip.removeClass('in')
 
-    $.support.transition && $tip.hasClass('fade') ?
-      $tip
-        .one('bsTransitionEnd', complete)
-        .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
-      complete()
+    // $.support.transition && $tip.hasClass('fade') ?
+    //   $tip
+    //     .one('bsTransitionEnd', complete)
+    //     .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
+    //   complete()
 
     this.hoverState = null
 

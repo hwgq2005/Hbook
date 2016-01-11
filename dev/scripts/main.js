@@ -18,7 +18,8 @@ define([
 	// 'ejs',
 	'rejs!../template/index'
 ], function(require,$, prettify, scroll, tooltip, modal, transition, carousel, jpage, indexTmp) {
-
+	ejs.open='{{';
+	ejs.close='}}';
 	var index={};
 	//初始化模板
 	index.initlalize=function(){
@@ -51,7 +52,7 @@ define([
 			current: 1,
 			showNum: 10,
 			callback: function(tPage, sNum) {
-				console.log(tPage);
+				console.log('分页');
 			}
 		});
 	}
@@ -71,4 +72,4 @@ define([
 	}
 
 	return index;
-});
+});	

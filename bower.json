@@ -21,7 +21,8 @@
     "require-css": "~0.1.8",
     "requirejs": "~2.1.22",
     "text": "~2.0.14",
-    "jquery.scrollTo": "~2.1.2"
+    "jquery.scrollTo": "~2.1.2",
+    "ejs":"~1.0.0"
   },
   "authors": [
     "hwgq2005 <262281610@qq.com>"
@@ -29,5 +30,8 @@
   "main": "",
   "moduleType": [],
   "license": "MIT",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "ejs": "~1.0.0"
+  }
 }
