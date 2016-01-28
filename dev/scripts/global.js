@@ -4,7 +4,7 @@
  * @version 1.0
  */
 
-
+var global = {};
 /************************************************************
  *	数量格式化
  *	num：数值
@@ -71,8 +71,6 @@ function transdate(endTime) {
  *	passTime：创建时间戳
  *************************************************************/
 function timeFormat(thisTime, passTime) {
-  // console.log(thisTime)
-  // console.log(passTime);
 
 	var start = transdate(thisTime);
 	var pass = transdate(passTime);
@@ -122,13 +120,13 @@ function getQueryString(name) {
  *	data：参数
  *	callback:回调函数
  *************************************************************/
-function getAjax(url, type, data, callback) {
+global.getAjax=function(url, type, data, callback) {
 	$.ajax({
 		url: url,
 		type: type,
 		dataType: 'json',
-		// contentType: 'text/plain',
 		data: data,
 		success: callback
 	});
 }
+module.exports = global;

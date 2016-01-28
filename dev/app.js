@@ -49,11 +49,11 @@ require.config({
 			deps: ['jquery'],
 			exports: 'scroll'
 		},
-		
-	    ejs: {
-	      exports: 'ejs'
-	    }
-		 
+
+		ejs: {
+			exports: 'ejs'
+		}
+
 	},
 	map: {
 		'*': {
