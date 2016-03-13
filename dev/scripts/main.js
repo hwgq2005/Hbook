@@ -70,6 +70,6 @@ define([
 			itemsMobile: false
 		});
 	}
-
+	
 	return index;
 });	

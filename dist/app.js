@@ -9,7 +9,7 @@ require.config({
 	baseUrl: 'scripts',
 	paths: {
 		'jquery': 'lib/jquery/dist/jquery.min',
-		'ejs': 'lib/ejs/ejs.min',
+		'ejs': 'lib/ejs/ejs',
 		'text': 'lib/text/text',
 		'rejs': "lib/rejs",
 		'prettify': 'component/prettify',
@@ -49,11 +49,11 @@ require.config({
 			deps: ['jquery'],
 			exports: 'scroll'
 		},
-		
-	    ejs: {
-	      exports: 'ejs'
-	    }
-		 
+
+		ejs: {
+			exports: 'ejs'
+		}
+
 	},
 	map: {
 		'*': {
