@@ -5,28 +5,66 @@
  * @date    2014-11-28 21:53:45
  * @version $Id$
  */
-/*---------------------------------------base----------------------------------------*/
-body, div, ul, ol, li, a, img, h1, h2, h3, h4, h5, p, input, table, tr, td, i, b, dl, dt, textarea, select, option, pre {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
-body {
-  font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
-  font-size: 14px;
+html {
+  line-height: 1;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
-img, input {
-  border: 0;
-  outline: none;
-}
-
-ul {
-  list-style: none;
+/*---------------------------------------base----------------------------------------*/
+body {
+  font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 a:link {
@@ -283,7 +321,7 @@ i {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#08c), to(#0077b3));
   background-image: -webkit-linear-gradient(top, #08c, #0077b3);
   background-image: -o-linear-gradient(top, #08c, #0077b3);
-  background-image: linear-gradient(to bottom, #08c, #0077b3);
+  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
@@ -296,7 +334,7 @@ i {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#08c), to(#0077b3));
   background-image: -webkit-linear-gradient(top, #08c, #0077b3);
   background-image: -o-linear-gradient(top, #08c, #0077b3);
-  background-image: linear-gradient(to bottom, #08c, #0077b3);
+  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
   background-repeat: repeat-x;
   outline: 0;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
@@ -688,7 +726,7 @@ button[type="button"] {
 }
 
 .btn-grey, .grey-info {
-  background: #666666;
+  background: #666;
   color: #fff;
 }
 
@@ -1445,7 +1483,7 @@ button.close {
   position: absolute;
   top: 0;
   left: 0;
-  /*background: #66CCFF;*/
+  /*background: $primaryBg;*/
   color: #fff;
   padding: 3px 10px;
   display: block;

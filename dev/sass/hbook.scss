@@ -6,25 +6,23 @@
  * @date    2014-11-28 21:53:45
  * @version $Id$
  */
+@import "compass/reset";
+@import "compass/css3";
+// @import "compass/layout";
+
+$defaultBg : #E4E4E4;
+$primaryBg : #66CCFF;
+$successBg : #33CCCC;
+$warningBg : #F3D261;
+$dangerBg  : #FF9999;
+$violetBg  : #8089C1;
+$blackBg   : #525252;
+$greyBg    : #666;
 
 /*---------------------------------------base----------------------------------------*/
-body, div, ul, ol, li, a, img, h1, h2, h3, h4, h5, p, input, table, tr, td, i, b, dl, dt, textarea, select, option, pre {
-	margin: 0;
-	padding: 0;
-}
-body {
+body{
 	font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
-	font-size: 14px;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-img, input {
-	border: 0;
-	outline: none;
-}
-ul {
-	list-style: none;
+	font-size:14px;
 }
 a:link {
 	text-decoration: none;
@@ -38,6 +36,7 @@ a:hover {
 i {
 	font-style: normal
 }
+
 .clear {
 	clear: both;
 }
@@ -116,6 +115,7 @@ i {
 	border-color: transparent;
 	border-style: solid;
 }
+
 .tooltip.top .tooltip-arrow {
 	bottom: 0;
 	left: 50%;
@@ -453,7 +453,7 @@ i {
 	text-align: left;
 }
 .jpage a {
-	color: #33CCCC;
+	color: $successBg;
 }
 .jpage a:hover {
 	text-decoration: none;
@@ -471,8 +471,8 @@ i {
 }
 .jpage span.current {
 	color: #fff;
-	background-color: #33CCCC;
-	border: 1px solid #33CCCC;
+	background-color: $successBg;
+	border: 1px solid $successBg;
 }
 .jpage span.disabled {
 	cursor: not-allowed;
@@ -533,10 +533,10 @@ button[type="button"] {
 	margin: 0 3px;
 	border-radius: 10px;
 	display: inline-block;
-	background: #E4E4E4;
+	background: $defaultBg;
 }
 .btn {
-	background: #E4E4E4;
+	background: $defaultBg;
 	padding: 6px 20px;
 	color: #666;
 	font-size: 13px;
@@ -554,7 +554,7 @@ button[type="button"] {
 	background-color: #CFCFCF;
 }
 .btn-primary, .primary-info {
-	background: #66CCFF;
+	background: $primaryBg;
 	color: #fff;
 }
 .btn-primary:hover {
@@ -562,7 +562,7 @@ button[type="button"] {
 }
 .btn-success, .success-info {
 	color: #fff;
-	background: #33CCCC;
+	background: $successBg;
 }
 .btn-success:hover {
 	background: #2EBABA;
@@ -575,35 +575,35 @@ button[type="button"] {
 	background: #3998B4;
 }
 .btn-warning, .warning-info {
-	background: #F3D261;
+	background: $warningBg;
 	color: #fff;
 }
 .btn-warning:hover {
 	background: #DDBF58;
 }
 .btn-danger, .danger-info {
-	background: #FF9999;
+	background: $dangerBg;
 	color: #fff;
 }
 .btn-danger:hover {
 	background: #E88B8B;
 }
 .btn-grey, .grey-info {
-	background: #666666;
+	background: $greyBg;
 	color: #fff;
 }
 .btn-grey:hover {
 	background: #5D5D5D;
 }
 .btn-black, .black-info {
-	background: #525252;
+	background: $blackBg;
 	color: #fff;
 }
 .btn-black:hover {
 	background: #3E3E3E;
 }
 .btn-violet, .violet-info {
-	background: #8089C1;
+	background: $violetBg;
 	color: #fff;
 }
 .btn-violet:hover {
@@ -777,7 +777,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	transition: width 0.6s ease;
 }
 .progress .bar-primary {
-	background: #66CCFF;
+	background: $primaryBg;
 }
 .progress .bar-success {
 	background: #2EBABA
@@ -1236,7 +1236,7 @@ button.close {
 .around .left-mark .tip {
 	position: absolute;
 	top: 0;
-	left: 0;    /*background: #66CCFF;*/
+	left: 0;    /*background: $primaryBg;*/
 	color: #fff;
 	padding: 3px 10px;
 	display: block;
@@ -1287,7 +1287,7 @@ button.close {
 }
 .msg .span-1, .msg .span-2 {
 	margin: 0 10px;
-	color: #E4E4E4;
+	color: $defaultBg;
 }
 .around .right-summary .right-summary-p {
 	display: block;
@@ -1324,7 +1324,7 @@ button.close {
 	position: relative;
 	margin: 0 0 0 68px;
 	padding-bottom: 26px;
-	border-bottom: 1px dotted #E4E4E4;
+	border-bottom: 1px dotted $defaultBg;
 }
 .comment-box .comment-list .right-summary .operation {
 	position: absolute;
