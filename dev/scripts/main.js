@@ -18,11 +18,7 @@
 			var action = $(this).attr('data-id');
 			$.scrollTo('#' + action, 500)
 		})
-		var data = {
-			name: 'Hbook',
-			num:100
-		}
-		// var _html = ejs.render(indexTmp(), data);
+		
 		$('[data-toggle="tooltip"]').tooltip();
 		this.page('.jpage');
 	}
