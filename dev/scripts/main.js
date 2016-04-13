@@ -41,3 +41,21 @@
 	
 
 
+=======
+	//轮播
+	index.carousel=function(element){
+		$(element).owlCarousel({
+			slideSpeed: 300,
+			paginationSpeed: 400,
+			autoPlay: true,
+			items: 1, 
+			itemsDesktop: false,
+			itemsDesktopSmall: false,
+			itemsTablet: false,
+			itemsMobile: false
+		});
+	}
+	
+	return index;
+});	
+>>>>>>> 7e0128eea87f138419115e4fc744e9e21f9b98d8

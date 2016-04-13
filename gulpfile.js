@@ -146,11 +146,11 @@ gulp.task('imagemin', function() {
 
 //定义名为"watch"的任务
 gulp.task('watch', function() {
-	gulp.watch('./dev/images/*.*');
-	gulp.watch('./dev/template/*.ejs');
-	gulp.watch('./dev/scripts/*.js');
-	gulp.watch('./sass/*.scss');
-	gulp.watch('./dev/style/*.css');
+	gulp.watch('./dev/images/*.*',['imagemin']);
+	gulp.watch('./dev/template/*.ejs',['ejs']);
+	gulp.watch('./dev/scripts/*.js',['scripts']);
+	gulp.watch('./dev/sass/*.scss',['compass']);
+	// gulp.watch('./dev/style/*.css',['compass']);
 })
 
 
