@@ -4,22 +4,7 @@
  * @date    2015-12-07 11:03:23
  * @version 1.0
  */
-
-define([
-	'require',
-	'jquery',
-	'prettify',
-	'scroll',
-	'tooltip',
-	'modal',
-	'transition',
-	'carousel',
-	'jpage',
-	// 'ejs',
-	'rejs!../template/index'
-], function(require,$, prettify, scroll, tooltip, modal, transition, carousel, jpage, indexTmp) {
-	ejs.open='{{';
-	ejs.close='}}';
+;(function(global){
 	var index={};
 	//初始化模板
 	index.initlalize=function(){
@@ -38,11 +23,8 @@ define([
 			num:100
 		}
 		// var _html = ejs.render(indexTmp(), data);
-		var _html = indexTmp(data);
-		$('#content').html(_html);
 		$('[data-toggle="tooltip"]').tooltip();
 		this.page('.jpage');
-		this.carousel('#owl-demo');
 	}
 
 	//分页
@@ -57,19 +39,9 @@ define([
 		});
 	}
 
-	//轮播
-	index.carousel=function(element){
-		$(element).owlCarousel({
-			slideSpeed: 300,
-			paginationSpeed: 400,
-			autoPlay: true,
-			items: 1, 
-			itemsDesktop: false,
-			itemsDesktopSmall: false,
-			itemsTablet: false,
-			itemsMobile: false
-		});
-	}
 
-	return index;
-});	
+	global.index=index;
+}(this))
+	
+
+
