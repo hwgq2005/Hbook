@@ -11,7 +11,6 @@
 //    !js/dev.js：除了js/dev.js以外的所有文件。
 //    *.+(js|css)：匹配项目根目录下，所有后缀名为js或css的文件。
 
-
 //引入gulp插件node模块
 var gulp = require('gulp'),
 	template = require('gulp-template'),
