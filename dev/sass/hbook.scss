@@ -20,6 +20,7 @@ $blackBg   : #525252;
 $greyBg    : #666;
 
 /*---------------------------------------base----------------------------------------*/
+
 body{
 	font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
 	font-size:14px;
@@ -37,24 +38,6 @@ i {
 	font-style: normal
 }
 
-.clear {
-	clear: both;
-}
-.clearfix:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
-}
-.clearfix {
-	display: inline-block;
-}
-.clearfix {
-	display: block;
-	zoom: 1;
-}
 
 /*---------------------------------------提示框----------------------------------------*/
 .tooltip {
@@ -1294,8 +1277,8 @@ button.close {
 	font-size: 12px;
 	height: 38px;
 	line-height: 18px;
-	margin-top: 10px;    /*min-height: 19px;*/
-
+	margin-top: 10px;    
+	/*min-height: 19px;*/
 	/*max-height: 34px;*/
 	overflow: hidden;
 }
