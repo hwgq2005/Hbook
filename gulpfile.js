@@ -5,10 +5,10 @@
  * @version $Id$
  */
 
-//    js/dev.js：指定确切的文件名。
+//    js/src.js：指定确切的文件名。
 //    js/*.js：某个目录所有后缀名为js的文件。
 //    js/**/*.js：某个目录及其所有子目录中的所有后缀名为js的文件。
-//    !js/dev.js：除了js/dev.js以外的所有文件。
+//    !js/src.js：除了js/src.js以外的所有文件。
 //    *.+(js|css)：匹配项目根目录下，所有后缀名为js或css的文件。
 
 //引入gulp插件node模块
@@ -42,29 +42,29 @@ gulp.task('http-server', function() {
 	});
 });
 gulp.task('clean', function () {
-	return gulp.src('./dev/scripts/lib/jquery/src/', {read: false})
+	return gulp.src('./src/scripts/lib/jquery/src/', {read: false})
     .pipe(clean());
  
 });
 
 gulp.task('html', function() {
-	return gulp.src('./dev/**.*')
+	return gulp.src('./src/**.*')
 		.pipe(template({
 			srcName: 'aa'
 		})) //模板变量
 		.pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('ejs', function() {
-	gulp.src('./dev/template/*.ejs')
-		.pipe(gulp.dest('./dist/template/'));
+gulp.task('copy', function() {
+	gulp.src('./src/scripts/lib/**/*.js')
+		.pipe(gulp.dest('./dist/scripts/lib/'));
 });
 
 //gulp.task(name, fn)gulp模块的task方法，用于定义具体的任务。它的第一个参数是任务名，第二个参数是任务函数。
 gulp.task('uglify', function() {
 
 	//gulp.src(glob)返回了一个可读的stream，如此行返回了./js/*.js下的全部
-	gulp.src('./dev/scripts/**/*.js')
+	gulp.src('./src/scripts/**/*.js')
 
 		.pipe(uglify())
 		//gulp.dest(glob)返回一个可写的stream，如此行是将文件流写入到 ./dist/js 里的对应路径下            
@@ -76,12 +76,12 @@ gulp.task('uglify', function() {
 
 // 创建Compass任务
 gulp.task('compass', function() {
-	gulp.src('./dev/sass/*.scss')
+	gulp.src('./src/sass/*.scss')
 		.pipe(compass({
 			comments: false,
 			css: './dist/style',
-			sass: './dev/sass',
-			image: './dev/images'
+			sass: './src/sass',
+			image: './src/images'
 		}))
 		.pipe(minicss())
 		.pipe(rename( { suffix: '.min' }))
@@ -108,18 +108,18 @@ gulp.task("sass", function() {
 
 //检查js
 gulp.task("jshint", function() {
-	gulp.src("./dev/scripts/.js")
+	gulp.src("./src/scripts/.js")
 		.pipe(jshint())
 		.pipe(jshint.reporter('default')); //导入到模块任务里面
 })
 
 // 合并、压缩文件
 gulp.task('scripts', function() {
-	gulp.src('./dev/scripts/**/*.js')
-	// gulp.src('./dev/scripts/*.js')
+	gulp.src(['./src/scripts/**/*.js','!./src/scripts/lib/**/*.js'])
+	// gulp.src('./src/scripts/*.js')
 		// .pipe(concat('all.js'))
-		.pipe(gulp.dest('./dist/scripts'))
-		.pipe(rename('all.min.js'))
+		// .pipe(gulp.dest('./dist/scripts'))
+		.pipe(rename( { suffix: '.min' }))
 		.pipe(uglify())
 		.pipe(gulp.dest('./dist/scripts'))
 		.pipe(livereload())
@@ -127,7 +127,7 @@ gulp.task('scripts', function() {
 
 //压缩图片
 gulp.task('imagemin', function() {
-	gulp.src('./dev/images/**/*.*')
+	gulp.src('./src/images/**/*.*')
 		.pipe(imagemin())
 		.pipe(gulp.dest('./dist/images'))
 		.pipe(notify({
@@ -140,36 +140,36 @@ gulp.task('imagemin', function() {
 // 	// gulp.src('*.*')
 // 	// 	.pipe(livereload());
 
-// 	gulp.src('./dev/*.html')
+// 	gulp.src('./src/*.html')
 // 		.pipe(gulp.dest('./dist/'))
 // })
 
 //定义名为"watch"的任务
 gulp.task('watch', function() {
-	gulp.watch('./dev/images/*.*',['imagemin']);
-	gulp.watch('./dev/template/*.ejs',['ejs']);
-	gulp.watch('./dev/scripts/*.js',['scripts']);
-	gulp.watch('./dev/sass/*.scss',['compass']);
-	// gulp.watch('./dev/style/*.css',['compass']);
+	gulp.watch('./src/images/*.*',['imagemin']);
+	gulp.watch('./src/template/*.ejs',['ejs']);
+	gulp.watch('./src/scripts/*.js',['scripts']);
+	gulp.watch('./src/sass/*.scss',['compass']);
+	// gulp.watch('./src/style/*.css',['compass']);
 })
 
 
 //每个gulpfile.js里都应当有一个dafault任务，它是缺省任务入口（类似C语言的main()入口），运行gulp的时候实际只是调用该任务（从而来调用其它的任务）
 gulp.task('default', function() {
 	//gulp.run(tasks)表示运行对应的任务，这里表示执行名
-	gulp.run('clean','html','ejs', 'compass', 'minicss', 'imagemin','scripts');
+	gulp.run('clean','html','copy', 'compass', 'minicss', 'imagemin','scripts');
 	//执行'watch'监听任务
 	// gulp.run('watch');
 	// 监听文件变化
 	gulp.watch([
-		'./dev/*.html',
-		'./dev/template/*.ejs',
-		'./dev/sass/**',
-		'./dev/images/**',
-		'./dev/style/*.css',
-		'./dev/scripts/*.js'
+		'./src/*.html',
+		'./src/template/*.ejs',
+		'./src/sass/**',
+		'./src/images/**',
+		'./src/style/*.css',
+		'./src/scripts/*.js'
 	], function() {
 		livereload.listen();
-		gulp.run('clean','html','ejs', 'compass', 'minicss', 'imagemin', 'scripts');
+		gulp.run('clean','html','copy', 'compass', 'minicss', 'imagemin', 'scripts');
 	});
 })
