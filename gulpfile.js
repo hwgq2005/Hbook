@@ -79,18 +79,19 @@ gulp.task('compass', function() {
 	gulp.src('./dev/sass/*.scss')
 		.pipe(compass({
 			comments: false,
-			css: './dev/style',
+			css: './dist/style',
 			sass: './dev/sass',
 			image: './dev/images'
 		}))
 		.pipe(minicss())
+		.pipe(rename( { suffix: '.min' }))
 		.pipe(gulp.dest('./dist/style'));
 
 });
 
 //压缩样式
 gulp.task('minicss', function() {
-	gulp.src('./dev/style/*.css')
+	gulp.src('./dist/style/*.css')
 		.pipe(minicss())
 		.pipe(gulp.dest('./dist/style'))
 })
@@ -118,7 +119,7 @@ gulp.task('scripts', function() {
 	// gulp.src('./dev/scripts/*.js')
 		// .pipe(concat('all.js'))
 		.pipe(gulp.dest('./dist/scripts'))
-		// .pipe(rename('all.min.js'))
+		.pipe(rename('all.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('./dist/scripts'))
 		.pipe(livereload())

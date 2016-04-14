@@ -1,8 +1,30 @@
+@charset "utf-8";
+
+/**
+ * 
+ * @authors H君 (26228161@qq.com)
+ * @date    2014-11-28 21:53:45
+ * @version $Id$
+ */
+
+@import "compass/css3";
+$defaultBg : #E4E4E4;
+$primaryBg : #66CCFF;
+$successBg : #33CCCC;
+$warningBg : #F3D261;
+$dangerBg  : #FF9999;
+$violetBg  : #8089C1;
+$blackBg   : #525252;
+$greyBg    : #666;
+
 body {
 	color: #4B4B4B;
 	padding-top: 40px !important;
 }
-.container {
+ol{
+	list-style:decimal;
+}
+.h-header {
 	background: #222222;
 	position: fixed;
 	top: 0;
@@ -11,24 +33,25 @@ body {
 	height: 40px;
 	z-index: 9000;
 }
-.header, .content {
+.h-header-box, .content {
 	width: 1024px;
 	margin: 0 auto;
 }
-.header .nav a {
+.h-header-box .nav a {
 	color: #d1d1d1;
 }
-.header .nav a:hover {
+.h-header-box .nav a:hover {
 	color: #fff;
 }
 .content {
 	padding: 50px 0 0;
 }
+
 .banner {
-	background: #F7A22E;
+	background: $violetBg;
 	height: 220px;
 	text-align: center;
-	padding: 80px 0 150px;
+	padding: 80px 0 100px;
 	color: #fff;
 }
 .banner .title {
@@ -41,15 +64,13 @@ body {
 	font-size: 18px;
 	margin-top: 40px;
 	padding: 15px 80px;
-	background: #1FBBA6;
+	background: $warningBg;
 	color: #fff;
 	display: inline-block;
-	-webkit-box-shadow: 0px 5px 0px #1A9583;
-	-moz-box-shadow: 0px 5px 0px #1A9583;
-	box-shadow: 0px 5px 0px #1A9583;
+	@include box-shadow(0px 5px 0px darken($warningBg,15%));
 }
 .banner .download:hover {
-	background: #21A593;
+	background: lighten($warningBg,3%);
 }
 .section {
 	margin-bottom: 30px;
@@ -60,6 +81,7 @@ body {
 .content .hb-sum {
 	margin-bottom: 30px;
 	font-size: 22px;
+	line-height:34px;
 }
 .page-header {
 	padding-bottom: 9px;
@@ -89,7 +111,7 @@ body {
 footer {
 	width: 1024px;
 	margin: 0 auto;
-	padding: 20px 0 30px;
+	padding: 10px 0 40px;
 	color: #999;
 	text-align: center;
 }

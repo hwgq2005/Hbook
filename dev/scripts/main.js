@@ -22,7 +22,7 @@
 		})
 		
 		$('[data-toggle="tooltip"]').tooltip();
-		this.page('.jpage');
+		this.page('.h-page');
 	}
 
 	//分页
