@@ -11,7 +11,7 @@ body {
 }
 
 ol {
-  list-style: decimal;
+  list-style: decimal !important;
 }
 
 .h-header {
