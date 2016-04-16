@@ -45,12 +45,13 @@ ol {
 .banner {
   background: #8089C1;
   text-align: center;
-  padding: 80px 0 100px;
+  padding: 60px 0 80px;
   color: #fff;
 }
 
 .banner .title {
-  font-size: 100px;
+  font-size: 80px;
+  margin-bottom: 10px;
 }
 
 .banner p {
