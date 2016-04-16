@@ -7,23 +7,7 @@
  * @version 1.0.2
  */
 
-@import "compass/reset";
-@import "compass/css3";
-
-/********************主颜色配置 start********************/
-$defaultBg : #E4E4E4;
-$primaryBg : #66CCFF;
-$successBg : #33CCCC;
-$warningBg : #F3D261;
-$dangerBg  : #FF9999;
-$violetBg  : #8089C1;
-$blackBg   : #333;
-$greyBg    : #666;
-/********************主颜色配置 end********************/
-
-/********************表单长度 start********************/
-$formLength:80px;
-/********************表单长度 end********************/
+@import 'config.scss';
 
 /*********************base*********************/
 body {

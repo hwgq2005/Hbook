@@ -76,7 +76,7 @@ gulp.task('uglify', function() {
 
 // 创建Compass任务
 gulp.task('compass', function() {
-	gulp.src('./src/sass/*.scss')
+	gulp.src(['./src/sass/*.scss','!./src/sass/config.scss'])
 		.pipe(compass({
 			comments: false,
 			css: './dist/style',

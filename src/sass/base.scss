@@ -7,15 +7,7 @@
  * @version $Id$
  */
 
-@import "compass/css3";
-$defaultBg : #E4E4E4;
-$primaryBg : #66CCFF;
-$successBg : #33CCCC;
-$warningBg : #F3D261;
-$dangerBg  : #FF9999;
-$violetBg  : #8089C1;
-$blackBg   : #525252;
-$greyBg    : #666;
+@import "config";
 
 body {
 	color: #4B4B4B;
@@ -51,7 +43,7 @@ ol{
 .banner {
 	background: $violetBg;
 	text-align: center;
-	padding: 60px 0 80px;
+	padding: 80px 0 100px;
 	color: #fff;
 }
 .banner .title {
@@ -111,8 +103,8 @@ ol{
 }
 footer {
 	max-width: 1024px;
-	margin: 0 auto;
-	padding: 10px 10px 40px;
+	margin: 0 auto!important;
+	padding: 10px 10px 40px!important;
 	color: #999;
 	text-align: center;
 }
@@ -159,14 +151,11 @@ code {
 	font-weight: normal;
 }
 .prettyprint.linenums {
-	-webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
-	-moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
-	box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+	@include box-shadow(inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0);
 }
 
 ol.linenums {
-	margin: 0 0 0 33px; /* IE indents via margin-left */
-
+	margin: 0 0 0 33px; 
 }
 ol.linenums li {
 	padding-left: 12px;
