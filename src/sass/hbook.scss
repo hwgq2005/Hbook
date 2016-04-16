@@ -510,15 +510,6 @@ span{
 button[type="button"] {
 	border: none;
 }
-.label {
-	font-size: 12px;
-	color: #fff;
-	padding: 4px 10px;
-	margin: 0 3px;
-	border-radius: 14px;
-	display: inline-block;
-	background: $defaultBg;
-}
 .btn {
 	background: $defaultBg;
 	padding: 6px 20px;
@@ -527,14 +518,23 @@ button[type="button"] {
 	display: inline-block;
 	line-height: 20px;
 }
+.btn:hover {
+	background-color: #CFCFCF;
+}
 .btn-mini {
 	padding: 4px 12px;
 }
-.btn-large {
-	padding: 10px 30px;
+.label {
+	font-size: 12px;
+	color: #fff;
+	padding: 8px 20px;
+	margin: 0 3px;
+	border-radius: 14px;
+	display: inline-block;
+	background: $defaultBg;
 }
-.btn:hover {
-	background-color: #CFCFCF;
+.label-mini{
+	padding: 4px 10px;
 }
 .btn-primary, .label-primary {
 	background: $primaryBg;
@@ -601,9 +601,6 @@ label {
 	margin-bottom: 5px;
 	display: block;
 }
-label input, label textarea, label select {
-	display: block;
-}
 
 /********************form*********************/
 label, input, button, select, textarea {
@@ -643,7 +640,6 @@ label, input, button, select, textarea {
 					width: 0;
 					visibility: hidden;
 					transition: .2s ease all;
-					
 				}
 			}
 		}
