@@ -21,13 +21,13 @@
 	var ms = {
 		init: function(obj, args) {
 
-			
+
 			return (function() {
 				ms.fillHtml(obj, args);
 				ms.bindEvent(obj, args);
-				if (typeof(args.callback) == "function") {
-					args.callback(args.current,args.showNum);
-				}
+				// if (typeof(args.callback) == "function") {
+				// 	args.callback(args.current,args.showNum);
+				// }
 			})();
 		},
 		//填充html

@@ -4,21 +4,28 @@
  * 
  * @authors H君 (26228161@qq.com)
  * @date    2014-11-28 21:53:45
- * @version $Id$
+ * @version 1.0.2
  */
 
 @import "compass/reset";
 @import "compass/css3";
+
+/********************主颜色配置 start********************/
 $defaultBg : #E4E4E4;
 $primaryBg : #66CCFF;
 $successBg : #33CCCC;
 $warningBg : #F3D261;
 $dangerBg  : #FF9999;
 $violetBg  : #8089C1;
-$blackBg   : #525252;
+$blackBg   : #333;
 $greyBg    : #666;
+/********************主颜色配置 end********************/
 
-/*---------------------------------------base----------------------------------------*/
+/********************表单长度 start********************/
+$formLength:80px;
+/********************表单长度 end********************/
+
+/*********************base*********************/
 body {
 	font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
 	font-size: 14px;
@@ -47,8 +54,15 @@ i {
 	display: block;
 	zoom: 1;
 }
-
-/* ------------------------------------nav------------------------------------ */
+span{
+	vertical-align:middle;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* ********************nav*********************/
 .nav {
 	font-size: 0;
 	a {
@@ -78,21 +92,19 @@ i {
 			border: 1px solid #DDDDDD;
 			text-align: center;
 			&:hover{
-				color: #2EBABA;
-				background: #fff;
-				border-bottom: 1px solid #fff;
+				@extend a.active;
 			}
 		}
 		a.active{
 			background: #fff;
-			color: #2EBABA;
+			color: $primaryBg;
 			border-bottom: 1px solid #fff;
 		}
 	}
 }
 
 
-/*---------------------------------------提示框----------------------------------------*/
+/*********************tooltip*********************/
 .tooltip {
 	position: absolute;
 	z-index: 1070;
@@ -209,7 +221,7 @@ i {
 	border-bottom-color: #000;
 }
 
-/* ------------------------------------dropdown------------------------------------ */
+/********************dropdown*********************/
 .dropdown-toggle {
 	*margin-bottom: -3px
 }
@@ -396,9 +408,7 @@ i {
 	padding-left: 20px
 }
 
-
-
-/* ------------------------------------table------------------------------------ */
+/********************table*********************/
 .table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -411,8 +421,7 @@ i {
 	}
 	td {
 		padding: 10px;
-		line-height: 20px;
-		vertical-align: top;
+		vertical-align: middle;
 		border-top: 1px solid #ddd;
 		color: #5D5A5A;
 		background: #FFF;
@@ -422,7 +431,6 @@ i {
 		cursor: pointer;
 	}
 }
-
 .table-bordered {
 	border: 1px solid #ddd;
 	border-collapse: separate;
@@ -434,7 +442,6 @@ i {
 	  border-left: 1px solid #E9E9E9;
 	}
 }
-
 .table-hover tbody tr:hover>td {
 	background-color: #f5f5f5;
 }
@@ -442,7 +449,7 @@ i {
 	background-color: #f9f9f9;
 }
 
-/* ------------------------------------page------------------------------------ */
+/********************page*********************/
 .h-page {
 	padding: 15px 20px;
 	text-align: left;
@@ -473,10 +480,10 @@ i {
 		@extend a;
 		color: #fff;
 		z-index: 2;
-		background-color: $successBg;
-		border: 1px solid $successBg;
+		background-color: $primaryBg;
+		border: 1px solid $primaryBg;
 		&:hover{
-			background: $successBg;
+			background: $primaryBg;
 		}
 	}
 	span.disabled{
@@ -499,13 +506,576 @@ i {
 		border: 1px solid #ddd;
 	}
 }
+/********************btn********************/
+button[type="button"] {
+	border: none;
+}
+.label {
+	font-size: 12px;
+	color: #fff;
+	padding: 4px 10px;
+	margin: 0 3px;
+	border-radius: 14px;
+	display: inline-block;
+	background: $defaultBg;
+}
+.btn {
+	background: $defaultBg;
+	padding: 6px 20px;
+	color: #666;
+	font-size: 13px;
+	display: inline-block;
+	line-height: 20px;
+}
+.btn-mini {
+	padding: 4px 12px;
+}
+.btn-large {
+	padding: 10px 30px;
+}
+.btn:hover {
+	background-color: #CFCFCF;
+}
+.btn-primary, .label-primary {
+	background: $primaryBg;
+	color: #fff;
+}
+.btn-primary:hover {
+	background: lighten($primaryBg,5%);
+}
+.btn-success, .label-success {
+	background: $successBg;
+	color: #fff;
+}
+.btn-success:hover {
+	background: lighten($successBg,5%);
+}
 
-/* ------------------------------------form------------------------------------ */
+.btn-warning, .label-warning {
+	background: $warningBg;
+	color: #fff;
+}
+.btn-warning:hover {
+	background: lighten($warningBg,5%);
+}
+.btn-danger, .label-danger {
+	background: $dangerBg;
+	color: #fff;
+}
+.btn-danger:hover {
+	background: lighten($dangerBg,5%);
+}
+.btn-grey, .label-grey {
+	background: $greyBg;
+	color: #fff;
+}
+.btn-grey:hover {
+	background: lighten($greyBg,5%);
+}
+.btn-black, .label-black{
+	background: $blackBg;
+	color: #fff;
+}
+.btn-black:hover {
+	background: lighten($blackBg,5%);
+}
+.btn-violet, .label-violet{
+	background: $violetBg;
+	color: #fff;
+}
+.btn-violet:hover {
+	background: lighten($violetBg,5%);
+}
+.btn-link {
+	background: none;
+	color: #005580;
+}
+.btn-link:hover {
+	background: none;
+	color: #0D79AF;
+}
+.btn-raduis {
+	border-radius: 16px;
+}
+label {
+	margin-bottom: 5px;
+	display: block;
+}
+label input, label textarea, label select {
+	display: block;
+}
+
+/********************form*********************/
 label, input, button, select, textarea {
 	font-size: 14px;
 	font-weight: normal;
 	line-height: 20px;
 }
+.form-group.form-line-input{
+	position: relative;
+	margin-bottom:20px;
+	padding-top:20px;
+	.form-control~label{
+		position: absolute;
+		top:28px;
+		left:6px;
+		color: #999;
+	}
+	.form-control{
+		width: 100%;
+		border:none;
+		border-bottom: 1px solid #c2cad8;
+		@include transition(border-color ease-in-out .15s);
+		&:focus{
+			border:0;
+			outline: none;
+			&:not([readonly])~label{
+				font-size: 12px;
+				pointer-events: none;
+				transition: .2s ease all;
+				&:after{
+					content: '1212';
+					position: absolute;
+					z-index: 5;
+					bottom: 0;
+					left: 50%;
+					height: 2px;
+					width: 0;
+					visibility: hidden;
+					transition: .2s ease all;
+					
+				}
+			}
+		}
+	}
+	&.has-success{
+		.form-control{
+			&:focus{
+				border-bottom:  2px solid $primaryBg;
+			}
+		}
+	}
+	
+}
+
+
+// .form-group.form-md-line-input .form-control.edited:not([readonly])~label, .form-group.form-md-line-input .form-control.focus:not([readonly])~label, .form-group.form-md-line-input .form-control:focus:not([readonly])~label, .form-group.form-md-line-input .form-control~.help-block-error, .form-group.form-md-line-input .form-control~label, .form-horizontal .form-group.form-md-line-input>label {
+// 	opacity: 1;
+// 	filter: alpha(opacity=100)
+// }
+// .form-group.form-md-line-input {
+// 	position: relative;
+// 	margin: 0 0 35px;
+// 	padding-top: 20px
+// }
+// .form-horizontal .form-group.form-md-line-input {
+// 	padding-top: 10px;
+// 	margin: 0 -15px 20px
+// }
+// .form-horizontal .form-group.form-md-line-input>label {
+// 	padding-top: 5px;
+// 	font-size: 14px;
+// 	color: #888
+// }
+// .form-group.form-md-line-input .form-control {
+// 	background: 0 0;
+// 	border: 0;
+// 	border-bottom: 1px solid #c2cad8;
+// 	-webkit-border-radius: 0;
+// 	-moz-border-radius: 0;
+// 	-ms-border-radius: 0;
+// 	-o-border-radius: 0;
+// 	border-radius: 0;
+// 	color: #555;
+// 	box-shadow: none;
+// 	padding-left: 0;
+// 	padding-right: 0;
+// 	font-size: 14px
+// }
+// .form-group.form-md-line-input .form-control::-moz-placeholder {
+// 	color: #999;
+// 	opacity: 1
+// }
+// .form-group.form-md-line-input .form-control:-ms-input-placeholder {
+// 	color: #999
+// }
+// .form-group.form-md-line-input .form-control::-webkit-input-placeholder {
+// 	color: #999
+// }
+// .form-group.form-md-line-input .form-control.form-control-static {
+// 	border-bottom: 0
+// }
+// .form-group.form-md-line-input .form-control.input-sm {
+// 	font-size: 14px;
+// 	padding: 6px 0
+// }
+// .form-group.form-md-line-input .form-control.input-lg {
+// 	font-size: 20px;
+// 	padding: 14px 0
+// }
+// .form-group.form-md-line-input .input-group, .form-group.form-md-line-input .input-group+.input-group-control, .form-group.form-md-line-input+.input-group, .form-group.form-md-line-input+.input-icon, .form-horizontal .form-group.form-md-line-input .input-group, .form-horizontal .form-group.form-md-line-input .input-group>.input-group-control, .form-inline .form-md-line-input {
+// 	padding-top: 0
+// }
+// .form-group.form-md-line-input .form-control~.form-control-focus, .form-group.form-md-line-input .form-control~label {
+// 	width: 100%;
+// 	position: absolute;
+// 	left: 0;
+// 	bottom: 0;
+// 	pointer-events: none
+// }
+// .form-horizontal .form-group.form-md-line-input .form-control~.form-control-focus, .form-horizontal .form-group.form-md-line-input .form-control~label {
+// 	width: auto;
+// 	left: 15px;
+// 	right: 15px
+// }
+// .form-group.form-md-line-input .form-control~.form-control-focus:after, .form-group.form-md-line-input .form-control~label:after {
+// 	content: '';
+// 	position: absolute;
+// 	z-index: 5;
+// 	bottom: 0;
+// 	left: 50%;
+// 	height: 2px;
+// 	width: 0;
+// 	visibility: hidden;
+// 	transition: .2s ease all
+// }
+// .form-group.form-md-line-input .form-control~label {
+// 	top: 0;
+// 	margin-bottom: 0;
+// 	font-size: 14px;
+// 	color: #888
+// }
+// .form-group.form-md-line-input .form-control.edited:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control.edited:not([readonly])~label, .form-group.form-md-line-input .form-control.focus:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control.focus:not([readonly])~label, .form-group.form-md-line-input .form-control:focus:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control:focus:not([readonly])~label {
+// 	color: #888
+// }
+// .form-group.form-md-line-input .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control:focus:not([readonly])~label:after {
+// 	visibility: visible;
+// 	left: 0;
+// 	width: 100%;
+// 	background: #36c6d3
+// }
+// .form-group.form-md-line-input .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input .form-control:focus:not([readonly])~.help-block {
+// 	color: #36c6d3;
+// 	opacity: 1;
+// 	filter: alpha(opacity=100)
+// }
+// .form-group.form-md-line-input .form-control.edited:not([readonly])~.help-block-error, .form-group.form-md-line-input .form-control.focus:not([readonly])~.help-block-error, .form-group.form-md-line-input .form-control:focus:not([readonly])~.help-block-error {
+// 	opacity: 0;
+// 	filter: alpha(opacity=0)
+// }
+// .form-group.form-md-line-input .form-control[disabled], .form-group.form-md-line-input .form-control[readonly], fieldset[disabled] .form-group.form-md-line-input .form-control {
+// 	background: 0 0;
+// 	cursor: not-allowed;
+// 	border-bottom: 1px dashed #c2cad8
+// }
+// .form-group.form-md-line-input.form-md-floating-label .form-control~label {
+// 	font-size: 16px;
+// 	top: 25px;
+// 	transition: .2s ease all;
+// 	color: #999
+// }
+
+// .form-group.form-md-line-input .form-control.edited:not([readonly])~label, .form-group.form-md-line-input .form-control.focus:not([readonly])~label, .form-group.form-md-line-input .form-control:focus:not([readonly])~label, .form-group.form-md-line-input .form-control~.help-block-error, .form-group.form-md-line-input .form-control~label, .form-horizontal .form-group.form-md-line-input>label {
+// 	opacity: 1;
+// 	filter: alpha(opacity=100)
+// }
+// .form-group.form-md-line-input {
+// 	position: relative;
+// 	margin: 0 0 35px;
+// 	padding-top: 20px
+// }
+// .form-horizontal .form-group.form-md-line-input {
+// 	padding-top: 10px;
+// 	margin: 0 -15px 20px
+// }
+// .form-horizontal .form-group.form-md-line-input>label {
+// 	padding-top: 5px;
+// 	font-size: 14px;
+// 	color: #888
+// }
+// .form-group.form-md-line-input .form-control {
+// 	background: 0 0;
+// 	border: 0;
+// 	border-bottom: 1px solid #c2cad8;
+// 	-webkit-border-radius: 0;
+// 	-moz-border-radius: 0;
+// 	-ms-border-radius: 0;
+// 	-o-border-radius: 0;
+// 	border-radius: 0;
+// 	color: #555;
+// 	box-shadow: none;
+// 	padding-left: 0;
+// 	padding-right: 0;
+// 	font-size: 14px
+// }
+// .form-group.form-md-line-input .form-control::-moz-placeholder {
+// 	color: #999;
+// 	opacity: 1
+// }
+// .form-group.form-md-line-input .form-control:-ms-input-placeholder {
+// 	color: #999
+// }
+// .form-group.form-md-line-input .form-control::-webkit-input-placeholder {
+// 	color: #999
+// }
+// .form-group.form-md-line-input .form-control.form-control-static {
+// 	border-bottom: 0
+// }
+// .form-group.form-md-line-input .form-control.input-sm {
+// 	font-size: 14px;
+// 	padding: 6px 0
+// }
+// .form-group.form-md-line-input .form-control.input-lg {
+// 	font-size: 20px;
+// 	padding: 14px 0
+// }
+// .form-group.form-md-line-input .input-group, .form-group.form-md-line-input .input-group+.input-group-control, .form-group.form-md-line-input+.input-group, .form-group.form-md-line-input+.input-icon, .form-horizontal .form-group.form-md-line-input .input-group, .form-horizontal .form-group.form-md-line-input .input-group>.input-group-control, .form-inline .form-md-line-input {
+// 	padding-top: 0
+// }
+// .form-group.form-md-line-input .form-control~.form-control-focus, .form-group.form-md-line-input .form-control~label {
+// 	width: 100%;
+// 	position: absolute;
+// 	left: 0;
+// 	bottom: 0;
+// 	pointer-events: none
+// }
+// .form-horizontal .form-group.form-md-line-input .form-control~.form-control-focus, .form-horizontal .form-group.form-md-line-input .form-control~label {
+// 	width: auto;
+// 	left: 15px;
+// 	right: 15px
+// }
+// .form-group.form-md-line-input .form-control~.form-control-focus:after, .form-group.form-md-line-input .form-control~label:after {
+// 	content: '';
+// 	position: absolute;
+// 	z-index: 5;
+// 	bottom: 0;
+// 	left: 50%;
+// 	height: 2px;
+// 	width: 0;
+// 	visibility: hidden;
+// 	transition: .2s ease all
+// }
+// .form-group.form-md-line-input .form-control~label {
+// 	top: 0;
+// 	margin-bottom: 0;
+// 	font-size: 14px;
+// 	color: #888
+// }
+// .form-group.form-md-line-input .form-control.edited:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control.edited:not([readonly])~label, .form-group.form-md-line-input .form-control.focus:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control.focus:not([readonly])~label, .form-group.form-md-line-input .form-control:focus:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control:focus:not([readonly])~label {
+// 	color: #888
+// }
+// .form-group.form-md-line-input .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control:focus:not([readonly])~label:after {
+// 	visibility: visible;
+// 	left: 0;
+// 	width: 100%;
+// 	background: #36c6d3
+// }
+// .form-group.form-md-line-input .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input .form-control:focus:not([readonly])~.help-block {
+// 	color: #36c6d3;
+// 	opacity: 1;
+// 	filter: alpha(opacity=100)
+// }
+// .form-group.form-md-line-input .form-control.edited:not([readonly])~.help-block-error, .form-group.form-md-line-input .form-control.focus:not([readonly])~.help-block-error, .form-group.form-md-line-input .form-control:focus:not([readonly])~.help-block-error {
+// 	opacity: 0;
+// 	filter: alpha(opacity=0)
+// }
+// .form-group.form-md-line-input .form-control[disabled], .form-group.form-md-line-input .form-control[readonly], fieldset[disabled] .form-group.form-md-line-input .form-control {
+// 	background: 0 0;
+// 	cursor: not-allowed;
+// 	border-bottom: 1px dashed #c2cad8
+// }
+// .form-group.form-md-line-input.form-md-floating-label .form-control~label {
+// 	font-size: 16px;
+// 	top: 25px;
+// 	transition: .2s ease all;
+// 	color: #999
+// }
+// .form-group.form-md-line-input.form-md-floating-label .form-control.edited~label, .form-group.form-md-line-input.form-md-floating-label .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.form-control-static~label, .form-group.form-md-line-input.form-md-floating-label .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control[readonly]~label {
+// 	top: 0;
+// 	font-size: 13px
+// }
+// .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm~label {
+// 	font-size: 14px;
+// 	top: 24px
+// }
+// .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.edited~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.form-control-static~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm:focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm[readonly]~label {
+// 	top: 0;
+// 	font-size: 13px
+// }
+// .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg~label {
+// 	font-size: 20px;
+// 	top: 30px
+// }
+// .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.edited~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.form-control-static~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg:focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg[readonly]~label {
+// 	top: 0;
+// 	font-size: 13px
+// }
+// .form-group.form-md-line-input.form-md-floating-label .input-icon>label {
+// 	padding-left: 34px
+// }
+// .form-group.form-md-line-input.form-md-floating-label .input-icon.right>label {
+// 	padding-left: 0;
+// 	padding-right: 34px
+// }
+// .form-group.form-md-line-input.form-md-floating-label .input-group.left-addon label, .form-group.form-md-line-input>.input-icon .form-control {
+// 	padding-left: 34px
+// }
+// .form-group.form-md-line-input.form-md-floating-label .input-group.right-addon label {
+// 	padding-right: 34px
+// }
+// .form-group.form-md-line-input .help-block {
+// 	position: absolute;
+// 	margin: 2px 0 0;
+// 	opacity: 0;
+// 	filter: alpha(opacity=0);
+// 	font-size: 13px
+// }
+// .form-group.form-md-line-input>.input-icon>i {
+// 	left: 0;
+// 	bottom: 0;
+// 	margin: 9px 2px 10px 10px;
+// 	color: #888
+// }
+// .form-group.form-md-line-input.has-success .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input.has-success .form-control.edited:not([readonly])~i, .form-group.form-md-line-input.has-success .form-control.edited:not([readonly])~label, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly])~i, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.has-success .form-control.form-control-static~.help-block, .form-group.form-md-line-input.has-success .form-control.form-control-static~i, .form-group.form-md-line-input.has-success .form-control.form-control-static~label, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly])~i, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.has-success label {
+// 	color: #27a4b0
+// }
+// .form-group.form-md-line-input>.input-icon.input-icon-lg>i {
+// 	top: 6px
+// }
+// .form-group.form-md-line-input>.input-icon.input-icon-sm>i {
+// 	top: -1px
+// }
+// .form-group.form-md-line-input>.input-icon>label {
+// 	margin-top: -20px
+// }
+// .form-group.form-md-line-input>.input-icon.right .form-control {
+// 	padding-left: 0;
+// 	padding-right: 34px
+// }
+// .form-group.form-md-line-input>.input-icon.right>i {
+// 	left: auto;
+// 	right: 8px;
+// 	margin: 11px 2px 10px 10px
+// }
+// .form-horizontal .form-group.form-md-line-input .input-group>.form-control-focus, .form-horizontal .form-group.form-md-line-input .input-group>.input-group-control>.form-control-focus, .form-horizontal .form-group.form-md-line-input .input-icon>.form-control-focus {
+// 	left: 0 !important;
+// 	right: 0 !important
+// }
+// .form-group.form-md-line-input .input-group .input-group-control>label, .form-group.form-md-line-input .input-group>label {
+// 	margin-top: -20px
+// }
+// .form-group.form-md-line-input .input-group .input-group-addon {
+// 	-webkit-border-radius: 0;
+// 	-moz-border-radius: 0;
+// 	-ms-border-radius: 0;
+// 	-o-border-radius: 0;
+// 	border-radius: 0;
+// 	background: 0 0;
+// 	border: 0;
+// 	border-bottom: 1px solid #c2cad8
+// }
+// .form-group.form-md-line-input .input-group .input-group-control {
+// 	padding-top: 0;
+// 	position: relative;
+// 	display: table-cell;
+// 	vertical-align: bottom
+// }
+// .badge, .input-inline {
+// 	vertical-align: middle
+// }
+// .form-group.form-md-line-input .input-group .input-group-btn .btn {
+// 	-webkit-border-radius: 4px;
+// 	-moz-border-radius: 4px;
+// 	-ms-border-radius: 4px;
+// 	-o-border-radius: 4px;
+// 	border-radius: 4px
+// }
+// .form-group.form-md-line-input .input-group .input-group-btn.btn-left .btn {
+// 	margin-right: 10px
+// }
+// .form-group.form-md-line-input .input-group .input-group-btn.btn-right .btn {
+// 	margin-left: 10px
+// }
+// .form-group.form-md-line-input .input-group .help-block {
+// 	margin-top: 35px
+// }
+// .form-group.form-md-line-input .input-group.input-group-sm .help-block {
+// 	margin-top: 30px
+// }
+// .form-group.form-md-line-input .input-group.input-group-lg .help-block {
+// 	margin-top: 47px
+// }
+// .form-group.form-md-line-input.has-success .form-control {
+// 	border-bottom: 1px solid #27a4b0
+// }
+// .form-group.form-md-line-input.has-success .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-success .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input.has-success .form-control.form-control-static~.form-control-focus:after, .form-group.form-md-line-input.has-success .form-control.form-control-static~label:after, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly])~label:after {
+// 	background: #27a4b0
+// }
+// .form-group.form-md-line-input.has-success .input-group-addon {
+// 	color: #27a4b0;
+// 	border-bottom: 1px solid #27a4b0
+// }
+// .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly])~i, .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly])~label, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly])~i, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.has-warning .form-control.form-control-static~.help-block, .form-group.form-md-line-input.has-warning .form-control.form-control-static~i, .form-group.form-md-line-input.has-warning .form-control.form-control-static~label, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly])~i, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.has-warning label {
+// 	color: #c29d0b
+// }
+// .form-group.form-md-line-input.has-warning .form-control {
+// 	border-bottom: 1px solid #c29d0b
+// }
+// .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input.has-warning .form-control.form-control-static~.form-control-focus:after, .form-group.form-md-line-input.has-warning .form-control.form-control-static~label:after, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly])~label:after {
+// 	background: #c29d0b
+// }
+// .form-group.form-md-line-input.has-warning .input-group-addon {
+// 	color: #c29d0b;
+// 	border-bottom: 1px solid #c29d0b
+// }
+// .form-group.form-md-line-input.has-error .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input.has-error .form-control.edited:not([readonly])~i, .form-group.form-md-line-input.has-error .form-control.edited:not([readonly])~label, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly])~i, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.has-error .form-control.form-control-static~.help-block, .form-group.form-md-line-input.has-error .form-control.form-control-static~i, .form-group.form-md-line-input.has-error .form-control.form-control-static~label, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly])~i, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.has-error label {
+// 	color: #e73d4a
+// }
+// .form-group.form-md-line-input.has-error .form-control {
+// 	border-bottom: 1px solid #e73d4a
+// }
+// .form-group.form-md-line-input.has-error .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-error .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input.has-error .form-control.form-control-static~.form-control-focus:after, .form-group.form-md-line-input.has-error .form-control.form-control-static~label:after, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly])~label:after {
+// 	background: #e73d4a
+// }
+// .form-group.form-md-line-input.has-error .input-group-addon {
+// 	color: #e73d4a;
+// 	border-bottom: 1px solid #e73d4a
+// }
+// .form-group.form-md-line-input.has-info .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input.has-info .form-control.edited:not([readonly])~i, .form-group.form-md-line-input.has-info .form-control.edited:not([readonly])~label, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly])~i, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.has-info .form-control.form-control-static~.help-block, .form-group.form-md-line-input.has-info .form-control.form-control-static~i, .form-group.form-md-line-input.has-info .form-control.form-control-static~label, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly])~i, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.has-info label {
+// 	color: #327ad5
+// }
+// .form-group.form-md-line-input.has-info .form-control {
+// 	border-bottom: 1px solid #327ad5
+// }
+// .form-group.form-md-line-input.has-info .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-info .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input.has-info .form-control.form-control-static~.form-control-focus:after, .form-group.form-md-line-input.has-info .form-control.form-control-static~label:after, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly])~label:after {
+// 	background: #327ad5
+// }
+// .form-group.form-md-line-input.has-info .input-group-addon {
+// 	color: #327ad5;
+// 	border-bottom: 1px solid #327ad5
+// }
+// .form-inline .form-md-line-input {
+// 	margin: 0 20px 0 0
+// }
+// .form-inline .form-md-line-input>.input-icon {
+// 	padding: 0
+// }
+// .form-horizontal .form-group.form-md-line-input .input-icon .form-control {
+// 	padding-left: 33px
+// }
+// .form-horizontal .form-group.form-md-line-input .input-icon>i {
+// 	top: 0
+// }
+// .form-horizontal .form-group.form-md-line-input .input-icon.right .form-control {
+// 	padding-left: 0;
+// 	padding-right: 33px
+// }
+// .form-horizontal .form-group.form-md-line-input .input-group>.input-group-btn .btn {
+// 	margin-bottom: 0 !important
+// }
+
+
+
 .form-horizontal .control-label {
 	float: left;
 	width: 76px;
@@ -539,103 +1109,7 @@ label, input, button, select, textarea {
 .form-horizontal .control-group:after {
 	clear: both;
 }
-button[type="button"] {
-	border: none;
-}
-.label {
-	font-size: 12px;
-	color: #fff;
-	padding: 1px 10px;
-	margin: 0 3px;
-	border-radius: 14px;
-	display: inline-block;
-	background: $defaultBg;
-}
-.btn {
-	background: $defaultBg;
-	padding: 6px 20px;
-	color: #666;
-	font-size: 13px;
-	display: inline-block;
-	line-height: 20px;	/*border: 1px solid #ccc ;*/
-}
-.btn-mini {
-	padding: 4px 12px;
-}
-.btn-large {
-	padding: 10px 30px;
-}
-.btn:hover {
-	background-color: #CFCFCF;
-}
-.btn-primary, .primary-info {
-	background: $primaryBg;
-	color: #fff;
-}
-.btn-primary:hover {
-	background: lighten($primaryBg,5%);
-}
-.btn-success, .success-info {
-	color: #fff;
-	background: $successBg;
-}
-.btn-success:hover {
-	background: lighten($successBg,5%);
-}
 
-.btn-warning, .warning-info {
-	background: $warningBg;
-	color: #fff;
-}
-.btn-warning:hover {
-	background: lighten($warningBg,5%);
-}
-.btn-danger, .danger-info {
-	background: $dangerBg;
-	color: #fff;
-}
-.btn-danger:hover {
-	background: lighten($dangerBg,5%);
-}
-.btn-grey, .grey-info {
-	background: $greyBg;
-	color: #fff;
-}
-.btn-grey:hover {
-	background: lighten($greyBg,5%);
-}
-.btn-black, .black-info {
-	background: $blackBg;
-	color: #fff;
-}
-.btn-black:hover {
-	background: lighten($blackBg,5%);
-}
-.btn-violet, .violet-info {
-	background: $violetBg;
-	color: #fff;
-}
-.btn-violet:hover {
-	background: lighten($violetBg,5%);
-}
-.btn-link {
-	background: none;
-	color: #005580;
-}
-.btn-link:hover {
-	background: none;
-	color: #0D79AF;
-}
-.btn-raduis {
-	border-radius: 16px;
-}
-label {
-	margin-bottom: 5px;
-	display: block;
-}
-label input, label textarea, label select {
-	display: block;
-}
 .form-horizontal .control-group-mini .control-label {
 	width: 120px;
 }
@@ -647,14 +1121,13 @@ label input, label textarea, label select {
 }
 select, textarea, input[type="text"], input[type="password"] {
 	display: inline-block;
-	height: 20px;
-	padding: 8px 6px;
-	margin-bottom: 10px;
+	// width: 100%;
+    height: 34px;
+    padding: 6px 12px;
 	font-size: 14px;
 	line-height: 20px;
 	color: #555;
 	vertical-align: middle;
-	font-size: 12px;
 }
 select {
 	width: 220px;
@@ -676,49 +1149,75 @@ textarea {
 textarea, input[type="text"], input[type="password"] {
 	background-color: #fff;
 	border: 1px solid #ccc;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	
 }
 textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
-	border-color: rgba(46, 193, 193, 0.8);
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(46, 193, 193, 0.6);
-	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(46, 193, 193, 0.6);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(46, 193, 193, 0.6);
+	border-color: lighten($primaryBg,10%);
+	@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px lighten($primaryBg,10%));
 	outline: 0;
 	outline: thin dotted \9; /* IE6-9 */
 }
 .input-mini {
-	width: 80px;
+	width: $formLength;
 }
 .input-small {
-	width: 140px;
+	width: $formLength + 60px;
 }
 .input-large {
-	width: 220px;
+	width: $formLength +140px;
 }
 .input-xlarge {
-	width: 340px;
+	width: $formLength +270px;
 }
 .input-xxlarge {
-	width: 440px;
+	width: $formLength +370px;
 }
-input[type="radio"], input[type="checkbox"] {
+input[type="checkbox"] {
 	margin: 4px 0 0;
 	margin-top: 1px \9;
 	line-height: normal;
+	outline:none;
+	-webkit-appearance: none;
+  	user-select: none;
+  	width:18px;
+  	height: 18px;
+  	border:1px solid #ddd;
+  	text-align:center;
+  	vertical-align: middle;
+  	&:hover{
+  		border:1px solid $primaryBg;
+  	}
+  	&:after{
+  		display:block;
+		content: '\2713';
+		color:#fff;
+		font-size: 12px;
+  	}
+  	&:checked{
+  		background:$primaryBg;
+		border:1px solid $primaryBg;
+  	}
 }
+
+input[type="radio"]{
+	@extend input[type="checkbox"];
+	border-radius:50%;
+	&:hover{
+  		@extend input[type="checkbox"]:hover;
+  	}
+  	&:after{
+  		@extend input[type="checkbox"]:after;
+  	}
+  	&:checked{
+  		@extend input[type="checkbox"]:checked;
+  	}
+}
+
 input[type="image"], input[type="checkbox"], input[type="radio"] {
-	width: auto;
-	height: auto;
 	padding: 0;
 	margin: 4px 0;
-	*margin-top: 0;
 	line-height: normal;
 	cursor: pointer;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
 	border: 0 \9;
 }
 .radio, .checkbox {
@@ -726,7 +1225,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	min-height: 20px;
 }
 .radio input[type="radio"], .checkbox input[type="checkbox"] {
-	float: left;
+	display:inline-block;
 	margin-left: -20px;
 }
 .controls>.radio:first-child, .controls>.checkbox:first-child {
@@ -749,7 +1248,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	color: #999;
 }
 
-/* ------------------------------------select------------------------------------ */
+/********************select********************/
 .search {
 	margin-bottom: 20px;
 }
@@ -762,7 +1261,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	margin-bottom: 0;
 }
 
-/* ------------------------------------scrollbar------------------------------------ */
+/********************scrollbar*********************/
 .progress {
 	overflow: hidden;
 	height: 18px;
@@ -807,8 +1306,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	}
 }
 
-
-/* ------------------------------------modal------------------------------------ */
+/********************modal*********************/
 .form-list {
 	margin: 20px 0;
 }
@@ -960,7 +1458,7 @@ button.close {
 	margin-left: 0
 }
 
-/* ------------------------------------提示框------------------------------------ */
+/********************提示框********************/
 .popover {
 	position: absolute;
 	top: 0;
@@ -1086,7 +1584,7 @@ button.close {
 	border-right-width: 0
 }
 
-/* ------------------------------------ 时间选择框 ------------------------------------ */
+/********************时间选择框********************/
 .input-append, .input-prepend {
 	display: inline-block;
 	margin-bottom: 10px;
@@ -1155,7 +1653,7 @@ button.close {
 	background-position: -240px 0;
 }
 
-/* ------------------------------------ 图文列表 ------------------------------------ */
+/********************图文列表********************/
 .list-c {
 	font-size: 0;
 	li {

@@ -83,18 +83,19 @@ gulp.task('compass', function() {
 			sass: './src/sass',
 			image: './src/images'
 		}))
-		.pipe(minicss())
+		
 		.pipe(rename( { suffix: '.min' }))
+		.pipe(minicss())
 		.pipe(gulp.dest('./dist/style'));
 
 });
 
 //压缩样式
-gulp.task('minicss', function() {
-	gulp.src('./dist/style/*.css')
-		.pipe(minicss())
-		.pipe(gulp.dest('./dist/style'))
-})
+// gulp.task('minicss', function() {
+// 	gulp.src('./dist/style/*.css')
+// 		.pipe(minicss())
+// 		.pipe(gulp.dest('./dist/style'))
+// })
 
 //编译sass
 gulp.task("sass", function() {
@@ -148,7 +149,7 @@ gulp.task('imagemin', function() {
 gulp.task('watch', function() {
 	gulp.watch('./src/images/*.*',['imagemin']);
 	gulp.watch('./src/template/*.ejs',['ejs']);
-	gulp.watch('./src/scripts/*.js',['scripts']);
+	gulp.watch('./src/scripts/**/*.js',['scripts']);
 	gulp.watch('./src/sass/*.scss',['compass']);
 	// gulp.watch('./src/style/*.css',['compass']);
 })
@@ -157,19 +158,19 @@ gulp.task('watch', function() {
 //每个gulpfile.js里都应当有一个dafault任务，它是缺省任务入口（类似C语言的main()入口），运行gulp的时候实际只是调用该任务（从而来调用其它的任务）
 gulp.task('default', function() {
 	//gulp.run(tasks)表示运行对应的任务，这里表示执行名
-	gulp.run('clean','html','copy', 'compass', 'minicss', 'imagemin','scripts');
+	gulp.run('clean','html','copy', 'compass',  'imagemin','scripts');
 	//执行'watch'监听任务
 	// gulp.run('watch');
 	// 监听文件变化
 	gulp.watch([
 		'./src/*.html',
 		'./src/template/*.ejs',
-		'./src/sass/**',
+		'./src/sass/*.scss',
 		'./src/images/**',
 		'./src/style/*.css',
-		'./src/scripts/*.js'
+		'./src/scripts/**/*.js'
 	], function() {
 		livereload.listen();
-		gulp.run('clean','html','copy', 'compass', 'minicss', 'imagemin', 'scripts');
+		gulp.run('clean','html','copy', 'compass',  'imagemin', 'scripts');
 	});
 })

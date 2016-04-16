@@ -32,6 +32,7 @@
 			current: 1,
 			showNum: 10,
 			callback: function(tPage, sNum) {
+				
 				console.log('分页');
 			}
 		});

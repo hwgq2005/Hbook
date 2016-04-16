@@ -34,7 +34,8 @@ ol{
 	z-index: 9000;
 }
 .h-header-box, .content {
-	width: 1024px;
+	max-width: 1024px;
+	padding:0 10px;
 	margin: 0 auto;
 }
 .h-header-box .nav a {
@@ -44,12 +45,11 @@ ol{
 	color: #fff;
 }
 .content {
-	padding: 50px 0 0;
+	padding: 50px 10px 0;
 }
 
 .banner {
 	background: $violetBg;
-	height: 220px;
 	text-align: center;
 	padding: 80px 0 100px;
 	color: #fff;
@@ -109,9 +109,9 @@ ol{
 	margin-bottom: 10px;
 }
 footer {
-	width: 1024px;
+	max-width: 1024px;
 	margin: 0 auto;
-	padding: 10px 0 40px;
+	padding: 10px 10px 40px;
 	color: #999;
 	text-align: center;
 }
@@ -165,10 +165,12 @@ code {
 
 ol.linenums {
 	margin: 0 0 0 33px; /* IE indents via margin-left */
+
 }
 ol.linenums li {
 	padding-left: 12px;
 	color: #bebec5;
 	line-height: 20px;
 	text-shadow: 0 1px 0 #fff;
+	white-space: pre-wrap;
 }
