@@ -8,7 +8,7 @@
  * @param  {[type]} current   [当前页]
  * @return {[type]} showNum   [显示条数 ]
  * @return {[type]} pageCount [总页数]
- * @return {[type]} callback  [单击回调方法，返回当前页和条数]
+ * @return {[type]} callback  [单击回调方法，返回当前页]
  */
 
 ;(function($) {
@@ -30,7 +30,7 @@
 
 		getDom:function(element,options){
 			
-			element.empty();
+			// element.empty();
 
 			//上一页
 			if (options.current > 1) {
@@ -39,6 +39,7 @@
 				element.remove('.prevPage');
 				element.append('<span class="disabled">&laquo;</span>');
 			}
+			
 			//中间页码
 			if (options.current != 1 && options.current >= 4 && options.pageCount != 4) {
 				element.append('<a href="javascript:;" class="number">' + 1 + '</a>');
@@ -47,8 +48,9 @@
 				
 				element.append('<span class="more">...</span>');
 			}
+
 			var start = options.current - 2,
-				end = options.current + 2;
+				end   = options.current + 2;
 			if ((start > 1 && options.current < 4) || options.current == 1) {
 				end++;
 			}
@@ -94,7 +96,7 @@
 					"pageCount": _self.options.pageCount
 				});
 				if (typeof(_self.options.callback) == "function") {
-					_self.options.callback(current,_self.options.showNum);
+					_self.options.callback(current);
 				}
 			});
 
@@ -106,7 +108,7 @@
 					"pageCount": _self.options.pageCount
 				});
 				if (typeof(_self.options.callback) == "function") {
-					_self.options.callback(current - 1,_self.options.showNum);
+					_self.options.callback(current - 1);
 				}
 			});
 
@@ -119,7 +121,7 @@
 					"pageCount": _self.options.pageCount
 				});
 				if (typeof(_self.options.callback) == "function") {
-					_self.options.callback(current + 1,_self.options.showNum);
+					_self.options.callback(current + 1);
 				}
 			});
 
@@ -135,7 +137,7 @@
 								"pageCount": _self.options.pageCount
 							});
 							if (typeof(_self.options.callback) == "function") {
-								_self.options.callback(current,options.showNum);
+								_self.options.callback(current);
 							}
 						};
 					};

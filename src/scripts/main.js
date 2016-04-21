@@ -34,7 +34,7 @@
 			pageCount: 26,
 			current: 1,
 			showNum: 10,
-			callback: function(tPage, tNum) {
+			callback: function(tPage) {
 				console.log(tPage);
 			}
 		});
