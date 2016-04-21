@@ -5,11 +5,13 @@
  * @version 1.0
  */
 ;(function(global){
+
 	'use strict';
+
 	var index={};
 
 	//初始化模板
-	index.initlalize=function(){
+	index.init=function(){
 		this.template();
 		prettyPrint();
 	}
@@ -27,15 +29,16 @@
 
 	//分页
 	index.page=function(element){
-		$(element).createPage({
+		
+		$(element).page({
 			pageCount: 26,
 			current: 1,
 			showNum: 10,
-			callback: function(tPage, sNum) {
-				
-				console.log('分页');
+			callback: function(tPage, tNum) {
+				console.log(tPage);
 			}
 		});
+
 	}
 
 	global.index=index;
