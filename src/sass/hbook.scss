@@ -10,10 +10,18 @@
 @import "config";
 
 /*********************base*********************/
+*, 
+:after, 
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 body {
 	font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
 	font-size: 14px;
 }
+
 a:link {
 	text-decoration: none;
 }
@@ -41,11 +49,16 @@ i {
 span{
 	vertical-align:middle;
 }
-*, :after, :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+.pull-left{
+	float:left;
 }
+.pull-right{
+	float:right;
+}
+.hide {
+	display: none;
+}
+
 /* ********************nav*********************/
 .nav {
 	font-size: 0;
@@ -58,31 +71,31 @@ span{
 			color: #999;
 		}
 	}
-}
-.tab-menu {
-	border-bottom: 1px solid #ddd;
-	li {
-		float: left;
-		text-align: center;
-		cursor: pointer;
-		list-style: none;
-		margin-right: 15px;
-		margin-bottom: -1px;
-		a {
-			color: #5e5e5e;
-			display: block;
-			padding: 8px 20px;
-			background: #EDEDED;
-			border: 1px solid #DDDDDD;
+	&.nav-tabs{
+		border-bottom: 1px solid #ddd;
+		li {
+			float: left;
 			text-align: center;
-			&:hover{
-				@extend a.active;
+			cursor: pointer;
+			list-style: none;
+			margin-right: 15px;
+			margin-bottom: -1px;
+			a {
+				color: #5e5e5e;
+				display: block;
+				padding: 8px 20px;
+				background: #EDEDED;
+				border: 1px solid #DDDDDD;
+				text-align: center;
+				&:hover{
+					@extend a.active;
+				}
 			}
-		}
-		a.active{
-			background: #fff;
-			color: $primaryBg;
-			border-bottom: 1px solid #fff;
+			a.active{
+				background: #fff;
+				color: $primaryBg;
+				border-bottom: 1px solid #fff;
+			}
 		}
 	}
 }
@@ -434,7 +447,7 @@ span{
 }
 
 /********************page*********************/
-.h-page {
+.page {
 	padding: 15px 20px;
 	text-align: left;
 	color: #ccc;
@@ -1371,9 +1384,7 @@ button.close {
 	-moz-background-clip: padding-box;
 	background-clip: padding-box
 }
-.hide {
-	display: none;
-}
+
 .modal.fade {
 	top: -25%;
 	-webkit-transition: opacity .3s linear, top .3s ease-out;
@@ -1634,120 +1645,98 @@ button.close {
 }
 
 /********************图文列表********************/
-.list-c {
-	font-size: 0;
-	li {
-		position: relative;
-		vertical-align: middle;
-		display: inline-block;
+.table-view {
+	padding: 20px;
+	position: relative;
+	.table-view-cell{
 		width: 100%;
-		.icon-operation {
+		position: relative;
+	    padding: 15px ;
+	    overflow: hidden;
+	    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	    &:hover {
+			background: #FAFAFA;
+			.table-view-operation {
+				opacity: 1;
+			}
+		}
+		.table-view-operation {
 			position: absolute;
 			top: 20px;
 			right: 20px;
 			font-size: 12px;
 			opacity: 0;
-			@include transition(opacity 0.5s linear);
 			color: #999;
+			@include transition(opacity 0.5s linear);
 			i {
 				display: block;
 			}
 		}
-		&:hover {
-			background: #FAFAFA;
-			.icon-operation {
-				opacity: 1;
-			}
-		}
-	}
-}
-.around {
-	padding: 20px;
-	position: relative;
-	.left-mark {
-		width: 160px;
-		height: 110px;
-		float: left;
-		position: relative;
-		overflow: hidden;
-		text-align: center;
-		img {
-			max-width: 100%;
-		}
-		.tip {
-			position: absolute;
-			top: 0;
-			left: 0;
-			color: #fff;
-			padding: 3px 10px;
-			display: block;
-			font-size: 12px;
-		}
-	}
-	.right-summary {
-		margin-left: 180px;
-		.topic-tit {
-			a {
-				color: #000;
-				font-size: 16px;
-				margin-right: 5px;
-			}
-		}
-		 .right-summary-p {
-			display: block;
-			font-size: 12px;
-			height: 38px;
-			line-height: 18px;
-			margin-top: 10px;
+	    .media-object {
+			width: 160px;
+			height: 110px;
+			margin-right: 10px;
+			position: relative;
 			overflow: hidden;
-			a {
-				color: #333;
+			text-align: center;
+			img {
+				max-width: 100%;
 			}
 		}
-	}
-	.right-summary-line {
-		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		left: 200px;
-	}
-}
-
-.msg {
-	margin: 10px 0;
-	a {
-		display: inline-block;
-		position: relative;
-	}
-	img {
-		width: 25px;
-		height: 25px;
-		border-radius: 50%;
-		vertical-align: middle;
-	}
-	span {
-		color: #999;
-		font-size: 12px;
-		vertical-align: middle;
-		i {
-			font-weight: 700;
-			color: #666;
-			display: inline-block;
-			margin-left: 3px;
+		.media-body {
+			.media-body-tit {
+				a {
+					color: #000;
+					font-size: 16px;
+					margin-right: 5px;
+				}
+			}
+			.media-body-sum {
+				display: block;
+				font-size: 12px;
+				height: 38px;
+				line-height: 18px;
+				margin-top: 10px;
+				overflow: hidden;
+				a {
+					color: #333;
+				}
+			}
+			.media-footer{
+				margin: 10px 0;
+				a {
+					display: inline-block;
+					position: relative;
+				}
+				img {
+					width: 25px;
+					height: 25px;
+					border-radius: 50%;
+					vertical-align: middle;
+				}
+				span {
+					color: #999;
+					font-size: 12px;
+					vertical-align: middle;
+					i {
+						font-weight: 700;
+						color: #666;
+						display: inline-block;
+						margin-left: 3px;
+					}
+				}
+				.media-name {
+					color: #000;
+					font-weight: 700;
+					margin: 0 5px;
+				}
+				.media-span{
+					margin: 0 10px;
+					color: $defaultBg;
+				}
+				
+			}
 		}
-	}
-	.name {
-		color: #000;
-		font-weight: 700;
-		margin: 0 5px;
-	}
-	.span-1 {
-		margin: 0 10px;
-		color: $defaultBg;
-	}
-	.span-2 {
-		@extend .span-1
 	}
 }
 

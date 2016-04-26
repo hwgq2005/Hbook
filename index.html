@@ -2,8 +2,8 @@
 <html  lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="keywords" content="Hbook,致力于前端开发推广。">
-	<meta name="description" content="Hbook,致力于前端开发推广。">
+	<meta name="keywords" content="Hbook,致力于前端开发推广">
+	<meta name="description" content="Hbook,致力于前端开发推广">
 	<title>简洁、直观的前端UI框架－Hbook</title>
 	<link rel="stylesheet" href="dist/style/base.css">
 	<link rel="stylesheet" href="dist/style/hbook.css">
@@ -74,7 +74,7 @@
 
 	         <h3>选项卡</h3>
 	        <div class="docs-example">
-				<div class="tab-menu">
+				<div class="nav nav-tabs">
 					<ul class="clearfix">
 						<li ><a href="#" class="active">首页</a></li>
 						<li><a href="#" >简介</a></li>
@@ -83,11 +83,11 @@
 				</div>
 	         </div>
 <pre class="prettyprint linenums">
-&lt;div class="tab-menu"&gt;
+&lt;div class="nav nav-tabs"&gt;
 	&lt;ul class="clearfix"&gt;
-		&lt;li &gt;&lt;a href="game-explain.html" class="selected"&gt;游戏说明&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="game-reward.html" &gt;回报设置&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="game-complete.html"&gt;完成&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="javascript:;" class="selected"&gt;游戏说明&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="javascript:;" &gt;回报设置&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="javascript:;"&gt;完成&lt;/a&gt;&lt;/li&gt;
 	&lt;/ul&gt;
 &lt;/div>
 </pre>
@@ -309,10 +309,10 @@
 	            <h1>分页</h1>
 	        </div>
 	        <div class="docs-example">
-	        	<div class="h-page"></div>
+	        	<div class="page"></div>
 	         </div>
 <pre class="prettyprint linenums">
-&lt;div class="h-page"&gt;&lt;/div&gt;
+&lt;div class="page"&gt;&lt;/div&gt;
 </pre>
 	    </section>
 
@@ -648,7 +648,7 @@
 	            <h1>弹出框</h1>
 	        </div>
 	        <div class="docs-example">
-	        	<a href="#modal" class="btn btn-primary"  role="button"  data-toggle="modal"  style="padding:8px 30px;">点击演示</a>
+	        	<a href="javascript:;" id="dialog" class="btn btn-primary" style="padding:8px 30px;">点击演示</a>
 
 	        </div>
 	    </section>
@@ -768,97 +768,73 @@
 	            <h1>图文</h1>
 	        </div>
 	        <div class="docs-example">
-        		<ul class="list-c clearfix">
-        			<li>
-					   <div class="around ">
-						    <div class="left-mark">
-						     <a href="#" ><img src="dist/images/1.jpg" alt="" /> </a>
-						    </div>
-						    <div class="right-summary ">
-						      <div class="topic-tit">
-						      		<a href="#" >列表一</a> <i class="label label-mini label-danger">已发布</i>
-						      </div>
-						      <p class="right-summary-p"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </p>
-						      <p class="msg">
-							      <a href="#"> <img src="dist/images/photo.jpg" alt="" /> <span class="name">aaa</span> </a>
-					      		  <span class="time">. 2015-12-02 21:21:24</span>
-					      		  <span class="span-1">|</span> <span class="red">阅读<i>1</i></span>
-					      		  <span class="span-2">/</span> <span class="comment">评论<i>0</i></span>
-					      		  <span class="span-2">/</span> <span class="collection">点赞<i>0</i></span>
-						      </p>
-						     
-						    </div>
-						    <div class="right-summary-line"></div>
-					   </div>
-					</li>
-					<li>
-					   <div class="around ">
-						    <div class="left-mark">
-						     <a href="#" ><img src="dist/images/2.jpg" alt="" /> </a>
-						    </div>
-						    <div class="right-summary ">
-						      <div class="topic-tit">
-						      		<a href="#" >列表二</a> 
-						      </div>
-						      <p class="right-summary-p"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </p>
-						      <p class="msg">
-							      <a href="#"> <img src="dist/images/photo.jpg" alt="" /> <span class="name">aaa</span> </a>
-					      		  <span class="time">. 2015-12-02 21:21:24</span>
-					      		  <span class="span-1">|</span> <span class="red">阅读<i>1</i></span>
-					      		  <span class="span-2">/</span> <span class="comment">评论<i>0</i></span>
-					      		  <span class="span-2">/</span> <span class="collection">点赞<i>0</i></span>
-						      </p>
-						    </div>
-						    <div class="right-summary-line"></div>
-					   </div>
-					</li>
+        		<ul class="table-view ">
+        			<li class="table-view-cell">
+					    <div class="media-object pull-left">
+					     <a href="#" ><img src="dist/images/1.jpg" alt="" /> </a>
+					    </div>
+					    <div class="media-body">
+					      <div class="media-body-tit">
+					      		<a href="#" >列表一</a> <i class="label label-mini label-danger">已发布</i>
+					      </div>
+					      <div class="media-body-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
+					      <div class="media-footer">
+						      <a href="#"> 
+							      <img src="dist/images/photo.jpg" alt="" /> 
+							      <span class="media-name">aaa</span> 
+						      </a>
+				      		  <span class="media-time">. 2015-12-02 21:21:24</span>
+				      		  <span class="media-span">|</span> <span >阅读<i>1</i></span>
+				      		  <span class="media-span">/</span> <span >评论<i>0</i></span>
+				      		  <span class="media-span">/</span> <span >点赞<i>0</i></span>
+					      </div>
+					    </div>
 
-					<li>
-					   <div class="around ">
-						    <div class="left-mark">
-						     	<a href="#" ><img src="dist/images/3.jpg" alt="" /> </a> 
-						    </div>
-						    <div class="right-summary ">
-						      <div class="topic-tit">
-						      		<a href="#" >列表三</a> 
-						      </div>
-						      <p class="right-summary-p"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </p>
-						      <p class="msg">
-							      <a href="#"> <img src="dist/images/photo.jpg" alt="" /> <span class="name">aaa</span> </a>
-					      		  <span class="time">. 2015-12-02 21:21:24</span>
-					      		  <span class="span-1">|</span> <span class="red">阅读<i>1</i></span>
-					      		  <span class="span-2">/</span> <span class="comment">评论<i>0</i></span>
-					      		  <span class="span-2">/</span> <span class="collection">点赞<i>0</i></span>
-						      </p>
-						    </div>
-						    <div class="right-summary-line"></div>
-					   </div>
+					    <!-- <div class="table-view-operation"></div> -->
+					</li>
+					<li  class="table-view-cell">
+					    <div class="media-object pull-left">
+					     	<a href="#" ><img src="dist/images/3.jpg" alt="" /> </a> 
+					    </div>
+					    <div class="media-body">
+					      <div class="media-body-tit">
+					      		<a href="#" >列表二</a> 
+					      </div>
+					      <div class="media-body-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
+					      <div class="media-footer">
+						      <a href="#"> 
+							      <img src="dist/images/photo.jpg" alt="" /> 
+							      <span class="media-name">aaa</span> 
+						      </a>
+				      		  <span class="media-time">. 2015-12-02 21:21:24</span>
+				      		  <span class="media-span">|</span> <span >阅读<i>1</i></span>
+				      		  <span class="media-span">/</span> <span >评论<i>0</i></span>
+				      		  <span class="media-span">/</span> <span >点赞<i>0</i></span>
+					      </div>
+					    </div>
 					</li>
         		</ul>
 	        </div>
 <pre class="prettyprint linenums">
-&lt;ul class="list-c clearfix"&gt;
-	&lt;li&gt;
-	   &lt;div class="around "&gt;
-		    &lt;div class="left-mark"&gt;
-		     &lt;a href="#" &gt;&lt;img src="dist/images/1.jpg" alt="" /&gt; &lt;/a&gt;
-		    &lt;/div&gt;
-		    &lt;div class="right-summary "&gt;
-		      &lt;div class="topic-tit"&gt;
-		      		&lt;a href="#" &gt;哈哈哈哈&lt;/a&gt; &lt;i class="label label-danger"&gt;已发布&lt;/i&gt;
-		      &lt;/div&gt;
-		      &lt;p class="right-summary-p"&gt; &lt;a href="#"&gt;Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、
-		      设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。&lt;/a&gt; &lt;/p&gt;
-		      &lt;p class="msg"&gt;
-			      &lt;a href="#"&gt; &lt;img src="dist/images/photo.jpg" alt="" /&gt; &lt;span class="name"&gt;aaa&lt;/span&gt; &lt;/a&gt;
-	      		  &lt;span class="time"&gt;. 2015-12-02 21:21:24&lt;/span&gt;
-	      		  &lt;span class="span-1"&gt;|&lt;/span&gt; &lt;span class="red"&gt;阅读&lt;i&gt;1&lt;/i&gt;&lt;/span&gt;
-	      		  &lt;span class="span-2"&gt;/&lt;/span&gt; &lt;span class="comment"&gt;评论&lt;i&gt;0&lt;/i&gt;&lt;/span&gt;
-	      		  &lt;span class="span-2"&gt;/&lt;/span&gt; &lt;span class="collection"&gt;点赞&lt;i&gt;0&lt;/i&gt;&lt;/span&gt;
-		      &lt;/p&gt;
-		      &lt;div class="right-summary-line"&gt;&lt;/div&gt;
-		    &lt;/div&gt;
-	   &lt;/div&gt;
+&lt;ul class="table-view"&gt;
+	&lt;li class="table-view-cell"&gt;
+	    &lt;div class="media-object pull-left"&gt;
+	     	&lt;a href="#" &gt;&lt;img src="dist/images/1.jpg" alt="" /&gt; &lt;/a&gt;
+	    &lt;/div&gt;
+	    &lt;div class="media-body"&gt;
+	      &lt;div class="media-body-tit"&gt;
+	      		&lt;a href="#" &gt;哈哈哈哈&lt;/a&gt; &lt;i class="label label-mini label-danger"&gt;已发布&lt;/i&gt;
+	      &lt;/div&gt;
+	      &lt;div class="media-body-sum"&gt; &lt;a href="#"&gt;Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、
+	      设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。&lt;/a&gt; &lt;/div&gt;
+	      &lt;div class="media-footer"&gt;
+		        &lt;a href="#"&gt; &lt;img src="dist/images/photo.jpg" alt="" /&gt; &lt;span class="name"&gt;aaa&lt;/span&gt; &lt;/a&gt;
+      		  	&lt;span class="media-time"&gt;. 2015-12-02 21:21:24&lt;/span&gt;
+      		  	&lt;span class="media-span"&gt;|&lt;/span&gt; &lt;span &gt;阅读&lt;i&gt;1&lt;/i&gt;&lt;/span&gt;
+      		  	&lt;span class="media-span"&gt;/&lt;/span&gt; &lt;span &gt;评论&lt;i&gt;0&lt;/i&gt;&lt;/span&gt;
+      		  	&lt;span class="media-span"&gt;/&lt;/span&gt; &lt;span &gt;点赞&lt;i&gt;0&lt;/i&gt;&lt;/span&gt;
+	      &lt;/div&gt;
+	    &lt;/div&gt;
 	&lt;/li&gt;
 &lt;/ul&gt;
 </pre>

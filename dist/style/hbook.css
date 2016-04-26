@@ -8,9 +8,9 @@
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a,
-.h-page span.current,
-.h-page span.disabled,
-.h-page .more, abbr, acronym, address, big, cite, code,
+.page span.current,
+.page span.disabled,
+.page .more, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
@@ -56,7 +56,7 @@ q:before, q:after, blockquote:before, blockquote:after {
   content: none;
 }
 
-a img, .h-page span.current img, .h-page span.disabled img, .h-page .more img {
+a img, .page span.current img, .page span.disabled img, .page .more img {
   border: none;
 }
 
@@ -69,20 +69,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /********************表单长度 start********************/
 /********************表单长度 end********************/
 /*********************base*********************/
+*,
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
 
-a:link, .h-page span.current:link, .h-page span.disabled:link, .h-page .more:link {
+a:link, .page span.current:link, .page span.disabled:link, .page .more:link {
   text-decoration: none;
 }
 
-a:visited, .h-page span.current:visited, .h-page span.disabled:visited, .h-page .more:visited {
+a:visited, .page span.current:visited, .page span.disabled:visited, .page .more:visited {
   text-decoration: none;
 }
 
-a:hover, .h-page span.current:hover, .h-page span.disabled:hover, .h-page .more:hover {
+a:hover, .page span.current:hover, .page span.disabled:hover, .page .more:hover {
   text-decoration: none;
 }
 
@@ -108,30 +116,35 @@ span {
   vertical-align: middle;
 }
 
-*, :after, :before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.hide {
+  display: none;
 }
 
 /* ********************nav*********************/
 .nav {
   font-size: 0;
 }
-.nav a, .nav .h-page span.current, .h-page .nav span.current, .nav .h-page span.disabled, .h-page .nav span.disabled, .nav .h-page .more, .h-page .nav .more {
+.nav a, .nav .page span.current, .page .nav span.current, .nav .page span.disabled, .page .nav span.disabled, .nav .page .more, .page .nav .more {
   color: #4B4B4B;
   padding: 12px 15px;
   display: inline-block;
   font-size: 14px;
 }
-.nav a:hover, .nav .h-page span.current:hover, .h-page .nav span.current:hover, .nav .h-page span.disabled:hover, .h-page .nav span.disabled:hover, .nav .h-page .more:hover, .h-page .nav .more:hover {
+.nav a:hover, .nav .page span.current:hover, .page .nav span.current:hover, .nav .page span.disabled:hover, .page .nav span.disabled:hover, .nav .page .more:hover, .page .nav .more:hover {
   color: #999;
 }
-
-.tab-menu {
+.nav.nav-tabs {
   border-bottom: 1px solid #ddd;
 }
-.tab-menu li {
+.nav.nav-tabs li {
   float: left;
   text-align: center;
   cursor: pointer;
@@ -139,7 +152,7 @@ span {
   margin-right: 15px;
   margin-bottom: -1px;
 }
-.tab-menu li a, .tab-menu li .h-page span.current, .h-page .tab-menu li span.current, .tab-menu li .h-page span.disabled, .h-page .tab-menu li span.disabled, .tab-menu li .h-page .more, .h-page .tab-menu li .more {
+.nav.nav-tabs li a, .nav.nav-tabs li .page span.current, .page .nav.nav-tabs li span.current, .nav.nav-tabs li .page span.disabled, .page .nav.nav-tabs li span.disabled, .nav.nav-tabs li .page .more, .page .nav.nav-tabs li .more {
   color: #5e5e5e;
   display: block;
   padding: 8px 20px;
@@ -147,7 +160,7 @@ span {
   border: 1px solid #DDDDDD;
   text-align: center;
 }
-.tab-menu li a.active, .tab-menu li a:hover, .tab-menu li .h-page span.current:hover, .h-page .tab-menu li span.current:hover, .tab-menu li .h-page span.disabled:hover, .h-page .tab-menu li span.disabled:hover, .tab-menu li .h-page .more:hover, .h-page .tab-menu li .more:hover, .tab-menu li .h-page span.active.current, .h-page .tab-menu li span.active.current, .tab-menu li .h-page span.active.disabled, .h-page .tab-menu li span.active.disabled, .tab-menu li .h-page .active.more, .h-page .tab-menu li .active.more {
+.nav.nav-tabs li a.active, .nav.nav-tabs li a:hover, .nav.nav-tabs li .page span.current:hover, .page .nav.nav-tabs li span.current:hover, .nav.nav-tabs li .page span.disabled:hover, .page .nav.nav-tabs li span.disabled:hover, .nav.nav-tabs li .page .more:hover, .page .nav.nav-tabs li .more:hover, .nav.nav-tabs li .page span.active.current, .page .nav.nav-tabs li span.active.current, .nav.nav-tabs li .page span.active.disabled, .page .nav.nav-tabs li span.active.disabled, .nav.nav-tabs li .page .active.more, .page .nav.nav-tabs li .active.more {
   background: #fff;
   color: #66CCFF;
   border-bottom: 1px solid #fff;
@@ -351,7 +364,7 @@ span {
   border-bottom: 1px solid #fff;
 }
 
-.dropdown-menu > li > a, .h-page .dropdown-menu > li > span.current, .h-page .dropdown-menu > li > span.disabled, .h-page .dropdown-menu > li > .more {
+.dropdown-menu > li > a, .page .dropdown-menu > li > span.current, .page .dropdown-menu > li > span.disabled, .page .dropdown-menu > li > .more {
   display: block;
   padding: 3px 20px;
   clear: both;
@@ -361,7 +374,7 @@ span {
   white-space: nowrap;
 }
 
-.dropdown-menu > li > a:hover, .h-page .dropdown-menu > li > span.current:hover, .h-page .dropdown-menu > li > span.disabled:hover, .h-page .dropdown-menu > li > .more:hover, .dropdown-menu > li > a:focus, .h-page .dropdown-menu > li > span.current:focus, .h-page .dropdown-menu > li > span.disabled:focus, .h-page .dropdown-menu > li > .more:focus, .dropdown-submenu:hover > a, .h-page .dropdown-submenu:hover > span.current, .h-page .dropdown-submenu:hover > span.disabled, .h-page .dropdown-submenu:hover > .more, .dropdown-submenu:focus > a, .h-page .dropdown-submenu:focus > span.current, .h-page .dropdown-submenu:focus > span.disabled, .h-page .dropdown-submenu:focus > .more {
+.dropdown-menu > li > a:hover, .page .dropdown-menu > li > span.current:hover, .page .dropdown-menu > li > span.disabled:hover, .page .dropdown-menu > li > .more:hover, .dropdown-menu > li > a:focus, .page .dropdown-menu > li > span.current:focus, .page .dropdown-menu > li > span.disabled:focus, .page .dropdown-menu > li > .more:focus, .dropdown-submenu:hover > a, .page .dropdown-submenu:hover > span.current, .page .dropdown-submenu:hover > span.disabled, .page .dropdown-submenu:hover > .more, .dropdown-submenu:focus > a, .page .dropdown-submenu:focus > span.current, .page .dropdown-submenu:focus > span.disabled, .page .dropdown-submenu:focus > .more {
   color: #fff;
   text-decoration: none;
   background-color: #0081c2;
@@ -374,7 +387,7 @@ span {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
-.dropdown-menu > .active > a, .h-page .dropdown-menu > .active > span.current, .h-page .dropdown-menu > .active > span.disabled, .h-page .dropdown-menu > .active > .more, .dropdown-menu > .active > a:hover, .h-page .dropdown-menu > .active > span.current:hover, .h-page .dropdown-menu > .active > span.disabled:hover, .h-page .dropdown-menu > .active > .more:hover, .dropdown-menu > .active > a:focus, .h-page .dropdown-menu > .active > span.current:focus, .h-page .dropdown-menu > .active > span.disabled:focus, .h-page .dropdown-menu > .active > .more:focus {
+.dropdown-menu > .active > a, .page .dropdown-menu > .active > span.current, .page .dropdown-menu > .active > span.disabled, .page .dropdown-menu > .active > .more, .dropdown-menu > .active > a:hover, .page .dropdown-menu > .active > span.current:hover, .page .dropdown-menu > .active > span.disabled:hover, .page .dropdown-menu > .active > .more:hover, .dropdown-menu > .active > a:focus, .page .dropdown-menu > .active > span.current:focus, .page .dropdown-menu > .active > span.disabled:focus, .page .dropdown-menu > .active > .more:focus {
   color: #fff;
   text-decoration: none;
   background-color: #0081c2;
@@ -388,11 +401,11 @@ span {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
-.dropdown-menu > .disabled > a, .h-page .dropdown-menu > .disabled > span.current, .h-page .dropdown-menu > .disabled > span.disabled, .h-page .dropdown-menu > .disabled > .more, .dropdown-menu > .disabled > a:hover, .h-page .dropdown-menu > .disabled > span.current:hover, .h-page .dropdown-menu > .disabled > span.disabled:hover, .h-page .dropdown-menu > .disabled > .more:hover, .dropdown-menu > .disabled > a:focus, .h-page .dropdown-menu > .disabled > span.current:focus, .h-page .dropdown-menu > .disabled > span.disabled:focus, .h-page .dropdown-menu > .disabled > .more:focus {
+.dropdown-menu > .disabled > a, .page .dropdown-menu > .disabled > span.current, .page .dropdown-menu > .disabled > span.disabled, .page .dropdown-menu > .disabled > .more, .dropdown-menu > .disabled > a:hover, .page .dropdown-menu > .disabled > span.current:hover, .page .dropdown-menu > .disabled > span.disabled:hover, .page .dropdown-menu > .disabled > .more:hover, .dropdown-menu > .disabled > a:focus, .page .dropdown-menu > .disabled > span.current:focus, .page .dropdown-menu > .disabled > span.disabled:focus, .page .dropdown-menu > .disabled > .more:focus {
   color: #999;
 }
 
-.dropdown-menu > .disabled > a:hover, .h-page .dropdown-menu > .disabled > span.current:hover, .h-page .dropdown-menu > .disabled > span.disabled:hover, .h-page .dropdown-menu > .disabled > .more:hover, .dropdown-menu > .disabled > a:focus, .h-page .dropdown-menu > .disabled > span.current:focus, .h-page .dropdown-menu > .disabled > span.disabled:focus, .h-page .dropdown-menu > .disabled > .more:focus {
+.dropdown-menu > .disabled > a:hover, .page .dropdown-menu > .disabled > span.current:hover, .page .dropdown-menu > .disabled > span.disabled:hover, .page .dropdown-menu > .disabled > .more:hover, .dropdown-menu > .disabled > a:focus, .page .dropdown-menu > .disabled > span.current:focus, .page .dropdown-menu > .disabled > span.disabled:focus, .page .dropdown-menu > .disabled > .more:focus {
   text-decoration: none;
   cursor: default;
   background-color: transparent;
@@ -462,7 +475,7 @@ span {
   border-radius: 5px 5px 5px 0;
 }
 
-.dropdown-submenu > a:after, .h-page .dropdown-submenu > span.current:after, .h-page .dropdown-submenu > span.disabled:after, .h-page .dropdown-submenu > .more:after {
+.dropdown-submenu > a:after, .page .dropdown-submenu > span.current:after, .page .dropdown-submenu > span.disabled:after, .page .dropdown-submenu > .more:after {
   display: block;
   float: right;
   width: 0;
@@ -476,7 +489,7 @@ span {
   content: " ";
 }
 
-.dropdown-submenu:hover > a:after, .h-page .dropdown-submenu:hover > span.current:after, .h-page .dropdown-submenu:hover > span.disabled:after, .h-page .dropdown-submenu:hover > .more:after {
+.dropdown-submenu:hover > a:after, .page .dropdown-submenu:hover > span.current:after, .page .dropdown-submenu:hover > span.disabled:after, .page .dropdown-submenu:hover > .more:after {
   border-left-color: #fff;
 }
 
@@ -538,12 +551,12 @@ span {
 }
 
 /********************page*********************/
-.h-page {
+.page {
   padding: 15px 20px;
   text-align: left;
   color: #ccc;
 }
-.h-page a, .h-page span.current, .h-page span.disabled, .h-page .more {
+.page a, .page span.current, .page span.disabled, .page .more {
   color: #666;
   display: inline-block;
   margin-left: -1px;
@@ -554,37 +567,37 @@ span {
   font-size: 13px;
   z-index: 1;
 }
-.h-page a:hover, .h-page span.current:hover, .h-page span.disabled:hover, .h-page .more:hover {
+.page a:hover, .page span.current:hover, .page span.disabled:hover, .page .more:hover {
   background: #f2f2f2;
 }
-.h-page a:first-child, .h-page span.current:first-child, .h-page span.disabled:first-child, .h-page .more:first-child {
+.page a:first-child, .page span.current:first-child, .page span.disabled:first-child, .page .more:first-child {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.h-page a:last-child, .h-page span.current:last-child, .h-page span.disabled:last-child, .h-page .more:last-child {
+.page a:last-child, .page span.current:last-child, .page span.disabled:last-child, .page .more:last-child {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-.h-page span.current {
+.page span.current {
   color: #fff;
   z-index: 2;
   background-color: #66CCFF;
   border: 1px solid #66CCFF;
 }
-.h-page span.current:hover {
+.page span.current:hover {
   background: #66CCFF;
 }
-.h-page span.disabled {
+.page span.disabled {
   cursor: not-allowed;
   color: #999;
 }
-.h-page span.disabled:hover {
+.page span.disabled:hover {
   background: #fff;
 }
-.h-page .more:hover {
+.page .more:hover {
   background: #fff;
 }
-.h-page .gotoInput {
+.page .gotoInput {
   padding: 5px;
   width: 30px;
   border: 1px solid #ddd;
@@ -955,7 +968,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
   margin-bottom: 20px;
 }
 
-.search a, .search .h-page span.current, .h-page .search span.current, .search .h-page span.disabled, .h-page .search span.disabled, .search .h-page .more, .h-page .search .more {
+.search a, .search .page span.current, .page .search span.current, .search .page span.disabled, .page .search span.disabled, .search .page .more, .page .search .more {
   vertical-align: top;
   margin-top: -1px;
 }
@@ -1105,10 +1118,6 @@ button.close {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box;
-}
-
-.hide {
-  display: none;
 }
 
 .modal.fade {
@@ -1413,70 +1422,55 @@ button.close {
 }
 
 /********************图文列表********************/
-.list-c {
-  font-size: 0;
-}
-.list-c li {
+.table-view {
+  padding: 20px;
   position: relative;
-  vertical-align: middle;
-  display: inline-block;
-  width: 100%;
 }
-.list-c li .icon-operation {
+.table-view .table-view-cell {
+  width: 100%;
+  position: relative;
+  padding: 15px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.table-view .table-view-cell:hover {
+  background: #FAFAFA;
+}
+.table-view .table-view-cell:hover .table-view-operation {
+  opacity: 1;
+}
+.table-view .table-view-cell .table-view-operation {
   position: absolute;
   top: 20px;
   right: 20px;
   font-size: 12px;
   opacity: 0;
+  color: #999;
   -moz-transition: opacity 0.5s linear;
   -o-transition: opacity 0.5s linear;
   -webkit-transition: opacity 0.5s linear;
   transition: opacity 0.5s linear;
-  color: #999;
 }
-.list-c li .icon-operation i {
+.table-view .table-view-cell .table-view-operation i {
   display: block;
 }
-.list-c li:hover {
-  background: #FAFAFA;
-}
-.list-c li:hover .icon-operation {
-  opacity: 1;
-}
-
-.around {
-  padding: 20px;
-  position: relative;
-}
-.around .left-mark {
+.table-view .table-view-cell .media-object {
   width: 160px;
   height: 110px;
-  float: left;
+  margin-right: 10px;
   position: relative;
   overflow: hidden;
   text-align: center;
 }
-.around .left-mark img {
+.table-view .table-view-cell .media-object img {
   max-width: 100%;
 }
-.around .left-mark .tip {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #fff;
-  padding: 3px 10px;
-  display: block;
-  font-size: 12px;
-}
-.around .right-summary {
-  margin-left: 180px;
-}
-.around .right-summary .topic-tit a, .around .right-summary .topic-tit .h-page span.current, .h-page .around .right-summary .topic-tit span.current, .around .right-summary .topic-tit .h-page span.disabled, .h-page .around .right-summary .topic-tit span.disabled, .around .right-summary .topic-tit .h-page .more, .h-page .around .right-summary .topic-tit .more {
+.table-view .table-view-cell .media-body .media-body-tit a, .table-view .table-view-cell .media-body .media-body-tit .page span.current, .page .table-view .table-view-cell .media-body .media-body-tit span.current, .table-view .table-view-cell .media-body .media-body-tit .page span.disabled, .page .table-view .table-view-cell .media-body .media-body-tit span.disabled, .table-view .table-view-cell .media-body .media-body-tit .page .more, .page .table-view .table-view-cell .media-body .media-body-tit .more {
   color: #000;
   font-size: 16px;
   margin-right: 5px;
 }
-.around .right-summary .right-summary-p {
+.table-view .table-view-cell .media-body .media-body-sum {
   display: block;
   font-size: 12px;
   height: 38px;
@@ -1484,47 +1478,39 @@ button.close {
   margin-top: 10px;
   overflow: hidden;
 }
-.around .right-summary .right-summary-p a, .around .right-summary .right-summary-p .h-page span.current, .h-page .around .right-summary .right-summary-p span.current, .around .right-summary .right-summary-p .h-page span.disabled, .h-page .around .right-summary .right-summary-p span.disabled, .around .right-summary .right-summary-p .h-page .more, .h-page .around .right-summary .right-summary-p .more {
+.table-view .table-view-cell .media-body .media-body-sum a, .table-view .table-view-cell .media-body .media-body-sum .page span.current, .page .table-view .table-view-cell .media-body .media-body-sum span.current, .table-view .table-view-cell .media-body .media-body-sum .page span.disabled, .page .table-view .table-view-cell .media-body .media-body-sum span.disabled, .table-view .table-view-cell .media-body .media-body-sum .page .more, .page .table-view .table-view-cell .media-body .media-body-sum .more {
   color: #333;
 }
-.around .right-summary-line {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 200px;
-}
-
-.msg {
+.table-view .table-view-cell .media-body .media-footer {
   margin: 10px 0;
 }
-.msg a, .msg .h-page span.current, .h-page .msg span.current, .msg .h-page span.disabled, .h-page .msg span.disabled, .msg .h-page .more, .h-page .msg .more {
+.table-view .table-view-cell .media-body .media-footer a, .table-view .table-view-cell .media-body .media-footer .page span.current, .page .table-view .table-view-cell .media-body .media-footer span.current, .table-view .table-view-cell .media-body .media-footer .page span.disabled, .page .table-view .table-view-cell .media-body .media-footer span.disabled, .table-view .table-view-cell .media-body .media-footer .page .more, .page .table-view .table-view-cell .media-body .media-footer .more {
   display: inline-block;
   position: relative;
 }
-.msg img {
+.table-view .table-view-cell .media-body .media-footer img {
   width: 25px;
   height: 25px;
   border-radius: 50%;
   vertical-align: middle;
 }
-.msg span {
+.table-view .table-view-cell .media-body .media-footer span {
   color: #999;
   font-size: 12px;
   vertical-align: middle;
 }
-.msg span i {
+.table-view .table-view-cell .media-body .media-footer span i {
   font-weight: 700;
   color: #666;
   display: inline-block;
   margin-left: 3px;
 }
-.msg .name {
+.table-view .table-view-cell .media-body .media-footer .media-name {
   color: #000;
   font-weight: 700;
   margin: 0 5px;
 }
-.msg .span-1, .msg .span-2 {
+.table-view .table-view-cell .media-body .media-footer .media-span {
   margin: 0 10px;
   color: #E4E4E4;
 }

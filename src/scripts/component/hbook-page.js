@@ -30,8 +30,8 @@
 
 		getDom:function(element,options){
 			
-			// element.empty();
-
+			element.empty();
+			
 			//上一页
 			if (options.current > 1) {
 				element.append('<a href="javascript:;" class="prevPage">&laquo;</a>');

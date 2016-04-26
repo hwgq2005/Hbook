@@ -22,7 +22,9 @@
 			var action = $(this).attr('data-id');
 			$.scrollTo('#' + action, 500)
 		})
-		
+		$('#dialog').click(function(){
+			var aa=$('#modal').modal('show');
+		})
 		$('[data-toggle="tooltip"]').tooltip();
 		this.page('.h-page');
 	}
