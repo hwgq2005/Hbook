@@ -79,9 +79,11 @@ gulp.task('compass', function() {
 	gulp.src(['./src/sass/*.scss','!./src/sass/config.scss'])
 		.pipe(compass({
 			comments: false,
+			style:'nested',
 			css: './dist/style',
 			sass: './src/sass',
 			image: './src/images'
+
 		}))
 		
 		.pipe(rename( { suffix: '.min' }))
