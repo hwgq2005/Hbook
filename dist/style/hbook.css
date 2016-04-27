@@ -524,12 +524,10 @@ button[type="button"] {
   font-size: 13px;
   display: inline-block;
   line-height: 20px; }
-
-.btn:hover {
-  background-color: #CFCFCF; }
-
-.btn-mini {
-  padding: 4px 12px; }
+  .btn:hover {
+    background-color: #CFCFCF; }
+  .btn.btn-mini {
+    padding: 4px 12px; }
 
 .label {
   font-size: 12px;
@@ -539,9 +537,8 @@ button[type="button"] {
   border-radius: 14px;
   display: inline-block;
   background: #E4E4E4; }
-
-.label-mini {
-  padding: 4px 10px; }
+  .label.label-mini {
+    padding: 4px 10px; }
 
 .btn-primary, .label-primary {
   background: #66CCFF;
@@ -617,38 +614,76 @@ label, input, button, select, textarea {
   position: relative;
   margin-bottom: 20px;
   padding-top: 20px; }
-  .form-group.form-line-input .form-control ~ label {
-    position: absolute;
-    top: 28px;
-    left: 6px;
-    color: #999; }
   .form-group.form-line-input .form-control {
     width: 100%;
     border: none;
+    box-shadow: none;
+    padding: 6px 0;
     border-bottom: 1px solid #c2cad8;
-    -moz-transition: border-color 0.15s ease-in-out;
-    -o-transition: border-color 0.15s ease-in-out;
-    -webkit-transition: border-color 0.15s ease-in-out;
-    transition: border-color 0.15s ease-in-out; }
-    .form-group.form-line-input .form-control:focus {
-      border: 0;
-      outline: none; }
-      .form-group.form-line-input .form-control:focus:not([readonly]) ~ label {
+    display: bolck;
+    overflow: auto; }
+    .form-group.form-line-input .form-control ~ label {
+      width: 100%;
+      position: absolute;
+      top: 28px;
+      left: 0;
+      bottom: 0;
+      color: #999;
+      margin-bottom: 0;
+      font-size: 14px;
+      color: #888888;
+      opacity: 1;
+      filter: alpha(opacity=100);
+      -moz-transition: ease 0.2s all;
+      -o-transition: ease 0.2s all;
+      -webkit-transition: ease 0.2s all;
+      transition: ease 0.2s all;
+      pointer-events: none; }
+      .form-group.form-line-input .form-control ~ label:after {
+        width: 0;
+        height: 2px;
+        content: '';
+        position: absolute;
+        z-index: 5;
+        bottom: 0;
+        left: 50%;
+        visibility: hidden;
+        -moz-transition: ease 0.2s all;
+        -o-transition: ease 0.2s all;
+        -webkit-transition: ease 0.2s all;
+        transition: ease 0.2s all; }
+    .form-group.form-line-input .form-control:disabled {
+      cursor: not-allowed;
+      border-bottom: 1px solid #eee; }
+      .form-group.form-line-input .form-control:disabled ~ label {
+        top: 0;
         font-size: 12px;
-        pointer-events: none;
-        transition: .2s ease all; }
-        .form-group.form-line-input .form-control:focus:not([readonly]) ~ label:after {
-          content: '1212';
-          position: absolute;
-          z-index: 5;
-          bottom: 0;
-          left: 50%;
-          height: 2px;
-          width: 0;
-          visibility: hidden;
-          transition: .2s ease all; }
-  .form-group.form-line-input.has-success .form-control:focus {
-    border-bottom: 2px solid #66CCFF; }
+        pointer-events: none; }
+    .form-group.form-line-input .form-control:not([readonly]):focus {
+      outline: none; }
+      .form-group.form-line-input .form-control:not([readonly]):focus ~ label {
+        top: 0;
+        font-size: 12px;
+        pointer-events: none; }
+        .form-group.form-line-input .form-control:not([readonly]):focus ~ label:after {
+          left: 0;
+          width: 100%;
+          visibility: visible;
+          background: #66CCFF; }
+      .form-group.form-line-input .form-control:not([readonly]):focus ~ .help-block {
+        opacity: 1; }
+  .form-group.form-line-input .help-block {
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    margin: 2px 0 0;
+    opacity: 0;
+    font-size: 13px;
+    color: #ccc; }
+  .form-group.form-line-input.has-success .form-control:focus ~ label {
+    color: #33CCCC; }
+    .form-group.form-line-input.has-success .form-control:focus ~ label:after {
+      background: #33CCCC; }
 
 .form-horizontal .control-label {
   float: left;
@@ -732,19 +767,19 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
   /* IE6-9 */ }
 
 .input-mini {
-  width: 80px; }
+  width: 100px; }
 
 .input-small {
-  width: 140px; }
+  width: 160px; }
 
 .input-large {
-  width: 220px; }
+  width: 240px; }
 
 .input-xlarge {
-  width: 350px; }
+  width: 370px; }
 
 .input-xxlarge {
-  width: 450px; }
+  width: 470px; }
 
 input[type="checkbox"], input[type="radio"] {
   margin: 4px 0 0;
@@ -830,29 +865,27 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     font-size: 12px;
     text-align: center;
     background: #1476E5;
-    -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-transition: width 0.6s ease;
     -moz-transition: width 0.6s ease;
-    -ms-transition: width 0.6s ease;
     -o-transition: width 0.6s ease;
+    -webkit-transition: width 0.6s ease;
     transition: width 0.6s ease; }
-  .progress .bar-primary {
-    background: #66CCFF; }
-  .progress .bar-success {
-    background: #33CCCC; }
-  .progress .bar-warning {
-    background: #F3D261; }
-  .progress .bar-danger {
-    background: #FF9999; }
-  .progress .bar-violet {
-    background: #8089C1; }
-  .progress .bar-black {
-    background: #333; }
-  .progress .bar-grey {
-    background: #666; }
+    .progress .bar.bar-primary {
+      background: #66CCFF; }
+    .progress .bar.bar-success {
+      background: #33CCCC; }
+    .progress .bar.bar-warning {
+      background: #F3D261; }
+    .progress .bar.bar-danger {
+      background: #FF9999; }
+    .progress .bar.bar-violet {
+      background: #8089C1; }
+    .progress .bar.bar-black {
+      background: #333; }
+    .progress .bar.bar-grey {
+      background: #666; }
 
 /********************modal*********************/
 .form-list {
@@ -860,10 +893,10 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
 
 .fade {
   opacity: 0;
-  -webkit-transition: opacity .15s linear;
-  -moz-transition: opacity .15s linear;
-  -o-transition: opacity .15s linear;
-  transition: opacity .15s linear; }
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear; }
 
 .fade.in {
   opacity: 1; }
@@ -872,9 +905,9 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
   position: relative;
   height: 0;
   overflow: hidden;
-  -webkit-transition: height .35s ease;
-  -moz-transition: height .35s ease;
-  -o-transition: height .35s ease;
+  -moz-transition: height 0.35s ease;
+  -o-transition: height 0.35s ease;
+  -webkit-transition: height 0.35s ease;
   transition: height 0.35s ease; }
 
 .collapse.in {
@@ -932,19 +965,20 @@ button.close {
   border: 1px solid rgba(0, 0, 0, 0.3);
   *border: 1px solid #999;
   outline: 0;
-  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding-box;
+  -moz-background-clip: padding;
+  -o-background-clip: padding-box;
+  -webkit-background-clip: padding;
   background-clip: padding-box; }
 
 .modal.fade {
   top: -25%;
-  -webkit-transition: opacity .3s linear, top .3s ease-out;
-  -moz-transition: opacity .3s linear, top .3s ease-out;
-  -o-transition: opacity .3s linear, top .3s ease-out;
-  transition: opacity .3s linear, top .3s ease-out; }
+  -moz-transition: opacity 0.3s linear, top 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, top 0.3s ease-out;
+  -webkit-transition: opacity 0.3s linear, top 0.3s ease-out;
+  transition: opacity 0.3s linear, top 0.3s ease-out; }
 
 .modal.fade.in {
   top: 10%; }
@@ -976,13 +1010,13 @@ button.close {
   text-align: right;
   background-color: #f5f5f5;
   border-top: 1px solid #ddd;
-  -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;
+  -webkit-border-radius: 0;
   border-radius: 0 0 6px 6px;
-  *zoom: 1;
-  -webkit-box-shadow: inset 0 1px 0 #fff;
   -moz-box-shadow: inset 0 1px 0 #fff;
-  box-shadow: inset 0 1px 0 #fff; }
+  -webkit-box-shadow: inset 0 1px 0 #fff;
+  box-shadow: inset 0 1px 0 #fff;
+  *zoom: 1; }
 
 .modal-footer:before, .modal-footer:after {
   display: table;
@@ -1016,14 +1050,15 @@ button.close {
   background-color: #fff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
   border-radius: 6px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
+  -o-background-clip: padding-box;
+  -webkit-background-clip: padding;
   background-clip: padding-box; }
 
 .popover.top {
@@ -1046,8 +1081,8 @@ button.close {
   line-height: 18px;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
-  -webkit-border-radius: 5px 5px 0 0;
   -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px;
   border-radius: 5px 5px 0 0; }
 
 .popover-title:empty {

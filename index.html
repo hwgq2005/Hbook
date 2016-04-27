@@ -468,18 +468,32 @@
 &lt;input class="input-xlarge" type="text" placeholder=".input-xlarge"&gt;
 &lt;input class="input-xxlarge" type="text" placeholder=".input-xxlarge"&gt;
 </pre>
-		  <!--   <h3>表单类型二</h3>
+		    <h3>表单类型二</h3>
 	        <div class="docs-example docs-input">
-	        	<div class="form-group form-md-line-input has-success">
-                    <input type="text" class="form-control"  id="form-control-1" >
-                    <label for="form-control-1">Success input</label>
+	        	<div class="form-group form-line-input inline">
+                    <input type="text" class="form-control"  id="form-control-1"  disabled="disabled" value="张三">
+                    <label for="form-control-1">姓名</label>
+
                 </div>
-	        	<input class="metro input-mini" type="text" placeholder=".input-mini">
-				<input class="input-small" type="text" placeholder=".input-small">
-				<input class="input-large" type="text" placeholder=".input-large">
-				<input class="input-xlarge" type="text" placeholder=".input-xlarge">
-				<input class="input-xxlarge" type="text" placeholder=".input-xxlarge">
-	        </div> -->
+                <div class="form-group form-line-input has-success inline">
+                    <input type="text" class="form-control"  id="form-control-2" >
+                    <label for="form-control-2">年龄</label>
+                    <span class="help-block">限制在10字以内</span>
+                </div>
+                <div class="form-group form-line-input has-success">
+                	<select class="form-control" name="" id="form-control-3">
+                		<option value=" "></option>
+                		<option value="1">选项2</option>
+                		<option value="2">选项3</option>
+                	</select>
+                    <label for="form-control-3">简介</label>
+                </div>
+                <div class="form-group form-line-input has-success">
+                	<textarea class="form-control" name="" id="form-control-4" rows="3" ></textarea>
+                    <label for="form-control-4">简介</label>
+                     <span class="help-block">限制在100字以内</span>
+                </div>
+	        </div>
 	    </section>
 
 	    <!-- 按钮 -->
@@ -781,7 +795,7 @@
 					      <div class="media-footer">
 						      <a href="#"> 
 							      <img src="dist/images/photo.jpg" alt="" /> 
-							      <span class="media-name">aaa</span> 
+							      <span class="media-name">张三</span> 
 						      </a>
 				      		  <span class="media-time">. 2015-12-02 21:21:24</span>
 				      		  <span class="media-span">|</span> <span >阅读<i>1</i></span>
@@ -804,7 +818,7 @@
 					      <div class="media-footer">
 						      <a href="#"> 
 							      <img src="dist/images/photo.jpg" alt="" /> 
-							      <span class="media-name">aaa</span> 
+							      <span class="media-name">李四</span> 
 						      </a>
 				      		  <span class="media-time">. 2015-12-02 21:21:24</span>
 				      		  <span class="media-span">|</span> <span >阅读<i>1</i></span>
@@ -823,12 +837,12 @@
 	    &lt;/div&gt;
 	    &lt;div class="media-body"&gt;
 	      &lt;div class="media-body-tit"&gt;
-	      		&lt;a href="#" &gt;哈哈哈哈&lt;/a&gt; &lt;i class="label label-mini label-danger"&gt;已发布&lt;/i&gt;
+	      		&lt;a href="#" &gt;列表一&lt;/a&gt; &lt;i class="label label-mini label-danger"&gt;已发布&lt;/i&gt;
 	      &lt;/div&gt;
 	      &lt;div class="media-body-sum"&gt; &lt;a href="#"&gt;Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、
 	      设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。&lt;/a&gt; &lt;/div&gt;
 	      &lt;div class="media-footer"&gt;
-		        &lt;a href="#"&gt; &lt;img src="dist/images/photo.jpg" alt="" /&gt; &lt;span class="name"&gt;aaa&lt;/span&gt; &lt;/a&gt;
+		        &lt;a href="#"&gt; &lt;img src="dist/images/photo.jpg" alt="" /&gt; &lt;span class="name"&gt;张三&lt;/span&gt; &lt;/a&gt;
       		  	&lt;span class="media-time"&gt;. 2015-12-02 21:21:24&lt;/span&gt;
       		  	&lt;span class="media-span"&gt;|&lt;/span&gt; &lt;span &gt;阅读&lt;i&gt;1&lt;/i&gt;&lt;/span&gt;
       		  	&lt;span class="media-span"&gt;/&lt;/span&gt; &lt;span &gt;评论&lt;i&gt;0&lt;/i&gt;&lt;/span&gt;

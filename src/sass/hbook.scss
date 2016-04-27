@@ -514,13 +514,15 @@ button[type="button"] {
 	font-size: 13px;
 	display: inline-block;
 	line-height: 20px;
+	&:hover{
+		background-color: #CFCFCF;
+	}
+	&.btn-mini {
+		padding: 4px 12px;
+	}
+
 }
-.btn:hover {
-	background-color: #CFCFCF;
-}
-.btn-mini {
-	padding: 4px 12px;
-}
+
 .label {
 	font-size: 12px;
 	color: #fff;
@@ -529,10 +531,11 @@ button[type="button"] {
 	border-radius: 14px;
 	display: inline-block;
 	background: $defaultBg;
+	&.label-mini{
+		padding: 4px 10px;
+	}
 }
-.label-mini{
-	padding: 4px 10px;
-}
+
 .btn-primary, .label-primary {
 	background: $primaryBg;
 	color: #fff;
@@ -609,464 +612,401 @@ label, input, button, select, textarea {
 	position: relative;
 	margin-bottom:20px;
 	padding-top:20px;
-	.form-control~label{
-		position: absolute;
-		top:28px;
-		left:6px;
-		color: #999;
-	}
 	.form-control{
 		width: 100%;
 		border:none;
+		box-shadow: none;
+		padding:6px 0;
 		border-bottom: 1px solid #c2cad8;
-		@include transition(border-color ease-in-out .15s);
-		&:focus{
-			border:0;
-			outline: none;
-			&:not([readonly])~label{
+		display: bolck;
+		overflow: auto;
+		&~label{
+			width: 100%;
+			position: absolute;
+			top:28px;
+			left:0;
+			bottom:0;
+			color: #999;
+		    margin-bottom: 0;
+		    font-size: 14px;
+		    color: #888888;
+		    opacity: 1 ;
+		    filter: alpha(opacity=100) ; 
+		    @include transition(.2s ease all);
+		    pointer-events: none; 
+		    &:after{
+		    	width: 0;
+		        height: 2px;
+				content: '';
+		        position: absolute;
+		        z-index: 5;
+		        bottom: 0;
+		        left: 50%;
+		        visibility: hidden;
+		        @include transition(.2s ease all);
+			}
+		}
+		&:disabled{
+			cursor: not-allowed;
+			border-bottom: 1px solid #eee;
+			&~label{
+				top: 0;
 				font-size: 12px;
 				pointer-events: none;
-				transition: .2s ease all;
-				&:after{
-					content: '1212';
-					position: absolute;
-					z-index: 5;
-					bottom: 0;
-					left: 50%;
-					height: 2px;
-					width: 0;
-					visibility: hidden;
-					transition: .2s ease all;
+				
+			}
+		}
+		&:not([readonly]){
+			&:focus{
+				outline: none;
+				&~label{
+					top: 0;
+					font-size: 12px;
+					pointer-events: none;
+					&:after{
+				        left: 0;
+				        width: 100%;
+				        visibility: visible;
+				        background:$primaryBg;
+					}
+				}
+				&~.help-block{
+					opacity: 1;
 				}
 			}
 		}
 	}
+	.help-block{
+		display: block;
+		position: absolute;
+		bottom:-20px;
+	    margin: 2px 0 0;
+	    opacity: 0;
+	    font-size: 13px;
+	    color:#ccc;
+	}
 	&.has-success{
 		.form-control{
 			&:focus{
-				border-bottom:  2px solid $primaryBg;
+				&~label{
+					color:$successBg;
+					&:after{
+				        background:$successBg;
+					}
+				}
 			}
 		}
 	}
-	
 }
 
-
-// .form-group.form-md-line-input .form-control.edited:not([readonly])~label, .form-group.form-md-line-input .form-control.focus:not([readonly])~label, .form-group.form-md-line-input .form-control:focus:not([readonly])~label, .form-group.form-md-line-input .form-control~.help-block-error, .form-group.form-md-line-input .form-control~label, .form-horizontal .form-group.form-md-line-input>label {
-// 	opacity: 1;
-// 	filter: alpha(opacity=100)
-// }
 // .form-group.form-md-line-input {
-// 	position: relative;
-// 	margin: 0 0 35px;
-// 	padding-top: 20px
-// }
-// .form-horizontal .form-group.form-md-line-input {
-// 	padding-top: 10px;
-// 	margin: 0 -15px 20px
-// }
-// .form-horizontal .form-group.form-md-line-input>label {
-// 	padding-top: 5px;
-// 	font-size: 14px;
-// 	color: #888
-// }
-// .form-group.form-md-line-input .form-control {
-// 	background: 0 0;
-// 	border: 0;
-// 	border-bottom: 1px solid #c2cad8;
-// 	-webkit-border-radius: 0;
-// 	-moz-border-radius: 0;
-// 	-ms-border-radius: 0;
-// 	-o-border-radius: 0;
-// 	border-radius: 0;
-// 	color: #555;
-// 	box-shadow: none;
-// 	padding-left: 0;
-// 	padding-right: 0;
-// 	font-size: 14px
-// }
-// .form-group.form-md-line-input .form-control::-moz-placeholder {
-// 	color: #999;
-// 	opacity: 1
-// }
-// .form-group.form-md-line-input .form-control:-ms-input-placeholder {
-// 	color: #999
-// }
-// .form-group.form-md-line-input .form-control::-webkit-input-placeholder {
-// 	color: #999
-// }
-// .form-group.form-md-line-input .form-control.form-control-static {
-// 	border-bottom: 0
-// }
-// .form-group.form-md-line-input .form-control.input-sm {
-// 	font-size: 14px;
-// 	padding: 6px 0
-// }
-// .form-group.form-md-line-input .form-control.input-lg {
-// 	font-size: 20px;
-// 	padding: 14px 0
-// }
-// .form-group.form-md-line-input .input-group, .form-group.form-md-line-input .input-group+.input-group-control, .form-group.form-md-line-input+.input-group, .form-group.form-md-line-input+.input-icon, .form-horizontal .form-group.form-md-line-input .input-group, .form-horizontal .form-group.form-md-line-input .input-group>.input-group-control, .form-inline .form-md-line-input {
-// 	padding-top: 0
-// }
-// .form-group.form-md-line-input .form-control~.form-control-focus, .form-group.form-md-line-input .form-control~label {
-// 	width: 100%;
-// 	position: absolute;
-// 	left: 0;
-// 	bottom: 0;
-// 	pointer-events: none
-// }
-// .form-horizontal .form-group.form-md-line-input .form-control~.form-control-focus, .form-horizontal .form-group.form-md-line-input .form-control~label {
-// 	width: auto;
-// 	left: 15px;
-// 	right: 15px
-// }
-// .form-group.form-md-line-input .form-control~.form-control-focus:after, .form-group.form-md-line-input .form-control~label:after {
-// 	content: '';
-// 	position: absolute;
-// 	z-index: 5;
-// 	bottom: 0;
-// 	left: 50%;
-// 	height: 2px;
-// 	width: 0;
-// 	visibility: hidden;
-// 	transition: .2s ease all
-// }
-// .form-group.form-md-line-input .form-control~label {
-// 	top: 0;
-// 	margin-bottom: 0;
-// 	font-size: 14px;
-// 	color: #888
-// }
-// .form-group.form-md-line-input .form-control.edited:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control.edited:not([readonly])~label, .form-group.form-md-line-input .form-control.focus:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control.focus:not([readonly])~label, .form-group.form-md-line-input .form-control:focus:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control:focus:not([readonly])~label {
-// 	color: #888
-// }
-// .form-group.form-md-line-input .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control:focus:not([readonly])~label:after {
-// 	visibility: visible;
-// 	left: 0;
-// 	width: 100%;
-// 	background: #36c6d3
-// }
-// .form-group.form-md-line-input .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input .form-control:focus:not([readonly])~.help-block {
-// 	color: #36c6d3;
-// 	opacity: 1;
-// 	filter: alpha(opacity=100)
-// }
-// .form-group.form-md-line-input .form-control.edited:not([readonly])~.help-block-error, .form-group.form-md-line-input .form-control.focus:not([readonly])~.help-block-error, .form-group.form-md-line-input .form-control:focus:not([readonly])~.help-block-error {
-// 	opacity: 0;
-// 	filter: alpha(opacity=0)
-// }
-// .form-group.form-md-line-input .form-control[disabled], .form-group.form-md-line-input .form-control[readonly], fieldset[disabled] .form-group.form-md-line-input .form-control {
-// 	background: 0 0;
-// 	cursor: not-allowed;
-// 	border-bottom: 1px dashed #c2cad8
-// }
-// .form-group.form-md-line-input.form-md-floating-label .form-control~label {
-// 	font-size: 16px;
-// 	top: 25px;
-// 	transition: .2s ease all;
-// 	color: #999
-// }
+//   position: relative;
+//   margin: 0 0 35px 0;
+//   padding-top: 20px; }
+//   .form-horizontal .form-group.form-md-line-input {
+//     padding-top: 10px;
+//     margin-bottom: 20px;
+//     margin: 0 -15px 20px -15px; }
+//   .form-horizontal .form-group.form-md-line-input > label {
+//     padding-top: 5px;
+//     font-size: 14px;
+//     color: #888888;
+//     opacity: 1 ;
+//     filter: alpha(opacity=100) ; }
+//   .form-group.form-md-line-input .form-control {
+//     background: none;
+//     border: 0;
+//     border-bottom: 1px solid #c2cad8;
+//     -webkit-border-radius: 0;
+//     -moz-border-radius: 0;
+//     -ms-border-radius: 0;
+//     -o-border-radius: 0;
+//     border-radius: 0;
+//     color: #555555;
+//     box-shadow: none;
+//     padding-left: 0;
+//     padding-right: 0;
+//     font-size: 14px; }
+//     .form-group.form-md-line-input .form-control::-moz-placeholder {
+//       color: #999;
+//       opacity: 1; }
+//     .form-group.form-md-line-input .form-control:-ms-input-placeholder {
+//       color: #999; }
+//     .form-group.form-md-line-input .form-control::-webkit-input-placeholder {
+//       color: #999; }
+//     .form-group.form-md-line-input .form-control.form-control-static {
+//       border-bottom: 0; }
+//     .form-group.form-md-line-input .form-control.input-sm {
+//       font-size: 14px;
+//       padding: 6px 0; }
+//     .form-group.form-md-line-input .form-control.input-lg {
+//       font-size: 20px;
+//       padding: 14px 0; }
+//     .form-group.form-md-line-input .form-control ~ label,
+//     .form-group.form-md-line-input .form-control ~ .form-control-focus {
+//       width: 100%;
+//       position: absolute;
+//       left: 0;
+//       bottom: 0;
+//       pointer-events: none; }
+//       .form-horizontal .form-group.form-md-line-input .form-control ~ label, .form-horizontal
+//       .form-group.form-md-line-input .form-control ~ .form-control-focus {
+//         width: auto;
+//         left: 15px;
+//         right: 15px; }
+//       .form-group.form-md-line-input .form-control ~ label:after,
+//       .form-group.form-md-line-input .form-control ~ .form-control-focus:after {
+//         content: '';
+//         position: absolute;
+//         z-index: 5;
+//         bottom: 0;
+//         left: 50%;
+//         width: 0;
+//         height: 2px;
+//         width: 0;
+//         visibility: hidden;
+//         transition: 0.2s ease all; }
+//     .form-group.form-md-line-input .form-control ~ label {
+//       top: 0;
+//       margin-bottom: 0;
+//       font-size: 14px;
+//       color: #888888;
+//       opacity: 1 ;
+//       filter: alpha(opacity=100) ; }
+//     .form-group.form-md-line-input .form-control ~ .help-block-error {
+//       opacity: 1 ;
+//       filter: alpha(opacity=100) ; }
+//     .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ label,
+//     .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ .form-control-focus, .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ label,
+//     .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ .form-control-focus, .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ label,
+//     .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ .form-control-focus {
+//       color: #888888; }
+//       .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ label:after,
+//       .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ label:after,
+//       .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ label:after,
+//       .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ .form-control-focus:after {
+//         visibility: visible;
+//         left: 0;
+//         width: 100%;
+//         background: #36c6d3; }
+//     .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ label, .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ label {
+//       opacity: 1 ;
+//       filter: alpha(opacity=100) ; }
+//     .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ .help-block, .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ .help-block, .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ .help-block {
+//       color: #36c6d3;
+//       opacity: 1 ;
+//       filter: alpha(opacity=100) ; }
+//     .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ .help-block-error, .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ .help-block-error, .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ .help-block-error {
+//       opacity: 0 ;
+//       filter: alpha(opacity=0) ; }
+//     .form-group.form-md-line-input .form-control[readonly], .form-group.form-md-line-input .form-control[disabled],
+//     fieldset[disabled] .form-group.form-md-line-input .form-control {
+//       background: none;
+//       cursor: not-allowed;
+//       border-bottom: 1px dashed #c2cad8; }
+//   .form-group.form-md-line-input.form-md-floating-label .form-control ~ label {
+//     font-size: 16px;
+//     top: 25px;
+//     transition: 0.2s ease all;
+//     color: #999; }
+//   .form-group.form-md-line-input.form-md-floating-label .form-control[readonly] ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.edited ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.form-control-static ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.focus:not([readonly]) ~ label {
+//     top: 0;
+//     font-size: 13px; }
+//   .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm ~ label {
+//     font-size: 14px;
+//     top: 24px; }
+//   .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm[readonly] ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.form-control-static ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.edited ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm:focus:not([readonly]) ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.focus:not([readonly]) ~ label {
+//     top: 0;
+//     font-size: 13px; }
+//   .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg ~ label {
+//     font-size: 20px;
+//     top: 30px; }
+//   .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg[readonly] ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.edited ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.form-control-static ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg:focus:not([readonly]) ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.focus:not([readonly]) ~ label {
+//     top: 0;
+//     font-size: 13px; }
+//   .form-group.form-md-line-input.form-md-floating-label .input-icon > label {
+//     padding-left: 34px; }
+//   .form-group.form-md-line-input.form-md-floating-label .input-icon.right > label {
+//     padding-left: 0;
+//     padding-right: 34px; }
+//   .form-group.form-md-line-input.form-md-floating-label .input-group.left-addon label {
+//     padding-left: 34px; }
+//   .form-group.form-md-line-input.form-md-floating-label .input-group.right-addon label {
+//     padding-right: 34px; }
+//   .form-group.form-md-line-input + .input-icon {
+//     padding-top: 0; }
+//   .form-group.form-md-line-input .help-block {
+//     position: absolute;
+//     margin: 2px 0 0 0;
+//     opacity: 0 ;
+//     filter: alpha(opacity=0) ;
+//     font-size: 13px; }
+//   .form-group.form-md-line-input > .input-icon > i {
+//     left: 0;
+//     bottom: 0;
+//     margin: 9px 2px 10px 10px;
+//     color: #888888; }
+//   .form-group.form-md-line-input > .input-icon.input-icon-lg > i {
+//     top: 6px; }
+//   .form-group.form-md-line-input > .input-icon.input-icon-sm > i {
+//     top: -1px; }
+//   .form-group.form-md-line-input > .input-icon .form-control {
+//     padding-left: 34px; }
+//   .form-group.form-md-line-input > .input-icon > label {
+//     margin-top: -20px; }
+//   .form-group.form-md-line-input > .input-icon.right .form-control {
+//     padding-left: 0;
+//     padding-right: 34px; }
+//   .form-group.form-md-line-input > .input-icon.right > i {
+//     left: auto;
+//     right: 8px;
+//     margin: 11px 2px 10px 10px; }
+//   .form-group.form-md-line-input + .input-group {
+//     padding-top: 0; }
+//   .form-group.form-md-line-input .input-group {
+//     padding-top: 0; }
+//     .form-group.form-md-line-input .input-group > label {
+//       margin-top: -20px; }
+//     .form-group.form-md-line-input .input-group .input-group-addon {
+//       -webkit-border-radius: 0;
+//       -moz-border-radius: 0;
+//       -ms-border-radius: 0;
+//       -o-border-radius: 0;
+//       border-radius: 0;
+//       background: none;
+//       border: 0;
+//       border-bottom: 1px solid #c2cad8; }
+//     .form-group.form-md-line-input .input-group + .input-group-control {
+//       padding-top: 0; }
+//     .form-group.form-md-line-input .input-group .input-group-control {
+//       padding-top: 0;
+//       position: relative;
+//       display: table-cell;
+//       vertical-align: bottom; }
+//       .form-group.form-md-line-input .input-group .input-group-control > label {
+//         margin-top: -20px; }
+//     .form-group.form-md-line-input .input-group .input-group-btn .btn {
+//       -webkit-border-radius: 4px;
+//       -moz-border-radius: 4px;
+//       -ms-border-radius: 4px;
+//       -o-border-radius: 4px;
+//       border-radius: 4px; }
+//     .form-group.form-md-line-input .input-group .input-group-btn.btn-left .btn {
+//       margin-right: 10px; }
+//     .form-group.form-md-line-input .input-group .input-group-btn.btn-right .btn {
+//       margin-left: 10px; }
+//     .form-group.form-md-line-input .input-group .help-block {
+//       margin-top: 35px; }
+//     .form-group.form-md-line-input .input-group.input-group-sm .help-block {
+//       margin-top: 30px; }
+//     .form-group.form-md-line-input .input-group.input-group-lg .help-block {
+//       margin-top: 47px; }
+//   .form-group.form-md-line-input.has-success .form-control {
+//     border-bottom: 1px solid #27a4b0; }
+    // .form-group.form-md-line-input.has-success .form-control.edited:not([readonly]) ~ label:after,
+    // .form-group.form-md-line-input.has-success .form-control.edited:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-success .form-control.form-control-static ~ label:after,
+    // .form-group.form-md-line-input.has-success .form-control.form-control-static ~ .form-control-focus:after, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly]) ~ label:after,
+    // .form-group.form-md-line-input.has-success .form-control:focus:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly]) ~ label:after,
+    // .form-group.form-md-line-input.has-success .form-control.focus:not([readonly]) ~ .form-control-focus:after {
+    //   background: #27a4b0; }
+    // .form-group.form-md-line-input.has-success .form-control.edited:not([readonly]) ~ label, .form-group.form-md-line-input.has-success .form-control.form-control-static ~ label, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly]) ~ label {
+    //   color: #27a4b0; }
+    // .form-group.form-md-line-input.has-success .form-control.edited:not([readonly]) ~ i, .form-group.form-md-line-input.has-success .form-control.form-control-static ~ i, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly]) ~ i, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly]) ~ i {
+    //   color: #27a4b0; }
+    // .form-group.form-md-line-input.has-success .form-control.edited:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-success .form-control.form-control-static ~ .help-block, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly]) ~ .help-block {
+    //   color: #27a4b0; }
+//   .form-group.form-md-line-input.has-success .input-group-addon {
+//     color: #27a4b0;
+//     border-bottom: 1px solid #27a4b0; }
+//   .form-group.form-md-line-input.has-success label {
+//     color: #27a4b0; }
+//   .form-group.form-md-line-input.has-warning .form-control {
+//     border-bottom: 1px solid #c29d0b; }
+//    
+//     
+//     .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly]) ~ label, .form-group.form-md-line-input.has-warning .form-control.form-control-static ~ label, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly]) ~ label {
+//       color: #c29d0b; }
+//     .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly]) ~ i, .form-group.form-md-line-input.has-warning .form-control.form-control-static ~ i, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly]) ~ i, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly]) ~ i {
+//       color: #c29d0b; }
+//     .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-warning .form-control.form-control-static ~ .help-block, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly]) ~ .help-block {
+//       color: #c29d0b; }
+//   .form-group.form-md-line-input.has-warning .input-group-addon {
+//     color: #c29d0b;
+//     border-bottom: 1px solid #c29d0b; }
+//   .form-group.form-md-line-input.has-warning label {
+//     color: #c29d0b; }
+//   .form-group.form-md-line-input.has-error .form-control {
+//     border-bottom: 1px solid #e73d4a; }
+//     .form-group.form-md-line-input.has-error .form-control.edited:not([readonly]) ~ label:after,
+//     .form-group.form-md-line-input.has-error .form-control.edited:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-error .form-control.form-control-static ~ label:after,
+//     .form-group.form-md-line-input.has-error .form-control.form-control-static ~ .form-control-focus:after, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly]) ~ label:after,
+//     .form-group.form-md-line-input.has-error .form-control:focus:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly]) ~ label:after,
+//     .form-group.form-md-line-input.has-error .form-control.focus:not([readonly]) ~ .form-control-focus:after {
+//       background: #e73d4a; }
+//     .form-group.form-md-line-input.has-error .form-control.edited:not([readonly]) ~ label, .form-group.form-md-line-input.has-error .form-control.form-control-static ~ label, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly]) ~ label {
+//       color: #e73d4a; }
+//     .form-group.form-md-line-input.has-error .form-control.edited:not([readonly]) ~ i, .form-group.form-md-line-input.has-error .form-control.form-control-static ~ i, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly]) ~ i, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly]) ~ i {
+//       color: #e73d4a; }
+//     .form-group.form-md-line-input.has-error .form-control.edited:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-error .form-control.form-control-static ~ .help-block, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly]) ~ .help-block {
+//       color: #e73d4a; }
+//   .form-group.form-md-line-input.has-error .input-group-addon {
+//     color: #e73d4a;
+//     border-bottom: 1px solid #e73d4a; }
+//   .form-group.form-md-line-input.has-error label {
+//     color: #e73d4a; }
+//   .form-group.form-md-line-input.has-info .form-control {
+//     border-bottom: 1px solid #327ad5; }
+//     .form-group.form-md-line-input.has-info .form-control.edited:not([readonly]) ~ label:after,
+//     .form-group.form-md-line-input.has-info .form-control.edited:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-info .form-control.form-control-static ~ label:after,
+//     .form-group.form-md-line-input.has-info .form-control.form-control-static ~ .form-control-focus:after, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly]) ~ label:after,
+//     .form-group.form-md-line-input.has-info .form-control:focus:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly]) ~ label:after,
+//     .form-group.form-md-line-input.has-info .form-control.focus:not([readonly]) ~ .form-control-focus:after {
+//       background: #327ad5; }
+//     .form-group.form-md-line-input.has-info .form-control.edited:not([readonly]) ~ label, .form-group.form-md-line-input.has-info .form-control.form-control-static ~ label, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly]) ~ label {
+//       color: #327ad5; }
+//     .form-group.form-md-line-input.has-info .form-control.edited:not([readonly]) ~ i, .form-group.form-md-line-input.has-info .form-control.form-control-static ~ i, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly]) ~ i, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly]) ~ i {
+//       color: #327ad5; }
+//     .form-group.form-md-line-input.has-info .form-control.edited:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-info .form-control.form-control-static ~ .help-block, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly]) ~ .help-block {
+//       color: #327ad5; }
+//   .form-group.form-md-line-input.has-info .input-group-addon {
+//     color: #327ad5;
+//     border-bottom: 1px solid #327ad5; }
+//   .form-group.form-md-line-input.has-info label {
+//     color: #327ad5; }
 
-// .form-group.form-md-line-input .form-control.edited:not([readonly])~label, .form-group.form-md-line-input .form-control.focus:not([readonly])~label, .form-group.form-md-line-input .form-control:focus:not([readonly])~label, .form-group.form-md-line-input .form-control~.help-block-error, .form-group.form-md-line-input .form-control~label, .form-horizontal .form-group.form-md-line-input>label {
-// 	opacity: 1;
-// 	filter: alpha(opacity=100)
-// }
-// .form-group.form-md-line-input {
-// 	position: relative;
-// 	margin: 0 0 35px;
-// 	padding-top: 20px
-// }
-// .form-horizontal .form-group.form-md-line-input {
-// 	padding-top: 10px;
-// 	margin: 0 -15px 20px
-// }
-// .form-horizontal .form-group.form-md-line-input>label {
-// 	padding-top: 5px;
-// 	font-size: 14px;
-// 	color: #888
-// }
-// .form-group.form-md-line-input .form-control {
-// 	background: 0 0;
-// 	border: 0;
-// 	border-bottom: 1px solid #c2cad8;
-// 	-webkit-border-radius: 0;
-// 	-moz-border-radius: 0;
-// 	-ms-border-radius: 0;
-// 	-o-border-radius: 0;
-// 	border-radius: 0;
-// 	color: #555;
-// 	box-shadow: none;
-// 	padding-left: 0;
-// 	padding-right: 0;
-// 	font-size: 14px
-// }
-// .form-group.form-md-line-input .form-control::-moz-placeholder {
-// 	color: #999;
-// 	opacity: 1
-// }
-// .form-group.form-md-line-input .form-control:-ms-input-placeholder {
-// 	color: #999
-// }
-// .form-group.form-md-line-input .form-control::-webkit-input-placeholder {
-// 	color: #999
-// }
-// .form-group.form-md-line-input .form-control.form-control-static {
-// 	border-bottom: 0
-// }
-// .form-group.form-md-line-input .form-control.input-sm {
-// 	font-size: 14px;
-// 	padding: 6px 0
-// }
-// .form-group.form-md-line-input .form-control.input-lg {
-// 	font-size: 20px;
-// 	padding: 14px 0
-// }
-// .form-group.form-md-line-input .input-group, .form-group.form-md-line-input .input-group+.input-group-control, .form-group.form-md-line-input+.input-group, .form-group.form-md-line-input+.input-icon, .form-horizontal .form-group.form-md-line-input .input-group, .form-horizontal .form-group.form-md-line-input .input-group>.input-group-control, .form-inline .form-md-line-input {
-// 	padding-top: 0
-// }
-// .form-group.form-md-line-input .form-control~.form-control-focus, .form-group.form-md-line-input .form-control~label {
-// 	width: 100%;
-// 	position: absolute;
-// 	left: 0;
-// 	bottom: 0;
-// 	pointer-events: none
-// }
-// .form-horizontal .form-group.form-md-line-input .form-control~.form-control-focus, .form-horizontal .form-group.form-md-line-input .form-control~label {
-// 	width: auto;
-// 	left: 15px;
-// 	right: 15px
-// }
-// .form-group.form-md-line-input .form-control~.form-control-focus:after, .form-group.form-md-line-input .form-control~label:after {
-// 	content: '';
-// 	position: absolute;
-// 	z-index: 5;
-// 	bottom: 0;
-// 	left: 50%;
-// 	height: 2px;
-// 	width: 0;
-// 	visibility: hidden;
-// 	transition: .2s ease all
-// }
-// .form-group.form-md-line-input .form-control~label {
-// 	top: 0;
-// 	margin-bottom: 0;
-// 	font-size: 14px;
-// 	color: #888
-// }
-// .form-group.form-md-line-input .form-control.edited:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control.edited:not([readonly])~label, .form-group.form-md-line-input .form-control.focus:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control.focus:not([readonly])~label, .form-group.form-md-line-input .form-control:focus:not([readonly])~.form-control-focus, .form-group.form-md-line-input .form-control:focus:not([readonly])~label {
-// 	color: #888
-// }
-// .form-group.form-md-line-input .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input .form-control:focus:not([readonly])~label:after {
-// 	visibility: visible;
-// 	left: 0;
-// 	width: 100%;
-// 	background: #36c6d3
-// }
-// .form-group.form-md-line-input .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input .form-control:focus:not([readonly])~.help-block {
-// 	color: #36c6d3;
-// 	opacity: 1;
-// 	filter: alpha(opacity=100)
-// }
-// .form-group.form-md-line-input .form-control.edited:not([readonly])~.help-block-error, .form-group.form-md-line-input .form-control.focus:not([readonly])~.help-block-error, .form-group.form-md-line-input .form-control:focus:not([readonly])~.help-block-error {
-// 	opacity: 0;
-// 	filter: alpha(opacity=0)
-// }
-// .form-group.form-md-line-input .form-control[disabled], .form-group.form-md-line-input .form-control[readonly], fieldset[disabled] .form-group.form-md-line-input .form-control {
-// 	background: 0 0;
-// 	cursor: not-allowed;
-// 	border-bottom: 1px dashed #c2cad8
-// }
-// .form-group.form-md-line-input.form-md-floating-label .form-control~label {
-// 	font-size: 16px;
-// 	top: 25px;
-// 	transition: .2s ease all;
-// 	color: #999
-// }
-// .form-group.form-md-line-input.form-md-floating-label .form-control.edited~label, .form-group.form-md-line-input.form-md-floating-label .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.form-control-static~label, .form-group.form-md-line-input.form-md-floating-label .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control[readonly]~label {
-// 	top: 0;
-// 	font-size: 13px
-// }
-// .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm~label {
-// 	font-size: 14px;
-// 	top: 24px
-// }
-// .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.edited~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.form-control-static~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm:focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm[readonly]~label {
-// 	top: 0;
-// 	font-size: 13px
-// }
-// .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg~label {
-// 	font-size: 20px;
-// 	top: 30px
-// }
-// .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.edited~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.form-control-static~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg:focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg[readonly]~label {
-// 	top: 0;
-// 	font-size: 13px
-// }
-// .form-group.form-md-line-input.form-md-floating-label .input-icon>label {
-// 	padding-left: 34px
-// }
-// .form-group.form-md-line-input.form-md-floating-label .input-icon.right>label {
-// 	padding-left: 0;
-// 	padding-right: 34px
-// }
-// .form-group.form-md-line-input.form-md-floating-label .input-group.left-addon label, .form-group.form-md-line-input>.input-icon .form-control {
-// 	padding-left: 34px
-// }
-// .form-group.form-md-line-input.form-md-floating-label .input-group.right-addon label {
-// 	padding-right: 34px
-// }
-// .form-group.form-md-line-input .help-block {
-// 	position: absolute;
-// 	margin: 2px 0 0;
-// 	opacity: 0;
-// 	filter: alpha(opacity=0);
-// 	font-size: 13px
-// }
-// .form-group.form-md-line-input>.input-icon>i {
-// 	left: 0;
-// 	bottom: 0;
-// 	margin: 9px 2px 10px 10px;
-// 	color: #888
-// }
-// .form-group.form-md-line-input.has-success .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input.has-success .form-control.edited:not([readonly])~i, .form-group.form-md-line-input.has-success .form-control.edited:not([readonly])~label, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly])~i, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.has-success .form-control.form-control-static~.help-block, .form-group.form-md-line-input.has-success .form-control.form-control-static~i, .form-group.form-md-line-input.has-success .form-control.form-control-static~label, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly])~i, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.has-success label {
-// 	color: #27a4b0
-// }
-// .form-group.form-md-line-input>.input-icon.input-icon-lg>i {
-// 	top: 6px
-// }
-// .form-group.form-md-line-input>.input-icon.input-icon-sm>i {
-// 	top: -1px
-// }
-// .form-group.form-md-line-input>.input-icon>label {
-// 	margin-top: -20px
-// }
-// .form-group.form-md-line-input>.input-icon.right .form-control {
-// 	padding-left: 0;
-// 	padding-right: 34px
-// }
-// .form-group.form-md-line-input>.input-icon.right>i {
-// 	left: auto;
-// 	right: 8px;
-// 	margin: 11px 2px 10px 10px
-// }
-// .form-horizontal .form-group.form-md-line-input .input-group>.form-control-focus, .form-horizontal .form-group.form-md-line-input .input-group>.input-group-control>.form-control-focus, .form-horizontal .form-group.form-md-line-input .input-icon>.form-control-focus {
-// 	left: 0 !important;
-// 	right: 0 !important
-// }
-// .form-group.form-md-line-input .input-group .input-group-control>label, .form-group.form-md-line-input .input-group>label {
-// 	margin-top: -20px
-// }
-// .form-group.form-md-line-input .input-group .input-group-addon {
-// 	-webkit-border-radius: 0;
-// 	-moz-border-radius: 0;
-// 	-ms-border-radius: 0;
-// 	-o-border-radius: 0;
-// 	border-radius: 0;
-// 	background: 0 0;
-// 	border: 0;
-// 	border-bottom: 1px solid #c2cad8
-// }
-// .form-group.form-md-line-input .input-group .input-group-control {
-// 	padding-top: 0;
-// 	position: relative;
-// 	display: table-cell;
-// 	vertical-align: bottom
-// }
-// .badge, .input-inline {
-// 	vertical-align: middle
-// }
-// .form-group.form-md-line-input .input-group .input-group-btn .btn {
-// 	-webkit-border-radius: 4px;
-// 	-moz-border-radius: 4px;
-// 	-ms-border-radius: 4px;
-// 	-o-border-radius: 4px;
-// 	border-radius: 4px
-// }
-// .form-group.form-md-line-input .input-group .input-group-btn.btn-left .btn {
-// 	margin-right: 10px
-// }
-// .form-group.form-md-line-input .input-group .input-group-btn.btn-right .btn {
-// 	margin-left: 10px
-// }
-// .form-group.form-md-line-input .input-group .help-block {
-// 	margin-top: 35px
-// }
-// .form-group.form-md-line-input .input-group.input-group-sm .help-block {
-// 	margin-top: 30px
-// }
-// .form-group.form-md-line-input .input-group.input-group-lg .help-block {
-// 	margin-top: 47px
-// }
-// .form-group.form-md-line-input.has-success .form-control {
-// 	border-bottom: 1px solid #27a4b0
-// }
-// .form-group.form-md-line-input.has-success .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-success .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input.has-success .form-control.form-control-static~.form-control-focus:after, .form-group.form-md-line-input.has-success .form-control.form-control-static~label:after, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly])~label:after {
-// 	background: #27a4b0
-// }
-// .form-group.form-md-line-input.has-success .input-group-addon {
-// 	color: #27a4b0;
-// 	border-bottom: 1px solid #27a4b0
-// }
-// .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly])~i, .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly])~label, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly])~i, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.has-warning .form-control.form-control-static~.help-block, .form-group.form-md-line-input.has-warning .form-control.form-control-static~i, .form-group.form-md-line-input.has-warning .form-control.form-control-static~label, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly])~i, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.has-warning label {
-// 	color: #c29d0b
-// }
-// .form-group.form-md-line-input.has-warning .form-control {
-// 	border-bottom: 1px solid #c29d0b
-// }
-// .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input.has-warning .form-control.form-control-static~.form-control-focus:after, .form-group.form-md-line-input.has-warning .form-control.form-control-static~label:after, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly])~label:after {
-// 	background: #c29d0b
-// }
-// .form-group.form-md-line-input.has-warning .input-group-addon {
-// 	color: #c29d0b;
-// 	border-bottom: 1px solid #c29d0b
-// }
-// .form-group.form-md-line-input.has-error .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input.has-error .form-control.edited:not([readonly])~i, .form-group.form-md-line-input.has-error .form-control.edited:not([readonly])~label, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly])~i, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.has-error .form-control.form-control-static~.help-block, .form-group.form-md-line-input.has-error .form-control.form-control-static~i, .form-group.form-md-line-input.has-error .form-control.form-control-static~label, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly])~i, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.has-error label {
-// 	color: #e73d4a
-// }
-// .form-group.form-md-line-input.has-error .form-control {
-// 	border-bottom: 1px solid #e73d4a
-// }
-// .form-group.form-md-line-input.has-error .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-error .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input.has-error .form-control.form-control-static~.form-control-focus:after, .form-group.form-md-line-input.has-error .form-control.form-control-static~label:after, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly])~label:after {
-// 	background: #e73d4a
-// }
-// .form-group.form-md-line-input.has-error .input-group-addon {
-// 	color: #e73d4a;
-// 	border-bottom: 1px solid #e73d4a
-// }
-// .form-group.form-md-line-input.has-info .form-control.edited:not([readonly])~.help-block, .form-group.form-md-line-input.has-info .form-control.edited:not([readonly])~i, .form-group.form-md-line-input.has-info .form-control.edited:not([readonly])~label, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly])~i, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.has-info .form-control.form-control-static~.help-block, .form-group.form-md-line-input.has-info .form-control.form-control-static~i, .form-group.form-md-line-input.has-info .form-control.form-control-static~label, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly])~.help-block, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly])~i, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.has-info label {
-// 	color: #327ad5
-// }
-// .form-group.form-md-line-input.has-info .form-control {
-// 	border-bottom: 1px solid #327ad5
-// }
-// .form-group.form-md-line-input.has-info .form-control.edited:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-info .form-control.edited:not([readonly])~label:after, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly])~label:after, .form-group.form-md-line-input.has-info .form-control.form-control-static~.form-control-focus:after, .form-group.form-md-line-input.has-info .form-control.form-control-static~label:after, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly])~.form-control-focus:after, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly])~label:after {
-// 	background: #327ad5
-// }
-// .form-group.form-md-line-input.has-info .input-group-addon {
-// 	color: #327ad5;
-// 	border-bottom: 1px solid #327ad5
-// }
 // .form-inline .form-md-line-input {
-// 	margin: 0 20px 0 0
-// }
-// .form-inline .form-md-line-input>.input-icon {
-// 	padding: 0
-// }
-// .form-horizontal .form-group.form-md-line-input .input-icon .form-control {
-// 	padding-left: 33px
-// }
-// .form-horizontal .form-group.form-md-line-input .input-icon>i {
-// 	top: 0
-// }
-// .form-horizontal .form-group.form-md-line-input .input-icon.right .form-control {
-// 	padding-left: 0;
-// 	padding-right: 33px
-// }
-// .form-horizontal .form-group.form-md-line-input .input-group>.input-group-btn .btn {
-// 	margin-bottom: 0 !important
-// }
+//   margin: 0;
+//   padding-top: 0;
+//   margin-right: 20px; }
+//   .form-inline .form-md-line-input > .input-icon {
+//     padding: 0; }
 
+// .form-horizontal .form-group.form-md-line-input .input-icon .form-control {
+//   padding-left: 33px; }
+
+// .form-horizontal .form-group.form-md-line-input .input-icon > i {
+//   top: 0; }
+
+// .form-horizontal .form-group.form-md-line-input .input-icon.right .form-control {
+//   padding-left: 0;
+//   padding-right: 33px; }
+
+// .form-horizontal .form-group.form-md-line-input .input-icon > .form-control-focus {
+//   left: 0 !important;
+//   right: 0 !important; }
+
+// .form-horizontal .form-group.form-md-line-input .input-group {
+//   padding-top: 0; }
+//   .form-horizontal .form-group.form-md-line-input .input-group > .input-group-btn .btn {
+//     margin-bottom: 0 !important; }
+//   .form-horizontal .form-group.form-md-line-input .input-group > .input-group-control {
+//     padding-top: 0; }
+//     .form-horizontal .form-group.form-md-line-input .input-group > .input-group-control > .form-control-focus {
+//       left: 0 !important;
+//       right: 0 !important; }
+//   .form-horizontal .form-group.form-md-line-input .input-group > .form-control-focus {
+//     left: 0 !important;
+//     right: 0 !important; }
 
 
 .form-horizontal .control-label {
@@ -1266,37 +1206,32 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 		font-size: 12px;
 		text-align: center;
 		background: #1476E5;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		box-sizing: border-box;
-		-webkit-transition: width 0.6s ease;
-		-moz-transition: width 0.6s ease;
-		-ms-transition: width 0.6s ease;
-		-o-transition: width 0.6s ease;
-		transition: width 0.6s ease;
+		@include box-sizing(border-box);
+		@include transition(width .6s ease);
+		&.bar-primary {
+			background: $primaryBg;
+		}
+		&.bar-success {
+			background: $successBg;
+		}
+		&.bar-warning {
+			background: $warningBg;
+		}
+		&.bar-danger {
+			background: $dangerBg;
+		}
+		&.bar-violet {
+			background: $violetBg;
+		}
+		&.bar-black {
+			background: $blackBg;
+		}
+		&.bar-grey {
+			background: $greyBg;
+		}
 	}
-	.bar-primary {
-		background: $primaryBg;
-	}
-	.bar-success {
-		background: $successBg;
-	}
-	.bar-warning {
-		background: $warningBg;
-	}
-	.bar-danger {
-		background: $dangerBg;
-	}
-	.bar-violet {
-		background: $violetBg;
-	}
-	.bar-black {
-		background: $blackBg;
-	}
-	.bar-grey {
-		background: $greyBg;
-	}
+	
+	
 }
 
 /********************modal*********************/
@@ -1305,10 +1240,8 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 }
 .fade {
 	opacity: 0;
-	-webkit-transition: opacity .15s linear;
-	-moz-transition: opacity .15s linear;
-	-o-transition: opacity .15s linear;
-	transition: opacity .15s linear;
+	@include transition(opacity .15s linear);
+	
 }
 .fade.in {
 	opacity: 1;
@@ -1317,10 +1250,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	position: relative;
 	height: 0;
 	overflow: hidden;
-	-webkit-transition: height .35s ease;
-	-moz-transition: height .35s ease;
-	-o-transition: height .35s ease;
-	transition: height .35s ease
+	@include transition(height .35s ease);
 }
 .collapse.in {
 	height: auto
@@ -1377,20 +1307,13 @@ button.close {
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	*border: 1px solid #999;
 	outline: 0;
-	-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-	-webkit-background-clip: padding-box;
-	-moz-background-clip: padding-box;
-	background-clip: padding-box
+	@include box-shadow(0 3px 7px rgba(0, 0, 0, 0.3));
+	@include background-clip(padding-box);
 }
 
 .modal.fade {
 	top: -25%;
-	-webkit-transition: opacity .3s linear, top .3s ease-out;
-	-moz-transition: opacity .3s linear, top .3s ease-out;
-	-o-transition: opacity .3s linear, top .3s ease-out;
-	transition: opacity .3s linear, top .3s ease-out;
+	@include transition(opacity .3s linear, top .3s ease-out);
 }
 .modal.fade.in {
 	top: 10%
@@ -1422,13 +1345,9 @@ button.close {
 	text-align: right;
 	background-color: #f5f5f5;
 	border-top: 1px solid #ddd;
-	-webkit-border-radius: 0 0 6px 6px;
-	-moz-border-radius: 0 0 6px 6px;
-	border-radius: 0 0 6px 6px;
+	@include border-radius(0 0 6px 6px);
+	@include box-shadow(inset 0 1px 0 #fff);
 	*zoom: 1;
-	-webkit-box-shadow: inset 0 1px 0 #fff;
-	-moz-box-shadow: inset 0 1px 0 #fff;
-	box-shadow: inset 0 1px 0 #fff
 }
 .modal-footer:before, .modal-footer:after {
 	display: table;
@@ -1463,15 +1382,11 @@ button.close {
 	background-color: #fff;
 	border: 1px solid #ccc;
 	border: 1px solid rgba(0, 0, 0, 0.2);
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-webkit-background-clip: padding-box;
-	-moz-background-clip: padding;
-	background-clip: padding-box
+
+	@include border-radius(6px);
+	@include box-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+	@include background-clip(padding-box);
+	
 }
 .popover.top {
 	margin-top: -10px
@@ -1493,9 +1408,8 @@ button.close {
 	line-height: 18px;
 	background-color: #f7f7f7;
 	border-bottom: 1px solid #ebebeb;
-	-webkit-border-radius: 5px 5px 0 0;
-	-moz-border-radius: 5px 5px 0 0;
-	border-radius: 5px 5px 0 0
+	@include border-radius(5px 5px 0 0);
+
 }
 .popover-title:empty {
 	display: none
