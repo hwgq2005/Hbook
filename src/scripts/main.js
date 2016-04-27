@@ -12,9 +12,10 @@
 
 	//初始化模板
 	index.init=function(){
-		this.template();
+		index.template();
 		prettyPrint();
 	}
+
 
 	//加载模板
 	index.template=function(){
@@ -26,7 +27,7 @@
 			var aa=$('#modal').modal('show');
 		})
 		$('[data-toggle="tooltip"]').tooltip();
-		this.page('.h-page');
+		index.page('.page');
 	}
 
 	//分页
@@ -43,7 +44,7 @@
 
 	}
 
-	global.index=index;
+	global.index=index.init;
 
 }(this))
 	

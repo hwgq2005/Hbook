@@ -470,12 +470,11 @@
 </pre>
 		    <h3>表单类型二</h3>
 	        <div class="docs-example docs-input">
-	        	<div class="form-group form-line-input inline">
-                    <input type="text" class="form-control"  id="form-control-1"  disabled="disabled" value="张三">
+	        	<div class="form-group form-line-input">
+                    <input type="text" class="form-control"  id="form-control-1" >
                     <label for="form-control-1">姓名</label>
-
                 </div>
-                <div class="form-group form-line-input has-success inline">
+                <div class="form-group form-line-input ">
                     <input type="text" class="form-control"  id="form-control-2" >
                     <label for="form-control-2">年龄</label>
                     <span class="help-block">限制在10字以内</span>
@@ -483,14 +482,14 @@
                 <div class="form-group form-line-input has-success">
                 	<select class="form-control" name="" id="form-control-3">
                 		<option value=" "></option>
-                		<option value="1">选项2</option>
-                		<option value="2">选项3</option>
+                		<option value="1">男</option>
+                		<option value="2">女</option>
                 	</select>
-                    <label for="form-control-3">简介</label>
+                    <label for="form-control-3">性别</label>
                 </div>
                 <div class="form-group form-line-input has-success">
                 	<textarea class="form-control" name="" id="form-control-4" rows="3" ></textarea>
-                    <label for="form-control-4">简介</label>
+                    <label for="form-control-4">描述</label>
                      <span class="help-block">限制在100字以内</span>
                 </div>
 	        </div>
@@ -884,6 +883,7 @@
 	<script src="dist/scripts/lib/jquery.scrollTo/jquery.scrollTo.min.js"></script>
     <script src="dist/scripts/component/prettify.min.js"></script>
     <script src="dist/scripts/component/bootstrap-transition.min.js"></script>
+    <script src="dist/scripts/component/hbook-form.min.js"></script>	
     <script src="dist/scripts/component/hbook-page.min.js"></script>	
     <script src="dist/scripts/component/tooltip.min.js"></script>	
     <script src="dist/scripts/component/bootstrap-popover.min.js"></script>	
@@ -899,7 +899,7 @@
 	})();
 	</script>
     <script>
-    	index.init();
+    	index();
     </script>
 
  </body>
