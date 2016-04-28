@@ -551,11 +551,210 @@ label {
 }
 
 /********************form*********************/
-label, input, button, select, textarea {
+label, 
+input, 
+button, 
+select, 
+textarea {
 	font-size: 14px;
 	font-weight: normal;
 	line-height: 20px;
 }
+
+select, 
+textarea, 
+input[type="text"], 
+input[type="password"] {
+	display: inline-block;
+    height: 34px;
+    padding: 6px 12px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #555;
+	vertical-align: middle;
+}
+select {
+	width: 220px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 7px 6px;
+	height: 38px;
+	line-height: 38px;
+}
+textarea {
+	height: auto;
+	overflow: hidden;
+}
+.form-search input, 
+.form-inline input, 
+.form-horizontal input, 
+.form-search textarea, 
+.form-inline textarea, 
+.form-horizontal textarea, 
+.form-search select, 
+.form-inline select, 
+.form-horizontal select, 
+.form-search .help-inline, 
+.form-inline .help-inline, 
+.form-horizontal .help-inline, 
+.form-search .uneditable-input, 
+.form-inline .uneditable-input, 
+.form-horizontal .uneditable-input, 
+.form-search .input-prepend, 
+.form-inline .input-prepend, 
+.form-horizontal .input-prepend, 
+.form-search .input-append, 
+.form-inline .input-append, 
+.form-horizontal .input-append {
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+
+textarea, 
+input[type="text"], 
+input[type="password"] {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	&:focus{
+		border-color: lighten($primaryBg,10%);
+		@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px lighten($primaryBg,10%));
+		outline: 0;
+		outline: thin dotted \9; /* IE6-9 */
+	}
+}
+input[type="checkbox"] {
+	margin: 4px 0 0;
+	margin-top: 1px \9;
+	line-height: normal;
+	outline:none;
+	-webkit-appearance: none;
+  	user-select: none;
+  	width:18px;
+  	height: 18px;
+  	border:1px solid #ddd;
+  	text-align:center;
+  	vertical-align: middle;
+  	&:hover{
+  		border:1px solid $primaryBg;
+  	}
+  	&:after{
+  		display:block;
+		content: '\2713';
+		color:#fff;
+		font-size: 12px;
+  	}
+  	&:checked{
+  		background:$primaryBg;
+		border:1px solid $primaryBg;
+  	}
+}
+
+input[type="radio"]{
+	@extend input[type="checkbox"];
+	border-radius:50%;
+	&:hover{
+  		@extend input[type="checkbox"]:hover;
+  	}
+  	&:after{
+  		@extend input[type="checkbox"]:after;
+  	}
+  	&:checked{
+  		@extend input[type="checkbox"]:checked;
+  	}
+}
+
+input[type="image"], input[type="checkbox"], input[type="radio"] {
+	padding: 0;
+	margin: 4px 0;
+	line-height: normal;
+	cursor: pointer;
+	border: 0 \9;
+}
+
+
+/*defaul form */
+.form-horizontal{
+	.control-label {
+		float: left;
+		width: 76px;
+		padding-top: 8px;
+		text-align: left;
+		color: #6b6a68;
+	}
+	.words {
+		padding-top: 0px;
+	}
+	.control-group {
+		margin-bottom: 20px;
+		&:before{
+			display: block;
+			line-height: 0;
+			content: "";
+		}
+		&:after{
+			clear: both;
+			@extend .control-group:before;
+		}
+	}
+	.control-group-list{
+		.control-label {
+			width: 100px;
+		}
+		.controls {
+			margin-left: 110px;
+			.help-inline {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+.input-mini {
+	width: $formLength;
+}
+.input-small {
+	width: $formLength + 60px;
+}
+.input-large {
+	width: $formLength +140px;
+}
+.input-xlarge {
+	width: $formLength +270px;
+}
+.input-xxlarge {
+	width: $formLength +370px;
+}
+
+.radio, .checkbox {
+	padding-left: 18px;
+	min-height: 20px;
+}
+.radio input[type="radio"], .checkbox input[type="checkbox"] {
+	display:inline-block;
+	margin-left: -20px;
+}
+.controls>.radio:first-child, .controls>.checkbox:first-child {
+	padding-top: 5px;
+}
+.radio.inline, .checkbox.inline {
+	display: inline-block;
+	padding-top: 5px;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+.radio.inline+.radio.inline, .checkbox.inline+.checkbox.inline {
+	margin-left: 10px;
+}
+.help-inline {
+	display: inline-block;
+	padding-left: 5px;
+	vertical-align: middle;
+	font-size: 13px;
+	color: #999;
+}
+
+/*line form*/
 .form-group.form-line-input{
 	position: relative;
 	margin-bottom:30px;
@@ -616,9 +815,12 @@ label, input, button, select, textarea {
 			border-bottom: 1px solid #eee;
 			&~label{
 				top: 0;
-				font-size: 12px;
+				font-size: 13px;
 				pointer-events: none;
 				
+			}
+			&~.help-block{
+				opacity: 1;
 			}
 		}
 		&:not([readonly]){
@@ -647,7 +849,7 @@ label, input, button, select, textarea {
 		bottom:-20px;
 	    margin: 2px 0 0;
 	    opacity: 0;
-	    font-size: 13px;
+	    font-size: 12px;
 	    color:#ccc;
 	}
 	&.has-success{
@@ -698,502 +900,7 @@ label, input, button, select, textarea {
 	}
 }
 
-// .form-group.form-md-line-input {
-//   position: relative;
-//   margin: 0 0 35px 0;
-//   padding-top: 20px; }
-//   .form-horizontal .form-group.form-md-line-input {
-//     padding-top: 10px;
-//     margin-bottom: 20px;
-//     margin: 0 -15px 20px -15px; }
-//   .form-horizontal .form-group.form-md-line-input > label {
-//     padding-top: 5px;
-//     font-size: 14px;
-//     color: #888888;
-//     opacity: 1 ;
-//     filter: alpha(opacity=100) ; }
-//   .form-group.form-md-line-input .form-control {
-//     background: none;
-//     border: 0;
-//     border-bottom: 1px solid #c2cad8;
-//     -webkit-border-radius: 0;
-//     -moz-border-radius: 0;
-//     -ms-border-radius: 0;
-//     -o-border-radius: 0;
-//     border-radius: 0;
-//     color: #555555;
-//     box-shadow: none;
-//     padding-left: 0;
-//     padding-right: 0;
-//     font-size: 14px; }
-//     .form-group.form-md-line-input .form-control::-moz-placeholder {
-//       color: #999;
-//       opacity: 1; }
-//     .form-group.form-md-line-input .form-control:-ms-input-placeholder {
-//       color: #999; }
-//     .form-group.form-md-line-input .form-control::-webkit-input-placeholder {
-//       color: #999; }
-//     .form-group.form-md-line-input .form-control.form-control-static {
-//       border-bottom: 0; }
-//     .form-group.form-md-line-input .form-control.input-sm {
-//       font-size: 14px;
-//       padding: 6px 0; }
-//     .form-group.form-md-line-input .form-control.input-lg {
-//       font-size: 20px;
-//       padding: 14px 0; }
-//     .form-group.form-md-line-input .form-control ~ label,
-//     .form-group.form-md-line-input .form-control ~ .form-control-focus {
-//       width: 100%;
-//       position: absolute;
-//       left: 0;
-//       bottom: 0;
-//       pointer-events: none; }
-//       .form-horizontal .form-group.form-md-line-input .form-control ~ label, .form-horizontal
-//       .form-group.form-md-line-input .form-control ~ .form-control-focus {
-//         width: auto;
-//         left: 15px;
-//         right: 15px; }
-//       .form-group.form-md-line-input .form-control ~ label:after,
-//       .form-group.form-md-line-input .form-control ~ .form-control-focus:after {
-//         content: '';
-//         position: absolute;
-//         z-index: 5;
-//         bottom: 0;
-//         left: 50%;
-//         width: 0;
-//         height: 2px;
-//         width: 0;
-//         visibility: hidden;
-//         transition: 0.2s ease all; }
-//     .form-group.form-md-line-input .form-control ~ label {
-//       top: 0;
-//       margin-bottom: 0;
-//       font-size: 14px;
-//       color: #888888;
-//       opacity: 1 ;
-//       filter: alpha(opacity=100) ; }
-//     .form-group.form-md-line-input .form-control ~ .help-block-error {
-//       opacity: 1 ;
-//       filter: alpha(opacity=100) ; }
-//     .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ label,
-//     .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ .form-control-focus, .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ label,
-//     .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ .form-control-focus, .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ label,
-//     .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ .form-control-focus {
-//       color: #888888; }
-//       .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ label:after,
-//       .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ label:after,
-//       .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ label:after,
-//       .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ .form-control-focus:after {
-//         visibility: visible;
-//         left: 0;
-//         width: 100%;
-//         background: #36c6d3; }
-//     .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ label, .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ label {
-//       opacity: 1 ;
-//       filter: alpha(opacity=100) ; }
-//     .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ .help-block, .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ .help-block, .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ .help-block {
-//       color: #36c6d3;
-//       opacity: 1 ;
-//       filter: alpha(opacity=100) ; }
-//     .form-group.form-md-line-input .form-control.edited:not([readonly]) ~ .help-block-error, .form-group.form-md-line-input .form-control:focus:not([readonly]) ~ .help-block-error, .form-group.form-md-line-input .form-control.focus:not([readonly]) ~ .help-block-error {
-//       opacity: 0 ;
-//       filter: alpha(opacity=0) ; }
-//     .form-group.form-md-line-input .form-control[readonly], .form-group.form-md-line-input .form-control[disabled],
-//     fieldset[disabled] .form-group.form-md-line-input .form-control {
-//       background: none;
-//       cursor: not-allowed;
-//       border-bottom: 1px dashed #c2cad8; }
-//   .form-group.form-md-line-input.form-md-floating-label .form-control ~ label {
-//     font-size: 16px;
-//     top: 25px;
-//     transition: 0.2s ease all;
-//     color: #999; }
-//   .form-group.form-md-line-input.form-md-floating-label .form-control[readonly] ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.edited ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.form-control-static ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.focus:not([readonly]) ~ label {
-//     top: 0;
-//     font-size: 13px; }
-//   .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm ~ label {
-//     font-size: 14px;
-//     top: 24px; }
-//   .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm[readonly] ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.form-control-static ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.edited ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm:focus:not([readonly]) ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-sm.focus:not([readonly]) ~ label {
-//     top: 0;
-//     font-size: 13px; }
-//   .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg ~ label {
-//     font-size: 20px;
-//     top: 30px; }
-//   .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg[readonly] ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.edited ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.form-control-static ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg:focus:not([readonly]) ~ label, .form-group.form-md-line-input.form-md-floating-label .form-control.input-lg.focus:not([readonly]) ~ label {
-//     top: 0;
-//     font-size: 13px; }
-//   .form-group.form-md-line-input.form-md-floating-label .input-icon > label {
-//     padding-left: 34px; }
-//   .form-group.form-md-line-input.form-md-floating-label .input-icon.right > label {
-//     padding-left: 0;
-//     padding-right: 34px; }
-//   .form-group.form-md-line-input.form-md-floating-label .input-group.left-addon label {
-//     padding-left: 34px; }
-//   .form-group.form-md-line-input.form-md-floating-label .input-group.right-addon label {
-//     padding-right: 34px; }
-//   .form-group.form-md-line-input + .input-icon {
-//     padding-top: 0; }
-//   .form-group.form-md-line-input .help-block {
-//     position: absolute;
-//     margin: 2px 0 0 0;
-//     opacity: 0 ;
-//     filter: alpha(opacity=0) ;
-//     font-size: 13px; }
-//   .form-group.form-md-line-input > .input-icon > i {
-//     left: 0;
-//     bottom: 0;
-//     margin: 9px 2px 10px 10px;
-//     color: #888888; }
-//   .form-group.form-md-line-input > .input-icon.input-icon-lg > i {
-//     top: 6px; }
-//   .form-group.form-md-line-input > .input-icon.input-icon-sm > i {
-//     top: -1px; }
-//   .form-group.form-md-line-input > .input-icon .form-control {
-//     padding-left: 34px; }
-//   .form-group.form-md-line-input > .input-icon > label {
-//     margin-top: -20px; }
-//   .form-group.form-md-line-input > .input-icon.right .form-control {
-//     padding-left: 0;
-//     padding-right: 34px; }
-//   .form-group.form-md-line-input > .input-icon.right > i {
-//     left: auto;
-//     right: 8px;
-//     margin: 11px 2px 10px 10px; }
-//   .form-group.form-md-line-input + .input-group {
-//     padding-top: 0; }
-//   .form-group.form-md-line-input .input-group {
-//     padding-top: 0; }
-//     .form-group.form-md-line-input .input-group > label {
-//       margin-top: -20px; }
-//     .form-group.form-md-line-input .input-group .input-group-addon {
-//       -webkit-border-radius: 0;
-//       -moz-border-radius: 0;
-//       -ms-border-radius: 0;
-//       -o-border-radius: 0;
-//       border-radius: 0;
-//       background: none;
-//       border: 0;
-//       border-bottom: 1px solid #c2cad8; }
-//     .form-group.form-md-line-input .input-group + .input-group-control {
-//       padding-top: 0; }
-//     .form-group.form-md-line-input .input-group .input-group-control {
-//       padding-top: 0;
-//       position: relative;
-//       display: table-cell;
-//       vertical-align: bottom; }
-//       .form-group.form-md-line-input .input-group .input-group-control > label {
-//         margin-top: -20px; }
-//     .form-group.form-md-line-input .input-group .input-group-btn .btn {
-//       -webkit-border-radius: 4px;
-//       -moz-border-radius: 4px;
-//       -ms-border-radius: 4px;
-//       -o-border-radius: 4px;
-//       border-radius: 4px; }
-//     .form-group.form-md-line-input .input-group .input-group-btn.btn-left .btn {
-//       margin-right: 10px; }
-//     .form-group.form-md-line-input .input-group .input-group-btn.btn-right .btn {
-//       margin-left: 10px; }
-//     .form-group.form-md-line-input .input-group .help-block {
-//       margin-top: 35px; }
-//     .form-group.form-md-line-input .input-group.input-group-sm .help-block {
-//       margin-top: 30px; }
-//     .form-group.form-md-line-input .input-group.input-group-lg .help-block {
-//       margin-top: 47px; }
-//   .form-group.form-md-line-input.has-success .form-control {
-//     border-bottom: 1px solid #27a4b0; }
-    // .form-group.form-md-line-input.has-success .form-control.edited:not([readonly]) ~ label:after,
-    // .form-group.form-md-line-input.has-success .form-control.edited:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-success .form-control.form-control-static ~ label:after,
-    // .form-group.form-md-line-input.has-success .form-control.form-control-static ~ .form-control-focus:after, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly]) ~ label:after,
-    // .form-group.form-md-line-input.has-success .form-control:focus:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly]) ~ label:after,
-    // .form-group.form-md-line-input.has-success .form-control.focus:not([readonly]) ~ .form-control-focus:after {
-    //   background: #27a4b0; }
-    // .form-group.form-md-line-input.has-success .form-control.edited:not([readonly]) ~ label, .form-group.form-md-line-input.has-success .form-control.form-control-static ~ label, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly]) ~ label {
-    //   color: #27a4b0; }
-    // .form-group.form-md-line-input.has-success .form-control.edited:not([readonly]) ~ i, .form-group.form-md-line-input.has-success .form-control.form-control-static ~ i, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly]) ~ i, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly]) ~ i {
-    //   color: #27a4b0; }
-    // .form-group.form-md-line-input.has-success .form-control.edited:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-success .form-control.form-control-static ~ .help-block, .form-group.form-md-line-input.has-success .form-control:focus:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-success .form-control.focus:not([readonly]) ~ .help-block {
-    //   color: #27a4b0; }
-//   .form-group.form-md-line-input.has-success .input-group-addon {
-//     color: #27a4b0;
-//     border-bottom: 1px solid #27a4b0; }
-//   .form-group.form-md-line-input.has-success label {
-//     color: #27a4b0; }
-//   .form-group.form-md-line-input.has-warning .form-control {
-//     border-bottom: 1px solid #c29d0b; }
-//    
-//     
-//     .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly]) ~ label, .form-group.form-md-line-input.has-warning .form-control.form-control-static ~ label, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly]) ~ label {
-//       color: #c29d0b; }
-//     .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly]) ~ i, .form-group.form-md-line-input.has-warning .form-control.form-control-static ~ i, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly]) ~ i, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly]) ~ i {
-//       color: #c29d0b; }
-//     .form-group.form-md-line-input.has-warning .form-control.edited:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-warning .form-control.form-control-static ~ .help-block, .form-group.form-md-line-input.has-warning .form-control:focus:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-warning .form-control.focus:not([readonly]) ~ .help-block {
-//       color: #c29d0b; }
-//   .form-group.form-md-line-input.has-warning .input-group-addon {
-//     color: #c29d0b;
-//     border-bottom: 1px solid #c29d0b; }
-//   .form-group.form-md-line-input.has-warning label {
-//     color: #c29d0b; }
-//   .form-group.form-md-line-input.has-error .form-control {
-//     border-bottom: 1px solid #e73d4a; }
-//     .form-group.form-md-line-input.has-error .form-control.edited:not([readonly]) ~ label:after,
-//     .form-group.form-md-line-input.has-error .form-control.edited:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-error .form-control.form-control-static ~ label:after,
-//     .form-group.form-md-line-input.has-error .form-control.form-control-static ~ .form-control-focus:after, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly]) ~ label:after,
-//     .form-group.form-md-line-input.has-error .form-control:focus:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly]) ~ label:after,
-//     .form-group.form-md-line-input.has-error .form-control.focus:not([readonly]) ~ .form-control-focus:after {
-//       background: #e73d4a; }
-//     .form-group.form-md-line-input.has-error .form-control.edited:not([readonly]) ~ label, .form-group.form-md-line-input.has-error .form-control.form-control-static ~ label, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly]) ~ label {
-//       color: #e73d4a; }
-//     .form-group.form-md-line-input.has-error .form-control.edited:not([readonly]) ~ i, .form-group.form-md-line-input.has-error .form-control.form-control-static ~ i, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly]) ~ i, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly]) ~ i {
-//       color: #e73d4a; }
-//     .form-group.form-md-line-input.has-error .form-control.edited:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-error .form-control.form-control-static ~ .help-block, .form-group.form-md-line-input.has-error .form-control:focus:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-error .form-control.focus:not([readonly]) ~ .help-block {
-//       color: #e73d4a; }
-//   .form-group.form-md-line-input.has-error .input-group-addon {
-//     color: #e73d4a;
-//     border-bottom: 1px solid #e73d4a; }
-//   .form-group.form-md-line-input.has-error label {
-//     color: #e73d4a; }
-//   .form-group.form-md-line-input.has-info .form-control {
-//     border-bottom: 1px solid #327ad5; }
-//     .form-group.form-md-line-input.has-info .form-control.edited:not([readonly]) ~ label:after,
-//     .form-group.form-md-line-input.has-info .form-control.edited:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-info .form-control.form-control-static ~ label:after,
-//     .form-group.form-md-line-input.has-info .form-control.form-control-static ~ .form-control-focus:after, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly]) ~ label:after,
-//     .form-group.form-md-line-input.has-info .form-control:focus:not([readonly]) ~ .form-control-focus:after, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly]) ~ label:after,
-//     .form-group.form-md-line-input.has-info .form-control.focus:not([readonly]) ~ .form-control-focus:after {
-//       background: #327ad5; }
-//     .form-group.form-md-line-input.has-info .form-control.edited:not([readonly]) ~ label, .form-group.form-md-line-input.has-info .form-control.form-control-static ~ label, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly]) ~ label, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly]) ~ label {
-//       color: #327ad5; }
-//     .form-group.form-md-line-input.has-info .form-control.edited:not([readonly]) ~ i, .form-group.form-md-line-input.has-info .form-control.form-control-static ~ i, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly]) ~ i, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly]) ~ i {
-//       color: #327ad5; }
-//     .form-group.form-md-line-input.has-info .form-control.edited:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-info .form-control.form-control-static ~ .help-block, .form-group.form-md-line-input.has-info .form-control:focus:not([readonly]) ~ .help-block, .form-group.form-md-line-input.has-info .form-control.focus:not([readonly]) ~ .help-block {
-//       color: #327ad5; }
-//   .form-group.form-md-line-input.has-info .input-group-addon {
-//     color: #327ad5;
-//     border-bottom: 1px solid #327ad5; }
-//   .form-group.form-md-line-input.has-info label {
-//     color: #327ad5; }
-
-// .form-inline .form-md-line-input {
-//   margin: 0;
-//   padding-top: 0;
-//   margin-right: 20px; }
-//   .form-inline .form-md-line-input > .input-icon {
-//     padding: 0; }
-
-// .form-horizontal .form-group.form-md-line-input .input-icon .form-control {
-//   padding-left: 33px; }
-
-// .form-horizontal .form-group.form-md-line-input .input-icon > i {
-//   top: 0; }
-
-// .form-horizontal .form-group.form-md-line-input .input-icon.right .form-control {
-//   padding-left: 0;
-//   padding-right: 33px; }
-
-// .form-horizontal .form-group.form-md-line-input .input-icon > .form-control-focus {
-//   left: 0 !important;
-//   right: 0 !important; }
-
-// .form-horizontal .form-group.form-md-line-input .input-group {
-//   padding-top: 0; }
-//   .form-horizontal .form-group.form-md-line-input .input-group > .input-group-btn .btn {
-//     margin-bottom: 0 !important; }
-//   .form-horizontal .form-group.form-md-line-input .input-group > .input-group-control {
-//     padding-top: 0; }
-//     .form-horizontal .form-group.form-md-line-input .input-group > .input-group-control > .form-control-focus {
-//       left: 0 !important;
-//       right: 0 !important; }
-//   .form-horizontal .form-group.form-md-line-input .input-group > .form-control-focus {
-//     left: 0 !important;
-//     right: 0 !important; }
-
-
-.form-horizontal .control-label {
-	float: left;
-	width: 76px;
-	padding-top: 8px;
-	text-align: left;
-	color: #6b6a68;
-}
-.form-horizontal .words {
-	padding-top: 0px;
-}
-.form-horizontal .control-group {
-	margin-bottom: 20px;
-}
-.form-horizontal .control-group-list .control-label {
-	width: 100px;
-}
-.form-horizontal .control-group-list .controls {
-	margin-left: 110px;
-}
-.form-horizontal .control-group-list .controls .help-inline {
-	font-size: 14px;
-}
-.control-group {
-	margin-bottom: 10px;
-}
-.form-horizontal .control-group:before, .form-horizontal .control-group:after {
-	display: block;
-	line-height: 0;
-	content: "";
-}
-.form-horizontal .control-group:after {
-	clear: both;
-}
-
-.form-horizontal .control-group-mini .control-label {
-	width: 120px;
-}
-.form-horizontal .control-group-mini .controls {
-	margin-left: 140px;
-}
-.form-horizontal .controls {
-	margin-left: 86px;
-}
-select, textarea, input[type="text"], input[type="password"] {
-	display: inline-block;
-	// width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-	font-size: 14px;
-	line-height: 20px;
-	color: #555;
-	vertical-align: middle;
-}
-select {
-	width: 220px;
-	background-color: #fff;
-	border: 1px solid #ccc;
-	padding: 7px 6px;
-	height: 38px;
-	line-height: 38px;
-}
-textarea {
-	height: auto;
-	overflow: hidden;
-}
-.form-search input, .form-inline input, .form-horizontal input, .form-search textarea, .form-inline textarea, .form-horizontal textarea, .form-search select, .form-inline select, .form-horizontal select, .form-search .help-inline, .form-inline .help-inline, .form-horizontal .help-inline, .form-search .uneditable-input, .form-inline .uneditable-input, .form-horizontal .uneditable-input, .form-search .input-prepend, .form-inline .input-prepend, .form-horizontal .input-prepend, .form-search .input-append, .form-inline .input-append, .form-horizontal .input-append {
-	display: inline-block;
-	margin-bottom: 0;
-	vertical-align: middle;
-}
-textarea, input[type="text"], input[type="password"] {
-	background-color: #fff;
-	border: 1px solid #ccc;
-	
-}
-textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
-	border-color: lighten($primaryBg,10%);
-	@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px lighten($primaryBg,10%));
-	outline: 0;
-	outline: thin dotted \9; /* IE6-9 */
-}
-.input-mini {
-	width: $formLength;
-}
-.input-small {
-	width: $formLength + 60px;
-}
-.input-large {
-	width: $formLength +140px;
-}
-.input-xlarge {
-	width: $formLength +270px;
-}
-.input-xxlarge {
-	width: $formLength +370px;
-}
-input[type="checkbox"] {
-	margin: 4px 0 0;
-	margin-top: 1px \9;
-	line-height: normal;
-	outline:none;
-	-webkit-appearance: none;
-  	user-select: none;
-  	width:18px;
-  	height: 18px;
-  	border:1px solid #ddd;
-  	text-align:center;
-  	vertical-align: middle;
-  	&:hover{
-  		border:1px solid $primaryBg;
-  	}
-  	&:after{
-  		display:block;
-		content: '\2713';
-		color:#fff;
-		font-size: 12px;
-  	}
-  	&:checked{
-  		background:$primaryBg;
-		border:1px solid $primaryBg;
-  	}
-}
-
-input[type="radio"]{
-	@extend input[type="checkbox"];
-	border-radius:50%;
-	&:hover{
-  		@extend input[type="checkbox"]:hover;
-  	}
-  	&:after{
-  		@extend input[type="checkbox"]:after;
-  	}
-  	&:checked{
-  		@extend input[type="checkbox"]:checked;
-  	}
-}
-
-input[type="image"], input[type="checkbox"], input[type="radio"] {
-	padding: 0;
-	margin: 4px 0;
-	line-height: normal;
-	cursor: pointer;
-	border: 0 \9;
-}
-.radio, .checkbox {
-	padding-left: 18px;
-	min-height: 20px;
-}
-.radio input[type="radio"], .checkbox input[type="checkbox"] {
-	display:inline-block;
-	margin-left: -20px;
-}
-.controls>.radio:first-child, .controls>.checkbox:first-child {
-	padding-top: 5px;
-}
-.radio.inline, .checkbox.inline {
-	display: inline-block;
-	padding-top: 5px;
-	margin-bottom: 0;
-	vertical-align: middle;
-}
-.radio.inline+.radio.inline, .checkbox.inline+.checkbox.inline {
-	margin-left: 10px;
-}
-.help-inline {
-	display: inline-block;
-	padding-left: 5px;
-	vertical-align: middle;
-	font-size: 13px;
-	color: #999;
-}
-
-/********************select********************/
-.search {
-	margin-bottom: 20px;
-}
-.search a {
-	vertical-align: top;
-	margin-top: -1px;
-}
-.search select, .search input {
-	margin-right: 10px;
-	margin-bottom: 0;
-}
-
-/********************scrollbar*********************/
+/********************progress bar*********************/
 .progress {
 	overflow: hidden;
 	height: 18px;
