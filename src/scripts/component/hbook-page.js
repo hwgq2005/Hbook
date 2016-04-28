@@ -11,7 +11,7 @@
  * @return {[type]} callback  [单击回调方法，返回当前页]
  */
 
-;(function($) {
+!function($) {
 	"use strict";
 
 	var Page=function(element, options){
@@ -167,4 +167,4 @@
 
 
 	
-})(window.jQuery);
+}(window.jQuery);

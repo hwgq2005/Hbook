@@ -4,7 +4,7 @@
  * @date    2015-12-07 11:03:23
  * @version 1.0
  */
-;(function(window){
+!function(window){
 
 	'use strict';
 
@@ -22,8 +22,9 @@
 		template:function(){
 
 			$('#header .nav a').click(function() {
-				var _id = $(this).attr('data-id');
-				var T=$('#'+_id).offset().top;
+				var _id = $(this).attr('data-id'),
+					  T = $('#'+_id).offset().top;
+
 				$('body').stop().animate({
 					scrollTop: T - 60
 				},500, 'linear', function() {
@@ -56,5 +57,5 @@
 
 	window.hbook=hbook.init;
 
-}(this))
+}(this);
 	

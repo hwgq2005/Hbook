@@ -5,7 +5,8 @@
  * @version 1.0
  * 
  */
-;(function($) {
+
+!function($) {
 
 	"use strict";
 
@@ -14,7 +15,8 @@
 	formControl.on('focus',function(){
 		var $self = $(this);
 		$self.addClass('edited');
-	}).on('blur',function(){
+	})
+	.on('blur',function(){
 		var $self = $(this),
 			val   = $.trim($self.val());
 		if (!val) {
@@ -22,4 +24,4 @@
 		}
 	})
 	
-}(window.jQuery));
+}(window.jQuery);
