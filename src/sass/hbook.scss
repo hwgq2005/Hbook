@@ -637,7 +637,6 @@ label, input, button, select, textarea {
 				}
 				&~.help-block{
 					opacity: 1;
-
 				}
 			}
 		}
@@ -669,8 +668,33 @@ label, input, button, select, textarea {
 					}
 				}
 			}
+			// &~.help-block{
+			// 	color:$successBg;
+			// }
 		}
-
+	}
+	&.has-error{
+		.form-control{
+			&:focus{
+				&~label{
+					color:$dangerBg;
+					&:after{
+				        background:$dangerBg;
+					}
+				}
+			}
+			&.edited{
+				&~label{
+					color:$dangerBg!important;
+					&:after{
+				        background:$dangerBg;
+					}
+				}
+			}
+			&~.help-block{
+				color:$dangerBg;
+			}
+		}
 	}
 }
 

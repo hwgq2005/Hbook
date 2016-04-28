@@ -638,6 +638,16 @@ label, input, button, select, textarea {
     color: #33CCCC !important; }
     .form-group.form-line-input.has-success .form-control.edited ~ label:after {
       background: #33CCCC; }
+  .form-group.form-line-input.has-error .form-control:focus ~ label {
+    color: #FF9999; }
+    .form-group.form-line-input.has-error .form-control:focus ~ label:after {
+      background: #FF9999; }
+  .form-group.form-line-input.has-error .form-control.edited ~ label {
+    color: #FF9999 !important; }
+    .form-group.form-line-input.has-error .form-control.edited ~ label:after {
+      background: #FF9999; }
+  .form-group.form-line-input.has-error .form-control ~ .help-block {
+    color: #FF9999; }
 
 .form-horizontal .control-label {
   float: left;
