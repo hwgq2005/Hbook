@@ -12,8 +12,8 @@ var Form=function() {
 
 	var formControl=$('.form-line-input .form-control');
 
-	formControl.on('change',function(){
-		var $self=$(this);
+	formControl.on('focus',function(){
+		var $self = $(this);
 		$self.addClass('edited');
 	}).on('blur',function(){
 		var $self = $(this),
@@ -22,5 +22,7 @@ var Form=function() {
 			$self.removeClass('edited');	
 		}
 	})
+
+
 	
 }();

@@ -542,16 +542,18 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     border-bottom: 1px solid #c2cad8;
     display: bolck;
     overflow: auto; }
-    .form-group.form-line-input .form-control.edited ~ label {
-      top: 0;
-      font-size: 13px; }
-      .form-group.form-line-input .form-control.edited ~ label:after {
-        left: 0;
-        width: 100%;
-        visibility: visible;
-        background: #66CCFF; }
-    .form-group.form-line-input .form-control.edited ~ .help-block {
-      opacity: 1; }
+    .form-group.form-line-input .form-control.edited {
+      outline: none; }
+      .form-group.form-line-input .form-control.edited ~ label {
+        top: 0;
+        font-size: 13px; }
+        .form-group.form-line-input .form-control.edited ~ label:after {
+          left: 0;
+          width: 100%;
+          visibility: visible;
+          background: #66CCFF; }
+      .form-group.form-line-input .form-control.edited ~ .help-block {
+        opacity: 1; }
     .form-group.form-line-input .form-control ~ label {
       width: 100%;
       position: absolute;
@@ -590,18 +592,6 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
         font-size: 13px; }
       .form-group.form-line-input .form-control:disabled ~ .help-block {
         opacity: 1; }
-    .form-group.form-line-input .form-control:not([readonly]):focus {
-      outline: none; }
-      .form-group.form-line-input .form-control:not([readonly]):focus ~ label {
-        top: 0;
-        font-size: 13px; }
-        .form-group.form-line-input .form-control:not([readonly]):focus ~ label:after {
-          left: 0;
-          width: 100%;
-          visibility: visible;
-          background: #66CCFF; }
-      .form-group.form-line-input .form-control:not([readonly]):focus ~ .help-block {
-        opacity: 1; }
   .form-group.form-line-input .help-block {
     display: block;
     position: absolute;
@@ -610,18 +600,10 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     opacity: 0;
     font-size: 12px;
     color: #ccc; }
-  .form-group.form-line-input.has-success .form-control:focus ~ label {
-    color: #33CCCC; }
-    .form-group.form-line-input.has-success .form-control:focus ~ label:after {
-      background: #33CCCC; }
   .form-group.form-line-input.has-success .form-control.edited ~ label {
     color: #33CCCC !important; }
     .form-group.form-line-input.has-success .form-control.edited ~ label:after {
       background: #33CCCC; }
-  .form-group.form-line-input.has-error .form-control:focus ~ label {
-    color: #FF9999; }
-    .form-group.form-line-input.has-error .form-control:focus ~ label:after {
-      background: #FF9999; }
   .form-group.form-line-input.has-error .form-control.edited ~ label {
     color: #FF9999 !important; }
     .form-group.form-line-input.has-error .form-control.edited ~ label:after {
