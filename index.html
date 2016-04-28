@@ -41,8 +41,6 @@
 
 	<!-- content begin -->
 	<div class="content" id="content">
-		<!-- 提示框 -->
-		<!-- <a href="javascript:;" id="example" class="btn" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">Popover on top</a> -->
 		<p class="hb-sum">
 		Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。
 		</p>
@@ -55,7 +53,7 @@
 	        <h3>默认导航</h3>
 	        <div class="docs-example">
 	        	<div class="nav">
-				 	<a href="#">首页</a>
+				 	<a href="#" class="active">首页</a>
 				 	<a href="#">简介</a>
 				 	<a href="#">产品</a>
 				 	<a href="#">联系我们</a>
@@ -85,7 +83,7 @@
 <pre class="prettyprint linenums">
 &lt;div class="nav nav-tabs"&gt;
 	&lt;ul class="clearfix"&gt;
-		&lt;li&gt;&lt;a href="javascript:;" class="selected"&gt;游戏说明&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="javascript:;" class="active"&gt;游戏说明&lt;/a&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;a href="javascript:;" &gt;回报设置&lt;/a&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;a href="javascript:;"&gt;完成&lt;/a&gt;&lt;/li&gt;
 	&lt;/ul&gt;
@@ -324,50 +322,29 @@
 	        <h3>登录样例</h3>
 	        <div class="docs-example docs-example-mt">
 	        	<form class="form-horizontal">
-				  <div class="control-group">
-				    <label class="control-label" for="inputEmail">Email</label>
-				    <div class="controls">
-				      <input type="text" id="inputEmail" placeholder="Email" class="input-large">
-				    </div>
-				  </div>
-				  <div class="control-group" style="margin-bottom:10px;">
-				    <label class="control-label" for="inputPassword">Password</label>
-				    <div class="controls">
-				      <input type="password" id="inputPassword" placeholder="Password" class="input-large">
-				    </div>
-				  </div>
-				  <div class="control-group">
-				    <div class="controls">
-				     <!--  <label class="checkbox">
-				        <input type="checkbox"> 记住我
-				      </label> -->
-				     	<a href="#" class="btn btn-mini btn-primary">登录</a>
-				    </div>
-				  </div>
+				  <div class="form-group form-line-input">
+                    <input type="text" class="form-control"  id="user" >
+                    <label for="user">账号</label>
+                  </div>
+				  <div class="form-group form-line-input">
+                    <input type="text" class="form-control"  id="pass" >
+                    <label for="pass">密码</label>
+                  </div>
+
+                  <a href="#" class="btn btn-mini btn-primary">登录</a>
 				</form>
-	         </div>
+	        </div>
 <pre class="prettyprint linenums">
 &lt;form class="form-horizontal"&gt;
-	&lt;div class="control-group"&gt;
-		&lt;label class="control-label" for="inputEmail"&gt;Email&lt;/label&gt;
-		&lt;div class="controls"&gt;
-		  &lt;input type="text" id="inputEmail" placeholder="Email"&gt;
-		&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class="control-group"&gt;
-		&lt;label class="control-label" for="inputPassword"&gt;Password&lt;/label&gt;
-		&lt;div class="controls"&gt;
-		  &lt;input type="password" id="inputPassword" placeholder="Password"&gt;
-		&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class="control-group"&gt;
-		&lt;div class="controls"&gt;
-		  &lt;label class="checkbox"&gt;
-		    &lt;input type="checkbox"&gt; Remember me
-		  &lt;/label&gt;
-		 	&lt;a href="#" class="btn btn-orange"&gt;login&lt;/a&gt;
-		&lt;/div&gt;
+	&lt;div class="form-group form-line-input"&gt;
+	   &lt;input type="text" class="form-control"  id="user" &gt;
+	   &lt;label for="user"&gt;账号&lt;/label&gt;
 	&lt;/div&gt;
+	&lt;div class="form-group form-line-input"&gt;
+	   &lt;input type="text" class="form-control"  id="pass" &gt;
+	   &lt;label for="pass"&gt;密码&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;a href="#" class="btn btn-mini btn-primary"&gt;登录&lt;/a&gt;
 &lt;/form&gt;
 </pre>
 			<h3>复选框和单选框</h3>
@@ -453,22 +430,7 @@
 	2
 &lt;/label&gt;
 </pre>
-			<h3>表单类型一</h3>
-	        <div class="docs-example docs-input">
-	        	<input class="input-mini" type="text" placeholder=".input-mini">
-				<input class="input-small" type="text" placeholder=".input-small">
-				<input class="input-large" type="text" placeholder=".input-large">
-				<input class="input-xlarge" type="text" placeholder=".input-xlarge">
-				<input class="input-xxlarge" type="text" placeholder=".input-xxlarge">
-	         </div>
-<pre class="prettyprint linenums">
-&lt;input class="input-mini" type="text" placeholder=".input-mini"&gt;
-&lt;input class="input-small" type="text" placeholder=".input-small"&gt;
-&lt;input class="input-large" type="text" placeholder=".input-large"&gt;
-&lt;input class="input-xlarge" type="text" placeholder=".input-xlarge"&gt;
-&lt;input class="input-xxlarge" type="text" placeholder=".input-xxlarge"&gt;
-</pre>
-		    <h3>表单类型二</h3>
+			<h3>默认表单</h3>
 	        <div class="docs-example docs-input">
 
 	        	<div class="form-group form-line-input ">
@@ -498,6 +460,23 @@
                      <span class="help-block">限制在100字以内</span>
                 </div>
 	        </div>
+
+			<h3>传统表单</h3>
+	        <div class="docs-example docs-input">
+	        	<input class="input-mini" type="text" placeholder=".input-mini">
+				<input class="input-small" type="text" placeholder=".input-small">
+				<input class="input-large" type="text" placeholder=".input-large">
+				<input class="input-xlarge" type="text" placeholder=".input-xlarge">
+				<input class="input-xxlarge" type="text" placeholder=".input-xxlarge">
+	         </div>
+<pre class="prettyprint linenums">
+&lt;input class="input-mini" type="text" placeholder=".input-mini"&gt;
+&lt;input class="input-small" type="text" placeholder=".input-small"&gt;
+&lt;input class="input-large" type="text" placeholder=".input-large"&gt;
+&lt;input class="input-xlarge" type="text" placeholder=".input-xlarge"&gt;
+&lt;input class="input-xxlarge" type="text" placeholder=".input-xxlarge"&gt;
+</pre>
+		    
 	    </section>
 
 	    <!-- 按钮 -->
@@ -885,13 +864,11 @@
 	<!-- footer end -->
 
 	<script src="dist/scripts/lib/jquery/dist/jquery.min.js"></script>
-	<script src="dist/scripts/lib/jquery.scrollTo/jquery.scrollTo.min.js"></script>
     <script src="dist/scripts/component/prettify.min.js"></script>
     <script src="dist/scripts/component/bootstrap-transition.min.js"></script>
     <script src="dist/scripts/component/hbook-form.min.js"></script>	
     <script src="dist/scripts/component/hbook-page.min.js"></script>	
     <script src="dist/scripts/component/tooltip.min.js"></script>	
-    <script src="dist/scripts/component/bootstrap-popover.min.js"></script>	
     <script src="dist/scripts/component/modal.min.js"></script>	
     <script src="dist/scripts/main.min.js"></script>	
     <script>

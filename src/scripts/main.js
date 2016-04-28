@@ -8,41 +8,51 @@
 
 	'use strict';
 
-	var index={};
+	var index={
 
-	//初始化模板
-	index.init=function(){
-		index.template();
-		prettyPrint();
-	}
+		// 初始化
+		init:function(){
 
+			index.template();
+			prettyPrint();
 
-	//加载模板
-	index.template=function(){
-		$('#header .nav a').click(function() {
-			var action = $(this).attr('data-id');
-			$.scrollTo('#' + action, 500)
-		})
-		$('#dialog').click(function(){
-			var aa=$('#modal').modal('show');
-		})
-		$('[data-toggle="tooltip"]').tooltip();
-		index.page('.page');
-	}
+		},
 
-	//分页
-	index.page=function(element){
+		//事件绑定
+		template:function(){
+
+			$('#header .nav a').click(function() {
+				var _id = $(this).attr('data-id');
+				var T=$('#'+_id).offset().top;
+				$('body').animate({
+					scrollTop: T - 60
+				},500, 'linear', function() {
+
+				});
+			})
+
+			$('#dialog').click(function(){
+				var aa=$('#modal').modal('show');
+			})
+
+			$('[data-toggle="tooltip"]').tooltip();
+			index.page('.page');
+		},
 		
-		$(element).page({
-			pageCount: 26,
-			current: 1,
-			showNum: 10,
-			callback: function(tPage) {
-				console.log(tPage);
-			}
-		});
+		// 分页
+		page:function(element){
 
-	}
+			$(element).page({
+				pageCount: 26,
+				current: 1,
+				showNum: 10,
+				callback: function(tPage) {
+					console.log(tPage);
+				}
+			});
+
+		}
+	};
 
 	global.index=index.init;
 
