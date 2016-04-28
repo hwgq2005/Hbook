@@ -604,6 +604,10 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     color: #33CCCC !important; }
     .form-group.form-line-input.has-success .form-control.edited ~ label:after {
       background: #33CCCC; }
+  .form-group.form-line-input.has-warning .form-control.edited ~ label {
+    color: #F3D261 !important; }
+    .form-group.form-line-input.has-warning .form-control.edited ~ label:after {
+      background: #F3D261; }
   .form-group.form-line-input.has-error .form-control.edited ~ label {
     color: #FF9999 !important; }
     .form-group.form-line-input.has-error .form-control.edited ~ label:after {

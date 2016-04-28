@@ -24,7 +24,7 @@
 			$('#header .nav a').click(function() {
 				var _id = $(this).attr('data-id');
 				var T=$('#'+_id).offset().top;
-				$('body').animate({
+				$('body').stop().animate({
 					scrollTop: T - 60
 				},500, 'linear', function() {
 
