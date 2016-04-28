@@ -10,24 +10,17 @@ var Form=function() {
 
 	"use strict";
 
-	var formControl=$('.form-control');
-
-	
+	var formControl=$('.form-line-input .form-control');
 
 	formControl.on('change',function(){
 		var $self=$(this);
 		$self.addClass('edited');
-
-	})
-
-	formControl.on('blur',function(){
+	}).on('blur',function(){
 		var $self = $(this),
 			val   = $.trim($self.val());
 		if (!val) {
 			$self.removeClass('edited');	
 		}
-		
 	})
-
 	
 }();
