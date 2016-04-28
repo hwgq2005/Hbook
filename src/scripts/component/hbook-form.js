@@ -5,8 +5,7 @@
  * @version 1.0
  * 
  */
-
-var Form=function() {
+;(function($) {
 
 	"use strict";
 
@@ -22,7 +21,5 @@ var Form=function() {
 			$self.removeClass('edited');	
 		}
 	})
-
-
 	
-}();
+}(window.jQuery));

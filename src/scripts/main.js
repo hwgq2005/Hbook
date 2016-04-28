@@ -4,16 +4,16 @@
  * @date    2015-12-07 11:03:23
  * @version 1.0
  */
-;(function(global){
+;(function(window){
 
 	'use strict';
 
-	var index={
+	var hbook={
 
 		// 初始化
 		init:function(){
 
-			index.template();
+			hbook.template();
 			prettyPrint();
 
 		},
@@ -36,7 +36,7 @@
 			})
 
 			$('[data-toggle="tooltip"]').tooltip();
-			index.page('.page');
+			hbook.page('.page');
 		},
 		
 		// 分页
@@ -54,7 +54,7 @@
 		}
 	};
 
-	global.index=index.init;
+	window.hbook=hbook.init;
 
 }(this))
 	
