@@ -1,0 +1,137 @@
+
+/*====== Table ========*/
+
+@import "config";
+
+.table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	th{
+		color: #8c8c8c;
+		text-align: left;
+		border-top: none!important;
+		@extend td;
+	}
+	td {
+		padding: 16px;
+		vertical-align: middle;
+		border-top: 1px solid #ddd;
+		color: #5D5A5A;
+		background: #FFF;
+		font-size: 12px;
+	}
+}
+.table-bordered {
+	border: 1px solid #ddd;
+	border-collapse: separate;
+	border-left: 0;
+	th{
+		@extend td;
+	}
+	td{
+	  border-left: 1px solid #E9E9E9;
+	}
+}
+.table-hover tbody tr:hover>td {
+	background-color: #f5f5f5;
+}
+.table-zebra tbody > tr:nth-child(odd)>td {
+	background-color: #f9f9f9;
+}
+
+
+.table-view {
+	padding: 20px;
+	position: relative;
+	.table-view-cell{
+		width: 100%;
+		position: relative;
+	    padding: 15px ;
+	    overflow: hidden;
+	    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	    &:hover {
+			background: #FAFAFA;
+			.table-view-operation {
+				opacity: 1;
+			}
+		}
+		.table-view-operation {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			font-size: 12px;
+			opacity: 0;
+			color: #999;
+			@include transition(opacity 0.5s linear);
+			i {
+				display: block;
+			}
+		}
+	    .media-object {
+			width: 160px;
+			height: 110px;
+			margin-right: 10px;
+			position: relative;
+			overflow: hidden;
+			text-align: center;
+			img {
+				max-width: 100%;
+			}
+		}
+		.media-body {
+			.media-body-tit {
+				a {
+					color: #000;
+					font-size: 16px;
+					margin-right: 5px;
+				}
+			}
+			.media-body-sum {
+				display: block;
+				font-size: 12px;
+				height: 38px;
+				line-height: 18px;
+				margin-top: 10px;
+				overflow: hidden;
+				a {
+					color: #333;
+				}
+			}
+			.media-footer{
+				margin: 10px 0;
+				a {
+					display: inline-block;
+					position: relative;
+				}
+				img {
+					width: 25px;
+					height: 25px;
+					border-radius: 50%;
+					vertical-align: middle;
+				}
+				span {
+					color: #999;
+					font-size: 12px;
+					vertical-align: middle;
+					i {
+						font-weight: 700;
+						color: #666;
+						display: inline-block;
+						margin-left: 3px;
+					}
+				}
+				.media-name {
+					color: #000;
+					font-weight: 700;
+					margin: 0 5px;
+				}
+				.media-span{
+					margin: 0 10px;
+					color: $defaultBg;
+				}
+				
+			}
+		}
+	}
+}

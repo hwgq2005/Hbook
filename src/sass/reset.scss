@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/*====== Reset ========*/
+*, 
+:after, 
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+i {
+    font-style: normal
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix {
+    display: block;
+    zoom: 1;
+}
+span{
+    vertical-align:middle;
+}
+.pull-left{
+    float:left;
+}
+.pull-right{
+    float:right;
+}
+.hide {
+    display: none;
+}

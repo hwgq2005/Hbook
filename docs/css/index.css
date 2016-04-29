@@ -52,10 +52,6 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
-/********************主颜色配置 start********************/
-/********************主颜色配置 end********************/
-/********************表单长度 start********************/
-/********************表单长度 end********************/
 body {
   color: #4B4B4B;
   padding-top: 40px !important; }

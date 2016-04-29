@@ -1,0 +1,90 @@
+/*====== Button ========*/
+button[type="button"] {
+  border: none; }
+
+label {
+  margin-bottom: 5px;
+  display: block; }
+
+.btn {
+  background: #E4E4E4;
+  padding: 6px 20px;
+  color: #666;
+  font-size: 13px;
+  display: inline-block;
+  line-height: 20px; }
+  .btn:hover {
+    background-color: #CFCFCF; }
+  .btn.btn-mini {
+    padding: 4px 12px; }
+
+.label {
+  font-size: 12px;
+  color: #fff;
+  padding: 8px 20px;
+  margin: 0 3px;
+  border-radius: 14px;
+  display: inline-block;
+  background: #E4E4E4; }
+  .label.label-mini {
+    padding: 4px 10px; }
+
+.btn-primary, .label-primary {
+  background: #66CCFF;
+  color: #fff; }
+
+.btn-primary:hover {
+  background: #80d5ff; }
+
+.btn-success, .label-success {
+  background: #33CCCC;
+  color: #fff; }
+
+.btn-success:hover {
+  background: #47d1d1; }
+
+.btn-warning, .label-warning {
+  background: #F3D261;
+  color: #fff; }
+
+.btn-warning:hover {
+  background: #f5d979; }
+
+.btn-danger, .label-danger {
+  background: #FF9999;
+  color: #fff; }
+
+.btn-danger:hover {
+  background: #ffb3b3; }
+
+.btn-grey, .label-grey {
+  background: #666;
+  color: #fff; }
+
+.btn-grey:hover {
+  background: #737373; }
+
+.btn-black, .label-black {
+  background: #333;
+  color: #fff; }
+
+.btn-black:hover {
+  background: #404040; }
+
+.btn-violet, .label-violet {
+  background: #8089C1;
+  color: #fff; }
+
+.btn-violet:hover {
+  background: #9199c9; }
+
+.btn-link {
+  background: none;
+  color: #005580; }
+
+.btn-link:hover {
+  background: none;
+  color: #0D79AF; }
+
+.btn-raduis {
+  border-radius: 16px; }

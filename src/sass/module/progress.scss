@@ -1,0 +1,43 @@
+
+/*====== Progress ========*/
+
+@import "config";
+
+.progress {
+	overflow: hidden;
+	height: 18px;
+	background-color: #E1E1E1;
+	.bar {
+		width: 0%;
+		height: 18px;
+		color: #ffffff;
+		font-size: 12px;
+		text-align: center;
+		background: #1476E5;
+		@include box-sizing(border-box);
+		@include transition(width .6s ease);
+		&.bar-primary {
+			background: $primaryBg;
+		}
+		&.bar-success {
+			background: $successBg;
+		}
+		&.bar-warning {
+			background: $warningBg;
+		}
+		&.bar-danger {
+			background: $dangerBg;
+		}
+		&.bar-violet {
+			background: $violetBg;
+		}
+		&.bar-black {
+			background: $blackBg;
+		}
+		&.bar-grey {
+			background: $greyBg;
+		}
+	}
+	
+	
+}
