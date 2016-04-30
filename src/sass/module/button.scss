@@ -17,6 +17,7 @@ label {
 	font-size: 13px;
 	display: inline-block;
 	line-height: 20px;
+	white-space: nowrap;
 	&:hover{
 		background-color: #CFCFCF;
 	}
@@ -33,6 +34,7 @@ label {
 	border-radius: 14px;
 	display: inline-block;
 	background: $defaultBg;
+	white-space: nowrap;
 	&.label-mini{
 		padding: 4px 10px;
 	}

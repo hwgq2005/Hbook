@@ -12,7 +12,8 @@ label {
   color: #666;
   font-size: 13px;
   display: inline-block;
-  line-height: 20px; }
+  line-height: 20px;
+  white-space: nowrap; }
   .btn:hover {
     background-color: #CFCFCF; }
   .btn.btn-mini {
@@ -25,7 +26,8 @@ label {
   margin: 0 3px;
   border-radius: 14px;
   display: inline-block;
-  background: #E4E4E4; }
+  background: #E4E4E4;
+  white-space: nowrap; }
   .label.label-mini {
     padding: 4px 10px; }
 
@@ -34,7 +36,7 @@ label {
   color: #fff; }
 
 .btn-primary:hover {
-  background: #80d5ff; }
+  background: #80d4ff; }
 
 .btn-success, .label-success {
   background: #33CCCC;

@@ -155,8 +155,7 @@ input[type="password"] {
   background: none;
   outline: none;
   box-shadow: none;
-  border-radius: 0;
-  -webkit-appearance: none; }
+  border-radius: 0; }
 
 select {
   width: 220px;
@@ -222,7 +221,8 @@ input[type="checkbox"], input[type="radio"] {
   height: 18px;
   border: 1px solid #ddd;
   text-align: center;
-  vertical-align: middle; }
+  vertical-align: middle;
+  border-radius: 0; }
   input[type="checkbox"]:hover, input[type="radio"]:hover {
     border: 1px solid #66CCFF; }
   input[type="checkbox"]:after, input[type="radio"]:after {
@@ -242,8 +242,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
   margin: 4px 0;
   line-height: normal;
   cursor: pointer;
-  border: 0 \9;
-  border-radius: 0; }
+  border: 0 \9; }
 
 /*defaul form */
 .form-horizontal .control-label {
@@ -664,7 +663,8 @@ label {
   color: #666;
   font-size: 13px;
   display: inline-block;
-  line-height: 20px; }
+  line-height: 20px;
+  white-space: nowrap; }
   .btn:hover {
     background-color: #CFCFCF; }
   .btn.btn-mini {
@@ -677,7 +677,8 @@ label {
   margin: 0 3px;
   border-radius: 14px;
   display: inline-block;
-  background: #E4E4E4; }
+  background: #E4E4E4;
+  white-space: nowrap; }
   .label.label-mini {
     padding: 4px 10px; }
 
