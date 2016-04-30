@@ -28,6 +28,7 @@ input[type="password"] {
 	outline:none;
 	box-shadow:none;
 	border-radius:0;
+	-webkit-appearance: none; 
 }
 select {
 	width: 220px;
@@ -126,6 +127,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	line-height: normal;
 	cursor: pointer;
 	border: 0 \9;
+	border-radius:0;
 }
 
 
