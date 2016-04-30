@@ -24,6 +24,9 @@ input[type="password"] {
 	line-height: 20px;
 	color: #555;
 	vertical-align: middle;
+	background:none;
+	outline:none;
+	box-shadow:none;
 }
 select {
 	width: 220px;
@@ -217,7 +220,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 		box-shadow: none;
 		padding:6px 0;
 		border-bottom: 1px solid #c2cad8;
-		display: bolck;
+		display: block;
 		overflow: auto;
 		&.edited{
 			outline: none;

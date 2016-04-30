@@ -151,7 +151,10 @@ input[type="password"] {
   font-size: 14px;
   line-height: 20px;
   color: #555;
-  vertical-align: middle; }
+  vertical-align: middle;
+  background: none;
+  outline: none;
+  box-shadow: none; }
 
 select {
   width: 220px;
@@ -316,7 +319,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     box-shadow: none;
     padding: 6px 0;
     border-bottom: 1px solid #c2cad8;
-    display: bolck;
+    display: block;
     overflow: auto; }
     .form-group.form-line-input .form-control.edited {
       outline: none; }
@@ -680,7 +683,7 @@ label {
   color: #fff; }
 
 .btn-primary:hover {
-  background: #80d5ff; }
+  background: #80d4ff; }
 
 .btn-success, .label-success {
   background: #33CCCC;
