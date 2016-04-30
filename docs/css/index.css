@@ -52,6 +52,9 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
+html {
+  font-size: 62.5%; }
+
 body {
   color: #4B4B4B;
   padding-top: 40px !important; }
@@ -89,14 +92,14 @@ ol {
   color: #fff; }
 
 .banner .title {
-  font-size: 80px;
+  font-size: 8rem;
   margin-bottom: 10px; }
 
 .banner p {
-  font-size: 30px; }
+  font-size: 3rem; }
 
 .banner .download {
-  font-size: 18px;
+  font-size: 1.8rem;
   margin-top: 40px;
   padding: 15px 80px;
   background: #F3D261;
@@ -117,8 +120,8 @@ ol {
 
 .content .hb-sum {
   margin-bottom: 30px;
-  font-size: 22px;
-  line-height: 34px; }
+  font-size: 2.2rem;
+  line-height: 3.4rem; }
 
 .page-header {
   padding-bottom: 9px;
@@ -126,7 +129,7 @@ ol {
   border-bottom: 1px solid #eee; }
 
 .page-header h1 {
-  font-size: 34px; }
+  font-size: 3.4rem; }
 
 .docs-example {
   position: relative;
@@ -181,7 +184,7 @@ footer {
   padding: 8px;
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
-  font-size: 13px;
+  font-size: 1.3rem;
   margin-bottom: 18px; }
 
 code {
@@ -190,7 +193,7 @@ code {
   white-space: nowrap;
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: normal; }
 
 .prettyprint.linenums {

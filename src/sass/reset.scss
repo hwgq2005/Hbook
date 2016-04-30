@@ -8,9 +8,12 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+html{
+    font-size: 62.5%;
+}
 body {
     font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 a:link {
     text-decoration: none;

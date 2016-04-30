@@ -10,7 +10,7 @@ label {
   background: #E4E4E4;
   padding: 6px 20px;
   color: #666;
-  font-size: 13px;
+  font-size: 1.3rem;
   display: inline-block;
   line-height: 20px;
   white-space: nowrap; }
@@ -20,7 +20,7 @@ label {
     padding: 4px 12px; }
 
 .label {
-  font-size: 12px;
+  font-size: 1.2rem;
   color: #fff;
   padding: 8px 20px;
   margin: 0 3px;
