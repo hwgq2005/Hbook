@@ -89,6 +89,9 @@ gulp.task('compass', function() {
 
 		}))
 		.pipe(gulp.dest('./docs/css'))
+		.pipe(rename( { suffix: '.min' }))
+		.pipe(minicss())
+		.pipe(gulp.dest('./docs/css'))
 		
 	//生成dist目录
 	gulp.src(['./src/sass/hbook.scss'])
@@ -101,9 +104,11 @@ gulp.task('compass', function() {
 
 		}))
 		.pipe(gulp.dest('./dist/css'))
+		.pipe(gulp.dest('./docs/css'))
 		.pipe(rename( { suffix: '.min' }))
 		.pipe(minicss())
 		.pipe(gulp.dest('./dist/css'))
+		.pipe(gulp.dest('./docs/css'))
 
 });
 
@@ -145,9 +150,11 @@ gulp.task('scripts', function() {
 	gulp.src(['./src/js/module/*.js'])
 		.pipe(concat('hbook.js'))
 		.pipe(gulp.dest('./dist/js'))
+		.pipe(gulp.dest('./docs/js'))
 		.pipe(rename( { suffix: '.min' }))
 		.pipe(uglify())
 		.pipe(gulp.dest('./dist/js'))
+		.pipe(gulp.dest('./docs/js'))
 		.pipe(livereload())
 });
 

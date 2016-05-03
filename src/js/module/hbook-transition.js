@@ -5,7 +5,7 @@
  * @version 1.02
  */
 
-;(function ($) {
+!function ($) {
 
   "use strict"; 
 
@@ -37,4 +37,4 @@
 
   
 
-}(window.jQuery));
+}(window.jQuery);
