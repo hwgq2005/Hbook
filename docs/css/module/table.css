@@ -6,14 +6,15 @@
   .table th {
     color: #8c8c8c;
     text-align: left;
-    border-top: none !important; }
+    border-top: none !important;
+    font-weight: 700; }
   .table td, .table th {
+    line-height: 22px;
     padding: 16px;
-    vertical-align: middle;
     border-top: 1px solid #ddd;
     color: #5D5A5A;
     background: #FFF;
-    font-size: 12px; }
+    font-size: 14px; }
 
 .table-bordered {
   border: 1px solid #ddd;
@@ -29,7 +30,6 @@
   background-color: #f9f9f9; }
 
 .table-view {
-  padding: 20px;
   position: relative; }
   .table-view .table-view-cell {
     width: 100%;

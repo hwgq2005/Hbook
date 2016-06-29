@@ -6,17 +6,14 @@
 button[type="button"] {
 	border: none;
 }
-label {
-	margin-bottom: 5px;
-	display: block;
-}
+
 .btn {
-	background: $defaultBg;
 	padding: 6px 20px;
 	color: #666;
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 	display: inline-block;
 	line-height: 20px;
+	background: $defaultBg;
 	white-space: nowrap;
 	&:hover{
 		background-color: #CFCFCF;
@@ -27,12 +24,11 @@ label {
 }
 
 .label {
-	font-size: 1.2rem;
-	color: #fff;
-	padding: 8px 20px;
-	margin: 0 3px;
-	border-radius: 14px;
+	padding: 6px 20px;
+	color: #666;
+	font-size: 1.4rem;
 	display: inline-block;
+	line-height: 20px;
 	background: $defaultBg;
 	white-space: nowrap;
 	&.label-mini{
@@ -93,11 +89,20 @@ label {
 .btn-link {
 	background: none;
 	color: #005580;
+	&:hover{
+		background: none;
+		color: #0D79AF;
+	}
 }
-.btn-link:hover {
-	background: none;
-	color: #0D79AF;
+.btn-radius-2{
+	border-radius: 2px;
 }
-.btn-raduis {
+.btn-radius-4{
+	border-radius: 4px;
+}
+.btn-radius-16 {
 	border-radius: 16px;
+}
+.btn-radius-50 {
+	border-radius: 50%;
 }

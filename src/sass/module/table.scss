@@ -11,15 +11,16 @@
 		color: #8c8c8c;
 		text-align: left;
 		border-top: none!important;
+		font-weight: 700;
 		@extend td;
 	}
 	td {
+		line-height: 22px;
 		padding: 16px;
-		vertical-align: middle;
 		border-top: 1px solid #ddd;
 		color: #5D5A5A;
 		background: #FFF;
-		font-size: 12px;
+		font-size: 14px;
 	}
 }
 .table-bordered {
@@ -40,9 +41,7 @@
 	background-color: #f9f9f9;
 }
 
-
 .table-view {
-	padding: 20px;
 	position: relative;
 	.table-view-cell{
 		width: 100%;

@@ -597,14 +597,15 @@ button.close {
   .table th {
     color: #8c8c8c;
     text-align: left;
-    border-top: none !important; }
+    border-top: none !important;
+    font-weight: 700; }
   .table td, .table th {
+    line-height: 22px;
     padding: 16px;
-    vertical-align: middle;
     border-top: 1px solid #ddd;
     color: #5D5A5A;
     background: #FFF;
-    font-size: 12px; }
+    font-size: 14px; }
 
 .table-bordered {
   border: 1px solid #ddd;
@@ -620,7 +621,6 @@ button.close {
   background-color: #f9f9f9; }
 
 .table-view {
-  padding: 20px;
   position: relative; }
   .table-view .table-view-cell {
     width: 100%;
@@ -698,17 +698,13 @@ button.close {
 button[type="button"] {
   border: none; }
 
-label {
-  margin-bottom: 5px;
-  display: block; }
-
 .btn {
-  background: #E4E4E4;
   padding: 6px 20px;
   color: #666;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   display: inline-block;
   line-height: 20px;
+  background: #E4E4E4;
   white-space: nowrap; }
   .btn:hover {
     background-color: #CFCFCF; }
@@ -716,12 +712,11 @@ label {
     padding: 4px 12px; }
 
 .label {
-  font-size: 1.2rem;
-  color: #fff;
-  padding: 8px 20px;
-  margin: 0 3px;
-  border-radius: 14px;
+  padding: 6px 20px;
+  color: #666;
+  font-size: 1.4rem;
   display: inline-block;
+  line-height: 20px;
   background: #E4E4E4;
   white-space: nowrap; }
   .label.label-mini {
@@ -732,7 +727,7 @@ label {
   color: #fff; }
 
 .btn-primary:hover {
-  background: #80d4ff; }
+  background: #80d5ff; }
 
 .btn-success, .label-success {
   background: #33CCCC;
@@ -779,13 +774,21 @@ label {
 .btn-link {
   background: none;
   color: #005580; }
+  .btn-link:hover {
+    background: none;
+    color: #0D79AF; }
 
-.btn-link:hover {
-  background: none;
-  color: #0D79AF; }
+.btn-radius-2 {
+  border-radius: 2px; }
 
-.btn-raduis {
+.btn-radius-4 {
+  border-radius: 4px; }
+
+.btn-radius-16 {
   border-radius: 16px; }
+
+.btn-radius-50 {
+  border-radius: 50%; }
 
 /*====== Popover ========*/
 .popover {
@@ -935,6 +938,12 @@ label {
   .tooltip.right {
     padding: 0 5px;
     margin-left: 3px; }
+    .tooltip.right .tooltip-arrow {
+      top: 50%;
+      left: 0;
+      margin-top: -5px;
+      border-width: 5px 5px 5px 0;
+      border-right-color: #000; }
   .tooltip.bottom {
     padding: 5px 0;
     margin-top: 3px; }
