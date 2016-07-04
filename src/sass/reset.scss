@@ -24,8 +24,14 @@ a:visited {
 a:hover {
     text-decoration: none;
 }
+label{
+    display: block;
+}
 i {
     font-style: normal
+}
+span{
+    vertical-align:middle;
 }
 .clearfix:after {
     visibility: hidden;
@@ -38,9 +44,6 @@ i {
 .clearfix {
     display: block;
     zoom: 1;
-}
-span{
-    vertical-align:middle;
 }
 .pull-left{
     float:left;
