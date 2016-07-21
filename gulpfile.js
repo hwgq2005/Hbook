@@ -5,13 +5,13 @@
  * @version $Id$
  */
 
-//    js/src.js：指定确切的文件名。
-//    js/*.js：某个目录所有后缀名为js的文件。
-//    js/**/*.js：某个目录及其所有子目录中的所有后缀名为js的文件。
-//    !js/src.js：除了js/src.js以外的所有文件。
-//    *.+(js|css)：匹配项目根目录下，所有后缀名为js或css的文件。
+// js/src.js：指定确切的文件名。
+// js/*.js：某个目录所有后缀名为js的文件。
+// js/**/*.js：某个目录及其所有子目录中的所有后缀名为js的文件。
+// !js/src.js：除了js/src.js以外的所有文件。
+// *.+(js|css)：匹配项目根目录下，所有后缀名为js或css的文件。
 
-//引入gulp插件node模块
+//引入gulp插件node模
 var gulp = require('gulp'),
 	template = require('gulp-template'),
 	ejs = require("gulp-ejs"),
@@ -36,11 +36,11 @@ var gulp = require('gulp'),
 
 
 // 定义web模块,类似于全局的http-server
-gulp.task('http-server', function() {
+/*gulp.task('http-server', function() {
 	connect.server({
 		livereload: true
 	});
-});
+});*/
 gulp.task('clean', function () {
 	return gulp.src('./src/js/lib/jquery/src/', {read: false})
     .pipe(clean());
@@ -92,6 +92,7 @@ gulp.task('compass', function() {
 		.pipe(rename( { suffix: '.min' }))
 		.pipe(minicss())
 		.pipe(gulp.dest('./docs/css'))
+		.pipe(livereload())
 		
 	//生成dist目录
 	gulp.src(['./src/sass/hbook.scss'])
@@ -109,6 +110,7 @@ gulp.task('compass', function() {
 		.pipe(minicss())
 		.pipe(gulp.dest('./dist/css'))
 		.pipe(gulp.dest('./docs/css'))
+		
 
 });
 
@@ -155,7 +157,6 @@ gulp.task('scripts', function() {
 		.pipe(uglify())
 		.pipe(gulp.dest('./dist/js'))
 		.pipe(gulp.dest('./docs/js'))
-		.pipe(livereload())
 });
 
 //压缩图片

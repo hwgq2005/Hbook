@@ -3,7 +3,7 @@ button[type="button"] {
   border: none; }
 
 .btn {
-  padding: 6px 20px;
+  padding: 6px 12px;
   color: #666;
   font-size: 1.4rem;
   display: inline-block;
@@ -13,18 +13,18 @@ button[type="button"] {
   .btn:hover {
     background-color: #CFCFCF; }
   .btn.btn-mini {
-    padding: 4px 12px; }
+    padding: 5px 10px; }
 
 .label {
-  padding: 6px 20px;
+  padding: 3px 6px;
   color: #666;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   display: inline-block;
   line-height: 20px;
   background: #E4E4E4;
   white-space: nowrap; }
   .label.label-mini {
-    padding: 4px 10px; }
+    padding: 2px 5px; }
 
 .btn-primary, .label-primary {
   background: #66CCFF;
