@@ -14,7 +14,6 @@
 //引入gulp插件node模
 var gulp = require('gulp'),
 	template = require('gulp-template'),
-	ejs = require("gulp-ejs"),
 	sass = require('gulp-ruby-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
 	//gminifycss = require('gulp-minify-css'),
@@ -29,31 +28,21 @@ var gulp = require('gulp'),
 	gulpif = require('gulp-if'),
 	clean = require('gulp-clean'),
 	concat = require('gulp-concat'),
+	rev = require('gulp-rev'),
+	revCollector = require('gulp-rev-collector'),
+    minifyHtml = require('gulp-minify-html'),
 	livereload = require('gulp-livereload'),
 	notify = require('gulp-notify');
 
 //Gulp 仅有 5 个方法就能组合出你需要的任务流程：task, run, watch, src, dest
 
 
-// 定义web模块,类似于全局的http-server
-/*gulp.task('http-server', function() {
-	connect.server({
-		livereload: true
-	});
-});*/
 gulp.task('clean', function () {
-	return gulp.src('./src/js/lib/jquery/src/', {read: false})
+	return gulp.src(['./src/js/lib/jquery/src/','./dist/'], {read: false})
     .pipe(clean());
  
 });
 
-// gulp.task('html', function() {
-// 	return gulp.src('./src/**.*')
-// 		.pipe(template({
-// 			srcName: 'aa'
-// 		})) //模板变量
-// 		.pipe(gulp.dest('./dist/'));
-// });
 
 gulp.task('copy', function() {
 	gulp.src('./src/js/lib/**/*.js')
@@ -104,6 +93,7 @@ gulp.task('compass', function() {
 			image: './src/images'
 
 		}))
+
 		.pipe(gulp.dest('./dist/css'))
 		.pipe(gulp.dest('./docs/css'))
 		.pipe(rename( { suffix: '.min' }))
@@ -148,7 +138,7 @@ gulp.task('scripts', function() {
 		.pipe(gulp.dest('./docs/js'))
 		.pipe(livereload())
 
-	//生成disst目录
+	//生成dist目录
 	gulp.src(['./src/js/module/*.js'])
 		.pipe(concat('hbook.js'))
 		.pipe(gulp.dest('./dist/js'))
@@ -169,14 +159,15 @@ gulp.task('imagemin', function() {
 		}))
 })
 
-// 检测HTML变化并刷新
-gulp.task("html", function() {
-	gulp.src('*.*')
-		.pipe(livereload());
+//压缩Html/更新引入文件版本
+gulp.task('miniHtml', function () {
+    return gulp.src(['./docs/rev/**/*.json', './docs/**/*.html'])
+	        //.pipe(revCollector())
+	        .pipe(minifyHtml())
+	        .pipe(gulp.dest('./dist/'))
+	        
+});
 
-	// gulp.src('./src/*.html')
-		// .pipe(gulp.dest('./dist/'))
-})
 
 //定义名为"watch"的任务
 gulp.task('watch', function() {
@@ -191,19 +182,18 @@ gulp.task('watch', function() {
 //每个gulpfile.js里都应当有一个dafault任务，它是缺省任务入口（类似C语言的main()入口），运行gulp的时候实际只是调用该任务（从而来调用其它的任务）
 gulp.task('default', function() {
 	//gulp.run(tasks)表示运行对应的任务，这里表示执行名
-	gulp.run('clean','html','copy', 'compass',  'imagemin','scripts');
+	gulp.run('clean','copy', 'compass',  'imagemin','scripts');
 	//执行'watch'监听任务
 	// gulp.run('watch');
 	// 监听文件变化
 	gulp.watch([
-		'./src/*.html',
-		'./src/template/*.ejs',
+		'./src/**/*.html',
 		'./src/sass/**/*.scss',
 		'./src/images/**',
-		'./src/css/*.css',
+		'./src/css/**/*.css',
 		'./src/js/**/*.js'
 	], function() {
 		livereload.listen();
-		gulp.run('clean','html','copy', 'compass',  'imagemin', 'scripts');
+		gulp.run('clean','copy', 'compass',  'imagemin', 'scripts');
 	});
 })
