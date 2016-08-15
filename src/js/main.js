@@ -8,18 +8,24 @@
 
 	'use strict';
 
+	var $loginBtn = $("#login-btn");
 	var hbook={
 
 		// 初始化
 		init:function(){
 
-			hbook.template();
+			hbook.bindEvent();
+			hbook.valid();
+			$('[data-toggle="tooltip"]').tooltip();
+			hbook.page('.page');
 			prettyPrint();
+
+
 
 		},
 
 		//事件绑定
-		template:function(){
+		bindEvent:function(){
 
 			$('#header .nav a').click(function() {
 				var _id = $(this).attr('data-id'),
@@ -36,10 +42,31 @@
 				var aa=$('#modal').modal('show');
 			})
 
-			$('[data-toggle="tooltip"]').tooltip();
-			hbook.page('.page');
+			$loginBtn.click(function(event) {
+				if ($('#login-form').valid()) {
+					console.log($('#login-form').serialize())
+				}
+			});
+			
 		},
 		
+		valid:function(){
+			// $('#login-form').valid()
+			$("#login-form").validate({
+				rules: {
+					user: "required",
+					password: {
+						required: true,
+						minlength: 6
+					}
+				},
+				messages: {
+					user: "不能为空",
+					password: '密码至少6位数以上'
+				}
+			});
+		},
+
 		// 分页
 		page:function(element){
 

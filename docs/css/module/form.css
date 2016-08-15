@@ -242,7 +242,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     position: absolute;
     bottom: -20px;
     margin: 2px 0 0;
-    opacity: 0;
+    opacity: 1;
     font-size: 1.2rem;
     color: #ccc; }
   .form-group.form-line-input.has-success .form-control.edited ~ label {

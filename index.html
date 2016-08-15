@@ -326,17 +326,19 @@
 	        </div>
 	        <h3>登录样例</h3>
 	        <div class="docs-example docs-example-mt">
-	        	<form class="form-horizontal">
+	        	<form class="form-horizontal" id="login-form">
 				  <div class="form-group form-line-input">
-                    <input type="text" class="form-control"  id="user" >
+                    <input id="user" class="form-control" name="user" type="text" >
                     <label for="user">账号</label>
+                    <span class="help-block"></span>
                   </div>
 				  <div class="form-group form-line-input">
-                    <input type="text" class="form-control"  id="pass" >
+                    <input id="pass" class="form-control" name="password" type="text"  >
                     <label for="pass">密码</label>
+                     <span class="help-block"></span>
                   </div>
 
-                  <a href="#" class="btn btn-mini btn-primary">登录</a>
+                  <a href="javascript:;" class="btn btn-mini btn-primary" id="login-btn">登录</a>
 				</form>
 	        </div>
 <pre class="prettyprint linenums">
@@ -876,6 +878,8 @@
 	<!-- footer end -->
 
 	<script src="docs/js/lib/jquery/dist/jquery.min.js"></script>
+	<script src="docs/js/lib/jquery.validate.min.js"></script>
+	<script src="docs/js/lib/message.js"></script>
     <script src="docs/js/lib/prettify.js"></script>
     <script src="docs/js/hbook.min.js"></script>
     <script src="docs/js/main.min.js"></script>	
