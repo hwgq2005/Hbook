@@ -10,9 +10,11 @@
 
 	"use strict";
 
-	var formControl=$('.form-line-input .form-control');
+	var $formControl=$('.form-line-input .form-control');
+	var $checkControl=$('.checkbox,.radio');
 
-	formControl.on('focus',function(){
+	// 文本框
+	$formControl.on('focus',function(){
 		var $self = $(this);
 		$self.addClass('edited');
 	})
@@ -24,4 +26,14 @@
 		}
 	})
 	
+	// 复选框
+	$checkControl.on('change', 'input[type=checkbox],input[type=radio]', function(event) {
+		var $self = $(this);
+
+		if ($self.parent().hasClass('radio')) {
+			$(this).parent().siblings('.radio').removeClass('active');
+		}
+		$(this).parent().toggleClass('active');
+	});
+
 }(window.jQuery);

@@ -10,6 +10,7 @@
 
 	var $header = $("#header"),
 		$dialog = $("#dialog"),
+		$checkBox = $("#check-box"),
 		$loginBtn = $("#login-btn");
 		
 	var hbook={
@@ -48,7 +49,7 @@
 					console.log($('#login-form').serialize())
 				}
 			});
-			
+
 		},
 		
 		//表单验证

@@ -80,6 +80,9 @@ input[type="password"] {
 		outline: thin dotted \9; /* IE6-9 */
 	}
 }
+
+
+
 input[type="checkbox"] {
 	margin: 4px 0 0;
 	margin-top: 1px \9;
@@ -93,33 +96,13 @@ input[type="checkbox"] {
   	text-align:center;
   	vertical-align: middle;
   	border-radius:0;
-  	&:hover{
-  		border:1px solid $primaryBg;
-  	}
-  	&:after{
-  		display:block;
-		content: '\2713';
-		color:#fff;
-		font-size: 1.2rem;
-  	}
-  	&:checked{
-  		background:$primaryBg;
-		border:1px solid $primaryBg;
-  	}
+  	opacity: 0;
+  	visibility: hidden;
+  	z-index: 1;
 }
 
 input[type="radio"]{
 	@extend input[type="checkbox"];
-	border-radius:50%;
-	&:hover{
-  		@extend input[type="checkbox"]:hover;
-  	}
-  	&:after{
-  		@extend input[type="checkbox"]:after;
-  	}
-  	&:checked{
-  		@extend input[type="checkbox"]:checked;
-  	}
 }
 
 input[type="image"], input[type="checkbox"], input[type="radio"] {
@@ -185,14 +168,66 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	width: $formLength +370px;
 }
 
-.radio, .checkbox {
+
+.checkbox{
+	position:relative;
 	padding-left: 18px;
+	padding-top: 5px;
 	min-height: 20px;
+	input[type="checkbox"]{
+		display:inline-block;
+		margin-left: -20px;
+	}
+	&.active{
+		&:after{
+	  		position: absolute;
+	  		top: 14px;
+		    left: 1px;
+	  		display:block;
+		    content: '';
+		    width: 10px;
+	    	height: 6px;
+		    background: 0 0;
+		    border: 2px solid #fff;  
+		    border-top: none;
+		    border-right: none;    
+		    -webkit-transform: rotate(-45deg);
+		    -moz-transform: rotate(-45deg);
+		    -ms-transform: rotate(-45deg);
+		    transform: rotate(-45deg);
+		    z-index: 3;
+	  	}
+	}
+	&:before{
+		position: absolute;
+		top:9px;
+		left: -3px;
+  		display:block;
+		content: '';
+  		width:18px;
+	  	height: 18px;
+	  	line-height: 18px;
+	  	border-radius:2px;
+	  	text-align: center;
+	  	background:$primaryBg;
+		border:1px solid $primaryBg;
+		color:#fff;
+		font-size: 1.2rem;
+		z-index: 2;
+  	}
+  	
 }
-.radio input[type="radio"], .checkbox input[type="checkbox"] {
-	display:inline-block;
-	margin-left: -20px;
+.radio{
+	@extend .checkbox;
+	input[type="radio"]{
+		display:inline-block;
+		margin-left: -20px;
+	}
+	&:before{
+		border-radius:50%;
+	}
 }
+
 .controls>.radio:first-child, .controls>.checkbox:first-child {
 	padding-top: 5px;
 }
