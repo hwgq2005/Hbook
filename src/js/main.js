@@ -8,7 +8,10 @@
 
 	'use strict';
 
-	var $loginBtn = $("#login-btn");
+	var $header = $("#header"),
+		$dialog = $("#dialog"),
+		$loginBtn = $("#login-btn");
+		
 	var hbook={
 
 		// 初始化
@@ -20,14 +23,12 @@
 			hbook.page('.page');
 			prettyPrint();
 
-
-
 		},
 
 		//事件绑定
 		bindEvent:function(){
 
-			$('#header .nav a').click(function() {
+			 $header.find('.nav a').click(function() {
 				var _id = $(this).attr('data-id'),
 					  T = $('#'+_id).offset().top;
 
@@ -38,7 +39,7 @@
 				});
 			})
 
-			$('#dialog').click(function(){
+			$dialog.click(function(){
 				var aa=$('#modal').modal('show');
 			})
 
@@ -50,8 +51,9 @@
 			
 		},
 		
+		//表单验证
 		valid:function(){
-			// $('#login-form').valid()
+			
 			$("#login-form").validate({
 				rules: {
 					user: "required",
