@@ -145,6 +145,8 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
   .checkbox input[type="checkbox"], .radio input[type="checkbox"], .checkbox input[type="radio"], .radio input[type="radio"] {
     display: inline-block;
     margin-left: -20px; }
+  .checkbox.active:before, .active.radio:before {
+    background: #66CCFF; }
   .checkbox.active:after, .active.radio:after {
     position: absolute;
     top: 14px;
@@ -153,7 +155,6 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     content: '';
     width: 10px;
     height: 6px;
-    background: 0 0;
     border: 2px solid #fff;
     border-top: none;
     border-right: none;
@@ -173,11 +174,16 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     line-height: 18px;
     border-radius: 2px;
     text-align: center;
-    background: #66CCFF;
+    background: #fff;
     border: 1px solid #66CCFF;
     color: #fff;
     font-size: 1.2rem;
-    z-index: 2; }
+    cursor: pointer;
+    z-index: 2;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    transition: all .2s linear; }
 
 .radio input[type="radio"] {
   display: inline-block;
