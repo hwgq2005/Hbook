@@ -176,7 +176,8 @@ select {
 
 textarea {
   height: auto;
-  overflow: hidden; }
+  overflow: hidden;
+  resize: vertical; }
 
 .form-search input,
 .form-inline input,

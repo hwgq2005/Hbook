@@ -21,18 +21,15 @@
 	.on('blur',function(){
 		var $self = $(this),
 			val   = $.trim($self.val());
-		if (!val) {
-			$self.removeClass('edited');	
-		}
+
+		val ? '' : $self.removeClass('edited');
 	})
 	
 	// 复选框
 	$checkControl.on('change', 'input[type=checkbox],input[type=radio]', function(event) {
 		var $self = $(this);
 
-		if ($self.parent().hasClass('radio')) {
-			$(this).parent().siblings('.radio').removeClass('active');
-		}
+		$self.parent().hasClass('radio') ? $(this).parent().siblings('.radio').removeClass('active') : '';
 		$(this).parent().toggleClass('active');
 	});
 
