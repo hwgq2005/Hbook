@@ -178,10 +178,16 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 		display:inline-block;
 		margin-left: -20px;
 	}
+	&:hover{
+		&:before{
+			border:2px solid $primaryBg;
+		}
+	}
 	&.active{
 	  	
 	  	&:before{
 	  		background:$primaryBg;
+	  		border:2px solid $primaryBg;
 	  	}
 		&:after{
 	  		position: absolute;
@@ -214,7 +220,8 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	  	border-radius:2px;
 	  	text-align: center;
 	  	background:#fff;
-		border:1px solid $primaryBg;
+	  	border:2px solid lighten($primaryBg,15%);
+	  	
 		color:#fff;
 		font-size: 1.2rem;
 		cursor: pointer;

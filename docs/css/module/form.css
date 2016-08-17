@@ -145,8 +145,11 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
   .checkbox input[type="checkbox"], .radio input[type="checkbox"], .checkbox input[type="radio"], .radio input[type="radio"] {
     display: inline-block;
     margin-left: -20px; }
+  .checkbox:hover:before, .radio:hover:before {
+    border: 2px solid #66CCFF; }
   .checkbox.active:before, .active.radio:before {
-    background: #66CCFF; }
+    background: #66CCFF;
+    border: 2px solid #66CCFF; }
   .checkbox.active:after, .active.radio:after {
     position: absolute;
     top: 14px;
@@ -175,7 +178,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     border-radius: 2px;
     text-align: center;
     background: #fff;
-    border: 1px solid #66CCFF;
+    border: 2px solid #b3e6ff;
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;
