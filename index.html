@@ -780,17 +780,18 @@
 			<div class="page-header" >
 	            <h1>图文</h1>
 	        </div>
+	        <h3>风格一</h3>
 	        <div class="docs-example">
-        		<ul class="table-view ">
+        		<ul class="table-view table-view-one">
         			<li class="table-view-cell">
-					    <div class="media-object pull-left">
+					    <div class="media-object pull-left" style="width:160px;height:110px;">
 					     <a href="#" ><img src="docs/images/1.jpg" alt="" /> </a>
 					    </div>
 					    <div class="media-body">
-					      <div class="media-body-tit">
+					      <div class="media-tit">
 					      		<a href="#" >列表一</a> <i class="label label-mini label-danger">已发布</i>
 					      </div>
-					      <div class="media-body-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
+					      <div class="media-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
 					      <div class="media-footer">
 						      <a href="#"> 
 							      <img src="docs/images/photo.jpg" alt="" /> 
@@ -805,15 +806,15 @@
 
 					    <!-- <div class="table-view-operation"></div> -->
 					</li>
-					<li  class="table-view-cell">
-					    <div class="media-object pull-left">
+					<li  class="table-view-cell ">
+					    <div class="media-object pull-left" style="width:160px;height:110px;">
 					     	<a href="#" ><img src="docs/images/3.jpg" alt="" /> </a> 
 					    </div>
 					    <div class="media-body">
-					      <div class="media-body-tit">
+					      <div class="media-tit">
 					      		<a href="#" >列表二</a> 
 					      </div>
-					      <div class="media-body-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
+					      <div class="media-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
 					      <div class="media-footer">
 						      <a href="#"> 
 							      <img src="docs/images/photo.jpg" alt="" /> 
@@ -829,16 +830,16 @@
         		</ul>
 	        </div>
 <pre class="prettyprint linenums">
-&lt;ul class="table-view"&gt;
+&lt;ul class="table-view table-view-one"&gt;
 	&lt;li class="table-view-cell"&gt;
 	    &lt;div class="media-object pull-left"&gt;
 	     	&lt;a href="#" &gt;&lt;img src="docs/images/1.jpg" alt="" /&gt; &lt;/a&gt;
 	    &lt;/div&gt;
 	    &lt;div class="media-body"&gt;
-	      &lt;div class="media-body-tit"&gt;
+	      &lt;div class="media-tit"&gt;
 	      		&lt;a href="#" &gt;列表一&lt;/a&gt; &lt;i class="label label-mini label-danger"&gt;已发布&lt;/i&gt;
 	      &lt;/div&gt;
-	      &lt;div class="media-body-sum"&gt; &lt;a href="#"&gt;Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、
+	      &lt;div class="media-sum"&gt; &lt;a href="#"&gt;Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、
 	      设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。&lt;/a&gt; &lt;/div&gt;
 	      &lt;div class="media-footer"&gt;
 		        &lt;a href="#"&gt; &lt;img src="docs/images/photo.jpg" alt="" /&gt; &lt;span class="name"&gt;张三&lt;/span&gt; &lt;/a&gt;
@@ -847,6 +848,59 @@
       		  	&lt;span class="media-span"&gt;/&lt;/span&gt; &lt;span &gt;评论&lt;i&gt;0&lt;/i&gt;&lt;/span&gt;
       		  	&lt;span class="media-span"&gt;/&lt;/span&gt; &lt;span &gt;点赞&lt;i&gt;0&lt;/i&gt;&lt;/span&gt;
 	      &lt;/div&gt;
+	    &lt;/div&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+			<h3>风格二</h3>
+	        <div class="docs-example">
+        		<ul class="table-view ">
+			       <li class="table-view-cell ">
+			          <div class="media-object pull-left">
+			              <a href="#"><img src="docs/images/1.jpg" alt=""  width="48px" height="48px" class="btn-radius-4"/></a>
+			          </div>
+			          <div class="media-body">
+			            <div class="media-tit">
+			              迷笛音乐0
+			            </div>
+			            <div class="media-sum">生活很无趣幸好有迷笛生活很无趣幸</div>
+			          </div>
+			      </li> 
+			      <li class="table-view-cell ">
+			          <div class="media-object pull-left">
+			              <a href="#"><img src="docs/images/2.jpg" alt=""  width="48px" height="48px" class="btn-radius-4"/></a>
+			          </div>
+			          <div class="media-body">
+			            <div class="media-tit">
+			              迷笛音乐0
+			            </div>
+			            <div class="media-sum">生活很无趣幸好有迷笛生活很无趣幸</div>
+			          </div>
+			      </li> 
+			       <li class="table-view-cell ">
+			          <div class="media-object pull-left">
+			              <a href="#"><img src="docs/images/3.jpg" alt=""  width="48px" height="48px" class="btn-radius-4"/></a>
+			          </div>
+			          <div class="media-body">
+			            <div class="media-tit">
+			              迷笛音乐0
+			            </div>
+			            <div class="media-sum">生活很无趣幸好有迷笛生活很无趣幸</div>
+			          </div>
+			      </li> 
+				</ul>
+	        </div>
+<pre class="prettyprint linenums">
+&lt;ul class="table-view "&gt;
+	&lt;li class="table-view-cell"&gt;
+	    &lt;div class="media-object pull-left"&gt;
+	     	&lt;a href="#" &gt;&lt;img src="docs/images/1.jpg" alt="" /&gt; &lt;/a&gt;
+	    &lt;/div&gt;
+	    &lt;div class="media-body"&gt;
+	      &lt;div class="media-tit"&gt;
+	      		迷笛音乐0
+	      &lt;/div&gt;
+	      &lt;div class="media-sum"&gt; &lt;生活很无趣幸好有迷笛生活很无趣幸&lt;/div&gt;
 	    &lt;/div&gt;
 	&lt;/li&gt;
 &lt;/ul&gt;

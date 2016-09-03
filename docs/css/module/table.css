@@ -35,8 +35,7 @@
     width: 100%;
     position: relative;
     padding: 15px;
-    overflow: hidden;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+    overflow: hidden; }
     .table-view .table-view-cell:hover {
       background: #FAFAFA; }
       .table-view .table-view-cell:hover .table-view-operation {
@@ -55,26 +54,25 @@
       .table-view .table-view-cell .table-view-operation i {
         display: block; }
     .table-view .table-view-cell .media-object {
-      width: 160px;
-      height: 110px;
       margin-right: 10px;
       position: relative;
       overflow: hidden;
       text-align: center; }
       .table-view .table-view-cell .media-object img {
         max-width: 100%; }
-    .table-view .table-view-cell .media-body .media-body-tit a {
+    .table-view .table-view-cell .media-body .media-tit a {
       color: #000;
       font-size: 16px;
-      margin-right: 5px; }
-    .table-view .table-view-cell .media-body .media-body-sum {
+      margin-right: 5px;
+      line-height: 19px; }
+    .table-view .table-view-cell .media-body .media-sum {
       display: block;
-      font-size: 12px;
-      height: 38px;
       line-height: 18px;
       margin-top: 10px;
+      font-size: 12px;
+      color: #999;
       overflow: hidden; }
-      .table-view .table-view-cell .media-body .media-body-sum a {
+      .table-view .table-view-cell .media-body .media-sum a {
         color: #333; }
     .table-view .table-view-cell .media-body .media-footer {
       margin: 10px 0; }
@@ -102,3 +100,8 @@
       .table-view .table-view-cell .media-body .media-footer .media-span {
         margin: 0 10px;
         color: #E4E4E4; }
+
+.table-view-one .table-view-cell {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+  .table-view-one .table-view-cell .media-sum {
+    height: 38px; }

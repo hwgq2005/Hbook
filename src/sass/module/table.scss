@@ -48,7 +48,7 @@
 		position: relative;
 	    padding: 15px ;
 	    overflow: hidden;
-	    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
 	    &:hover {
 			background: #FAFAFA;
 			.table-view-operation {
@@ -68,8 +68,6 @@
 			}
 		}
 	    .media-object {
-			width: 160px;
-			height: 110px;
 			margin-right: 10px;
 			position: relative;
 			overflow: hidden;
@@ -79,19 +77,20 @@
 			}
 		}
 		.media-body {
-			.media-body-tit {
+			.media-tit {
 				a {
 					color: #000;
 					font-size: 16px;
 					margin-right: 5px;
+					line-height: 19px;
 				}
 			}
-			.media-body-sum {
+			.media-sum {
 				display: block;
-				font-size: 12px;
-				height: 38px;
 				line-height: 18px;
 				margin-top: 10px;
+				font-size: 12px;
+				color:#999;
 				overflow: hidden;
 				a {
 					color: #333;
@@ -131,6 +130,15 @@
 				}
 				
 			}
+		}
+	}
+
+}
+.table-view-one{
+	.table-view-cell{
+		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+		.media-sum {
+			height: 38px;
 		}
 	}
 }
