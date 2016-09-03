@@ -60,11 +60,12 @@
       text-align: center; }
       .table-view .table-view-cell .media-object img {
         max-width: 100%; }
-    .table-view .table-view-cell .media-body .media-tit a {
-      color: #000;
-      font-size: 16px;
-      margin-right: 5px;
+    .table-view .table-view-cell .media-body .media-tit {
       line-height: 19px; }
+      .table-view .table-view-cell .media-body .media-tit a {
+        color: #000;
+        font-size: 16px;
+        margin-right: 5px; }
     .table-view .table-view-cell .media-body .media-sum {
       display: block;
       line-height: 18px;

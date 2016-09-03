@@ -1,13 +1,21 @@
-
 /*====== Button ========*/
-
 @import "config";
 
 button[type="button"] {
 	border: none;
 }
-
 .btn {
+	@extend .label;
+
+	&:hover {
+		background-color: #CFCFCF;
+	}
+	&.btn-mini {
+		padding: 3px 8px;
+		font-size: 12px;
+	}
+}
+.label {
 	padding: 6px 12px;
 	color: #666;
 	font-size: 1.4rem;
@@ -15,89 +23,73 @@ button[type="button"] {
 	line-height: 20px;
 	background: $defaultBg;
 	white-space: nowrap;
-	&:hover{
-		background-color: #CFCFCF;
-	}
-	&.btn-mini {
-		padding: 5px 10px;
+	&.label-mini {
+		padding: 3px 8px;
+		font-size: 12px;
 	}
 }
-
-.label {
-	padding: 3px 6px;
-	color: #666;
-	font-size: 1.2rem;
-	display: inline-block;
-	line-height: 20px;
-	background: $defaultBg;
-	white-space: nowrap;
-	&.label-mini{
-		padding: 2px 5px;
-	}
-}
-
 .btn-primary, .label-primary {
 	background: $primaryBg;
 	color: #fff;
 }
 .btn-primary:hover {
-	background: lighten($primaryBg,5%);
+	background: darken($primaryBg, 5%);
 }
 .btn-success, .label-success {
 	background: $successBg;
 	color: #fff;
 }
 .btn-success:hover {
-	background: lighten($successBg,5%);
+	background: darken($successBg, 5%);
 }
-
 .btn-warning, .label-warning {
 	background: $warningBg;
 	color: #fff;
 }
 .btn-warning:hover {
-	background: lighten($warningBg,5%);
+	background: darken($warningBg, 5%);
 }
 .btn-danger, .label-danger {
 	background: $dangerBg;
 	color: #fff;
 }
 .btn-danger:hover {
-	background: lighten($dangerBg,5%);
+	background: darken($dangerBg, 5%);
 }
 .btn-grey, .label-grey {
 	background: $greyBg;
 	color: #fff;
 }
 .btn-grey:hover {
-	background: lighten($greyBg,5%);
+	background: darken($greyBg, 5%);
 }
-.btn-black, .label-black{
+.btn-black, .label-black {
 	background: $blackBg;
 	color: #fff;
 }
 .btn-black:hover {
-	background: lighten($blackBg,5%);
+	background: darken($blackBg, 5%);
 }
-.btn-violet, .label-violet{
+.btn-violet, .label-violet {
 	background: $violetBg;
 	color: #fff;
 }
 .btn-violet:hover {
-	background: lighten($violetBg,5%);
+	background: darken($violetBg, 5%);
 }
 .btn-link {
 	background: none;
 	color: #005580;
-	&:hover{
+
+	&:hover {
 		background: none;
 		color: #0D79AF;
 	}
 }
-.btn-radius-2{
+.btn-radius-2 {
 	border-radius: 2px;
 }
-.btn-radius-4{
+.btn-radius-4 {
 	border-radius: 4px;
 }
 .btn-radius-16 {

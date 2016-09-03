@@ -694,11 +694,12 @@ button.close {
       text-align: center; }
       .table-view .table-view-cell .media-object img {
         max-width: 100%; }
-    .table-view .table-view-cell .media-body .media-tit a, .table-view .table-view-cell .media-body .media-tit .page span.current, .page .table-view .table-view-cell .media-body .media-tit span.current, .table-view .table-view-cell .media-body .media-tit .page span.disabled, .page .table-view .table-view-cell .media-body .media-tit span.disabled, .table-view .table-view-cell .media-body .media-tit .page .more, .page .table-view .table-view-cell .media-body .media-tit .more {
-      color: #000;
-      font-size: 16px;
-      margin-right: 5px;
+    .table-view .table-view-cell .media-body .media-tit {
       line-height: 19px; }
+      .table-view .table-view-cell .media-body .media-tit a, .table-view .table-view-cell .media-body .media-tit .page span.current, .page .table-view .table-view-cell .media-body .media-tit span.current, .table-view .table-view-cell .media-body .media-tit .page span.disabled, .page .table-view .table-view-cell .media-body .media-tit span.disabled, .table-view .table-view-cell .media-body .media-tit .page .more, .page .table-view .table-view-cell .media-body .media-tit .more {
+        color: #000;
+        font-size: 16px;
+        margin-right: 5px; }
     .table-view .table-view-cell .media-body .media-sum {
       display: block;
       line-height: 18px;
@@ -744,7 +745,13 @@ button.close {
 button[type="button"] {
   border: none; }
 
-.btn {
+.btn:hover {
+  background-color: #CFCFCF; }
+.btn.btn-mini {
+  padding: 3px 8px;
+  font-size: 12px; }
+
+.label, .btn {
   padding: 6px 12px;
   color: #666;
   font-size: 1.4rem;
@@ -752,70 +759,58 @@ button[type="button"] {
   line-height: 20px;
   background: #E4E4E4;
   white-space: nowrap; }
-  .btn:hover {
-    background-color: #CFCFCF; }
-  .btn.btn-mini {
-    padding: 5px 10px; }
-
-.label {
-  padding: 3px 6px;
-  color: #666;
-  font-size: 1.2rem;
-  display: inline-block;
-  line-height: 20px;
-  background: #E4E4E4;
-  white-space: nowrap; }
-  .label.label-mini {
-    padding: 2px 5px; }
+  .label.label-mini, .label-mini.btn {
+    padding: 3px 8px;
+    font-size: 12px; }
 
 .btn-primary, .label-primary {
   background: #66CCFF;
   color: #fff; }
 
 .btn-primary:hover {
-  background: #80d5ff; }
+  background: #4dc4ff; }
 
 .btn-success, .label-success {
   background: #33CCCC;
   color: #fff; }
 
 .btn-success:hover {
-  background: #47d1d1; }
+  background: #2eb8b8; }
 
 .btn-warning, .label-warning {
   background: #F3D261;
   color: #fff; }
 
 .btn-warning:hover {
-  background: #f5d979; }
+  background: #f1cb49; }
 
 .btn-danger, .label-danger {
   background: #FF9999;
   color: #fff; }
 
 .btn-danger:hover {
-  background: #ffb3b3; }
+  background: #ff8080; }
 
 .btn-grey, .label-grey {
   background: #666;
   color: #fff; }
 
 .btn-grey:hover {
-  background: #737373; }
+  background: #595959; }
 
 .btn-black, .label-black {
   background: #333;
   color: #fff; }
 
 .btn-black:hover {
-  background: #404040; }
+  background: #262626; }
 
 .btn-violet, .label-violet {
   background: #8089C1;
   color: #fff; }
 
 .btn-violet:hover {
-  background: #9199c9; }
+  background: #6f79b9; }
 
 .btn-link {
   background: none;
