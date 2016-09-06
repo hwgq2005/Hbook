@@ -1,13 +1,4 @@
 /*====== Form ========*/
-label,
-input,
-button,
-select,
-textarea {
-  font-size: 1.4rem;
-  font-weight: normal;
-  line-height: 20px; }
-
 select,
 textarea,
 input[type="text"],
@@ -36,31 +27,6 @@ textarea {
   height: auto;
   overflow: hidden;
   resize: vertical; }
-
-.form-search input,
-.form-inline input,
-.form-horizontal input,
-.form-search textarea,
-.form-inline textarea,
-.form-horizontal textarea,
-.form-search select,
-.form-inline select,
-.form-horizontal select,
-.form-search .help-inline,
-.form-inline .help-inline,
-.form-horizontal .help-inline,
-.form-search .uneditable-input,
-.form-inline .uneditable-input,
-.form-horizontal .uneditable-input,
-.form-search .input-prepend,
-.form-inline .input-prepend,
-.form-horizontal .input-prepend,
-.form-search .input-append,
-.form-inline .input-append,
-.form-horizontal .input-append {
-  display: inline-block;
-  margin-bottom: 0;
-  vertical-align: middle; }
 
 textarea,
 input[type="text"],
@@ -148,6 +114,55 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     margin-left: -20px; }
   .checkbox:hover:before, .radio:hover:before {
     border: 2px solid #66CCFF; }
+  .checkbox.box-primary.active:before, .box-primary.active.radio:before {
+    background: #66CCFF;
+    border: 2px solid #66CCFF; }
+  .checkbox.box-primary:before, .box-primary.radio:before {
+    border: 2px solid #b3e6ff; }
+  .checkbox.box-primary:hover:before, .box-primary.radio:hover:before {
+    border: 2px solid #66CCFF; }
+  .checkbox.box-success.active:before, .box-success.active.radio:before {
+    background: #33CCCC;
+    border: 2px solid #33CCCC; }
+  .checkbox.box-success:before, .box-success.radio:before {
+    border: 2px solid #70dbdb; }
+  .checkbox.box-success:hover:before, .box-success.radio:hover:before {
+    border: 2px solid #33CCCC; }
+  .checkbox.box-warning.active:before, .box-warning.active.radio:before {
+    background: #F3D261;
+    border: 2px solid #F3D261; }
+  .checkbox.box-warning:before, .box-warning.radio:before {
+    border: 2px solid #f8e6a8; }
+  .checkbox.box-warning:hover:before, .box-warning.radio:hover:before {
+    border: 2px solid #F3D261; }
+  .checkbox.box-danger.active:before, .box-danger.active.radio:before {
+    background: #FF9999;
+    border: 2px solid #FF9999; }
+  .checkbox.box-danger:before, .box-danger.radio:before {
+    border: 2px solid #ffe6e6; }
+  .checkbox.box-danger:hover:before, .box-danger.radio:hover:before {
+    border: 2px solid #FF9999; }
+  .checkbox.box-violet.active:before, .box-violet.active.radio:before {
+    background: #8089C1;
+    border: 2px solid #8089C1; }
+  .checkbox.box-violet:before, .box-violet.radio:before {
+    border: 2px solid #b3b9da; }
+  .checkbox.box-violet:hover:before, .box-violet.radio:hover:before {
+    border: 2px solid #8089C1; }
+  .checkbox.box-black.active:before, .box-black.active.radio:before {
+    background: #333;
+    border: 2px solid #333; }
+  .checkbox.box-black:before, .box-black.radio:before {
+    border: 2px solid #595959; }
+  .checkbox.box-black:hover:before, .box-black.radio:hover:before {
+    border: 2px solid #333; }
+  .checkbox.box-grey.active:before, .box-grey.active.radio:before {
+    background: #666;
+    border: 2px solid #666; }
+  .checkbox.box-grey:before, .box-grey.radio:before {
+    border: 2px solid #8c8c8c; }
+  .checkbox.box-grey:hover:before, .box-grey.radio:hover:before {
+    border: 2px solid #666; }
   .checkbox.active:before, .active.radio:before {
     background: #66CCFF;
     border: 2px solid #66CCFF; }

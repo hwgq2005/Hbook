@@ -3,16 +3,6 @@
 
 @import "config";
 
-label, 
-input, 
-button, 
-select, 
-textarea {
-	font-size: 1.4rem;
-	font-weight: normal;
-	line-height: 20px;
-}
-
 select, 
 textarea, 
 input[type="text"], 
@@ -42,31 +32,6 @@ textarea {
 	height: auto;
 	overflow: hidden;
 	resize:vertical;
-}
-.form-search input, 
-.form-inline input, 
-.form-horizontal input, 
-.form-search textarea, 
-.form-inline textarea, 
-.form-horizontal textarea, 
-.form-search select, 
-.form-inline select, 
-.form-horizontal select, 
-.form-search .help-inline, 
-.form-inline .help-inline, 
-.form-horizontal .help-inline, 
-.form-search .uneditable-input, 
-.form-inline .uneditable-input, 
-.form-horizontal .uneditable-input, 
-.form-search .input-prepend, 
-.form-inline .input-prepend, 
-.form-horizontal .input-prepend, 
-.form-search .input-append, 
-.form-inline .input-append, 
-.form-horizontal .input-append {
-	display: inline-block;
-	margin-bottom: 0;
-	vertical-align: middle;
 }
 
 textarea, 
@@ -177,9 +142,123 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 		display:inline-block;
 		margin-left: -20px;
 	}
+
 	&:hover{
 		&:before{
 			border:2px solid $primaryBg;
+		}
+	}
+	&.box-primary{
+		&.active{
+			&:before{
+		  		background:$primaryBg;
+		  		border:2px solid $primaryBg;
+		  	}
+		}
+		&:before{
+			border:2px solid lighten($primaryBg,15%);
+		}
+		&:hover{
+			&:before{
+				border:2px solid $primaryBg;
+			}
+		}
+
+	}
+	&.box-success{
+		&.active{
+			&:before{
+		  		background:$successBg;
+		  		border:2px solid $successBg;
+		  	}
+		}
+		&:before{
+			border:2px solid lighten($successBg,15%);
+		}
+		&:hover{
+			&:before{
+				border:2px solid $successBg;
+			}
+		}
+	}
+	&.box-warning{
+		&.active{
+			&:before{
+		  		background:$warningBg;
+		  		border:2px solid $warningBg;
+		  	}
+		}
+		&:before{
+			border:2px solid lighten($warningBg,15%);
+		}
+		&:hover{
+			&:before{
+				border:2px solid $warningBg;
+			}
+		}
+	}
+	&.box-danger{
+		&.active{
+			&:before{
+		  		background:$dangerBg;
+		  		border:2px solid $dangerBg;
+		  	}
+		}
+		&:before{
+			border:2px solid lighten($dangerBg,15%);
+		}
+		&:hover{
+			&:before{
+				border:2px solid $dangerBg;
+			}
+		}
+	}
+	&.box-violet{
+		&.active{
+			&:before{
+		  		background:$violetBg;
+		  		border:2px solid $violetBg;
+		  	}
+		}
+		&:before{
+			border:2px solid lighten($violetBg,15%);
+		}
+		&:hover{
+			&:before{
+				border:2px solid $violetBg;
+			}
+		}
+	}
+	&.box-black{
+		&.active{
+			&:before{
+		  		background:$blackBg;
+		  		border:2px solid $blackBg;
+		  	}
+		}
+		&:before{
+			border:2px solid lighten($blackBg,15%);
+		}
+		&:hover{
+			&:before{
+				border:2px solid $blackBg;
+			}
+		}
+	}
+	&.box-grey{
+		&.active{
+			&:before{
+		  		background:$greyBg;
+		  		border:2px solid $greyBg;
+		  	}
+		}
+		&:before{
+			border:2px solid lighten($greyBg,15%);
+		}
+		&:hover{
+			&:before{
+				border:2px solid $greyBg;
+			}
 		}
 	}
 	&.active{
@@ -196,7 +275,6 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 		    content: '';
 		    width: 10px;
 	    	height: 6px;
-		    
 		    border: 2px solid #fff;  
 		    border-top: none;
 		    border-right: none;    
@@ -220,7 +298,6 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 	  	text-align: center;
 	  	background:#fff;
 	  	border:2px solid lighten($primaryBg,15%);
-	  	
 		color:#fff;
 		font-size: 1.2rem;
 		cursor: pointer;

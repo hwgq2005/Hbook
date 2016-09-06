@@ -50,6 +50,16 @@
 				}
 			});
 
+			$checkBox.on('click', 'a', function(event) {
+				var $this = $(this),
+					color = $this.data('color');
+
+				$checkBox.find('label').each(function(index, el) {
+					$(el).removeClass('box-primary box-success box-warning box-danger  box-violet box-black box-grey')
+						 .addClass(color);
+				});
+			});
+
 		},
 		
 		//表单验证

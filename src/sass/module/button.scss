@@ -4,97 +4,96 @@
 button[type="button"] {
 	border: none;
 }
+.label {
+	display: inline-block;
+	padding: 6px 12px;
+	font-size: 1.4rem;
+	line-height: 20px;
+	background: $defaultBg;
+	color: #666;
+	white-space: nowrap;
+}
 .btn {
 	@extend .label;
-
 	&:hover {
 		background-color: #CFCFCF;
 	}
-	&.btn-mini {
-		padding: 3px 8px;
-		font-size: 12px;
-	}
 }
-.label {
-	padding: 6px 12px;
-	color: #666;
-	font-size: 1.4rem;
-	display: inline-block;
-	line-height: 20px;
-	background: $defaultBg;
-	white-space: nowrap;
-	&.label-mini {
-		padding: 3px 8px;
-		font-size: 12px;
-	}
+.btn-mini,
+.label-mini{
+	padding: 3px 8px;
+	font-size: 12px;
 }
-.btn-primary, .label-primary {
-	background: $primaryBg;
-	color: #fff;
+
+// button
+.btn-primary{
+	@include button-define($primaryBg,#fff,'btn');
 }
-.btn-primary:hover {
-	background: darken($primaryBg, 5%);
+.btn-success{
+	@include button-define($successBg,#fff,'btn');
 }
-.btn-success, .label-success {
-	background: $successBg;
-	color: #fff;
+.btn-warning{
+	@include button-define($warningBg,#fff,'btn');
 }
-.btn-success:hover {
-	background: darken($successBg, 5%);
+.btn-danger{
+	@include button-define($dangerBg,#fff,'btn');
 }
-.btn-warning, .label-warning {
-	background: $warningBg;
-	color: #fff;
+.btn-violet{
+	@include button-define($violetBg,#fff,'btn');
 }
-.btn-warning:hover {
-	background: darken($warningBg, 5%);
+
+.btn-black{
+	@include button-define($blackBg,#fff,'btn');
 }
-.btn-danger, .label-danger {
-	background: $dangerBg;
-	color: #fff;
+.btn-grey{
+	@include button-define($greyBg,#fff,'btn');
 }
-.btn-danger:hover {
-	background: darken($dangerBg, 5%);
-}
-.btn-grey, .label-grey {
-	background: $greyBg;
-	color: #fff;
-}
-.btn-grey:hover {
-	background: darken($greyBg, 5%);
-}
-.btn-black, .label-black {
-	background: $blackBg;
-	color: #fff;
-}
-.btn-black:hover {
-	background: darken($blackBg, 5%);
-}
-.btn-violet, .label-violet {
-	background: $violetBg;
-	color: #fff;
-}
-.btn-violet:hover {
-	background: darken($violetBg, 5%);
-}
+
 .btn-link {
 	background: none;
 	color: #005580;
-
 	&:hover {
 		background: none;
 		color: #0D79AF;
 	}
 }
+
+// label
+.label-primary{
+	@include button-define($primaryBg,#fff,'label');
+}
+.label-success{
+	@include button-define($successBg,#fff,'label');
+}
+.label-warning{
+	@include button-define($warningBg,#fff,'label');
+}
+.label-danger{
+	@include button-define($dangerBg,#fff,'label');
+}
+.label-violet{
+	@include button-define($violetBg,#fff,'label');
+}
+
+.label-black{
+	@include button-define($blackBg,#fff,'label');
+}
+.label-grey{
+	@include button-define($greyBg,#fff,'label');
+}
+
+
+// border-radius
 .btn-radius-2 {
-	border-radius: 2px;
+	@include border-radius(2px);
 }
 .btn-radius-4 {
-	border-radius: 4px;
+	@include border-radius(4px);
 }
 .btn-radius-16 {
-	border-radius: 16px;
+	@include border-radius(16px);
 }
 .btn-radius-50 {
-	border-radius: 50%;
+	@include border-radius(50%);
 }
+

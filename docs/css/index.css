@@ -148,12 +148,20 @@ ol {
   display: block;
   margin-bottom: 10px; }
 
-footer {
+.footer {
   max-width: 1024px;
-  margin: 0 auto !important;
-  padding: 10px 10px 40px !important;
+  margin: 0 auto;
+  padding: 10px 10px 40px;
   color: #999;
   text-align: center; }
+
+.box-type {
+  margin-left: -3px;
+  margin-bottom: 10px; }
+
+.box-type a {
+  width: 20px;
+  height: 20px; }
 
 /* ---------------------------------code color------------------------------------- */
 .com {
