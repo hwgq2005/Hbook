@@ -78,9 +78,9 @@ gulp.task('compass', function() {
 
 		}))
 		.pipe(gulp.dest('./docs/css'))
-		.pipe(rename( { suffix: '.min' }))
-		.pipe(minicss())
-		.pipe(gulp.dest('./docs/css'))
+		//.pipe(rename( { suffix: '.min' }))
+		//.pipe(minicss())
+		//.pipe(gulp.dest('./docs/css'))
 		.pipe(livereload())
 		
 	//生成dist目录
@@ -99,7 +99,7 @@ gulp.task('compass', function() {
 		.pipe(rename( { suffix: '.min' }))
 		.pipe(minicss())
 		.pipe(gulp.dest('./dist/css'))
-		.pipe(gulp.dest('./docs/css'))
+		//.pipe(gulp.dest('./docs/css'))
 		
 
 });
@@ -146,7 +146,7 @@ gulp.task('scripts', function() {
 		.pipe(rename( { suffix: '.min' }))
 		.pipe(uglify())
 		.pipe(gulp.dest('./dist/js'))
-		.pipe(gulp.dest('./docs/js'))
+		//.pipe(gulp.dest('./docs/js'))
 });
 
 //压缩图片
