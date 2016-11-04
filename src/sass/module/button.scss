@@ -25,6 +25,16 @@ button[type="button"] {
 	font-size: 12px;
 }
 
+.btn-large,
+.label-large{
+	padding: 10px;
+	font-size: 16px;
+}
+.btn-block{
+	display:block;
+	text-align:center;
+}
+
 // button
 .btn-primary{
 	@include button-define($primaryBg,#fff,'btn');
@@ -57,6 +67,7 @@ button[type="button"] {
 		color: #0D79AF;
 	}
 }
+
 
 // label
 .label-primary{
