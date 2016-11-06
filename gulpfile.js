@@ -172,7 +172,6 @@ gulp.task('miniHtml', function () {
 //定义名为"watch"的任务
 gulp.task('watch', function() {
 	gulp.watch('./src/images/*.*',['imagemin']);
-	gulp.watch('./src/template/*.ejs',['ejs']);
 	gulp.watch('./src/js/**/*.js',['scripts']);
 	gulp.watch('./src/sass/**/*.scss',['compass']);
 	// gulp.watch('./src/style/*.css',['compass']);
