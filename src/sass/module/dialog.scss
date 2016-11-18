@@ -1,0 +1,81 @@
+
+/*====== Dialog ========*/
+
+@import "config";
+
+.dialog-open{
+	overflow:hidden;
+}
+.dialog-open .dialog{
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+.dialog{
+	display: none;
+	position: fixed;
+	top:15%;
+    width:500px;
+    left:50%;
+    margin-left:-250px;
+    padding:1px;
+    text-align:left;
+    color: #666;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+   	@include box-shadow(0 5px 10px rgba(0, 0, 0, .2));
+    z-index:999;
+
+}
+.dialog.in{
+	display:block;
+}
+
+.dialog-header {
+    position:relative;
+    padding:15px;
+    border-bottom:1px solid #f8f6f2;
+    background-color:#fff;
+    text-align: center;
+    color: #333;
+    font-size: 1.6rem;
+
+}
+.dialog-body {
+    position:relative;
+    padding:20px;
+    color:#666;
+    line-height: 22px;
+}
+.dialog-footer {
+    padding:15px ;
+    border-top:1px solid #f8f6f2;
+    font-size: 0;
+    &.dialog-footer-left{
+    	text-align:left;
+    }
+    &.dialog-footer-right{
+    	text-align:right;
+    }
+    &.dialog-footer-center{
+    	text-align:center;
+    }
+    .btn{
+    	margin:0 5px;
+    }
+}
+.dialog-backdrop{
+	position: fixed;
+  	top:0;
+  	bottom: 0;
+  	left:0;
+  	right: 0;
+  	width:100%;
+  	background: rgba(0,0,0,.6);
+  	text-align: center;
+  	z-index: 998;
+  	opacity: 0;
+  	@include transition(opacity .15s linear);
+  	&.in{
+  		opacity: 1;
+  	}
+}

@@ -24,6 +24,14 @@
 			hbook.page('.page');
 			prettyPrint();
 
+
+			$('#dialog-btn').click(function(event) {
+				$('#dialog1').dialog({
+					modal:'show'
+				});
+			});
+			
+
 		},
 
 		//事件绑定
