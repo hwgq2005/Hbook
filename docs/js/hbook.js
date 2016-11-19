@@ -1,7 +1,7 @@
 
 /**
  * @authors H君
- * @date    2016-04-21 11:22:04
+ * @date    2016-11-19 21:33:10
  * @version 1.0
  */
 
@@ -10,66 +10,82 @@
 	"use strict";
 
 	var Dialog=function(element, options){
+
 		this.options=options;
 		this.$element=$(element);
 		this.init(this.options,this.$element);
 		
 	}
 
+	// 初始化
 	Dialog.prototype.init=function(options,elememt){
 
 		var _self = this;
-		options.modal == 'show' ? this.show(options) : this.hide(options);
 
+		//判断是否已经显示弹出框
+		// if (options.backdrop) {
+			this.$element.on('click', '[data-dialog="hide"]', function(){
+				_self.hide(options,elememt);
+			});
+		// }
+		options.modal == 'show' ? this.show(options,elememt) : this.hide(options,elememt);
 		
-		this.$element.on('click', '[data-dialog="hide"]', function(){
-			_self.hide(options);
-		});
 	}
 
-	Dialog.prototype.show=function(options){
+	// 显示弹出框
+	Dialog.prototype.show=function(options,elememt){
 		
-		options.backdrop ? this.backdrop(options) : '' ;
+		// options.backdrop ? this.backdrop(options,elememt) : '' ;
+		this.backdrop(options,elememt)
 		this.$element.addClass('in');
 	}
 
-	Dialog.prototype.hide=function(options){
-		this.$element.removeClass('in');
-		console.log(this)
-		this.$backdrop.remove();
-		this.$backdrop = null;
+	// 隐藏弹出框
+	Dialog.prototype.hide=function(options,elememt){
 
-		options.backdrop = true;
+		this.$element.removeClass('in');
 		this.$element.off('click','[data-dialog="hide"]');
+
+		this.$backdrop ? this.hideBackDrop(options) : '' ;
+		
 	}
 
-	Dialog.prototype.backdrop=function(options){
-		var _self = this;
-		_self.$backdrop = $('<div class="dialog-backdrop"></div>');
+	// 显示遮罩
+	Dialog.prototype.backdrop=function(options,elememt){
+
+		var elememtId = elememt.attr('id');
 		
-		$('body').append(_self.$backdrop).addClass('dialog-open');
-		_self.$backdrop.addClass('in');
+		this.$backdrop = $('<div class="dialog-backdrop"></div>')
+		.appendTo(document.body)
+		.addClass('in');
+
+		$(document.body).addClass('dialog-open');
 		options.backdrop = false;
 
 	}
 
-
-
+	// 隐藏遮罩
+	Dialog.prototype.hideBackDrop = function(options){
+		this.$backdrop.remove();
+		this.$backdrop = null;
+		options.backdrop = true;
+	}
 
 	$.fn.dialog = function(option) {
-		//默认参数
+		
 		var element=this;
 		var options = $.extend($.fn.dialog.defaults, option);
 
 		return this.each(function () {
-           new Dialog(this, options);
+          	new Dialog(this, options);
 		})
 		
 	}
 
+	// 默认配置
 	$.fn.dialog.defaults={
-		modal:'show',
-		backdrop:true
+		modal:'show',  // 显示或者隐藏弹出框
+		backdrop:true  // 是否出现遮罩
 	}
 
 

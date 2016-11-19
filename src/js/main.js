@@ -30,6 +30,11 @@
 					modal:'show'
 				});
 			});
+			$('#confirm').click(function(event) {
+				$('#dialog2').dialog({
+					modal:'show'
+				});
+			});
 			
 
 		},
