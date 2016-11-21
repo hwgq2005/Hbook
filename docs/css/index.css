@@ -62,26 +62,6 @@ body {
 ol {
   list-style: decimal !important; }
 
-.h-header {
-  background: #222222;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 40px;
-  z-index: 9000; }
-
-.h-header-box, .content {
-  max-width: 1024px;
-  padding: 0 10px;
-  margin: 0 auto; }
-
-.h-header-box .nav a {
-  color: #d1d1d1; }
-
-.h-header-box .nav a:hover {
-  color: #fff; }
-
 .content {
   padding: 50px 10px 0; }
 
