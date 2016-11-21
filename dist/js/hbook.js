@@ -66,9 +66,12 @@
 
 	// 隐藏遮罩
 	Dialog.prototype.hideBackDrop = function(options){
+		
 		this.$backdrop.remove();
 		this.$backdrop = null;
 		options.backdrop = true;
+
+		$(document.body).removeClass('dialog-open');
 	}
 
 	$.fn.dialog = function(option) {
