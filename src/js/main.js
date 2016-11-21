@@ -25,16 +25,7 @@
 			prettyPrint();
 
 
-			$('#dialog-btn').click(function(event) {
-				$('#dialog1').dialog({
-					modal:'show'
-				});
-			});
-			$('#confirm').click(function(event) {
-				$('#dialog2').dialog({
-					modal:'show'
-				});
-			});
+			
 			
 
 		},
@@ -70,6 +61,24 @@
 				$checkBox.find('label').each(function(index, el) {
 					$(el).removeClass('box-primary box-success box-warning box-danger  box-violet box-black box-grey')
 						 .addClass(color);
+				});
+			});
+
+			// 导航下拉
+			$('.navbar-toggle').click(function(event) {
+				$(this).toggleClass('collapsed');
+				$('#navbar').toggleClass('in');
+			});
+
+			//弹窗
+			$('#dialog-btn').click(function(event) {
+				$('#dialog1').dialog({
+					modal:'show'
+				});
+			});
+			$('#confirm').click(function(event) {
+				$('#dialog2').dialog({
+					modal:'show'
 				});
 			});
 
