@@ -13,6 +13,8 @@
 
 		this.options=options;
 		this.$element=$(element);
+		this.$backdrop = null;
+		this.isShow = null;
 		this.init(this.options,this.$element);
 		
 	}
@@ -66,7 +68,7 @@
 
 	// 隐藏遮罩
 	Dialog.prototype.hideBackDrop = function(options){
-		
+
 		this.$backdrop.remove();
 		this.$backdrop = null;
 		options.backdrop = true;
