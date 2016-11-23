@@ -1078,6 +1078,7 @@ input[type="password"] {
   display: inline-block;
   height: 34px;
   padding: 6px 12px;
+  font-family: "Ping Fang SC", "STHeiTi", "arial", "Microsoft YaHei", "SimSun", "Georgia", "Times", "Times New Roman", "serif";
   font-size: 1.4rem;
   line-height: 20px;
   color: #555;
