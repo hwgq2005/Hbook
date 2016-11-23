@@ -49,7 +49,7 @@
 	    padding: 15px ;
 	    overflow: hidden;
 
-	    &:hover {
+	    &.table-view-hover:hover {
 			background: #FAFAFA;
 			.table-view-operation {
 				opacity: 1;

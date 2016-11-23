@@ -1389,7 +1389,6 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
 
 /*====== Page ========*/
 .page {
-  padding: 15px 20px;
   text-align: left;
   color: #ccc; }
   .page a, .page span.current, .page span.disabled, .page .more {
@@ -1689,9 +1688,9 @@ button.close {
     position: relative;
     padding: 15px;
     overflow: hidden; }
-    .table-view .table-view-cell:hover {
+    .table-view .table-view-cell.table-view-hover:hover {
       background: #FAFAFA; }
-      .table-view .table-view-cell:hover .table-view-operation {
+      .table-view .table-view-cell.table-view-hover:hover .table-view-operation {
         opacity: 1; }
     .table-view .table-view-cell .table-view-operation {
       position: absolute;
