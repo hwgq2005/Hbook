@@ -89,6 +89,8 @@
 
 		bindEvent:function(){
 			var _self=this;
+
+			_self.$element.off('click');			
 			_self.$element.on("click", "a.number", function() {
 				var current = parseInt($(this).text());
 				_self.getDom(_self.$element, {

@@ -55,7 +55,7 @@ a img, .page span.current img, .page span.disabled img, .page .more img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
-/*====== Reset ========*/
+/*====== Common ========*/
 *,
 :after,
 :before {
@@ -67,7 +67,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
+  font-family: "Ping Fang SC", "STHeiTi", "arial", "Microsoft YaHei", "SimSun", "Georgia", "Times", "Times New Roman", "serif";
   font-size: 1.4rem; }
 
 a:link, .page span.current:link, .page span.disabled:link, .page .more:link {
@@ -87,6 +87,18 @@ i {
 
 span {
   vertical-align: middle; }
+
+input::-webkit-input-placeholder {
+  color: #999; }
+
+input:-moz-placeholder {
+  color: #999; }
+
+input::-moz-placeholder {
+  color: #999; }
+
+input:-ms-placeholder {
+  color: #999; }
 
 .clearfix:after {
   visibility: hidden;
@@ -1715,7 +1727,7 @@ button.close {
       color: #999;
       overflow: hidden; }
       .table-view .table-view-cell .media-body .media-sum a, .table-view .table-view-cell .media-body .media-sum .page span.current, .page .table-view .table-view-cell .media-body .media-sum span.current, .table-view .table-view-cell .media-body .media-sum .page span.disabled, .page .table-view .table-view-cell .media-body .media-sum span.disabled, .table-view .table-view-cell .media-body .media-sum .page .more, .page .table-view .table-view-cell .media-body .media-sum .more {
-        color: #333; }
+        color: #999; }
     .table-view .table-view-cell .media-body .media-footer {
       margin: 10px 0; }
       .table-view .table-view-cell .media-body .media-footer a, .table-view .table-view-cell .media-body .media-footer .page span.current, .page .table-view .table-view-cell .media-body .media-footer span.current, .table-view .table-view-cell .media-body .media-footer .page span.disabled, .page .table-view .table-view-cell .media-body .media-footer span.disabled, .table-view .table-view-cell .media-body .media-footer .page .more, .page .table-view .table-view-cell .media-body .media-footer .more {

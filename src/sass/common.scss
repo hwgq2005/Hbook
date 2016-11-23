@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/*====== Reset ========*/
+/*====== Common ========*/
 *, 
 :after, 
 :before {
@@ -12,7 +12,7 @@ html{
     font-size: 62.5%;
 }
 body {
-    font-family: "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
+    font-family: "Ping Fang SC", "STHeiTi", "arial", "Microsoft YaHei", "SimSun", "Georgia", "Times", "Times New Roman", "serif";
     font-size: 1.4rem;
 }
 a:link {
@@ -33,6 +33,20 @@ i {
 span{
     vertical-align:middle;
 }
+
+input::-webkit-input-placeholder {
+    color: #999;
+}
+input:-moz-placeholder {
+    color: #999;
+}
+input::-moz-placeholder {
+    color: #999;
+}
+input:-ms-placeholder {
+    color: #999;
+}
+
 .clearfix:after {
     visibility: hidden;
     display: block;
