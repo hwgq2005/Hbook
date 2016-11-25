@@ -4,7 +4,7 @@ button[type="button"] {
 
 .label, .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 6px 20px;
   font-size: 1.4rem;
   line-height: 20px;
   background: #E4E4E4;
@@ -32,7 +32,7 @@ button[type="button"] {
   background: #66CCFF;
   color: #fff; }
   .btn-primary:hover {
-    background: #4dc3ff; }
+    background: #4dc4ff; }
 
 .btn-success {
   background: #33CCCC;
@@ -76,6 +76,11 @@ button[type="button"] {
   .btn-link:hover {
     background: none;
     color: #0D79AF; }
+
+.btn-group .btn {
+  margin: 0 5px; }
+  .btn-group .btn:last-child {
+    margin-right: 0; }
 
 .label-primary {
   background: #66CCFF;

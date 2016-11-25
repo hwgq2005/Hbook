@@ -76,70 +76,107 @@
 				max-width: 100%;
 			}
 		}
-		.media-body {
-			.media-tit {
-				line-height: 19px;
-				a {
-					color: #000;
-					font-size: 16px;
-					margin-right: 5px;
+		
+	}
 
+	&.table-view-one{
+		.table-view-cell{
+			.media-body{
+				.media-tit {
+					line-height: 19px;
+					a {
+						color: #000;
+						font-size: 16px;
+						margin-right: 5px;
+					}
+				}
+				.media-sum {
+					display: block;
+					line-height: 18px;
+					margin-top: 10px;
+					font-size: 12px;
+					color:#999;
+					overflow: hidden;
+					a {
+						color: #999;
+					}
+				}
+			}
+		}
+	}
+
+	&.table-view-two{
+		.table-view-cell{
+			border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+			.media-object{
+				margin-right: 20px;
+				.media-view{
+					display: block;
+					width: 160px;
+					height: 100px;
+					background-repeat:no-repeat;
+					background-position:center;
+					background-size:cover;
+				}
+			}
+			.media-tit{
+				margin-bottom: 10px;
+			    color: #666;
+			    font-size: 1.6rem;
+			    font-weight: normal;
+			    a{
+				    color: #666;
 				}
 			}
 			.media-sum {
-				display: block;
-				line-height: 18px;
-				margin-top: 10px;
-				font-size: 12px;
-				color:#999;
-				overflow: hidden;
-				a {
-					color: #999;
-				}
+				height: 38px;
+				margin-bottom: 10px;
+			    line-height: 20px;
+			    color: #999;
+			    font-size: 1.4rem;
+			    a{
+			    	color:#999;
+			    }
 			}
-			.media-footer{
-				margin: 10px 0;
-				a {
-					display: inline-block;
-					position: relative;
-				}
-				img {
-					width: 25px;
-					height: 25px;
-					border-radius: 50%;
-					vertical-align: middle;
-				}
-				span {
-					color: #999;
-					font-size: 12px;
-					vertical-align: middle;
-					i {
-						font-weight: 700;
-						color: #666;
+			.media-body{
+				line-height: 22px;
+				overflow: hidden;
+				.media-footer{
+					margin: 10px 0;
+					a {
 						display: inline-block;
-						margin-left: 3px;
+						position: relative;
 					}
+					img {
+						width: 25px;
+						height: 25px;
+						border-radius: 50%;
+						vertical-align: middle;
+					}
+					span {
+						color: #999;
+						font-size: 12px;
+						vertical-align: middle;
+						i {
+							color: #666;
+							display: inline-block;
+							margin-left: 3px;
+						}
+					}
+					.media-name {
+						color: #000;
+						font-weight: 700;
+						margin: 0 5px;
+					}
+					.media-span{
+						margin: 0 10px;
+						color: $defaultBg;
+					}
+					
 				}
-				.media-name {
-					color: #000;
-					font-weight: 700;
-					margin: 0 5px;
-				}
-				.media-span{
-					margin: 0 10px;
-					color: $defaultBg;
-				}
-				
 			}
 		}
 	}
 
 }
-.table-view-one{
-	.table-view-cell{
-		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-		.media-sum {
-			height: 38px;
-		}
-	}
-}
+

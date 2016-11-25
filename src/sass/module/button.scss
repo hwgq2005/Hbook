@@ -6,7 +6,7 @@ button[type="button"] {
 }
 .label {
 	display: inline-block;
-	padding: 6px 12px;
+    padding: 6px 20px;
 	font-size: 1.4rem;
 	line-height: 20px;
 	background: $defaultBg;
@@ -65,6 +65,15 @@ button[type="button"] {
 	&:hover {
 		background: none;
 		color: #0D79AF;
+	}
+}
+
+.btn-group{
+	.btn{
+		margin:0 5px;
+		&:last-child{
+			margin-right: 0;
+		}
 	}
 }
 

@@ -60,49 +60,72 @@
       text-align: center; }
       .table-view .table-view-cell .media-object img {
         max-width: 100%; }
-    .table-view .table-view-cell .media-body .media-tit {
-      line-height: 19px; }
-      .table-view .table-view-cell .media-body .media-tit a {
-        color: #000;
-        font-size: 16px;
-        margin-right: 5px; }
-    .table-view .table-view-cell .media-body .media-sum {
-      display: block;
-      line-height: 18px;
-      margin-top: 10px;
-      font-size: 12px;
+  .table-view.table-view-one .table-view-cell .media-body .media-tit {
+    line-height: 19px; }
+    .table-view.table-view-one .table-view-cell .media-body .media-tit a {
+      color: #000;
+      font-size: 16px;
+      margin-right: 5px; }
+  .table-view.table-view-one .table-view-cell .media-body .media-sum {
+    display: block;
+    line-height: 18px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+    overflow: hidden; }
+    .table-view.table-view-one .table-view-cell .media-body .media-sum a {
+      color: #999; }
+  .table-view.table-view-two .table-view-cell {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+    .table-view.table-view-two .table-view-cell .media-object {
+      margin-right: 20px; }
+      .table-view.table-view-two .table-view-cell .media-object .media-view {
+        display: block;
+        width: 160px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; }
+    .table-view.table-view-two .table-view-cell .media-tit {
+      margin-bottom: 10px;
+      color: #666;
+      font-size: 1.6rem;
+      font-weight: normal; }
+      .table-view.table-view-two .table-view-cell .media-tit a {
+        color: #666; }
+    .table-view.table-view-two .table-view-cell .media-sum {
+      height: 38px;
+      margin-bottom: 10px;
+      line-height: 20px;
       color: #999;
-      overflow: hidden; }
-      .table-view .table-view-cell .media-body .media-sum a {
+      font-size: 1.4rem; }
+      .table-view.table-view-two .table-view-cell .media-sum a {
         color: #999; }
-    .table-view .table-view-cell .media-body .media-footer {
-      margin: 10px 0; }
-      .table-view .table-view-cell .media-body .media-footer a {
-        display: inline-block;
-        position: relative; }
-      .table-view .table-view-cell .media-body .media-footer img {
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        vertical-align: middle; }
-      .table-view .table-view-cell .media-body .media-footer span {
-        color: #999;
-        font-size: 12px;
-        vertical-align: middle; }
-        .table-view .table-view-cell .media-body .media-footer span i {
-          font-weight: 700;
-          color: #666;
+    .table-view.table-view-two .table-view-cell .media-body {
+      line-height: 22px;
+      overflow: hidden; }
+      .table-view.table-view-two .table-view-cell .media-body .media-footer {
+        margin: 10px 0; }
+        .table-view.table-view-two .table-view-cell .media-body .media-footer a {
           display: inline-block;
-          margin-left: 3px; }
-      .table-view .table-view-cell .media-body .media-footer .media-name {
-        color: #000;
-        font-weight: 700;
-        margin: 0 5px; }
-      .table-view .table-view-cell .media-body .media-footer .media-span {
-        margin: 0 10px;
-        color: #E4E4E4; }
-
-.table-view-one .table-view-cell {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
-  .table-view-one .table-view-cell .media-sum {
-    height: 38px; }
+          position: relative; }
+        .table-view.table-view-two .table-view-cell .media-body .media-footer img {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          vertical-align: middle; }
+        .table-view.table-view-two .table-view-cell .media-body .media-footer span {
+          color: #999;
+          font-size: 12px;
+          vertical-align: middle; }
+          .table-view.table-view-two .table-view-cell .media-body .media-footer span i {
+            color: #666;
+            display: inline-block;
+            margin-left: 3px; }
+        .table-view.table-view-two .table-view-cell .media-body .media-footer .media-name {
+          color: #000;
+          font-weight: 700;
+          margin: 0 5px; }
+        .table-view.table-view-two .table-view-cell .media-body .media-footer .media-span {
+          margin: 0 10px;
+          color: #E4E4E4; }

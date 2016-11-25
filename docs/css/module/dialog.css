@@ -51,8 +51,6 @@
     text-align: right; }
   .dialog-footer.dialog-footer-center {
     text-align: center; }
-  .dialog-footer .btn {
-    margin: 0 5px; }
 
 .dialog-backdrop {
   position: fixed;

@@ -1630,8 +1630,6 @@ button.close {
     text-align: right; }
   .dialog-footer.dialog-footer-center {
     text-align: center; }
-  .dialog-footer .btn {
-    margin: 0 5px; }
 
 .dialog-backdrop {
   position: fixed;
@@ -1713,52 +1711,75 @@ button.close {
       text-align: center; }
       .table-view .table-view-cell .media-object img {
         max-width: 100%; }
-    .table-view .table-view-cell .media-body .media-tit {
-      line-height: 19px; }
-      .table-view .table-view-cell .media-body .media-tit a, .table-view .table-view-cell .media-body .media-tit .page span.current, .page .table-view .table-view-cell .media-body .media-tit span.current, .table-view .table-view-cell .media-body .media-tit .page span.disabled, .page .table-view .table-view-cell .media-body .media-tit span.disabled, .table-view .table-view-cell .media-body .media-tit .page .more, .page .table-view .table-view-cell .media-body .media-tit .more {
-        color: #000;
-        font-size: 16px;
-        margin-right: 5px; }
-    .table-view .table-view-cell .media-body .media-sum {
-      display: block;
-      line-height: 18px;
-      margin-top: 10px;
-      font-size: 12px;
+  .table-view.table-view-one .table-view-cell .media-body .media-tit {
+    line-height: 19px; }
+    .table-view.table-view-one .table-view-cell .media-body .media-tit a, .table-view.table-view-one .table-view-cell .media-body .media-tit .page span.current, .page .table-view.table-view-one .table-view-cell .media-body .media-tit span.current, .table-view.table-view-one .table-view-cell .media-body .media-tit .page span.disabled, .page .table-view.table-view-one .table-view-cell .media-body .media-tit span.disabled, .table-view.table-view-one .table-view-cell .media-body .media-tit .page .more, .page .table-view.table-view-one .table-view-cell .media-body .media-tit .more {
+      color: #000;
+      font-size: 16px;
+      margin-right: 5px; }
+  .table-view.table-view-one .table-view-cell .media-body .media-sum {
+    display: block;
+    line-height: 18px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+    overflow: hidden; }
+    .table-view.table-view-one .table-view-cell .media-body .media-sum a, .table-view.table-view-one .table-view-cell .media-body .media-sum .page span.current, .page .table-view.table-view-one .table-view-cell .media-body .media-sum span.current, .table-view.table-view-one .table-view-cell .media-body .media-sum .page span.disabled, .page .table-view.table-view-one .table-view-cell .media-body .media-sum span.disabled, .table-view.table-view-one .table-view-cell .media-body .media-sum .page .more, .page .table-view.table-view-one .table-view-cell .media-body .media-sum .more {
+      color: #999; }
+  .table-view.table-view-two .table-view-cell {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+    .table-view.table-view-two .table-view-cell .media-object {
+      margin-right: 20px; }
+      .table-view.table-view-two .table-view-cell .media-object .media-view {
+        display: block;
+        width: 160px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; }
+    .table-view.table-view-two .table-view-cell .media-tit {
+      margin-bottom: 10px;
+      color: #666;
+      font-size: 1.6rem;
+      font-weight: normal; }
+      .table-view.table-view-two .table-view-cell .media-tit a, .table-view.table-view-two .table-view-cell .media-tit .page span.current, .page .table-view.table-view-two .table-view-cell .media-tit span.current, .table-view.table-view-two .table-view-cell .media-tit .page span.disabled, .page .table-view.table-view-two .table-view-cell .media-tit span.disabled, .table-view.table-view-two .table-view-cell .media-tit .page .more, .page .table-view.table-view-two .table-view-cell .media-tit .more {
+        color: #666; }
+    .table-view.table-view-two .table-view-cell .media-sum {
+      height: 38px;
+      margin-bottom: 10px;
+      line-height: 20px;
       color: #999;
-      overflow: hidden; }
-      .table-view .table-view-cell .media-body .media-sum a, .table-view .table-view-cell .media-body .media-sum .page span.current, .page .table-view .table-view-cell .media-body .media-sum span.current, .table-view .table-view-cell .media-body .media-sum .page span.disabled, .page .table-view .table-view-cell .media-body .media-sum span.disabled, .table-view .table-view-cell .media-body .media-sum .page .more, .page .table-view .table-view-cell .media-body .media-sum .more {
+      font-size: 1.4rem; }
+      .table-view.table-view-two .table-view-cell .media-sum a, .table-view.table-view-two .table-view-cell .media-sum .page span.current, .page .table-view.table-view-two .table-view-cell .media-sum span.current, .table-view.table-view-two .table-view-cell .media-sum .page span.disabled, .page .table-view.table-view-two .table-view-cell .media-sum span.disabled, .table-view.table-view-two .table-view-cell .media-sum .page .more, .page .table-view.table-view-two .table-view-cell .media-sum .more {
         color: #999; }
-    .table-view .table-view-cell .media-body .media-footer {
-      margin: 10px 0; }
-      .table-view .table-view-cell .media-body .media-footer a, .table-view .table-view-cell .media-body .media-footer .page span.current, .page .table-view .table-view-cell .media-body .media-footer span.current, .table-view .table-view-cell .media-body .media-footer .page span.disabled, .page .table-view .table-view-cell .media-body .media-footer span.disabled, .table-view .table-view-cell .media-body .media-footer .page .more, .page .table-view .table-view-cell .media-body .media-footer .more {
-        display: inline-block;
-        position: relative; }
-      .table-view .table-view-cell .media-body .media-footer img {
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        vertical-align: middle; }
-      .table-view .table-view-cell .media-body .media-footer span {
-        color: #999;
-        font-size: 12px;
-        vertical-align: middle; }
-        .table-view .table-view-cell .media-body .media-footer span i {
-          font-weight: 700;
-          color: #666;
+    .table-view.table-view-two .table-view-cell .media-body {
+      line-height: 22px;
+      overflow: hidden; }
+      .table-view.table-view-two .table-view-cell .media-body .media-footer {
+        margin: 10px 0; }
+        .table-view.table-view-two .table-view-cell .media-body .media-footer a, .table-view.table-view-two .table-view-cell .media-body .media-footer .page span.current, .page .table-view.table-view-two .table-view-cell .media-body .media-footer span.current, .table-view.table-view-two .table-view-cell .media-body .media-footer .page span.disabled, .page .table-view.table-view-two .table-view-cell .media-body .media-footer span.disabled, .table-view.table-view-two .table-view-cell .media-body .media-footer .page .more, .page .table-view.table-view-two .table-view-cell .media-body .media-footer .more {
           display: inline-block;
-          margin-left: 3px; }
-      .table-view .table-view-cell .media-body .media-footer .media-name {
-        color: #000;
-        font-weight: 700;
-        margin: 0 5px; }
-      .table-view .table-view-cell .media-body .media-footer .media-span {
-        margin: 0 10px;
-        color: #E4E4E4; }
-
-.table-view-one .table-view-cell {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
-  .table-view-one .table-view-cell .media-sum {
-    height: 38px; }
+          position: relative; }
+        .table-view.table-view-two .table-view-cell .media-body .media-footer img {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          vertical-align: middle; }
+        .table-view.table-view-two .table-view-cell .media-body .media-footer span {
+          color: #999;
+          font-size: 12px;
+          vertical-align: middle; }
+          .table-view.table-view-two .table-view-cell .media-body .media-footer span i {
+            color: #666;
+            display: inline-block;
+            margin-left: 3px; }
+        .table-view.table-view-two .table-view-cell .media-body .media-footer .media-name {
+          color: #000;
+          font-weight: 700;
+          margin: 0 5px; }
+        .table-view.table-view-two .table-view-cell .media-body .media-footer .media-span {
+          margin: 0 10px;
+          color: #E4E4E4; }
 
 /*====== Button ========*/
 button[type="button"] {
@@ -1766,7 +1787,7 @@ button[type="button"] {
 
 .label, .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 6px 20px;
   font-size: 1.4rem;
   line-height: 20px;
   background: #E4E4E4;
@@ -1838,6 +1859,11 @@ button[type="button"] {
   .btn-link:hover {
     background: none;
     color: #0D79AF; }
+
+.btn-group .btn {
+  margin: 0 5px; }
+  .btn-group .btn:last-child {
+    margin-right: 0; }
 
 .label-primary {
   background: #66CCFF;
