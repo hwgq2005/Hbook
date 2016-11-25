@@ -107,6 +107,7 @@
 
 	&.table-view-two{
 		.table-view-cell{
+			padding:20px 0;
 			border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 			.media-object{
 				margin-right: 20px;
@@ -134,6 +135,7 @@
 			    line-height: 20px;
 			    color: #999;
 			    font-size: 1.4rem;
+			    overflow:hidden;
 			    a{
 			    	color:#999;
 			    }
@@ -142,7 +144,7 @@
 				line-height: 22px;
 				overflow: hidden;
 				.media-footer{
-					margin: 10px 0;
+					position:relative;
 					a {
 						display: inline-block;
 						position: relative;
