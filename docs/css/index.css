@@ -56,8 +56,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  color: #4B4B4B;
-  padding-top: 40px !important; }
+  color: #4B4B4B; }
 
 ol {
   list-style: decimal !important; }
@@ -65,11 +64,14 @@ ol {
 .content {
   padding: 50px 10px 0; }
 
+.header {
+  height: 50px; }
+
 .banner {
-  background: #8089C1;
+  background: #fef3f2;
   text-align: center;
   padding: 80px 0 100px;
-  color: #fff; }
+  color: #F05B48; }
 
 .banner .title {
   font-size: 8rem;
@@ -78,30 +80,36 @@ ol {
 .banner p {
   font-size: 3rem; }
 
-.banner .download {
-  font-size: 1.8rem;
-  margin-top: 40px;
-  padding: 15px 80px;
-  background: #F3D261;
-  color: #fff;
-  display: inline-block;
-  -moz-box-shadow: 0px 5px 0px #eebe1a;
-  -webkit-box-shadow: 0px 5px 0px #eebe1a;
-  box-shadow: 0px 5px 0px #eebe1a; }
+.banner .btn-group {
+  margin-top: 40px; }
 
-.banner .download:hover {
-  background: #f4d66f; }
+.banner .btn-group .btn {
+  font-size: 1.8rem;
+  margin: 0 10px;
+  padding: 15px 30px;
+  min-width: 180px; }
+
+.index {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 10px 0; }
+
+.index .hb-sum {
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  line-height: 3.4rem; }
+
+.content .hb-sum {
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  line-height: 3.4rem; }
 
 .section {
   margin-bottom: 30px; }
 
 .section > p {
   margin: 10px 0; }
-
-.content .hb-sum {
-  margin-bottom: 30px;
-  font-size: 2.2rem;
-  line-height: 3.4rem; }
 
 .page-header {
   padding-bottom: 9px;

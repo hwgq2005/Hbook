@@ -1843,6 +1843,12 @@ button[type="button"] {
   .btn-violet:hover {
     background: #6f79b9; }
 
+.btn-orange {
+  background: #F05B48;
+  color: #fff; }
+  .btn-orange:hover {
+    background: #ee4630; }
+
 .btn-black {
   background: #333;
   color: #fff; }

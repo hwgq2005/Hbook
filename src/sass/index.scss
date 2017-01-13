@@ -16,7 +16,7 @@ html{
 }
 body {
 	color: #4B4B4B;
-	padding-top: 40px !important;
+	
 }
 ol{
 	list-style:decimal!important;
@@ -26,11 +26,14 @@ ol{
 	padding: 50px 10px 0;
 }
 
+.header{
+	height:50px;
+}
 .banner {
-	background: #8089C1;
+	background:lighten($orangeBg, 36%);
 	text-align: center;
 	padding: 80px 0 100px;
-	color: #fff;
+	color: $orangeBg;
 }
 .banner .title {
 	font-size: 8rem;
@@ -39,29 +42,40 @@ ol{
 .banner p {
 	font-size: 3rem;
 }
-.banner .download {
-	font-size: 1.8rem;
+.banner .btn-group{
 	margin-top: 40px;
-	padding: 15px 80px;
-	background: $warningBg;
-	color: #fff;
-	display: inline-block;
-	@include box-shadow(0px 5px 0px darken($warningBg,15%));
 }
-.banner .download:hover {
-	background: lighten($warningBg,3%);
+.banner .btn-group .btn {
+	font-size: 1.8rem;
+	margin:0 10px;
+	padding: 15px 30px;
+	min-width:180px;
+
 }
-.section {
+.index {
+	max-width:1024px;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 50px 10px 0;
+}
+.index .hb-sum {
 	margin-bottom: 30px;
-}
-.section > p {
-	margin: 10px 0;
+	font-size: 2.2rem;
+	line-height:3.4rem;
 }
 .content .hb-sum {
 	margin-bottom: 30px;
 	font-size: 2.2rem;
 	line-height:3.4rem;
 }
+
+.section {
+	margin-bottom: 30px;
+}
+.section > p {
+	margin: 10px 0;
+}
+
 .page-header {
 	padding-bottom: 9px;
 	margin: 20px 0 30px;

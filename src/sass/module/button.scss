@@ -51,6 +51,9 @@ button[type="button"] {
 .btn-violet{
 	@include button-define($violetBg,#fff,'btn');
 }
+.btn-orange{
+	@include button-define($orangeBg,#fff,'btn');
+}
 
 .btn-black{
 	@include button-define($blackBg,#fff,'btn');
