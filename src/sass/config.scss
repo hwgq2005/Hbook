@@ -13,7 +13,7 @@ $greyBg    : #666;
 
 $formLength:100px;
 
-// button
+// button type1
 @mixin button-define($background,$color,$type) {
   background: $background;
   color: $color;
@@ -24,3 +24,16 @@ $formLength:100px;
 	}
   }
 }
+
+// button type2
+@mixin button-border-define($background) {
+	background: none;
+  	color: $background;
+	// padding: 5px 20px;
+	border: 1px solid $background;
+	&:hover{
+	  	background:lighten($background, 26%);
+	}
+}
+
+

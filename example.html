@@ -9,9 +9,10 @@
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<title>简洁、直观的前端UI框架－Hbook</title>
+	<link rel="Shortcut Icon" href="docs/images/icon.ico">
 	<link rel="stylesheet" href="docs/css/index.css">
 	<link rel="stylesheet" href="docs/css/hbook.css">
-	<link rel="Shortcut Icon" href="docs/images/icon.ico">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.4/styles/monokai_sublime.min.css">
  </head>
  <body >
 
@@ -64,19 +65,17 @@
 	<!-- header end -->
 
 	<!-- banner begin -->
-	<!-- <div class="banner"  id="h-index">
-		<h1 class="title">Hbook</h1>
-		<p>简洁、直观的前端UI框架</p>
-		<a href="https://github.com/hwgq2005/Hbook" class="btn btn-large btn-orange download">Hbook (v1.0.4)</a>
-	</div> -->
+	<div class="quotations"  id="h-index">
+		<div class="container">
+			<h1 class="title">开始上手</h1>
+			<p>Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</p>
+		</div>
+	</div>
 	<!-- banner end -->
 	
 	<!-- content begin -->
 	<div class="container content" id="content">
-		<!-- <p class="hb-sum">
-		Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。
-		</p> -->
-
+	
 		<!-- 导航 -->
 		<section class="section" id="h-nav">
 			<div class="page-header" >
@@ -545,7 +544,6 @@
 		                <th  width="170">class=""</th>
 		                <th>小按钮</th>
 		                <th>class=""</th>
-		                <th>描述</th>
 		              </tr>
 		            </thead>
 		            <tbody>
@@ -554,14 +552,12 @@
 		                <td><code>btn</code></td>
 		                <td><a class="btn btn-mini">默认</a></td>
 		                <td><code>btn btn-mini</code></td>
-		                <td>带渐变的标准灰色按钮</td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn btn-primary">主要</a></td>
 		                <td><code>btn btn-primary</code></td>
 		                <td><a class="btn btn-mini btn-primary">主要</a></td>
 		                <td><code>btn btn-mini btn-primary</code></td>
-		                <td>提供额外的视觉感, 可在一系列的按钮中指出主要操作</td>
 		              </tr>
 		             
 		              <tr>
@@ -569,50 +565,98 @@
 		                <td><code>btn btn-success</code></td>
 		                <td><a class="btn btn-mini btn-success">成功</a></td>
 		                <td><code>btn btn-mini btn-success</code></td>
-		                <td>表示成功或积极的动作</td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn btn-warning">警告</a></td>
 		                <td><code>btn btn-warning</code></td>
 		                 <td><a class="btn btn-mini btn-warning">警告</a></td>
 		                <td><code>btn btn-mini btn-warning</code></td>
-		                <td>提醒应该谨慎采取这个动作</td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn btn-danger">危险</a></td>
 		                <td><code>btn btn-danger</code></td>
 		                <td><a class="btn btn-mini btn-danger">危险</a></td>
 		                <td><code>btn btn-mini btn-danger</code></td>
-		                <td>表示这个动作危险或存在危险</td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn btn-violet">紫色</a></td>
 		                <td><code>btn btn-violet</code></td>
 		                <td><a class="btn btn-mini btn-violet">紫色</a></td>
 		                <td><code>btn btn-mini btn-violet</code></td>
-		                <td>备用紫色代表神秘</td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn  btn-black">暗灰</a></td>
 		                <td><code>btn btn-black</code></td>
 		                <td><a class="btn  btn-mini btn-black">暗灰</a></td>
 		                <td><code>btn btn-mini btn-black</code></td>
-		                <td>备用的暗灰色按钮，不依赖于语义和用途</td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn  btn-grey">灰色</a></td>
 		                <td><code>btn btn-grey</code></td>
 		                <td><a class="btn  btn-mini btn-grey">灰色</a></td>
 		                <td><code>btn btn-mini btn-grey</code></td>
-		                <td>备用的灰色按钮，不依赖于语义和用途</td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn  btn-link">链接</a></td>
 		                <td><code>btn btn-link</code></td>
 		                <td><a class="btn  btn-mini btn-link">链接</a></td>
 		                <td><code>btn btn-mini btn-link</code></td>
-		                <td>简化一个按钮, 使它看起来像一个链接，同时保持按钮的行为</td>
 		              </tr>
+		            </tbody>
+		          </table>
+	         </div>
+	    </section>
+
+
+	    <!-- 按钮风格2-->
+		<section class="section" id="h-btn">
+			<div class="page-header">
+	            <h1>按钮风格2</h1>
+	        </div>
+	        <div class="docs-example">
+	        	<table class="table table-bordered table-zebra">
+		            <thead>
+		              <tr>
+		                <th>大按钮</th>
+		                <th  width="170">class=""</th>
+		                <th>小按钮</th>
+		                <th>class=""</th>
+		              </tr>
+		            </thead>
+		            <tbody>
+		             
+		              <tr>
+		                <td><a class="btn btn-primary-border">主要</a></td>
+		                <td><code>btn btn-primary</code></td>
+		                <td><a class="btn btn-mini btn-primary-border">主要</a></td>
+		                <td><code>btn btn-mini btn-primary</code></td>
+		              </tr>
+		             
+		              <tr>
+		                <td><a class="btn btn-success-border">成功</a></td>
+		                <td><code>btn btn-success</code></td>
+		                <td><a class="btn btn-mini btn-success-border">成功</a></td>
+		                <td><code>btn btn-mini btn-success</code></td>
+		              </tr>
+		              <tr>
+		                <td><a class="btn btn-warning-border">警告</a></td>
+		                <td><code>btn btn-warning</code></td>
+		                 <td><a class="btn btn-mini btn-warning-border">警告</a></td>
+		                <td><code>btn btn-mini btn-warning</code></td>
+		              </tr>
+		              <tr>
+		                <td><a class="btn btn-danger-border">危险</a></td>
+		                <td><code>btn btn-danger</code></td>
+		                <td><a class="btn btn-mini btn-danger-border">危险</a></td>
+		                <td><code>btn btn-mini btn-danger</code></td>
+		              </tr>
+		              <tr>
+		                <td><a class="btn btn-violet-border">紫色</a></td>
+		                <td><code>btn btn-violet</code></td>
+		                <td><a class="btn btn-mini btn-violet-border">紫色</a></td>
+		                <td><code>btn btn-mini btn-violet</code></td>
+		              </tr>
+		          
 		            </tbody>
 		          </table>
 	         </div>
@@ -631,7 +675,6 @@
 		                <th width="170">class=""</th>
 		                <th>小标签</th>
 		                <th>class=""</th>
-		                <th>描述</th>
 		              </tr>
 		            </thead>
 		            <tbody>
@@ -640,7 +683,6 @@
 		                <td><code>label</code></td>
 		                <td><a class="label label-mini">默认</a></td>
 		                <td><code>label label-mini</code></td>
-		                <td>带渐变的标准灰色按钮</td>
 		              </tr>
 
 		              <tr>
@@ -648,7 +690,6 @@
 		                <td><code>label label-primary</code></td>
 		                <td><a class="label label-mini label-primary">主要</a></td>
 		                <td><code>label abel-mini label-primary</code></td>
-		                <td>提供额外的视觉感, 可在一系列的标签中指出主要操作</td>
 		              </tr>
 		            
 		              <tr>
@@ -656,43 +697,36 @@
 		                <td><code>label label-success</code></td>
 		                <td><a class="label label-mini label-success">成功</a></td>
 		                <td><code>label label-mini label-success</code></td>
-
-		                <td>表示成功或积极的动作</td>
 		              </tr>
 		              <tr>
 		                <td><a class="label label-warning">警告</a></td>
 		                <td><code>label label-warning</code></td>
 		                <td><a class="label label-mini label-warning">警告</a></td>
 		                <td><code>label label-mini label-warning</code></td>
-		                <td>提醒应该谨慎采取这个动作</td>
 		              </tr>
 		              <tr>
 		                <td><a class="label label-danger">危险</a></td>
 		                <td><code>label label-danger</code></td>
 		                <td><a class="label label-mini label-danger">危险</a></td>
 		                <td><code>label label-mini label-danger</code></td>
-		                <td>表示这个动作危险或存在危险</td>
 		              </tr>
 		              <tr>
 		                <td><a class="label label-violet">紫色</a></td>
 		                <td><code>label label-violet</code></td>
 		                <td><a class="label label-mini label-violet">紫色</a></td>
 		                <td><code>label label-mini label-violet</code></td>
-		                <td>备用紫色代表神秘</td>
 		              </tr>
 		              <tr>
 		                <td><a class="label label-black">暗灰</a></td>
 		                <td><code>label label-black</code></td>
 		                <td><a class="label label-mini label-black">暗灰</a></td>
 		                <td><code>label label-mini label-black</code></td>
-		                <td>备用的暗灰色标签，不依赖于语义和用途</td>
 		              </tr>
 		              <tr>
 		                <td><a class="label label-grey">灰色</a></td>
 		                <td><code>label label-grey</code></td>
 		                <td><a class="label label-mini label-grey">灰色</a></td>
 		                <td><code>label label-mini label-grey</code></td>
-		                <td>备用的灰色标签，不依赖于语义和用途</td>
 		              </tr>
 		            
 		            </tbody>
@@ -743,10 +777,10 @@
 	            <h1>提示工具</h1>
 	        </div>
 	        <div class="docs-example">
-	        	<a class="btn btn-primary" data-toggle="tooltip"  data-placement="top" data-original-title="hello,word">这是个提示</a>
-	        	<a class="btn btn-success" data-toggle="tooltip"  data-placement="bottom" data-original-title="hello,word">这是个提示</a>
-	        	<a class="btn btn-warning" data-toggle="tooltip"  data-placement="left" data-original-title="hello,word">这是个提示</a>
-	        	<a class="btn btn-danger"  data-toggle="tooltip"  data-placement="right" data-original-title="hello,word">这是个提示</a>
+	        	<a class="btn btn-large btn-primary" data-toggle="tooltip"  data-placement="top" data-original-title="hello,word">这是个提示</a>
+	        	<a class="btn btn-large btn-success" data-toggle="tooltip"  data-placement="bottom" data-original-title="hello,word">这是个提示</a>
+	        	<a class="btn btn-large btn-warning" data-toggle="tooltip"  data-placement="left" data-original-title="hello,word">这是个提示</a>
+	        	<a class="btn btn-large btn-danger"  data-toggle="tooltip"  data-placement="right" data-original-title="hello,word">这是个提示</a>
 	        </div>
 	    </section>
 
@@ -974,6 +1008,7 @@
 	<!-- footer end -->
 
 	<script src="docs/js/lib/jquery/dist/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/highlight.js/8.4/highlight.min.js"></script>
 	<script src="docs/js/lib/jquery.validate.min.js"></script>
 	<script src="docs/js/lib/message.js"></script>
     <script src="docs/js/lib/prettify.js"></script>
@@ -991,6 +1026,8 @@
 
     <script>
     	hbook();
+
+    	hljs.initHighlightingOnLoad();
     </script>
 
  </body>

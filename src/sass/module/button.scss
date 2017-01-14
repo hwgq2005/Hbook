@@ -12,6 +12,8 @@ button[type="button"] {
 	background: $defaultBg;
 	color: #666;
 	white-space: nowrap;
+	border-radius:2px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .btn {
 	@extend .label;
@@ -19,15 +21,18 @@ button[type="button"] {
 		background-color: #CFCFCF;
 	}
 }
+
 .btn-mini,
 .label-mini{
 	padding: 3px 8px;
+	border-radius:1px;
 	font-size: 12px;
 }
 
 .btn-large,
 .label-large{
-	padding: 10px;
+	padding: 10px 20px;
+	border-radius:2px;
 	font-size: 16px;
 }
 .btn-block{
@@ -35,7 +40,7 @@ button[type="button"] {
 	text-align:center;
 }
 
-// button
+// button type1
 .btn-primary{
 	@include button-define($primaryBg,#fff,'btn');
 }
@@ -45,14 +50,14 @@ button[type="button"] {
 .btn-warning{
 	@include button-define($warningBg,#fff,'btn');
 }
+.btn-orange{
+	@include button-define($orangeBg,#fff,'btn');
+}
 .btn-danger{
 	@include button-define($dangerBg,#fff,'btn');
 }
 .btn-violet{
 	@include button-define($violetBg,#fff,'btn');
-}
-.btn-orange{
-	@include button-define($orangeBg,#fff,'btn');
 }
 
 .btn-black{
@@ -61,6 +66,27 @@ button[type="button"] {
 .btn-grey{
 	@include button-define($greyBg,#fff,'btn');
 }
+
+// button type2
+.btn-primary-border {
+  @include button-border-define($primaryBg);
+}
+.btn-success-border {
+  @include button-border-define($successBg);
+}
+.btn-warning-border {
+  @include button-border-define($warningBg);
+}
+.btn-danger-border {
+  @include button-border-define($dangerBg);
+}
+.btn-violet-border {
+  @include button-border-define($violetBg);
+}
+.btn-orange-border {
+  @include button-border-define($orangeBg);
+}
+
 
 .btn-link {
 	background: none;
