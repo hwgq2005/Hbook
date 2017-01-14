@@ -1870,8 +1870,6 @@ button[type="button"] {
 
 .btn-group .btn {
   margin: 0 5px; }
-  .btn-group .btn:last-child {
-    margin-right: 0; }
 
 .label-primary {
   background: #66CCFF;

@@ -70,7 +70,7 @@ ol {
 .banner {
   background: #fef3f2;
   text-align: center;
-  padding: 80px 0 100px;
+  padding: 80px 40px 100px;
   color: #F05B48; }
 
 .banner .title {
@@ -93,18 +93,27 @@ ol {
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
-  padding: 50px 10px 0; }
+  padding: 50px 20px 0; }
 
 .index .hb-sum {
   margin-bottom: 30px;
   font-size: 2.2rem;
-  line-height: 3.4rem; }
+  line-height: 3.4rem;
+  text-indent: 2em; }
 
-.content .hb-sum {
-  margin-bottom: 30px;
-  font-size: 2.2rem;
-  line-height: 3.4rem; }
+@media screen and (max-width: 640px) {
+  .banner p {
+    font-size: 2rem; }
 
+  .banner .btn-group .btn {
+    display: inline-block;
+    margin-bottom: 1.6rem; }
+
+  .section {
+    display: none; }
+
+  .index {
+    padding: 20px 20px 0; } }
 .section {
   margin-bottom: 30px; }
 
