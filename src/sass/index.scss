@@ -35,10 +35,10 @@ ol{
 	height:50px;
 }
 .banner {
-	background:lighten($orangeBg, 36%);
+	background:lighten($primaryBg, 26%);
 	text-align: center;
 	padding: 80px 40px 100px;
-	color: $orangeBg;
+	color: $primaryBg;
 }
 .banner .title {
 	font-size: 8rem;
