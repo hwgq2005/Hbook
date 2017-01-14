@@ -27,10 +27,6 @@ ol{
 	margin-left:auto;
 	margin-right:auto;
 }
-.content {
-	padding: 50px 10px 0;
-}
-
 .header{
 	height:50px;
 }
@@ -84,17 +80,12 @@ ol{
 		padding: 20px 20px 0;
 	}
 }
-.section {
-	margin-bottom: 30px;
-}
-.section > p {
-	margin: 10px 0;
-}
+
 
 .quotations{
-	background:lighten($orangeBg, 36%);
+	background:lighten($primaryBg, 26%);
 	padding: 80px 0 100px;
-	color: $orangeBg;
+	color: #666;
 }
 .quotations .title{
 	font-size: 4rem;
@@ -104,13 +95,31 @@ ol{
 	font-size:2rem;
 	line-height:2.6rem;
 }
+
+.topic-module{
+   
+}
+
+.section {
+	margin: 48px 0 ;
+}
+.section > p {
+	margin: 10px 0;
+}
 .page-header {
-	padding-bottom: 9px;
-	margin: 20px 0 30px;
+	margin-bottom:24px;
+	padding-bottom: 16px;
 	border-bottom: 1px solid #eee;
 }
 .page-header h1 {
-	font-size: 3.4rem;
+    padding-left: 10px;
+    border-left: 4px solid #6CF ;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .docs-example {
 	position: relative;
