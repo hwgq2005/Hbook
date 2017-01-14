@@ -39,6 +39,11 @@ button[type="button"] {
 	display:block;
 	text-align:center;
 }
+.btn-group{
+	.btn{
+		margin:0 5px;
+	}
+}
 
 // button type1
 .btn-primary{
@@ -50,9 +55,7 @@ button[type="button"] {
 .btn-warning{
 	@include button-define($warningBg,#fff,'btn');
 }
-.btn-orange{
-	@include button-define($orangeBg,#fff,'btn');
-}
+
 .btn-danger{
 	@include button-define($dangerBg,#fff,'btn');
 }
@@ -60,50 +63,29 @@ button[type="button"] {
 	@include button-define($violetBg,#fff,'btn');
 }
 
-.btn-black{
-	@include button-define($blackBg,#fff,'btn');
-}
 .btn-grey{
 	@include button-define($greyBg,#fff,'btn');
 }
 
 // button type2
 .btn-primary-border {
-  @include button-border-define($primaryBg);
+  @include button-border-define($primaryBg,'primary');
 }
 .btn-success-border {
-  @include button-border-define($successBg);
+  @include button-border-define($successBg,'success');
 }
 .btn-warning-border {
-  @include button-border-define($warningBg);
+  @include button-border-define($warningBg,'warning');
 }
 .btn-danger-border {
-  @include button-border-define($dangerBg);
+  @include button-border-define($dangerBg,'danger');
 }
 .btn-violet-border {
-  @include button-border-define($violetBg);
+  @include button-border-define($violetBg,'violet');
 }
-.btn-orange-border {
-  @include button-border-define($orangeBg);
+.btn-grey-border{
+  @include button-border-define($greyBg,'grey');
 }
-
-
-.btn-link {
-	background: none;
-	color: #005580;
-	&:hover {
-		background: none;
-		color: #0D79AF;
-	}
-}
-
-.btn-group{
-	.btn{
-		margin:0 5px;
-
-	}
-}
-
 
 // label
 .label-primary{
@@ -122,13 +104,9 @@ button[type="button"] {
 	@include button-define($violetBg,#fff,'label');
 }
 
-.label-black{
-	@include button-define($blackBg,#fff,'label');
-}
 .label-grey{
 	@include button-define($greyBg,#fff,'label');
 }
-
 
 // border-radius
 .btn-radius-2 {

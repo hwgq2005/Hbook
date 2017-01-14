@@ -1817,6 +1817,9 @@ button[type="button"] {
   display: block;
   text-align: center; }
 
+.btn-group .btn {
+  margin: 0 5px; }
+
 .btn-primary {
   background: #66CCFF;
   color: #fff; }
@@ -1835,12 +1838,6 @@ button[type="button"] {
   .btn-warning:hover {
     background: #f1cb49; }
 
-.btn-orange {
-  background: #F05B48;
-  color: #fff; }
-  .btn-orange:hover {
-    background: #ee4630; }
-
 .btn-danger {
   background: #FF9999;
   color: #fff; }
@@ -1853,12 +1850,6 @@ button[type="button"] {
   .btn-violet:hover {
     background: #6f79b9; }
 
-.btn-black {
-  background: #333;
-  color: #fff; }
-  .btn-black:hover {
-    background: #262626; }
-
 .btn-grey {
   background: #666;
   color: #fff; }
@@ -1868,54 +1859,50 @@ button[type="button"] {
 .btn-primary-border {
   background: none;
   color: #66CCFF;
+  padding: 5px 20px;
   border: 1px solid #66CCFF; }
   .btn-primary-border:hover {
-    background: #ebf8ff; }
+    background: rgba(102, 204, 255, 0.16); }
 
 .btn-success-border {
   background: none;
   color: #33CCCC;
+  padding: 5px 20px;
   border: 1px solid #33CCCC; }
   .btn-success-border:hover {
-    background: #9de7e7; }
+    background: rgba(48, 200, 200, 0.16); }
 
 .btn-warning-border {
   background: none;
   color: #F3D261;
+  padding: 5px 20px;
   border: 1px solid #F3D261; }
   .btn-warning-border:hover {
-    background: #fcf5dc; }
+    background: rgba(243, 210, 97, 0.16); }
 
 .btn-danger-border {
   background: none;
   color: #FF9999;
+  padding: 5px 20px;
   border: 1px solid #FF9999; }
   .btn-danger-border:hover {
-    background: white; }
+    background: rgba(255, 153, 153, 0.16); }
 
 .btn-violet-border {
   background: none;
   color: #8089C1;
+  padding: 5px 20px;
   border: 1px solid #8089C1; }
   .btn-violet-border:hover {
-    background: #d9dcec; }
+    background: rgba(128, 137, 193, 0.16); }
 
-.btn-orange-border {
+.btn-grey-border {
   background: none;
-  color: #F05B48;
-  border: 1px solid #F05B48; }
-  .btn-orange-border:hover {
-    background: #fac9c3; }
-
-.btn-link {
-  background: none;
-  color: #005580; }
-  .btn-link:hover {
-    background: none;
-    color: #0D79AF; }
-
-.btn-group .btn {
-  margin: 0 5px; }
+  color: #666;
+  padding: 5px 20px;
+  border: 1px solid #666; }
+  .btn-grey-border:hover {
+    background: rgba(102, 102, 102, 0.16); }
 
 .label-primary {
   background: #66CCFF;
@@ -1935,10 +1922,6 @@ button[type="button"] {
 
 .label-violet {
   background: #8089C1;
-  color: #fff; }
-
-.label-black {
-  background: #333;
   color: #fff; }
 
 .label-grey {

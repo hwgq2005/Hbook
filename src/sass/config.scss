@@ -26,13 +26,27 @@ $formLength:100px;
 }
 
 // button type2
-@mixin button-border-define($background) {
+@mixin button-border-define($background,$type) {
 	background: none;
   	color: $background;
-	// padding: 5px 20px;
+	padding: 5px 20px;
 	border: 1px solid $background;
 	&:hover{
-	  	background:lighten($background, 26%);
+		 @if $type == 'primary' {
+		    background: rgba(102, 204, 255, .16);
+		 }@else if $type == 'success' {
+			background: rgba(48, 200, 200, .16);
+		 }@else if $type == 'warning' {
+			background: rgba(243, 210, 97, .16);
+		 }@else if $type == 'danger' {
+			background: rgba(255, 153, 153, .16);
+		 }@else if $type == 'violet' {
+			background: rgba(128, 137, 193, .16);
+		 }@else if $type == 'violet' {
+			background: rgba(48, 200, 200, .16);
+		 }@else if $type == 'grey' {
+			background: rgba(102, 102, 102, .16);
+		 }
 	}
 }
 
