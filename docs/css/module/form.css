@@ -150,13 +150,6 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     border: 2px solid #b3b9da; }
   .checkbox.box-violet:hover:before, .box-violet.radio:hover:before {
     border: 2px solid #8089C1; }
-  .checkbox.box-black.active:before, .box-black.active.radio:before {
-    background: #333;
-    border: 2px solid #333; }
-  .checkbox.box-black:before, .box-black.radio:before {
-    border: 2px solid #595959; }
-  .checkbox.box-black:hover:before, .box-black.radio:hover:before {
-    border: 2px solid #333; }
   .checkbox.box-grey.active:before, .box-grey.active.radio:before {
     background: #666;
     border: 2px solid #666; }

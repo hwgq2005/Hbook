@@ -29,7 +29,7 @@ $formLength:100px;
 @mixin button-border-define($background,$type) {
 	background: none;
   	color: $background;
-	padding: 5px 20px;
+	// padding: 5px 20px;
 	border: 1px solid $background;
 	&:hover{
 		 @if $type == 'primary' {

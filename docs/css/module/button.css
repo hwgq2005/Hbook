@@ -74,7 +74,6 @@ button[type="button"] {
 .btn-primary-border {
   background: none;
   color: #66CCFF;
-  padding: 5px 20px;
   border: 1px solid #66CCFF; }
   .btn-primary-border:hover {
     background: rgba(102, 204, 255, 0.16); }
@@ -82,7 +81,6 @@ button[type="button"] {
 .btn-success-border {
   background: none;
   color: #33CCCC;
-  padding: 5px 20px;
   border: 1px solid #33CCCC; }
   .btn-success-border:hover {
     background: rgba(48, 200, 200, 0.16); }
@@ -90,7 +88,6 @@ button[type="button"] {
 .btn-warning-border {
   background: none;
   color: #F3D261;
-  padding: 5px 20px;
   border: 1px solid #F3D261; }
   .btn-warning-border:hover {
     background: rgba(243, 210, 97, 0.16); }
@@ -98,7 +95,6 @@ button[type="button"] {
 .btn-danger-border {
   background: none;
   color: #FF9999;
-  padding: 5px 20px;
   border: 1px solid #FF9999; }
   .btn-danger-border:hover {
     background: rgba(255, 153, 153, 0.16); }
@@ -106,7 +102,6 @@ button[type="button"] {
 .btn-violet-border {
   background: none;
   color: #8089C1;
-  padding: 5px 20px;
   border: 1px solid #8089C1; }
   .btn-violet-border:hover {
     background: rgba(128, 137, 193, 0.16); }
@@ -114,7 +109,6 @@ button[type="button"] {
 .btn-grey-border {
   background: none;
   color: #666;
-  padding: 5px 20px;
   border: 1px solid #666; }
   .btn-grey-border:hover {
     background: rgba(102, 102, 102, 0.16); }

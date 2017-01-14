@@ -230,22 +230,6 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
 			}
 		}
 	}
-	&.box-black{
-		&.active{
-			&:before{
-		  		background:$blackBg;
-		  		border:2px solid $blackBg;
-		  	}
-		}
-		&:before{
-			border:2px solid lighten($blackBg,15%);
-		}
-		&:hover{
-			&:before{
-				border:2px solid $blackBg;
-			}
-		}
-	}
 	&.box-grey{
 		&.active{
 			&:before{
