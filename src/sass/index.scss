@@ -62,7 +62,6 @@ body {
 	margin-bottom: 30px;
 	font-size: 2.2rem;
 	line-height:3.4rem;
-	text-indent: 2em;
 }
 @media screen and (max-width : 640px){
 	.banner p {
@@ -127,13 +126,16 @@ body {
 	display: block;
 	margin-bottom: 10px;
 }
-.footer {
 
-	text-align: center;
+.footer.container{
+	padding:0;
+}
+.footer .footer-content{
 	margin:0 20px;
 	padding: 20px;
 	color: #999;
 	border-top: 1px solid #eee;
+	text-align: center;
 	font-size: 1.4rem;
 }
 .box-type{
