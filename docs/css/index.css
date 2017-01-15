@@ -180,6 +180,15 @@ body {
   width: 20px;
   height: 20px; }
 
+code {
+  padding: 2px 4px;
+  color: #d14;
+  white-space: nowrap;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  font-size: 1.4rem;
+  font-weight: normal; }
+
 /* ---------------------------------code color------------------------------------- */
 .com {
   color: #93a1a1; }
@@ -206,20 +215,11 @@ body {
   color: #48484c; }
 
 .prettyprint {
-  padding: 8px;
+  padding: 10px;
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
   font-size: 1.3rem;
   margin-bottom: 18px; }
-
-code {
-  padding: 2px 4px;
-  color: #d14;
-  white-space: nowrap;
-  background-color: #f7f7f9;
-  border: 1px solid #e1e1e8;
-  font-size: 1.4rem;
-  font-weight: normal; }
 
 ol.linenums li {
   color: #bebec5;
