@@ -26,7 +26,7 @@
         text-align: center; }
       .nav.nav-tabs li a.active, .nav.nav-tabs li a:hover {
         background: #fff;
-        color: #66CCFF;
+        color: #699FE1;
         border-bottom: 1px solid #fff; }
 
 .sr-only {
@@ -239,7 +239,7 @@
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
-  border: 1px solid transparent; }
+  background-color: #fff; }
 
 @media (min-width: 768px) {
   .navbar-header {
@@ -331,7 +331,8 @@
   height: 50px;
   padding: 15px 15px;
   font-size: 18px;
-  line-height: 20px; }
+  line-height: 20px;
+  color: #699FE1; }
 
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -363,7 +364,8 @@
   display: block;
   width: 22px;
   height: 2px;
-  border-radius: 1px; }
+  border-radius: 1px;
+  background-color: #699FE1; }
 
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px; }
@@ -372,7 +374,8 @@
   .navbar-toggle {
     display: none; } }
 .navbar-nav {
-  margin: 7.5px -15px; }
+  margin: 7.5px -15px;
+  background-color: #fff; }
 
 .navbar-nav > li > a {
   padding-top: 10px;

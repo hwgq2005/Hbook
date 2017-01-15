@@ -18,12 +18,14 @@ body {
 	color: #4B4B4B;
 	
 }
-ol{
-	list-style:decimal!important;
-}
 
 .w-1024{
 	max-width:1024px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.w-768{
+	max-width:768px;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -54,10 +56,7 @@ ol{
 
 }
 .index {
-	max-width:1024px;
-	margin-left:auto;
-	margin-right:auto;
-	padding: 50px 20px 0;
+	padding: 50px 20px;
 }
 .index .hb-sum {
 	margin-bottom: 30px;
@@ -83,17 +82,18 @@ ol{
 
 
 .quotations{
-	background:lighten($primaryBg, 26%);
+	background:$primaryBg;
 	padding: 60px 0;
-	color: #666;
 }
 .quotations .title{
 	font-size: 4rem;
 	margin-bottom:20px;
+	color: #fff;
 }
 .quotations p{
 	font-size:2rem;
 	line-height:2.6rem;
+	color: #f7f7f7;
 }
 
 .topic-module{
@@ -137,11 +137,11 @@ ol{
 	margin-bottom: 10px;
 }
 .footer {
-	max-width: 1024px;
-	margin: 0 auto;
-	padding: 10px 10px 40px;
-	color: #999;
 	text-align: center;
+	padding: 20px;
+	color: #999;
+	border-top: 1px solid #eee;
+	font-size: 1.4rem;
 }
 .box-type{
 	margin-left:-3px;
@@ -192,15 +192,8 @@ code {
 	font-size: 1.4rem;
 	font-weight: normal;
 }
-.prettyprint.linenums {
-	@include box-shadow(inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0);
-}
-
-ol.linenums {
-	margin: 0 0 0 33px; 
-}
+	
 ol.linenums li {
-	padding-left: 12px;
 	color: #bebec5;
 	line-height: 20px;
 	text-shadow: 0 1px 0 #fff;

@@ -262,7 +262,7 @@
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
+  background-color:#fff;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -372,6 +372,7 @@
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
+  color:$primaryBg;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -406,6 +407,7 @@
   width: 22px;
   height: 2px;
   border-radius: 1px;
+  background-color:$primaryBg;
 }
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
@@ -417,11 +419,13 @@
 }
 .navbar-nav {
   margin: 7.5px -15px;
+  background-color:#fff;
 }
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {

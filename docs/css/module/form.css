@@ -37,7 +37,7 @@ input[type="password"] {
   textarea:focus,
   input[type="text"]:focus,
   input[type="password"]:focus {
-    border-color: #99ddff;
+    border-color: #94baea;
     outline: 0;
     outline: thin dotted \9;
     /* IE6-9 */ }
@@ -114,35 +114,35 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     display: inline-block;
     margin-left: -20px; }
   .checkbox:hover:before, .radio:hover:before {
-    border: 2px solid #66CCFF; }
+    border: 2px solid #699FE1; }
   .checkbox.box-primary.active:before, .box-primary.active.radio:before {
-    background: #66CCFF;
-    border: 2px solid #66CCFF; }
+    background: #699FE1;
+    border: 2px solid #699FE1; }
   .checkbox.box-primary:before, .box-primary.radio:before {
-    border: 2px solid #b3e6ff; }
+    border: 2px solid #a9c8ee; }
   .checkbox.box-primary:hover:before, .box-primary.radio:hover:before {
-    border: 2px solid #66CCFF; }
+    border: 2px solid #699FE1; }
   .checkbox.box-success.active:before, .box-success.active.radio:before {
-    background: #33CCCC;
-    border: 2px solid #33CCCC; }
+    background: #50BA5F;
+    border: 2px solid #50BA5F; }
   .checkbox.box-success:before, .box-success.radio:before {
-    border: 2px solid #70dbdb; }
+    border: 2px solid #87d091; }
   .checkbox.box-success:hover:before, .box-success.radio:hover:before {
-    border: 2px solid #33CCCC; }
+    border: 2px solid #50BA5F; }
   .checkbox.box-warning.active:before, .box-warning.active.radio:before {
-    background: #F3D261;
-    border: 2px solid #F3D261; }
+    background: #FF9437;
+    border: 2px solid #FF9437; }
   .checkbox.box-warning:before, .box-warning.radio:before {
-    border: 2px solid #f8e6a8; }
+    border: 2px solid #ffbd84; }
   .checkbox.box-warning:hover:before, .box-warning.radio:hover:before {
-    border: 2px solid #F3D261; }
+    border: 2px solid #FF9437; }
   .checkbox.box-danger.active:before, .box-danger.active.radio:before {
-    background: #FF9999;
-    border: 2px solid #FF9999; }
+    background: #EB8B79;
+    border: 2px solid #EB8B79; }
   .checkbox.box-danger:before, .box-danger.radio:before {
-    border: 2px solid #ffe6e6; }
+    border: 2px solid #f5c5bc; }
   .checkbox.box-danger:hover:before, .box-danger.radio:hover:before {
-    border: 2px solid #FF9999; }
+    border: 2px solid #EB8B79; }
   .checkbox.box-violet.active:before, .box-violet.active.radio:before {
     background: #8089C1;
     border: 2px solid #8089C1; }
@@ -158,8 +158,8 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
   .checkbox.box-grey:hover:before, .box-grey.radio:hover:before {
     border: 2px solid #666; }
   .checkbox.active:before, .active.radio:before {
-    background: #66CCFF;
-    border: 2px solid #66CCFF; }
+    background: #699FE1;
+    border: 2px solid #699FE1; }
   .checkbox.active:after, .active.radio:after {
     position: absolute;
     top: 14px;
@@ -188,7 +188,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     border-radius: 2px;
     text-align: center;
     background: #fff;
-    border: 2px solid #b3e6ff;
+    border: 2px solid #a9c8ee;
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;
@@ -245,7 +245,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
           left: 0;
           width: 100%;
           visibility: visible;
-          background: #66CCFF; }
+          background: #699FE1; }
       .form-group.form-line-input .form-control.edited ~ .help-block {
         opacity: 1; }
     .form-group.form-line-input .form-control ~ label {
@@ -295,16 +295,16 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     font-size: 1.2rem;
     color: #ccc; }
   .form-group.form-line-input.has-success .form-control.edited ~ label {
-    color: #33CCCC !important; }
+    color: #50BA5F !important; }
     .form-group.form-line-input.has-success .form-control.edited ~ label:after {
-      background: #33CCCC; }
+      background: #50BA5F; }
   .form-group.form-line-input.has-warning .form-control.edited ~ label {
-    color: #F3D261 !important; }
+    color: #FF9437 !important; }
     .form-group.form-line-input.has-warning .form-control.edited ~ label:after {
-      background: #F3D261; }
+      background: #FF9437; }
   .form-group.form-line-input.has-error .form-control.edited ~ label {
-    color: #FF9999 !important; }
+    color: #EB8B79 !important; }
     .form-group.form-line-input.has-error .form-control.edited ~ label:after {
-      background: #FF9999; }
+      background: #EB8B79; }
   .form-group.form-line-input.has-error .form-control ~ .help-block {
-    color: #FF9999; }
+    color: #EB8B79; }

@@ -23,10 +23,10 @@
   .page span.current {
     color: #fff;
     z-index: 2;
-    background-color: #66CCFF;
-    border: 1px solid #66CCFF; }
+    background-color: #699FE1;
+    border: 1px solid #699FE1; }
     .page span.current:hover {
-      background: #66CCFF; }
+      background: #699FE1; }
   .page span.disabled {
     cursor: not-allowed;
     color: #999; }

@@ -58,11 +58,13 @@ html {
 body {
   color: #4B4B4B; }
 
-ol {
-  list-style: decimal !important; }
-
 .w-1024 {
   max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.w-768 {
+  max-width: 768px;
   margin-left: auto;
   margin-right: auto; }
 
@@ -70,10 +72,10 @@ ol {
   height: 50px; }
 
 .banner {
-  background: #ebf8ff;
+  background: #d7e6f7;
   text-align: center;
   padding: 80px 40px 100px;
-  color: #66CCFF; }
+  color: #699FE1; }
 
 .banner .title {
   font-size: 8rem;
@@ -92,10 +94,7 @@ ol {
   min-width: 180px; }
 
 .index {
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 50px 20px 0; }
+  padding: 50px 20px; }
 
 .index .hb-sum {
   margin-bottom: 30px;
@@ -117,17 +116,18 @@ ol {
   .index {
     padding: 20px 20px 0; } }
 .quotations {
-  background: #ebf8ff;
-  padding: 60px 0;
-  color: #666; }
+  background: #699FE1;
+  padding: 60px 0; }
 
 .quotations .title {
   font-size: 4rem;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  color: #fff; }
 
 .quotations p {
   font-size: 2rem;
-  line-height: 2.6rem; }
+  line-height: 2.6rem;
+  color: #f7f7f7; }
 
 .section {
   margin: 48px 0; }
@@ -166,11 +166,11 @@ ol {
   margin-bottom: 10px; }
 
 .footer {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 10px 10px 40px;
+  text-align: center;
+  padding: 20px;
   color: #999;
-  text-align: center; }
+  border-top: 1px solid #eee;
+  font-size: 1.4rem; }
 
 .box-type {
   margin-left: -3px;
@@ -221,16 +221,7 @@ code {
   font-size: 1.4rem;
   font-weight: normal; }
 
-.prettyprint.linenums {
-  -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
-  -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
-  box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0; }
-
-ol.linenums {
-  margin: 0 0 0 33px; }
-
 ol.linenums li {
-  padding-left: 12px;
   color: #bebec5;
   line-height: 20px;
   text-shadow: 0 1px 0 #fff;
