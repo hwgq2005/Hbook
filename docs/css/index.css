@@ -72,7 +72,7 @@ body {
   height: 50px; }
 
 .banner {
-  background: #d7e6f7;
+  background: #d8e6f7;
   text-align: center;
   padding: 80px 40px 100px;
   color: #699FE1; }
@@ -139,7 +139,7 @@ body {
 .page-header h1 {
   font-size: 2rem;
   font-weight: normal;
-  color: #333;
+  color: #699FE1;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }

@@ -145,7 +145,7 @@ input:-ms-placeholder {
     display: inline-block;
     font-size: 14px; }
     .nav a:hover, .nav .page span.current:hover, .page .nav span.current:hover, .nav .page span.disabled:hover, .page .nav span.disabled:hover, .nav .page .more:hover, .page .nav .more:hover {
-      color: #999; }
+      color: #699FE1; }
   .nav.nav-tabs {
     border-bottom: 1px solid #ddd; }
     .nav.nav-tabs li {
@@ -210,7 +210,7 @@ input:-ms-placeholder {
 .page .nav > li > .more:focus {
   text-decoration: none;
   color: #699FE1;
-  background: #d7e6f7; }
+  background: #d8e6f7; }
 
 .nav > li.disabled > a, .page .nav > li.disabled > span.current, .page .nav > li.disabled > span.disabled, .page .nav > li.disabled > .more {
   color: #777; }
