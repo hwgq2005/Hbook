@@ -1,7 +1,22 @@
-Hbook专注于前端开发推广，坚持分享、开放的互联网精神；如果你和我有相同的目标，我乐意一起携手前行。
+Hbook
+====================
+Simple, lightweight front-end UI framework
 
-	 <!--  核心 CSS 文件  -->
-     <link href="dist/css/hbook.min.css">
-     
-     <!--  核心 JS 文件  -->
-     <script src="dist/js/hbook.min.js">
+[![Hbook](http://www.bookcss.com/docs/images/banner.jpg)](http://www.bookcss.com)
+
+###Introduce
+Hbook focus on the front-end development and promotion, adhere to share, open the spirit of the Internet; if you and I have the same goal, I am willing to go hand in hand.
+
+###Install
+```
+npm install bookcss     
+```
+
+###Usage
+
+```
+require('bookcss')
+```
+
+###Contact
+Weibo：@hwgq2005      
