@@ -1,0 +1,22 @@
+{
+  "name": "bookcss",
+  "version": "1.0.3",
+  "main": "index.js",
+  "author": "hwgq2005",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hwgq2005/Hbook.git"
+  },
+  "keywords": [
+    "bookcss"
+  ],
+  "description": "Hbook focus on the front-end development and promotion, adhere to share, open the spirit of the Internet; if you and I have the same goal, I am willing to go hand in hand.",
+  "bugs": {
+    "url": "https://github.com/hwgq2005/Hbook/issues"
+  },
+  "homepage": "https://github.com/hwgq2005/Hbook#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

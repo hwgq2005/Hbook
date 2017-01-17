@@ -1,17 +1,15 @@
 {
-  "name": "app",
-  "version": "0.1.0",
+  "name": "bookcss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "H君",
+  "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-livereload": "^3.8.1",
     "gulp-minify-html": "^1.0.6",
     "gulp-rev": "^7.1.0",
-    "gulp-rev-collector": "^1.0.5"
-  },
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
+    "gulp-rev-collector": "^1.0.5",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-clean": "^0.3.1",
     "gulp-compass": "^2.1.0",
@@ -27,5 +25,15 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0",
     "run-sequence": "^1.2.2"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/hwgq2005/Hbook"
+  },
+  "keywords": [
+    "bookcss"
+  ]
 }
