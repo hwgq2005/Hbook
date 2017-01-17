@@ -9,7 +9,7 @@ Hbook focus on the front-end development and promotion, adhere to share, open th
 
 ###Install
 ```
-npm install hbook-ui     
+npm install hbook-ui  
 ```
 
 ###Usage
