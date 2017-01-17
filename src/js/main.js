@@ -24,10 +24,6 @@
 			hbook.page('.page');
 			prettyPrint();
 
-
-			
-			
-
 		},
 
 		//事件绑定
@@ -72,11 +68,15 @@
 
 			//弹窗
 			$('#dialog-btn').click(function(event) {
-				$('#dialog1').dialog({
+				var aaa=$('#dialog1').dialog({
 					modal:'show'
 				});
+				console.log(aaa)
 			});
 			$('#confirm').click(function(event) {
+				$('#dialog1').dialog({
+					modal:'hide'
+				});
 				$('#dialog2').dialog({
 					modal:'show'
 				});

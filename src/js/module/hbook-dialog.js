@@ -25,11 +25,10 @@
 		var _self = this;
 
 		//判断是否已经显示弹出框
-		// if (options.backdrop) {
-			this.$element.on('click', '[data-dialog="hide"]', function(){
-				_self.hide(options,elememt);
-			});
-		// }
+		this.$element.on('click', '[data-dialog="hide"]', function(){
+			_self.hide(options,elememt);
+		});
+		
 		options.modal == 'show' ? this.show(options,elememt) : this.hide(options,elememt);
 		
 	}
@@ -37,7 +36,6 @@
 	// 显示弹出框
 	Dialog.prototype.show=function(options,elememt){
 		
-		// options.backdrop ? this.backdrop(options,elememt) : '' ;
 		this.backdrop(options,elememt)
 		this.$element.addClass('in');
 	}
@@ -45,10 +43,12 @@
 	// 隐藏弹出框
 	Dialog.prototype.hide=function(options,elememt){
 
+		var elememtId = elememt.attr('id');
+
 		this.$element.removeClass('in');
 		this.$element.off('click','[data-dialog="hide"]');
 
-		this.$backdrop ? this.hideBackDrop(options) : '' ;
+		$('.dialog-backdrop-'+elememtId).length > 0 ? this.hideBackDrop(options,elememt) : '' ;
 		
 	}
 
@@ -57,19 +57,24 @@
 
 		var elememtId = elememt.attr('id');
 		
-		this.$backdrop = $('<div class="dialog-backdrop"></div>')
-		.appendTo(document.body)
-		.addClass('in');
+		if ($('.dialog-backdrop-'+elememtId).length <= 0) {
+			this.$backdrop = $('<div class="dialog-backdrop dialog-backdrop-'+elememtId+'"></div>')
+			.appendTo(document.body)
+			.addClass('in');
 
-		$(document.body).addClass('dialog-open');
-		options.backdrop = false;
+			$(document.body).addClass('dialog-open');
+			options.backdrop = false;
+		}
+		
 
 	}
 
 	// 隐藏遮罩
-	Dialog.prototype.hideBackDrop = function(options){
+	Dialog.prototype.hideBackDrop = function(options,elememt){
 
-		this.$backdrop.remove();
+		var elememtId = elememt.attr('id');
+
+		$('.dialog-backdrop-'+elememtId).remove();
 		this.$backdrop = null;
 		options.backdrop = true;
 
