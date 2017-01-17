@@ -1,6 +1,6 @@
 {
-  "name": "bookcss",
-  "version": "1.0.5",
+  "name": "hbook-ui",
+  "version": "0.0.1",
   "main": "index.js",
   "author": "hwgq2005",
   "license": "ISC",
@@ -11,7 +11,9 @@
   "keywords": [
     "bookcss",
     "hbook",
-    "css"
+    "css",
+    "js",
+    "ui"
   ],
   "description": "Simple, lightweight front-end UI framework",
   "bugs": {

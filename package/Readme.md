@@ -7,14 +7,14 @@ Hbook focus on the front-end development and promotion, adhere to share, open th
 
 ###Install
 ```
-npm install bookcss     
+npm install hbook-ui     
 ```
 
 ###Usage
 
 ```
-require('bookcss')
+require('hbook-ui')
 ```
 
 ###Contact
-Weibo：@hwgq2005      
+Weibo：@hwgq2005
