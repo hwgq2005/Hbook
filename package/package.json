@@ -9,9 +9,11 @@
     "url": "git+https://github.com/hwgq2005/Hbook.git"
   },
   "keywords": [
-    "bookcss"
+    "bookcss",
+    "hbook",
+    "css"
   ],
-  "description": "Hbook focus on the front-end development and promotion, adhere to share, open the spirit of the Internet; if you and I have the same goal, I am willing to go hand in hand.",
+  "description": "Simple, lightweight front-end UI framework",
   "bugs": {
     "url": "https://github.com/hwgq2005/Hbook/issues"
   },
