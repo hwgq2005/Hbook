@@ -337,6 +337,12 @@ input:-ms-placeholder {
 .navbar-collapse.in {
   overflow-y: auto; }
 
+.navbar-collapse.collapse {
+  display: none; }
+
+.navbar-collapse.collapse.in {
+  display: block; }
+
 @media (min-width: 768px) {
   .navbar-collapse {
     width: auto;
