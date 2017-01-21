@@ -19,4 +19,4 @@ require('hbook-ui')
 ```
 
 ###Contact
-Weibo：@hwgq2005
+Weibo：[@hwgq2005](http://www.weibo.com/hwgq2005) 
