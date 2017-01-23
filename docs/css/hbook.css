@@ -934,6 +934,17 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
   color: #333;
   font-size: 1.6rem; }
 
+.dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  color: #999;
+  padding: 5px; }
+
+.dialog-close:hover {
+  color: #666; }
+
 .dialog-body {
   position: relative;
   padding: 20px;

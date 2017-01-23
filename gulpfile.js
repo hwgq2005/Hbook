@@ -40,8 +40,11 @@ gulp.task('clean', function() {
 
 // 复制文件
 gulp.task('copy', function() {
-	gulp.src('./src/js/lib/**/*.js')
+	gulp.src(['./src/js/lib/**/*.js'])
 		.pipe(gulp.dest('./docs/js/lib/'));
+		
+	gulp.src(['./src/font-awesome/**/*'])
+		.pipe(gulp.dest('./docs/font-awesome'));
 });
 
 // 创建Compass任务
