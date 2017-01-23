@@ -33,7 +33,7 @@
 				var _id = $(this).attr('data-id'),
 					  T = $('#'+_id).offset().top;
 
-				$('body').stop().animate({
+				$('body,html').stop().animate({
 					scrollTop: T - 60
 				},500, 'linear', function() {
 
