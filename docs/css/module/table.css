@@ -40,60 +40,56 @@
       background: #FAFAFA; }
       .table-view .table-view-cell.table-view-hover:hover .table-view-operation {
         opacity: 1; }
-    .table-view .table-view-cell .table-view-operation {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 12px;
-      opacity: 0;
-      color: #999;
-      -moz-transition: opacity 0.5s linear;
-      -o-transition: opacity 0.5s linear;
-      -webkit-transition: opacity 0.5s linear;
-      transition: opacity 0.5s linear; }
-      .table-view .table-view-cell .table-view-operation i {
-        display: block; }
+    .table-view .table-view-cell .media-tit a {
+      color: #4B4B4B; }
     .table-view .table-view-cell .media-object {
       margin-right: 10px;
       position: relative;
       overflow: hidden;
       text-align: center; }
+      .table-view .table-view-cell .media-object .media-view {
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; }
       .table-view .table-view-cell .media-object img {
         max-width: 100%; }
-  .table-view.table-view-one .table-view-cell .media-body .media-tit {
-    line-height: 19px; }
-    .table-view.table-view-one .table-view-cell .media-body .media-tit a {
-      color: #000;
-      font-size: 16px;
-      margin-right: 5px; }
-  .table-view.table-view-one .table-view-cell .media-body .media-sum {
-    display: block;
-    line-height: 18px;
-    margin-top: 10px;
-    font-size: 12px;
-    color: #999;
-    overflow: hidden; }
-    .table-view.table-view-one .table-view-cell .media-body .media-sum a {
-      color: #999; }
+  .table-view.table-view-one .media-object .media-view {
+    width: 60px;
+    height: 60px;
+    line-height: 60px; }
+  .table-view.table-view-one .table-view-cell .media-body {
+    margin-top: 6px; }
+    .table-view.table-view-one .table-view-cell .media-body .media-tit {
+      font-size: 1.6rem;
+      line-height: 19px; }
+      .table-view.table-view-one .table-view-cell .media-body .media-tit a {
+        font-size: 1.6rem;
+        margin-right: 5px; }
+    .table-view.table-view-one .table-view-cell .media-body .media-sum {
+      display: block;
+      line-height: 18px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #999;
+      overflow: hidden; }
+      .table-view.table-view-one .table-view-cell .media-body .media-sum a {
+        color: #999; }
   .table-view.table-view-two .table-view-cell {
     padding: 20px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
     .table-view.table-view-two .table-view-cell .media-object {
       margin-right: 20px; }
       .table-view.table-view-two .table-view-cell .media-object .media-view {
-        display: block;
         width: 160px;
         height: 100px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover; }
+        line-height: 100px;
+        font-size: 2rem; }
     .table-view.table-view-two .table-view-cell .media-tit {
       margin-bottom: 10px;
       color: #666;
       font-size: 1.6rem;
       font-weight: normal; }
-      .table-view.table-view-two .table-view-cell .media-tit a {
-        color: #666; }
     .table-view.table-view-two .table-view-cell .media-sum {
       height: 38px;
       margin-bottom: 10px;
