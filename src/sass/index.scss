@@ -18,6 +18,15 @@ body {
 	color: #4B4B4B;
 	
 }
+code {
+	padding: 2px 4px;
+	color: #d14;
+	white-space: nowrap;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	font-size: 1.4rem;
+	font-weight: normal;
+}
 
 .w-1024{
 	max-width:1024px;
@@ -29,6 +38,7 @@ body {
 	margin-left:auto;
 	margin-right:auto;
 }
+
 .header{
 	height:50px;
 }
@@ -147,14 +157,22 @@ body {
 	height:20px;
 }
 
-code {
-	padding: 2px 4px;
-	color: #d14;
-	white-space: nowrap;
-	background-color: #f7f7f9;
-	border: 1px solid #e1e1e8;
-	font-size: 1.4rem;
-	font-weight: normal;
+
+
+.scroll-top{
+    display: none;
+	position: fixed;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    background: $primaryBg;
+    color:#fff;
+}
+.scroll-top.in{
+	display:block;
 }
 /* ---------------------------------code color------------------------------------- */
 .com {

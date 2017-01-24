@@ -12,7 +12,9 @@
 		$dialog = $("#dialog"),
 		$checkBox = $("#check-box"),
 		$loginBtn = $("#login-btn");
-		
+
+	var $backToTop = $('#backToTop');	
+
 	var hbook={
 
 		// 初始化
@@ -23,7 +25,7 @@
 			$('[data-toggle="tooltip"]').tooltip();
 			hbook.page('.page');
 			prettyPrint();
-
+			
 		},
 
 		//事件绑定
@@ -82,6 +84,22 @@
 				});
 			});
 
+			//滚动文档
+			$(window).on('scroll', function(event) {
+				var scrollTopVal = $(window).scrollTop();
+				if(scrollTopVal > 200){
+					$backToTop.addClass('in');
+				}else{
+					$backToTop.removeClass('in');
+				}
+			});
+
+			//回到顶部
+			$backToTop.click(function(event) {
+				$('body,html').stop().animate({scrollTop: 0
+				},500, 'linear', function() {});
+			});
+
 		},
 		
 		//表单验证
@@ -114,7 +132,12 @@
 				}
 			});
 
-		}
+		},
+
+		
+		
+		
+		
 	};
 
 	window.hbook=hbook.init;

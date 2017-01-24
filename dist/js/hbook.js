@@ -14,7 +14,6 @@
 		this.options=options;
 		this.$element=$(element);
 		this.$backdrop = null;
-		this.isShow = null;
 		this.init(this.options,this.$element);
 		
 	}
@@ -24,12 +23,11 @@
 
 		var _self = this;
 
-		//判断是否已经显示弹出框
-		this.$element.on('click', '[data-dialog="hide"]', function(){
-			_self.hide(options,elememt);
-		});
+		
 		
 		options.modal == 'show' ? this.show(options,elememt) : this.hide(options,elememt);
+
+		_self.bindEvent(options,elememt);
 		
 	}
 
@@ -49,6 +47,8 @@
 		this.$element.off('click','[data-dialog="hide"]');
 
 		$('.dialog-backdrop-'+elememtId).length > 0 ? this.hideBackDrop(options,elememt) : '' ;
+
+
 		
 	}
 
@@ -58,7 +58,7 @@
 		var elememtId = elememt.attr('id');
 		
 		if ($('.dialog-backdrop-'+elememtId).length <= 0) {
-			this.$backdrop = $('<div class="dialog-backdrop dialog-backdrop-'+elememtId+'"></div>')
+			this.$backdrop = $('<div class="dialog-backdrop dialog-backdrop-'+elememtId+'" ></div>')
 			.appendTo(document.body)
 			.addClass('in');
 
@@ -81,6 +81,26 @@
 		$(document.body).removeClass('dialog-open');
 	}
 
+
+	// 绑定事件
+	Dialog.prototype.bindEvent=function(options,elememt){
+
+		var _self = this ;
+		var elememtId = elememt.attr('id');
+
+		// 点击文档外关闭弹框
+		$(document).on('click', '.dialog-backdrop-' + elememtId, function(event) {
+			_self.hide(options,elememt);
+		});
+
+		// 判断是否已经显示弹出框
+		_self.$element.on('click', '[data-dialog="hide"]', function(){
+			_self.hide(options,elememt);
+		});
+
+	}
+
+
 	$.fn.dialog = function(option) {
 		
 		var element=this;
@@ -97,6 +117,23 @@
 		modal:'show',  // 显示或者隐藏弹出框
 		backdrop:true  // 是否出现遮罩
 	}
+
+	
+
+	function stopEvent(e){
+
+		if (!e) var e = window.event;
+		if (e.stopPropagation) { 
+			// 兼容火狐
+			e.stopPropagation(); 
+		} 
+		else if (e) { 
+			// 兼容IE
+			window.event.cancelBubble = true; 
+		}
+
+	}
+
 
 
 }(window.jQuery);
