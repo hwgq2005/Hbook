@@ -25,7 +25,7 @@
 			$('[data-toggle="tooltip"]').tooltip();
 			hbook.page('.page');
 			prettyPrint();
-			
+
 		},
 
 		//事件绑定
@@ -65,7 +65,7 @@
 			// 导航下拉
 			$('.navbar-toggle').click(function(event) {
 				$(this).toggleClass('collapsed');
-				$('#navbar').toggleClass('in');
+				$(this).parent().next('.collapse').toggleClass('in');
 			});
 
 			//弹窗

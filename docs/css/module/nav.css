@@ -366,8 +366,7 @@
     float: left !important; }
 
   .navbar-right {
-    float: right !important;
-    margin-right: -15px; }
+    float: right !important; }
 
   .navbar-right ~ .navbar-right {
     margin-right: 0; } }
