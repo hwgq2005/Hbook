@@ -59,8 +59,8 @@
 @media screen and (max-width: 600px) {
   .dialog {
     width: auto;
-    left: 20px;
-    right: 20px;
+    left: 12%;
+    right: 12%;
     margin-left: 0; }
     .dialog .dialog-header {
       display: none; }
