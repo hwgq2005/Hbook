@@ -69,19 +69,38 @@
 			});
 
 			//弹窗
+			var dialog = null;
 			$('#dialog-btn').click(function(event) {
-				var aaa=$('#dialog1').dialog({
-					modal:'show'
-				});
-				console.log(aaa)
-			});
-			$('#confirm').click(function(event) {
-				$('#dialog1').dialog({
-					modal:'hide'
-				});
-				$('#dialog2').dialog({
-					modal:'show'
-				});
+				var _html = '<div >您觉的Hbook好用吗？</div>';
+				dialog = new Dialog({
+					id:'dialog1',
+					type:0,
+					title:'提示',
+					content:_html,
+					confirm:function(){
+						new Dialog({
+							id:'dialog2',
+							title:'提示',
+							content:'感谢您的支持！',
+
+							confirm:function(){
+								this.hide();
+							}
+						})
+					},
+					cancel:function(){
+						new Dialog({
+							id:'dialog3',
+							type:'1',
+							content:'取消成功',
+							cancelButton:false,
+							confirm:function(){
+								this.hide();
+							}
+						})
+					}
+				})
+			
 			});
 
 			//滚动文档

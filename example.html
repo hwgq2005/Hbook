@@ -90,45 +90,67 @@
 	        <h3>默认导航</h3>
 	        <div class="docs-example">
 	        	<header class="header"  >
-						<nav class="navbar navbar-fixed-top" style="position:static;">
-							
-							  <div class="navbar-header clearfix">
-							    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-							      <span class="sr-only">Toggle navigation</span>
-							      <span class="icon-bar"></span>
-							      <span class="icon-bar"></span>
-							      <span class="icon-bar"></span>
-							    </button>
-							    <a class="navbar-brand" href="javascript:;">Hbook</a>
-							  </div>
-							  <div class="collapse navbar-collapse ">
-							    <ul class="nav navbar-nav">
-							      	<li class=""><a href="javascript:;" >首页</a></li>
-								 	<li class=""><a href="javascript:;" >产品展示</a></li>
-								 	<li class=""><a href="javascript:;" >关于我们</a></li>
-								 	<li class=""><a href="javascript:;" >联系我们</a></li>
-							    </ul>
-							    <ul class="nav navbar-nav navbar-right">
-							        <li class="dropdown">
-							          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" target="_blank">登录</a>
-							        </li>
-							        <li class="dropdown">
-							          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" target="_blank">注册</a>
-							        </li>
-							    </ul>
-							     
-							  </div>
-						</nav>
-					</header>
+					<nav class="navbar navbar-fixed-top" style="position:static;">
+						
+						  <div class="navbar-header clearfix">
+						    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						      <span class="sr-only">Toggle navigation</span>
+						      <span class="icon-bar"></span>
+						      <span class="icon-bar"></span>
+						      <span class="icon-bar"></span>
+						    </button>
+						    <a class="navbar-brand" href="javascript:;">Hbook</a>
+						  </div>
+						  <div class="collapse navbar-collapse ">
+						    <ul class="nav navbar-nav">
+						      	<li class=""><a href="javascript:;" >首页</a></li>
+							 	<li class=""><a href="javascript:;" >产品展示</a></li>
+							 	<li class=""><a href="javascript:;" >关于我们</a></li>
+							 	<li class=""><a href="javascript:;" >联系我们</a></li>
+						    </ul>
+						    <ul class="nav navbar-nav navbar-right">
+						        <li class="dropdown">
+						          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" target="_blank">登录</a>
+						        </li>
+						        <li class="dropdown">
+						          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" target="_blank">注册</a>
+						        </li>
+						    </ul>
+						     
+						  </div>
+					</nav>
+				</header>
 	         </div>
 <pre class="prettyprint linenums">
-&lt;div class="nav"&gt;
-	&lt;a href="#">首页&lt;/a&gt;
-	&lt;a href="#">简介&lt;/a&gt;
-	&lt;a href="#">产品&lt;/a&gt;
-	&lt;a href="#">关于我们&lt;/a&gt;
-	&lt;a href="#">联系我们&lt;/a&gt;
-&lt;/div&gt;
+&lt;header class="header"  >
+	&lt;nav class="navbar navbar-fixed-top" style="position:static;">
+		  &lt;div class="navbar-header clearfix">
+		    &lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		      &lt;span class="sr-only">Toggle navigation&lt;/span>
+		      &lt;span class="icon-bar">&lt;/span>
+		      &lt;span class="icon-bar">&lt;/span>
+		      &lt;span class="icon-bar">&lt;/span>
+		    &lt;/button>
+		    &lt;a class="navbar-brand" href="javascript:;">Hbook&lt;/a>
+		  &lt;/div>
+		  &lt;div class="collapse navbar-collapse ">
+		    &lt;ul class="nav navbar-nav">
+		      	&lt;li class="">&lt;a href="javascript:;" >首页&lt;/a>&lt;/li>
+			 	&lt;li class="">&lt;a href="javascript:;" >产品展示&lt;/a>&lt;/li>
+			 	&lt;li class="">&lt;a href="javascript:;" >关于我们&lt;/a>&lt;/li>
+			 	&lt;li class="">&lt;a href="javascript:;" >联系我们&lt;/a>&lt;/li>
+		    &lt;/ul>
+		    &lt;ul class="nav navbar-nav navbar-right">
+		        &lt;li class="dropdown">
+		          &lt;a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" target="_blank">登录&lt;/a>
+		        &lt;/li>
+		        &lt;li class="dropdown">
+		          &lt;a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" target="_blank">注册&lt;/a>
+		        &lt;/li>
+		    &lt;/ul>
+		  &lt;/div>
+	&lt;/nav>
+&lt;/header>
 </pre>
 
 	         <h3>选项卡</h3>
@@ -755,7 +777,7 @@
 	            <h1>弹出框</h1>
 	        </div>
 
-	        <div class="dialog" id="dialog1">
+	    <!--     <div class="dialog" id="dialog1">
 				<div class="dialog-header">
 					提示
 					<a href="javascript:;" class="dialog-close" data-dialog="hide"><i class="fa fa-close font-16"></i></a>
@@ -769,22 +791,8 @@
 					 	<a href="javascript:;" class="btn " data-dialog="hide">取消</a>
 					</div>
 				</div>
-			</div>
-			<div class="dialog" id="dialog2">
-				<div class="dialog-header">
-					提示
-					<a href="javascript:;" class="dialog-close" data-dialog="hide"><i class="fa fa-close font-16"></i></a>
-				</div>
-				<div class="dialog-body">
-					感谢您的支持！
-				</div>
-				<div class="dialog-footer dialog-footer-right">
-					<div class="btn-group">
-					 	<a href="javascript:;" class="btn btn-primary" data-dialog="hide">确认</a>
-					 	<a href="javascript:;" class="btn " data-dialog="hide">取消</a>
-					</div>
-				</div>
-			</div>
+			</div> -->
+			
 	        <div class="docs-example">
 	        	<a href="javascript:;" class="btn btn-primary"  id="dialog-btn">弹框</a>
 	        </div>
