@@ -33,7 +33,7 @@ var gulp = require('gulp'),
 
 // 删除文件
 gulp.task('clean', function() {
-	return gulp.src(['./src/js/lib/jquery/src/', './dist/'], {read: false})
+	return gulp.src(['./dist/','./docs/'], {read: false})
 			   .pipe(clean());
 
 });
@@ -92,7 +92,7 @@ gulp.task('compass', function() {
 
 // 压缩样式
 gulp.task('minicss', function() {
-	gulp.src('./src/css/*.css')
+	return gulp.src('./src/css/*.css')
 		.pipe(minicss())
 		.pipe(gulp.dest('./docs/css'))
 })
@@ -133,7 +133,7 @@ gulp.task('scripts', function() {
 
 // 压缩图片
 gulp.task('imagemin', function() {
-	gulp.src('./src/images/**/*.*')
+	return gulp.src('./src/images/**/*.*')
 		.pipe(imagemin())
 		.pipe(gulp.dest('./docs/images'))
 		.pipe(notify({
@@ -152,7 +152,7 @@ gulp.task('miniHtml', function() {
 
 // 正式构建
 gulp.task('build', function(done) {
-	runSequence('copy', 'minicss', 'compass', 'imagemin', 'scripts');
+	runSequence('clean','copy', 'minicss', 'compass', 'imagemin', 'scripts');
 	//执行'watch'监听任务
 	// 监听文件变化
 	gulp.watch([
@@ -163,7 +163,7 @@ gulp.task('build', function(done) {
 		'./src/js/**/*.js'
 	], function() {
 		livereload.listen();
-		runSequence('copy', 'minicss', 'compass',  'imagemin', 'scripts');
+		runSequence('clean','copy', 'minicss', 'compass',  'imagemin', 'scripts');
 	});
 })
 gulp.task('default', ['build']);
