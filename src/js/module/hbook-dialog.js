@@ -1,20 +1,20 @@
 
 /**
  * @authors H君
- * @date    2016-11-19 21:33:10
- * @version 1.0
+ * @date    2017-02-06 11:37:29
+ * @version 0.0.6
  */
 
 !function(window,$) {
 
 	"use strict";
-	// 默认配置
 	
-
-	window.dialogIndex = 1050;
+	//弹框层级
+	var dialogIndex = 1050;
 
 	var Dialog=function(options){
 
+		// 默认配置
 		var defaults={
 			title:'提示',
 			type:0, 	    // 0:有头部和尾部 1:没有头部 2:没有尾部 3：没有头尾 
