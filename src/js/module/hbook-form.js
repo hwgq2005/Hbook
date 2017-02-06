@@ -2,7 +2,7 @@
 /**
  * @authors H君
  * @date    2016-04-27 18:35:42
- * @version 1.0
+ * @version 0.0.6
  * 
  */
 

@@ -1,15 +1,14 @@
 /**
  * 
- * @authors H君 (262281610@qq.com)
- * @date    2015-12-07 11:03:23
- * @version 1.0
+ * @authors H君
+ * @date    2017-02-06 16:55:47
+ * @version 0.0.6
  */
 !function(window){
 
 	'use strict';
 
 	var $header = $("#header"),
-		$dialog = $("#dialog"),
 		$checkBox = $("#check-box"),
 		$loginBtn = $("#login-btn");
 
@@ -31,19 +30,15 @@
 		//事件绑定
 		bindEvent:function(){
 
-			 $header.find('.nav a').click(function() {
+			$header.find('.nav a').click(function() {
 				var _id = $(this).attr('data-id'),
 					  T = $('#'+_id).offset().top;
 
 				$('body,html').stop().animate({
 					scrollTop: T - 60
 				},500, 'linear', function() {
-
+					$('#navbar').removeClass('in');
 				});
-			})
-
-			$dialog.click(function(){
-				var aa=$('#modal').modal('show');
 			})
 
 			$loginBtn.click(function(event) {

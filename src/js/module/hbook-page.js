@@ -2,7 +2,7 @@
 /**
  * @authors H君
  * @date    2016-04-21 11:22:04
- * @version 1.0
+ * @version 0.0.6
  * 
  * 分页功能
  * @param  {[type]} current   [当前页]

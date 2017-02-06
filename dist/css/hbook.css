@@ -909,7 +909,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
 .dialog {
   display: none;
   position: fixed;
-  top: 18%;
+  top: 25%;
   width: 400px;
   left: 50%;
   margin-left: -200px;
@@ -991,7 +991,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
   left: 0;
   right: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   text-align: center;
   opacity: 0;
   -moz-transition: opacity 0.15s linear;
