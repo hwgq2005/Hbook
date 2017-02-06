@@ -81,8 +81,10 @@
       display: none;
     }
     .dialog-body{
+      padding:36px 20px;
       max-height: 150px;
       text-align: center;
+      font-size: 1.8rem;
     }
     &.dialog-tip{
       .btn-group{

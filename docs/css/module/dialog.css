@@ -65,8 +65,10 @@
     .dialog .dialog-header {
       display: none; }
     .dialog .dialog-body {
+      padding: 36px 20px;
       max-height: 150px;
-      text-align: center; }
+      text-align: center;
+      font-size: 1.8rem; }
     .dialog.dialog-tip .btn-group [class*="dialog-cancel-"] {
       display: none; }
     .dialog .btn-group {

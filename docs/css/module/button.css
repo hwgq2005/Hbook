@@ -19,13 +19,11 @@ button[type="button"] {
 .btn-mini,
 .label-mini {
   padding: 3px 8px;
-  border-radius: 1px;
-  font-size: 12px; }
+  font-size: 1.2rem; }
 
 .btn-large,
 .label-large {
   padding: 10px 20px;
-  border-radius: 2px;
   font-size: 16px; }
 
 .btn-block {
@@ -156,3 +154,18 @@ button[type="button"] {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%; }
+
+@media screen and (max-width: 600px) {
+  .label, .btn, .btn {
+    padding: 10px 20px;
+    font-size: 1.8rem; }
+
+  .btn-mini,
+  .label-mini {
+    padding: 6px 16px;
+    font-size: 1.4rem; }
+
+  .btn-large,
+  .label-large {
+    padding: 14px 20px;
+    font-size: 1.8rem; } }

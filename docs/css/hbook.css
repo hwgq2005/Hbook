@@ -969,8 +969,10 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
     .dialog .dialog-header {
       display: none; }
     .dialog .dialog-body {
+      padding: 36px 20px;
       max-height: 150px;
-      text-align: center; }
+      text-align: center;
+      font-size: 1.8rem; }
     .dialog.dialog-tip .btn-group [class*="dialog-cancel-"] {
       display: none; }
     .dialog .btn-group {
@@ -1150,13 +1152,11 @@ button[type="button"] {
 .btn-mini,
 .label-mini {
   padding: 3px 8px;
-  border-radius: 1px;
-  font-size: 12px; }
+  font-size: 1.2rem; }
 
 .btn-large,
 .label-large {
   padding: 10px 20px;
-  border-radius: 2px;
   font-size: 16px; }
 
 .btn-block {
@@ -1288,6 +1288,20 @@ button[type="button"] {
   -webkit-border-radius: 50%;
   border-radius: 50%; }
 
+@media screen and (max-width: 600px) {
+  .label, .btn, .btn {
+    padding: 10px 20px;
+    font-size: 1.8rem; }
+
+  .btn-mini,
+  .label-mini {
+    padding: 6px 16px;
+    font-size: 1.4rem; }
+
+  .btn-large,
+  .label-large {
+    padding: 14px 20px;
+    font-size: 1.8rem; } }
 /*====== Popover ========*/
 .popover {
   position: absolute;
