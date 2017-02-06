@@ -16,8 +16,10 @@
 
 		// 默认配置
 		var defaults={
-			title:'提示',
+			id:'dialog'+new Date().getTime(),
 			type:0, 	    // 0:有头部和尾部 1:没有头部 2:没有尾部 3：没有头尾 
+			addClass:'',
+			title:'提示',
 			backdrop:true,  // 是否出现遮罩
 			confirmButton:true,  //确认按钮
 			cancelButton:true,	 //取消按钮
@@ -54,10 +56,10 @@
 			options = _self.options;
 
 		var typeClass = '';	
-		if (options.type == 1){
-			typeClass = 'dialog-tip' ; 
-		}
-		var _html = '<div class="dialog '+typeClass+'" id="'+options.id+'" style="z-index:'+(dialogIndex - 1)+'">';
+		options.type == 1  ? typeClass = 'dialog-tip' : '' ;
+		typeof options.addClass == 'string'  ? options.addClass = options.addClass : options.addClass = '' ;
+
+		var _html = '<div class="dialog '+options.addClass+typeClass+'" id="'+options.id+'" style="z-index:'+(dialogIndex - 1)+'">';
 
 		if ( (options.type == 0 || options.type == 2) && options.type != 3) {
 			_html += 	'<div class="dialog-header">'+options.title+'<a href="javascript:;" class="dialog-close dialog-close-'+options.id+'" ><i class="fa fa-close font-16"></i></a></div>';
