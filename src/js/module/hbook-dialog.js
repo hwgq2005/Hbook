@@ -86,9 +86,9 @@
 		}
 
 		$(_html).appendTo(document.body).addClass('in');
-
 		_self.$element = $(_html);
-		_self.backdrop(options);
+
+		options.backdrop  ? _self.backdrop(options) : '';
 		_self.bindEvent(options);
 
 	}
@@ -106,7 +106,7 @@
 	Dialog.prototype.backdrop = function(options) {
 
 		var elememtId = options.id;
-		
+
 		if ($('.dialog-backdrop-' + elememtId).length <= 0) {
 			$('<div class="dialog-backdrop dialog-backdrop-' + elememtId + '" style="z-index:' + (dialogIndex - 2) + '"></div>')
 				.appendTo(document.body)

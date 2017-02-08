@@ -216,7 +216,7 @@ input:-ms-placeholder {
 .page .nav > li > .more:focus {
   text-decoration: none;
   color: #699FE1;
-  background: #d7e6f7; }
+  background: #d8e6f7; }
 
 .nav > li.disabled > a, .page .nav > li.disabled > span.current, .page .nav > li.disabled > span.disabled, .page .nav > li.disabled > .more {
   color: #777; }
@@ -991,7 +991,7 @@ input[type="image"], input[type="checkbox"], input[type="radio"], input[type="ra
   left: 0;
   right: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
   text-align: center;
   opacity: 0;
   -moz-transition: opacity 0.15s linear;

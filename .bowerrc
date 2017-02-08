@@ -1,5 +1,5 @@
 {
-  "directory" : "dev/scripts/lib",
+  "directory" : "src/js/lib",
   "analytics": false,
   "timeout": 120000
 }

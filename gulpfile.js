@@ -35,7 +35,6 @@ var gulp = require('gulp'),
 gulp.task('clean', function() {
 	return gulp.src(['./dist/','./docs/'], {read: false})
 			   .pipe(clean());
-
 });
 
 // 复制文件
@@ -48,47 +47,47 @@ gulp.task('copy', function() {
 });
 
 // 创建Compass任务
-gulp.task('compass', function() {
+gulp.task('compass-docs', function() {
 
 	//生成docs目录
-	gulp.src(['./src/sass/**/*.scss', '!./src/sass/config.scss', '!./src/sass/reset.scss'])
+	return gulp.src(['./src/sass/**/*.scss', '!./src/sass/config.scss', '!./src/sass/reset.scss'])
 		.pipe(compass({
 			comments: false,
 			style: 'nested',
 			css: './docs/css',
 			sass: './src/sass',
 			image: './src/images'
-
 		}))
-
 		.pipe(gulp.dest('./docs/css'))
 		//.pipe(rename( { suffix: '.min' }))
 		//.pipe(minicss())
 		//.pipe(gulp.dest('./docs/css'))
 		.pipe(livereload())
 
+});
+
+gulp.task('compass-dist', function() {
+
 	//生成dist目录
-	gulp.src(['./src/sass/hbook.scss'])
+	return gulp.src(['./src/sass/hbook.scss'])
 		.pipe(compass({
 			comments: false,
 			style: 'nested',
 			css: './docs/css',
 			sass: './src/sass',
 			image: './src/images'
-
 		}))
-
 		.pipe(gulp.dest('./dist/css'))
+		.pipe(gulp.dest('./package/hbook-ui/dist/js'))
 		.pipe(gulp.dest('./docs/css'))
 		.pipe(rename({
 			suffix: '.min'
 		}))
 		.pipe(minicss())
 		.pipe(gulp.dest('./dist/css'))
+		.pipe(gulp.dest('./package/hbook-ui/dist/css'))
 		//.pipe(gulp.dest('./docs/css'))
-
-
-});
+})
 
 // 压缩样式
 gulp.task('minicss', function() {
@@ -107,28 +106,32 @@ gulp.task("sass", function() {
 })
 
 // 合并、压缩文件
-gulp.task('scripts', function() {
+gulp.task('scripts-docs', function() {
 
 	//生成docs目录
-	gulp.src(['./src/js/**/*.js', '!./src/js/lib/**/*.js'])
-		.pipe(rename({
-			suffix: '.min'
-		}))
-		.pipe(uglify())
-		.pipe(gulp.dest('./docs/js'))
-		.pipe(livereload())
+	return gulp.src(['./src/js/**/*.js', '!./src/js/lib/**/*.js'])
+			.pipe(rename({
+				suffix: '.min'
+			}))
+			.pipe(uglify())
+			.pipe(gulp.dest('./docs/js'))
+			.pipe(livereload())
+});
 
+gulp.task('scripts-dist', function() {
 	//生成dist目录
-	gulp.src(['./src/js/module/*.js'])
-		.pipe(concat('hbook.js'))
-		.pipe(gulp.dest('./dist/js'))
-		.pipe(gulp.dest('./docs/js'))
-		.pipe(rename({
-			suffix: '.min'
-		}))
-		.pipe(uglify())
-		.pipe(gulp.dest('./dist/js'))
-		//.pipe(gulp.dest('./docs/js'))
+	return gulp.src(['./src/js/module/*.js'])
+			.pipe(concat('hbook.js'))
+			.pipe(gulp.dest('./dist/js'))
+			.pipe(gulp.dest('./package/hbook-ui/dist/js'))
+			.pipe(gulp.dest('./docs/js'))
+			.pipe(rename({
+				suffix: '.min'
+			}))
+			.pipe(uglify())
+			.pipe(gulp.dest('./dist/js'))
+			.pipe(gulp.dest('./package/hbook-ui/dist/js'))
+			//.pipe(gulp.dest('./docs/js'))
 });
 
 // 压缩图片
@@ -152,8 +155,8 @@ gulp.task('miniHtml', function() {
 
 // 正式构建
 gulp.task('build', function(done) {
-	runSequence('clean','copy', 'minicss', 'compass', 'imagemin', 'scripts');
-	//执行'watch'监听任务
+
+	runSequence('clean','copy', 'minicss', 'compass-docs', 'compass-dist','scripts-docs','scripts-dist','imagemin');
 	// 监听文件变化
 	gulp.watch([
 		'./src/**/*.html',
@@ -163,7 +166,8 @@ gulp.task('build', function(done) {
 		'./src/js/**/*.js'
 	], function() {
 		livereload.listen();
-		runSequence('clean','copy', 'minicss', 'compass',  'imagemin', 'scripts');
+		runSequence('clean','copy', 'minicss', 'compass-docs', 'compass-dist','scripts-docs','scripts-dist','imagemin');
 	});
 })
+
 gulp.task('default', ['build']);

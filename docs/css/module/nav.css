@@ -69,7 +69,7 @@
 .nav > li > a:focus {
   text-decoration: none;
   color: #699FE1;
-  background: #d7e6f7; }
+  background: #d8e6f7; }
 
 .nav > li.disabled > a {
   color: #777; }
