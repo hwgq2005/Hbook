@@ -74,7 +74,7 @@
 					content:_html,
 					confirm:function(){
 						new Dialog({
-							id:'dialog1',
+							id:'dialog2',
 							title:'提示',
 							content:'感谢您的支持！',
 

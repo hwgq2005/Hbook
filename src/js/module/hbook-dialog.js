@@ -53,9 +53,10 @@
 	Dialog.prototype.show = function() {
 
 		var _self = this,
+			typeClass = null,
 			options = _self.options;
+			
 
-		var typeClass = '';
 
 		// 提示类型
 		options.type == 1 ? typeClass = 'dialog-tip' : '';
@@ -63,8 +64,8 @@
 		typeof options.addClass == 'string' ? options.addClass = options.addClass : options.addClass = '';
 
 		// 创建弹框盒子
-		var _html = '';
-		var dialogHtml = document.createElement("div");
+		var _html = '',
+			dialogHtml = document.createElement("div");
 		dialogHtml.id = options.id;
 		dialogHtml.className = 'dialog ' + options.addClass + typeClass;
 		dialogHtml.setAttribute('style', 'z-index:' + (dialogIndex - 1));
@@ -73,6 +74,8 @@
 		if ((options.type == 0 || options.type == 2) && options.type != 3) {
 			_html += '<div class="dialog-header">' + options.title + '<a href="javascript:;" class="dialog-close dialog-close-' + options.id + '" ><i class="fa fa-close font-16"></i></a></div>';
 		}
+
+		// 弹框内容区域
 		_html += '<div class="dialog-body">' + options.content + '</div>';
 
 		// 弹框尾部
@@ -109,9 +112,9 @@
 	// 隐藏弹出框
 	Dialog.prototype.hide = function(id) {
 
-		var elememtId = id || this.options.id;
-		var body = document.querySelector('body');
-		var dialogElement = document.querySelector('#' + elememtId);
+		var elememtId = id || this.options.id,
+			body = document.querySelector('body'),
+			dialogElement = document.querySelector('#' + elememtId);
 
 		body.removeChild(dialogElement);
 
@@ -122,7 +125,8 @@
 	// 显示遮罩
 	Dialog.prototype.backdrop = function(options) {
 
-		var elememtId = options.id;
+		var elememtId = options.id,
+			body = document.querySelector('body');
 
 		if (document.querySelectorAll('.dialog-backdrop-' + elememtId).length <= 0) {
 
@@ -130,8 +134,8 @@
 			var dialogBackdrop = document.createElement("div");
 			dialogBackdrop.className = 'dialog-backdrop dialog-backdrop-' + elememtId;
 			dialogBackdrop.setAttribute('style', 'z-index:' + (dialogIndex - 2));
-
-			var body = document.querySelector('body');
+			
+			// 追加到body底部
 			body.appendChild(dialogBackdrop);
 			addClass(body, 'dialog-open');
 			addClass(dialogBackdrop, 'in');
@@ -143,13 +147,11 @@
 	// 隐藏遮罩
 	Dialog.prototype.hideBackDrop = function(elememtId) {
 
-		var _self = this;
-
-		var body = document.querySelector('body');
-		var backdropElement = document.querySelector('.dialog-backdrop-' + elememtId);
+		var _self = this,
+			body = document.querySelector('body'),
+			backdropElement = document.querySelector('.dialog-backdrop-' + elememtId);
 
 		body.removeChild(backdropElement);
-
 		if (document.querySelectorAll('.dialog-backdrop').length < 1) {
 			removeClass(body, 'dialog-open');
 		}
@@ -183,8 +185,8 @@
 		}
 
 		// 关闭操作
-		var closeElement = document.querySelectorAll('.dialog-close-' + elememtId);
-		var backdropElement = document.querySelectorAll('.dialog-backdrop-' + elememtId);
+		var closeElement = document.querySelectorAll('.dialog-close-' + elememtId),
+			backdropElement = document.querySelectorAll('.dialog-backdrop-' + elememtId);
 		if (closeElement.length > 0) {
 			closeElement[0].onclick = function() {
 				_self.hide(elememtId);
