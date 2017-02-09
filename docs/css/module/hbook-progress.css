@@ -1,0 +1,31 @@
+/*====== Progress ========*/
+.progress {
+  overflow: hidden;
+  height: 18px;
+  background-color: #E1E1E1; }
+  .progress .bar {
+    width: 0%;
+    height: 18px;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    background: #1476E5;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: width 0.6s ease;
+    -o-transition: width 0.6s ease;
+    -webkit-transition: width 0.6s ease;
+    transition: width 0.6s ease; }
+    .progress .bar.bar-primary {
+      background: #699FE1; }
+    .progress .bar.bar-success {
+      background: #50BA5F; }
+    .progress .bar.bar-warning {
+      background: #FF9437; }
+    .progress .bar.bar-danger {
+      background: #EB8B79; }
+    .progress .bar.bar-violet {
+      background: #8089C1; }
+    .progress .bar.bar-grey {
+      background: #666; }
