@@ -4,7 +4,7 @@
  * @version 0.0.6
  */
 
-! function(window, $) {
+! function(window) {
 
 	"use strict";
 
@@ -26,24 +26,24 @@
 			cancel: function() {}
 		}
 
-		var options = $.extend(defaults, options);
+		var options = extend(defaults, options);
 
 		this.options = options;
 		this.confirm = options.confirm;
 		this.cancel = options.cancel;
-		this.$element = $('#' + options.id);
-		this.init(this.options, this.$element);
+		this.element =document.querySelectorAll('#'+options.id);
+		this.init(this.options, this.element);
 
 	}
 
 	// 初始化
-	Dialog.prototype.init = function(options, $element) {
+	Dialog.prototype.init = function(options, element) {
 
 		var _self = this;
 
-		if ($element.length <= 0) {
+		if (element.length <= 0) {
 			dialogIndex++;
-			_self.show(options, $element);
+			_self.show(options, element);
 		}
 
 	}
@@ -55,10 +55,17 @@
 			options = _self.options;
 
 		var typeClass = '';
+
+		// 提示类型
 		options.type == 1 ? typeClass = 'dialog-tip' : '';
+
 		typeof options.addClass == 'string' ? options.addClass = options.addClass : options.addClass = '';
 
-		var _html = '<div class="dialog ' + options.addClass + typeClass + '" id="' + options.id + '" style="z-index:' + (dialogIndex - 1) + '">';
+		var _html = '' ;
+		var dialogHtml = document.createElement("div");
+		dialogHtml.id = options.id;
+		dialogHtml.className ='dialog ' + options.addClass + typeClass;
+		dialogHtml.style ='z-index:' + (dialogIndex - 1);
 
 		// 头部
 		if ((options.type == 0 || options.type == 2) && options.type != 3) {
@@ -80,13 +87,13 @@
 			if (options.cancelButton) {
 				_html += '<a href="javascript:;" class="btn dialog-cancel-' + options.id + '">取消</a>';
 			}
-			_html += '</div>' +
-				'</div>' +
-				'</div>';
+			_html += '</div></div>';
 		}
 
-		$(_html).appendTo(document.body).addClass('in');
-		_self.$element = $(_html);
+		dialogHtml.innerHTML = _html;
+
+		var body = document.querySelector('body');
+		body.appendChild(dialogHtml).classList.add("in");
 
 		options.backdrop  ? _self.backdrop(options) : '';
 		_self.bindEvent(options);
@@ -97,8 +104,13 @@
 	Dialog.prototype.hide = function(id) {
 
 		var elememtId = id || this.options.id;
-		$('#' + elememtId).removeClass('in').remove();
-		$('.dialog-backdrop-' + elememtId).length > 0 ? this.hideBackDrop(elememtId) : '';
+		var body = document.querySelector('body');
+		var dialogElement = document.querySelector('#'+elememtId);
+
+		dialogElement.classList.remove('in');
+		body.removeChild(dialogElement);
+
+		document.querySelectorAll('.dialog-backdrop-' + elememtId).length > 0 ? this.hideBackDrop(elememtId) : '';
 
 	}
 
@@ -107,12 +119,17 @@
 
 		var elememtId = options.id;
 
-		if ($('.dialog-backdrop-' + elememtId).length <= 0) {
-			$('<div class="dialog-backdrop dialog-backdrop-' + elememtId + '" style="z-index:' + (dialogIndex - 2) + '"></div>')
-				.appendTo(document.body)
-				.addClass('in');
+		if (document.querySelectorAll('.dialog-backdrop-' + elememtId).length <= 0) {
 
-			$(document.body).addClass('dialog-open');
+			var dialogBackdrop = document.createElement("div");
+			dialogBackdrop.className = 'dialog-backdrop dialog-backdrop-' + elememtId;
+			dialogBackdrop.style = 'z-index:' + (dialogIndex - 2);
+		
+			var body = document.querySelector('body');
+			body.appendChild(dialogBackdrop);
+			body.classList.add('dialog-open');
+			dialogBackdrop.classList.add('in');
+
 		}
 
 	}
@@ -121,9 +138,13 @@
 	Dialog.prototype.hideBackDrop = function(elememtId) {
 
 		var _self = this;
-		$('.dialog-backdrop-' + elememtId).remove();
-		if ($('.dialog-backdrop').length < 1) {
-			$(document.body).removeClass('dialog-open');
+
+		var body = document.querySelector('body');
+		var backdropElement = document.querySelector('.dialog-backdrop-' + elememtId);
+
+		body.removeChild(backdropElement);
+		if (document.querySelectorAll('.dialog-backdrop').length < 1) {
+			body.classList.remove('dialog-open');
 		}
 
 	}
@@ -136,30 +157,45 @@
 			elememtId = options.id;
 
 		// 点击确认按钮
-		$('.dialog-confirm-' + elememtId + '').click(function() {
+		var confirmElement = document.querySelectorAll('.dialog-confirm-' + elememtId);
+		confirmElement[0].onclick = function() {
 			if (typeof _self.confirm == 'function') {
 				_self.confirm();
 			}
-		})
+		}
 
 		// 点击取消按钮
-		$('.dialog-cancel-' + elememtId + '').click(function() {
+		var cancelElement = document.querySelectorAll('.dialog-cancel-' + elememtId);
 
-			if (typeof _self.cancel == 'function') {
-				_self.cancel();
-				_self.hide(elememtId);
+		if(cancelElement.length  > 0 ){
+			cancelElement[0].onclick = function() {
+				if (typeof _self.cancel == 'function') {
+					_self.cancel();
+					_self.hide(elememtId);
+				}
 			}
-		})
+		} 
+		
 
 		// 关闭操作
-		$('.dialog-backdrop-' + elememtId + ',.dialog-close-' + elememtId + '').click(function() {
-			_self.hide(elememtId);
-		})
+		var closeElement = document.querySelectorAll('.dialog-close-' + elememtId);
+		var backdropElement = document.querySelectorAll('.dialog-backdrop-' + elememtId);
+
+		if(closeElement.length  > 0 ){
+			closeElement[0].onclick = function() {
+				_self.hide(elememtId);
+			}
+		}
+		if (backdropElement.length  > 0 ){
+			backdropElement[0].onclick = function() {
+				_self.hide(elememtId);
+			}
+		}
 
 	}
 
+	// 防止冒泡
 	function stopEvent(e) {
-		_
 
 		if (!e) var e = window.event;
 		if (e.stopPropagation) {
@@ -172,6 +208,14 @@
 
 	}
 
+	// 对象合并
+	function extend(to, from) {
+	    for (var key in from) {
+	    	to[key] = from[key];
+	    }
+	  	return to;
+	}
+
 	window.Dialog = Dialog;
 
-}(window, window.jQuery);
+}(window);

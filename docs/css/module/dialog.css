@@ -1,4 +1,7 @@
 /*====== Dialog ========*/
+html {
+  font-size: 62.5%; }
+
 .dialog-open {
   overflow-y: hidden; }
 
@@ -55,6 +58,24 @@
       text-align: right; }
     .dialog .dialog-footer.dialog-footer-center {
       text-align: center; }
+    .dialog .dialog-footer .btn-group .btn {
+      display: inline-block;
+      margin: 0 5px;
+      padding: 6px 20px;
+      font-size: 1.4rem;
+      line-height: 20px;
+      background: #E4E4E4;
+      color: #666;
+      white-space: nowrap;
+      border-radius: 2px;
+      -webkit-tap-highlight-color: transparent; }
+      .dialog .dialog-footer .btn-group .btn[class*="dialog-confirm-"] {
+        background: #699FE1;
+        color: #fff; }
+        .dialog .dialog-footer .btn-group .btn[class*="dialog-confirm-"]:hover {
+          background: #5491dd; }
+      .dialog .dialog-footer .btn-group .btn[class*="dialog-cancel-"]:hover {
+        background-color: #CFCFCF; }
 
 @media screen and (max-width: 600px) {
   .dialog {
@@ -71,11 +92,13 @@
       font-size: 1.8rem; }
     .dialog.dialog-tip .btn-group [class*="dialog-cancel-"] {
       display: none; }
-    .dialog .btn-group {
+    .dialog .dialog-footer .btn-group {
       display: -webkit-box; }
-      .dialog .btn-group .btn {
+      .dialog .dialog-footer .btn-group .btn {
         display: block;
         text-align: center;
+        padding: 10px 20px;
+        font-size: 1.8rem;
         -webkit-box-flex: 1;
         -moz-box-flex: 1;
         -o-box-flex: 1;

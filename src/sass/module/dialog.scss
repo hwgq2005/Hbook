@@ -3,6 +3,9 @@
 
 @import "config";
 
+html{
+  font-size:62.5%;
+}
 .dialog-open{
 	overflow-y:hidden;
 }
@@ -68,6 +71,32 @@
       &.dialog-footer-center{
         text-align:center;
       }
+      .btn-group{
+        .btn{
+          display: inline-block;
+          margin: 0 5px;
+          padding: 6px 20px;
+          font-size: 1.4rem;
+          line-height: 20px;
+          background: #E4E4E4;
+          color: #666;
+          white-space: nowrap;
+          border-radius: 2px;
+          -webkit-tap-highlight-color: transparent;
+          &[class*="dialog-confirm-"]{
+            background: $primaryBg;
+            color: #fff;
+            &:hover{
+               background:darken($primaryBg, 5%);
+            }
+          }
+          &[class*="dialog-cancel-"]{
+             &:hover{
+               background-color: #CFCFCF;
+             }
+          }
+        }
+      }
   }
 }
 
@@ -93,17 +122,22 @@
         }
       }
     }
-    .btn-group{
-      display: -webkit-box;
-      .btn{
-        display: block;
-        text-align: center;
-        -webkit-box-flex:1;
-        -moz-box-flex:1;
-        -o-box-flex:1;
-        box-flex:1;
+    .dialog-footer{
+      .btn-group{
+        display: -webkit-box;
+        .btn{
+          display: block;
+          text-align: center;
+          padding: 10px 20px;
+          font-size: 1.8rem;
+          -webkit-box-flex:1;
+          -moz-box-flex:1;
+          -o-box-flex:1;
+          box-flex:1;
+        }
       }
     }
+    
   }
 }
 
