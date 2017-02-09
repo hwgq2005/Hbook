@@ -31,7 +31,7 @@
 		this.options = options;
 		this.confirm = options.confirm;
 		this.cancel = options.cancel;
-		this.element =document.querySelectorAll('#'+options.id);
+		this.element = document.querySelectorAll('#' + options.id);
 		this.init(this.options, this.element);
 
 	}
@@ -41,6 +41,7 @@
 
 		var _self = this;
 
+		//判断id是否存在
 		if (element.length <= 0) {
 			dialogIndex++;
 			_self.show(options, element);
@@ -61,30 +62,30 @@
 
 		typeof options.addClass == 'string' ? options.addClass = options.addClass : options.addClass = '';
 
-		var _html = '' ;
+		// 创建弹框盒子
+		var _html = '';
 		var dialogHtml = document.createElement("div");
 		dialogHtml.id = options.id;
-		dialogHtml.className ='dialog ' + options.addClass + typeClass;
-		dialogHtml.setAttribute('style','z-index:' + (dialogIndex - 1));
-		// dialogHtml.style ='z-index:' + (dialogIndex - 1);
+		dialogHtml.className = 'dialog ' + options.addClass + typeClass;
+		dialogHtml.setAttribute('style', 'z-index:' + (dialogIndex - 1));
 
-		// 头部
+		// 弹框头部
 		if ((options.type == 0 || options.type == 2) && options.type != 3) {
 			_html += '<div class="dialog-header">' + options.title + '<a href="javascript:;" class="dialog-close dialog-close-' + options.id + '" ><i class="fa fa-close font-16"></i></a></div>';
 		}
 		_html += '<div class="dialog-body">' + options.content + '</div>';
 
-		// 尾部
+		// 弹框尾部
 		if (options.type != 2 && options.type != 3) {
 			_html += '<div class="dialog-footer dialog-footer-right">' +
 				'<div class="btn-group">';
 
-			// 确认按钮				
+			// 弹框确认按钮				
 			if (options.confirmButton) {
 				_html += '<a href="javascript:;" class="btn btn-primary dialog-confirm-' + options.id + '" >确认</a>';
 			}
 
-			// 取消按钮
+			// 弹框取消按钮
 			if (options.cancelButton) {
 				_html += '<a href="javascript:;" class="btn dialog-cancel-' + options.id + '">取消</a>';
 			}
@@ -95,11 +96,12 @@
 
 		var body = document.querySelector('body');
 		body.appendChild(dialogHtml);
+		addClass(dialogHtml, 'in');
 
-		var dialogClass = dialogHtml.getAttribute("class"); 
-		dialogHtml.className = dialogClass + ' in';
+		// 判断是否出现遮罩
+		options.backdrop ? _self.backdrop(options) : '';
 
-		options.backdrop  ? _self.backdrop(options) : '';
+		//事件绑定
 		_self.bindEvent(options);
 
 	}
@@ -109,10 +111,8 @@
 
 		var elememtId = id || this.options.id;
 		var body = document.querySelector('body');
-		var dialogElement = document.querySelector('#'+elememtId);
+		var dialogElement = document.querySelector('#' + elememtId);
 
-		var dialogClass = dialogElement.getAttribute("class"); 
-		dialogElement.className = elememtId;
 		body.removeChild(dialogElement);
 
 		document.querySelectorAll('.dialog-backdrop-' + elememtId).length > 0 ? this.hideBackDrop(elememtId) : '';
@@ -126,17 +126,15 @@
 
 		if (document.querySelectorAll('.dialog-backdrop-' + elememtId).length <= 0) {
 
+			// 创建遮罩盒子
 			var dialogBackdrop = document.createElement("div");
 			dialogBackdrop.className = 'dialog-backdrop dialog-backdrop-' + elememtId;
-			dialogBackdrop.setAttribute('style','z-index:' + (dialogIndex - 2));
-			// dialogBackdrop.style = 'z-index:' + (dialogIndex - 2);
-		
+			dialogBackdrop.setAttribute('style', 'z-index:' + (dialogIndex - 2));
+
 			var body = document.querySelector('body');
 			body.appendChild(dialogBackdrop);
-			body.className = 'dialog-open';
-
-			var backdropClass = dialogBackdrop.getAttribute("class"); 
-			dialogBackdrop.className = backdropClass + ' in';
+			addClass(body, 'dialog-open');
+			addClass(dialogBackdrop, 'in');
 
 		}
 
@@ -151,8 +149,9 @@
 		var backdropElement = document.querySelector('.dialog-backdrop-' + elememtId);
 
 		body.removeChild(backdropElement);
+
 		if (document.querySelectorAll('.dialog-backdrop').length < 1) {
-			body.className = '';
+			removeClass(body, 'dialog-open');
 		}
 
 	}
@@ -174,27 +173,24 @@
 
 		// 点击取消按钮
 		var cancelElement = document.querySelectorAll('.dialog-cancel-' + elememtId);
-
-		if(cancelElement.length  > 0 ){
+		if (cancelElement.length > 0) {
 			cancelElement[0].onclick = function() {
 				if (typeof _self.cancel == 'function') {
 					_self.cancel();
 					_self.hide(elememtId);
 				}
 			}
-		} 
-		
+		}
 
 		// 关闭操作
 		var closeElement = document.querySelectorAll('.dialog-close-' + elememtId);
 		var backdropElement = document.querySelectorAll('.dialog-backdrop-' + elememtId);
-
-		if(closeElement.length  > 0 ){
+		if (closeElement.length > 0) {
 			closeElement[0].onclick = function() {
 				_self.hide(elememtId);
 			}
 		}
-		if (backdropElement.length  > 0 ){
+		if (backdropElement.length > 0) {
 			backdropElement[0].onclick = function() {
 				_self.hide(elememtId);
 			}
@@ -204,7 +200,6 @@
 
 	// 防止冒泡
 	function stopEvent(e) {
-
 		if (!e) var e = window.event;
 		if (e.stopPropagation) {
 			// 兼容火狐
@@ -213,15 +208,32 @@
 			// 兼容IE
 			window.event.cancelBubble = true;
 		}
-
 	}
 
-	// 对象合并
+	// 合并对象
 	function extend(to, from) {
-	    for (var key in from) {
-	    	to[key] = from[key];
-	    }
-	  	return to;
+		for (var key in from) {
+			to[key] = from[key];
+		}
+		return to;
+	}
+
+	// 判断是否存在class
+	function hasClass(obj, cls) {
+		return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+	}
+
+	// 添加class
+	function addClass(obj, cls) {
+		if (!hasClass(obj, cls)) obj.className += " " + cls;
+	}
+
+	// 移除class
+	function removeClass(obj, cls) {
+		if (hasClass(obj, cls)) {
+			var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+			obj.className = obj.className.replace(reg, ' ');
+		}
 	}
 
 	window.Dialog = Dialog;
