@@ -1,7 +1,7 @@
 /**
  * @authors H君
- * @date    2017-02-06 11:37:29
- * @version 0.0.6
+ * @date    2017-02-09 14:26:44
+ * @version 0.0.7
  */
 
 ! function(window) {
