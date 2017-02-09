@@ -65,7 +65,8 @@
 		var dialogHtml = document.createElement("div");
 		dialogHtml.id = options.id;
 		dialogHtml.className ='dialog ' + options.addClass + typeClass;
-		dialogHtml.style ='z-index:' + (dialogIndex - 1);
+		dialogHtml.setAttribute('style','z-index:' + (dialogIndex - 1));
+		// dialogHtml.style ='z-index:' + (dialogIndex - 1);
 
 		// 头部
 		if ((options.type == 0 || options.type == 2) && options.type != 3) {
@@ -93,7 +94,10 @@
 		dialogHtml.innerHTML = _html;
 
 		var body = document.querySelector('body');
-		body.appendChild(dialogHtml).classList.add("in");
+		body.appendChild(dialogHtml);
+
+		var dialogClass = dialogHtml.getAttribute("class"); 
+		dialogHtml.className = dialogClass + ' in';
 
 		options.backdrop  ? _self.backdrop(options) : '';
 		_self.bindEvent(options);
@@ -107,7 +111,8 @@
 		var body = document.querySelector('body');
 		var dialogElement = document.querySelector('#'+elememtId);
 
-		dialogElement.classList.remove('in');
+		var dialogClass = dialogElement.getAttribute("class"); 
+		dialogElement.className = elememtId;
 		body.removeChild(dialogElement);
 
 		document.querySelectorAll('.dialog-backdrop-' + elememtId).length > 0 ? this.hideBackDrop(elememtId) : '';
@@ -123,12 +128,15 @@
 
 			var dialogBackdrop = document.createElement("div");
 			dialogBackdrop.className = 'dialog-backdrop dialog-backdrop-' + elememtId;
-			dialogBackdrop.style = 'z-index:' + (dialogIndex - 2);
+			dialogBackdrop.setAttribute('style','z-index:' + (dialogIndex - 2));
+			// dialogBackdrop.style = 'z-index:' + (dialogIndex - 2);
 		
 			var body = document.querySelector('body');
 			body.appendChild(dialogBackdrop);
-			body.classList.add('dialog-open');
-			dialogBackdrop.classList.add('in');
+			body.className = 'dialog-open';
+
+			var backdropClass = dialogBackdrop.getAttribute("class"); 
+			dialogBackdrop.className = backdropClass + ' in';
 
 		}
 
@@ -144,7 +152,7 @@
 
 		body.removeChild(backdropElement);
 		if (document.querySelectorAll('.dialog-backdrop').length < 1) {
-			body.classList.remove('dialog-open');
+			body.className = '';
 		}
 
 	}
