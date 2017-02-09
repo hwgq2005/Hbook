@@ -1,8 +1,8 @@
 /**
  * 
  * @authors H君
- * @date    2017-02-06 16:55:47
- * @version 0.0.6
+ * @date    2017-02-09 14:26:44
+ * @version 0.0.8
  */
 !function(window){
 

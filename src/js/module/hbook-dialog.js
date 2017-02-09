@@ -1,7 +1,7 @@
 /**
  * @authors H君
  * @date    2017-02-09 14:26:44
- * @version 0.0.7
+ * @version 0.0.8
  */
 
 ! function(window) {
@@ -59,13 +59,14 @@
 
 
 		// 提示类型
-		options.type == 1 ? typeClass = 'dialog-tip' : '';
+		options.type == 1 ? typeClass = 'dialog-tip' : typeClass = '';
 
 		typeof options.addClass == 'string' ? options.addClass = options.addClass : options.addClass = '';
 
 		// 创建弹框盒子
 		var _html = '',
 			dialogHtml = document.createElement("div");
+
 		dialogHtml.id = options.id;
 		dialogHtml.className = 'dialog ' + options.addClass + typeClass;
 		dialogHtml.setAttribute('style', 'z-index:' + (dialogIndex - 1));
