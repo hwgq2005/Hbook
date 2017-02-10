@@ -19,7 +19,7 @@
 			type: 0, // 0:有头部和尾部 1:没有头部 2:没有尾部 3：没有头尾 
 			addClass: '',
 			title: '提示',
-			width:400,
+			width:500,
 			backdrop: true, // 是否出现遮罩
 			confirmButton: true, //确认按钮
 			cancelButton: true, //取消按钮
