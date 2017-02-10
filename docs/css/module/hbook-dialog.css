@@ -30,11 +30,13 @@ html {
     font-size: 1.6rem; }
   .dialog .dialog-close {
     position: absolute;
-    top: 10px;
+    top: 8px;
     right: 10px;
-    font-size: 16px;
+    padding: 5px;
     color: #999;
-    padding: 5px; }
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1; }
     .dialog .dialog-close:hover {
       color: #666; }
   .dialog .dialog-body {

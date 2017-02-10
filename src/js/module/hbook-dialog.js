@@ -19,9 +19,12 @@
 			type: 0, // 0:有头部和尾部 1:没有头部 2:没有尾部 3：没有头尾 
 			addClass: '',
 			title: '提示',
+			width:400,
 			backdrop: true, // 是否出现遮罩
 			confirmButton: true, //确认按钮
 			cancelButton: true, //取消按钮
+			confirmText:'确定',
+			ccancelText:'取消',
 			confirm: function() {},
 			cancel: function() {}
 		}
@@ -69,11 +72,13 @@
 
 		dialogHtml.id = options.id;
 		dialogHtml.className = 'dialog ' + options.addClass + typeClass;
-		dialogHtml.setAttribute('style', 'z-index:' + (dialogIndex - 1));
+		dialogHtml.style.width =  options.width + 'px';
+		dialogHtml.style.marginLeft =  - (options.width / 2) + 'px';
+		dialogHtml.style.zIndex =  dialogIndex - 1;
 
 		// 弹框头部
 		if ((options.type == 0 || options.type == 2) && options.type != 3) {
-			_html += '<div class="dialog-header">' + options.title + '<a href="javascript:;" class="dialog-close dialog-close-' + options.id + '" ><i class="fa fa-close font-16"></i></a></div>';
+			_html += '<div class="dialog-header">' + options.title + '<a href="javascript:;" class="dialog-close dialog-close-' + options.id + '" >×</a></div>';
 		}
 
 		// 弹框内容区域
@@ -86,12 +91,12 @@
 
 			// 弹框确认按钮				
 			if (options.confirmButton) {
-				_html += '<a href="javascript:;" class="btn btn-primary dialog-confirm-' + options.id + '" >确认</a>';
+				_html += '<a href="javascript:;" class="btn btn-primary dialog-confirm-' + options.id + '" >'+options.confirmText+'</a>';
 			}
 
 			// 弹框取消按钮
 			if (options.cancelButton) {
-				_html += '<a href="javascript:;" class="btn dialog-cancel-' + options.id + '">取消</a>';
+				_html += '<a href="javascript:;" class="btn dialog-cancel-' + options.id + '">'+options.ccancelText+'</a>';
 			}
 			_html += '</div></div>';
 		}
@@ -134,7 +139,7 @@
 			// 创建遮罩盒子
 			var dialogBackdrop = document.createElement("div");
 			dialogBackdrop.className = 'dialog-backdrop dialog-backdrop-' + elememtId;
-			dialogBackdrop.setAttribute('style', 'z-index:' + (dialogIndex - 2));
+			dialogBackdrop.style.zIndex = dialogIndex - 2 ;
 			
 			// 追加到body底部
 			body.appendChild(dialogBackdrop);

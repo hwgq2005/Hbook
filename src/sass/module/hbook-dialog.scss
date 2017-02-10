@@ -36,11 +36,13 @@ html{
   }
   .dialog-close{
       position: absolute;
-      top: 10px;
+      top: 8px;
       right: 10px;
-      font-size: 16px;
-      color: #999;
       padding: 5px;
+      color: #999;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
       &:hover{
         color:#666;
       }
