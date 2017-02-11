@@ -985,10 +985,10 @@ html {
 
 @media screen and (max-width: 600px) {
   .dialog {
-    width: auto;
+    width: auto !important;
     left: 10%;
     right: 10%;
-    margin-left: 0; }
+    margin-left: 0 !important; }
     .dialog .dialog-header {
       display: none; }
     .dialog .dialog-body {
