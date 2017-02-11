@@ -78,7 +78,7 @@ gulp.task('compass-dist', function() {
 			image: './src/images'
 		}))
 		.pipe(gulp.dest('./dist/css'))
-		.pipe(gulp.dest('./package/hbook-ui/dist/js'))
+		.pipe(gulp.dest('./package/hbook-ui/dist/css'))
 		.pipe(gulp.dest('./docs/css'))
 		.pipe(rename({
 			suffix: '.min'
