@@ -10,7 +10,7 @@ Hbook focus on the front-end development and promotion, adhere to share, open th
 npm install hbook-ui     
 ```
 
-###Usage
+###Structure
 
 ```
 hbook/
