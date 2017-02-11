@@ -13,11 +13,14 @@ npm install hbook-ui
 ###Usage
 
 ```
-<!--  核心 CSS 文件  -->
-<link rel="stylesheet" href="dist/css/hbook.min.css">
- 
-<!--  核心 JS 文件  -->
-<script src="dist/js/hbook.min.js">
+hbook/
+├── dist/
+	├── css/
+	│   ├── hbook.css
+	│   ├── hbook.min.css
+	└── js/
+	    ├── hbook.js
+	    └── hbook.min.js
 ```
 
 ###Contact
