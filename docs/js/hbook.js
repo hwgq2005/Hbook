@@ -15,7 +15,7 @@
 	"use strict";
 
 	// 版本号
-	var Version = '0.0.9';
+	var Version = '0.1.5';
 
 	// 弹框层级
 	var dialogIndex = 1050;
@@ -274,6 +274,9 @@
 
 	"use strict";
 
+	// 版本号
+	var Version = '0.1.5';
+	
 	var $formControl=$('.form-line-input .form-control');
 	var $checkControl=$('.checkbox,.radio');
 
@@ -319,6 +322,9 @@
 }(this, function () { 
 
 	"use strict";
+	
+	// 版本号
+	var Version = '0.1.5';
 
 	var Page=function(element, options){
 		this.options=options;

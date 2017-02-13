@@ -19,6 +19,9 @@
 }(this, function () { 
 
 	"use strict";
+	
+	// 版本号
+	var Version = '0.1.5';
 
 	var Page=function(element, options){
 		this.options=options;

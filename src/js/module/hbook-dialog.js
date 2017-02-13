@@ -15,7 +15,7 @@
 	"use strict";
 
 	// 版本号
-	var Version = '0.0.9';
+	var Version = '0.1.5';
 
 	// 弹框层级
 	var dialogIndex = 1050;

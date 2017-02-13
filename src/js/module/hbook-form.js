@@ -15,6 +15,9 @@
 
 	"use strict";
 
+	// 版本号
+	var Version = '0.1.5';
+	
 	var $formControl=$('.form-line-input .form-control');
 	var $checkControl=$('.checkbox,.radio');
 
