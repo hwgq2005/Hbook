@@ -12,17 +12,9 @@ Hbook focus on the front-end development and promotion, adhere to share, open th
 npm install hbook-ui  
 ```
 
-###Structure
-
+###Usage
 ```
-hbook/
-├── dist/
-	├── css/
-	│   ├── hbook.css
-	│   ├── hbook.min.css
-	└── js/
-	    ├── hbook.js
-	    └── hbook.min.js
+require('hbook-ui') 
 ```
 
 ###Contact

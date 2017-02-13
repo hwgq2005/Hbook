@@ -1,8 +1,8 @@
 
 /**
  * @authors H君
- * @date    2016-04-21 11:22:04
- * @version 0.0.6
+ * @date    2017-02-13 15:51:41
+ * @version 0.1.5
  * 
  * 分页功能
  * @param  {[type]} current   [当前页]
@@ -10,8 +10,14 @@
  * @return {[type]} pageCount [总页数]
  * @return {[type]} callback  [单击回调方法，返回当前页]
  */
+(function (global, factory) {
 
-!function($) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (factory());
+
+}(this, function () { 
+
 	"use strict";
 
 	var Page=function(element, options){
@@ -167,6 +173,4 @@
 		callback  : function() {}
 	}
 
-
-	
-}(window.jQuery);
+}));

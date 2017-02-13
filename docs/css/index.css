@@ -135,7 +135,8 @@ code {
   color: #f7f7f7; }
 
 .section {
-  margin: 48px 0; }
+  margin: 48px 0;
+  overflow: hidden; }
 
 .section > p {
   margin: 10px 0; }

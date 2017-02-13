@@ -1,14 +1,23 @@
 /**
  * @authors H君
  * @date    2017-02-09 14:26:44
- * @version 0.0.9
+ * @version 0.1.5
  */
+(function (global, factory) {
 
-! function(window) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global.Dialog = factory());
+
+}(this, function () { 
+
 
 	"use strict";
 
-	//弹框层级
+	// 版本号
+	var Version = '0.0.9';
+
+	// 弹框层级
 	var dialogIndex = 1050;
 
 	var Dialog = function(options) {
@@ -244,6 +253,6 @@
 		}
 	}
 
-	window.Dialog = Dialog;
+	return  Dialog;
 
-}(window);
+}));
