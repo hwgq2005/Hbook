@@ -8,7 +8,10 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
   (global.Dialog = factory());
-
+  console.log(typeof exports,'typeof exports')
+  console.log(typeof module,'typeof module')
+  console.log(typeof define,'typeof define')
+  console.log(typeof amd,'typeof amd')
 }(this, function () { 
 
 
