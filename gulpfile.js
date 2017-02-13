@@ -28,6 +28,7 @@ var gulp = require('gulp'),
 	rev = require('gulp-rev'),
 	revCollector = require('gulp-rev-collector'),
 	minifyHtml = require('gulp-minify-html'),
+	jsdoc = require("gulp-jsdoc"),
 	livereload = require('gulp-livereload'),
 	notify = require('gulp-notify');
 
