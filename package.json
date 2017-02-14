@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "H君",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^2.3.1",

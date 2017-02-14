@@ -46,8 +46,13 @@ gulp.task('copy', function() {
 	gulp.src(['./src/font-awesome/**/*'])
 		.pipe(gulp.dest('./docs/font-awesome'));
 
-	gulp.src(['./Readme.md'])
-		.pipe(gulp.dest('./package/hbook-ui/'));
+});
+
+// 文档说明
+gulp.task('readme', function() {
+
+	return gulp.src(['./Readme.md'])
+			.pipe(gulp.dest('./package/hbook-ui/'));
 });
 
 // 创建Compass任务
@@ -160,7 +165,7 @@ gulp.task('miniHtml', function() {
 // 正式构建
 gulp.task('build', function(done) {
 
-	runSequence('clean','copy', 'minicss', 'compass-docs', 'compass-dist','scripts-docs','scripts-dist','imagemin');
+	runSequence('copy', 'readme', 'minicss', 'compass-docs', 'compass-dist','scripts-docs','scripts-dist','imagemin');
 	// 监听文件变化
 	gulp.watch([
 		'./src/**/*.html',
@@ -171,7 +176,7 @@ gulp.task('build', function(done) {
 		'./Readme.md'
 	], function() {
 		livereload.listen();
-		runSequence('clean','copy', 'minicss', 'compass-docs', 'compass-dist','scripts-docs','scripts-dist','imagemin');
+		runSequence('readme', 'minicss', 'compass-docs', 'compass-dist','scripts-docs','scripts-dist','imagemin');
 	});
 })
 

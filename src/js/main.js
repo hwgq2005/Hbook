@@ -21,7 +21,7 @@
 
 			hbook.bindEvent();
 			hbook.valid();
-			// $('[data-toggle="tooltip"]').tooltip();
+			$('[data-toggle="tip"]').tip();
 			hbook.page('.page');
 			prettyPrint();
 
