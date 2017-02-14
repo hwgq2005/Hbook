@@ -303,15 +303,15 @@
 }));
 
 /**
- * @authors HÂêõ
+ * @authors Hæ˝
  * @date    2017-02-13 15:51:41
- * @version 0.1.5
+ * @version 0.1.6
  * 
- * ÂàÜÈ°µÂäüËÉΩ
- * @param  {[type]} current   [ÂΩìÂâçÈ°µ]
- * @return {[type]} showNum   [ÊòæÁ§∫Êù°Êï∞ ]
- * @return {[type]} pageCount [ÊÄªÈ°µÊï∞]
- * @return {[type]} callback  [ÂçïÂáªÂõûË∞ÉÊñπÊ≥ïÔºåËøîÂõûÂΩìÂâçÈ°µ]
+ * ∑÷“≥π¶ƒ‹
+ * @param  {[type]} current   [µ±«∞“≥]
+ * @return {[type]} showNum   [œ‘ æÃı ˝ ]
+ * @return {[type]} pageCount [◊‹“≥ ˝]
+ * @return {[type]} callback  [µ•ª˜ªÿµ˜∑Ω∑®£¨∑µªÿµ±«∞“≥]
  */
 (function (global, factory) {
 
@@ -323,147 +323,151 @@
 
 	"use strict";
 	
-	// ÁâàÊú¨Âè∑
-	var Version = '0.1.5';
+	// ∞Ê±æ∫≈
+	var Version = '0.1.6';
 
-	var Page=function(element, options){
-		this.options=options;
-		this.$element=$(element);
+	var Page = function(element, options){
+
+		this.options = options;
+		this.$element = $(element);
 		this.init();
 
 	}
 
-	Page.prototype = {
+	// ≥ı ºªØ
+	Page.prototype.init = function(){
 
-		init:function(){
-			this.getDom(this.$element, this.options);
-			this.bindEvent(this.$element, this.options);
-		},
-
-		getDom:function(element,options){
-			
-			element.empty();
-			
-			//‰∏ä‰∏ÄÈ°µ
-			if (options.current > 1) {
-				element.append('<a href="javascript:;" class="prevPage">&laquo;</a>');
-			} else {
-				element.remove('.prevPage');
-				element.append('<span class="disabled">&laquo;</span>');
-			}
-			
-			//‰∏≠Èó¥È°µÁ†Å
-			if (options.current != 1 && options.current >= 4 && options.pageCount != 4) {
-				element.append('<a href="javascript:;" class="number">' + 1 + '</a>');
-			}
-			if (options.current - 2 > 2 && options.current <= options.pageCount && options.pageCount > 5) {
-				
-				element.append('<span class="more">...</span>');
-			}
-
-			var start = options.current - 2,
-				end   = options.current + 2;
-			if ((start > 1 && options.current < 4) || options.current == 1) {
-				end++;
-			}
-			if (options.current > options.pageCount - 4 && options.current >= options.pageCount) {
-				start--;
-			}
-			for (; start <= end; start++) {
-				if (start <= options.pageCount && start >= 1) {
-					if (start != options.current) {
-						element.append('<a href="javascript:;" class="number">' + start + '</a>');
-					} else {
-						element.append('<span class="current">' + start + '</span>');
-					}
-				}
-			}
-			if (options.current + 2 < options.pageCount - 1 && options.current >= 1 && options.pageCount > 5 ) {
-				element.append('<span class="more">...</span>');
-			}
-			if (options.current != options.pageCount && options.current < options.pageCount - 2 && options.pageCount != 4) {
-				element.append('<a href="javascript:;" class="number">' + options.pageCount + '</a>');
-			}
-
-			//‰∏ã‰∏ÄÈ°µ
-			if (options.current < options.pageCount) {
-				element.append('<a href="javascript:;" class="nextPage">&raquo;</a>');
-				// element.append('<input type="text"  class="gotoInput"/>');
-				// element.append('<a href="javascript:;" class="gotoPage">Ë∑≥ËΩ¨</a>');
-			} else {
-				element.remove('.nextPage');
-				element.append('<span class="disabled">&raquo;</span>');
-				// element.append('<input type="text"  class="gotoInput"/>');
-				// element.append('<a href="javascript:;" class="gotoPage">Ë∑≥ËΩ¨</a>');
-			}
-		
-		},
-
-		bindEvent:function(){
-			var _self=this;
-
-			_self.$element.off('click');			
-			_self.$element.on("click", "a.number", function() {
-				var current = parseInt($(this).text());
-				_self.getDom(_self.$element, {
-					"current": current,
-					"pageCount": _self.options.pageCount
-				});
-				if (typeof(_self.options.callback) == "function") {
-					_self.options.callback(current);
-				}
-			});
-
-			//‰∏ä‰∏ÄÈ°µ
-			_self.$element.on("click", "a.prevPage", function() {
-				var current = parseInt(_self.$element.children("span.current").text());
-				_self.getDom(_self.$element, {
-					"current": current - 1,
-					"pageCount": _self.options.pageCount
-				});
-				if (typeof(_self.options.callback) == "function") {
-					_self.options.callback(current - 1);
-				}
-			});
-
-			//‰∏ã‰∏ÄÈ°µ
-			_self.$element.on("click", "a.nextPage", function() {
-
-				var current = parseInt(_self.$element.children("span.current").text());
-				_self.getDom(_self.$element, {
-					"current": current + 1,
-					"pageCount": _self.options.pageCount
-				});
-				if (typeof(_self.options.callback) == "function") {
-					_self.options.callback(current + 1);
-				}
-			});
-
-			//Ë∑≥ËΩ¨Âà∞ÊüêÈ°µ
-			_self.$element.on("click", "a.gotoPage", function() {
-				var gotoPage=_self.$element.children("input.gotoInput").val();
-				if (gotoPage != '') {
-					var current = parseInt(gotoPage);
-					if (current) {
-						if (current <= _self.options.pageCount) {
-							_self.getDom(_self.$element, {
-								"current": current,
-								"pageCount": _self.options.pageCount
-							});
-							if (typeof(_self.options.callback) == "function") {
-								_self.options.callback(current);
-							}
-						};
-					};
-					
-				};
-			});
-		}
+		this.create(this.$element, this.options);
+		this.bindEvent(this.$element, this.options);
 
 	}
 
+	// ¥¥Ω®∑÷“≥
+	Page.prototype.create = function(element,options){
+
+		element.empty();
+			
+		//…œ“ª“≥
+		if (options.current > 1) {
+			element.append('<a href="javascript:;" class="prevPage">&laquo;</a>');
+		} else {
+			element.remove('.prevPage');
+			element.append('<span class="disabled">&laquo;</span>');
+		}
+		
+		//÷–º‰“≥¬Î
+		if (options.current != 1 && options.current >= 4 && options.pageCount != 4) {
+			element.append('<a href="javascript:;" class="number">' + 1 + '</a>');
+		}
+		if (options.current - 2 > 2 && options.current <= options.pageCount && options.pageCount > 5) {
+			
+			element.append('<span class="more">...</span>');
+		}
+
+		var start = options.current - 2,
+			end   = options.current + 2;
+		if ((start > 1 && options.current < 4) || options.current == 1) {
+			end++;
+		}
+		if (options.current > options.pageCount - 4 && options.current >= options.pageCount) {
+			start--;
+		}
+		for (; start <= end; start++) {
+			if (start <= options.pageCount && start >= 1) {
+				if (start != options.current) {
+					element.append('<a href="javascript:;" class="number">' + start + '</a>');
+				} else {
+					element.append('<span class="current">' + start + '</span>');
+				}
+			}
+		}
+		if (options.current + 2 < options.pageCount - 1 && options.current >= 1 && options.pageCount > 5 ) {
+			element.append('<span class="more">...</span>');
+		}
+		if (options.current != options.pageCount && options.current < options.pageCount - 2 && options.pageCount != 4) {
+			element.append('<a href="javascript:;" class="number">' + options.pageCount + '</a>');
+		}
+
+		//œ¬“ª“≥
+		if (options.current < options.pageCount) {
+			element.append('<a href="javascript:;" class="nextPage">&raquo;</a>');
+			// element.append('<input type="text"  class="gotoInput"/>');
+			// element.append('<a href="javascript:;" class="gotoPage">Ã¯◊™</a>');
+		} else {
+			element.remove('.nextPage');
+			element.append('<span class="disabled">&raquo;</span>');
+			// element.append('<input type="text"  class="gotoInput"/>');
+			// element.append('<a href="javascript:;" class="gotoPage">Ã¯◊™</a>');
+		}
+	}
+
+	// ∞Û∂® ¬º˛
+	Page.prototype.bindEvent = function(){
+
+		var _self=this;
+
+		_self.$element.off('click');
+
+		_self.$element.on("click", "a.number", function() {
+			var current = parseInt($(this).text());
+			_self.create(_self.$element, {
+				"current": current,
+				"pageCount": _self.options.pageCount
+			});
+			if (typeof(_self.options.callback) == "function") {
+				_self.options.callback(current);
+			}
+		});
+
+		//…œ“ª“≥
+		_self.$element.on("click", "a.prevPage", function() {
+			var current = parseInt(_self.$element.children("span.current").text());
+			_self.create(_self.$element, {
+				"current": current - 1,
+				"pageCount": _self.options.pageCount
+			});
+			if (typeof(_self.options.callback) == "function") {
+				_self.options.callback(current - 1);
+			}
+		});
+
+		//œ¬“ª“≥
+		_self.$element.on("click", "a.nextPage", function() {
+
+			var current = parseInt(_self.$element.children("span.current").text());
+			_self.create(_self.$element, {
+				"current": current + 1,
+				"pageCount": _self.options.pageCount
+			});
+			if (typeof(_self.options.callback) == "function") {
+				_self.options.callback(current + 1);
+			}
+		});
+
+		//Ã¯◊™µΩƒ≥“≥
+		_self.$element.on("click", "a.gotoPage", function() {
+			var gotoPage=_self.$element.children("input.gotoInput").val();
+			if (gotoPage != '') {
+				var current = parseInt(gotoPage);
+				if (current) {
+					if (current <= _self.options.pageCount) {
+						_self.create(_self.$element, {
+							"current": current,
+							"pageCount": _self.options.pageCount
+						});
+						if (typeof(_self.options.callback) == "function") {
+							_self.options.callback(current);
+						}
+					};
+				};
+				
+			};
+		});
+		
+	}
+	
 	$.fn.page = function(option) {
-		//ÈªòËÆ§ÂèÇÊï∞
+		//ƒ¨»œ≤Œ ˝
 		var element=this;
 		var options = $.extend($.fn.page.defaults, option);
 
