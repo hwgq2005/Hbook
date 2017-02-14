@@ -1,8 +1,9 @@
 /**
  * @authors Hå›
  * @date    2017-02-09 14:26:44
- * @version 0.1.5
+ * @version 0.1.6
  */
+
 (function (global, factory) {
 
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -15,7 +16,7 @@
 	"use strict";
 
 	// ç‰ˆæœ¬å·
-	var Version = '0.1.5';
+	var Version = '0.1.6';
 
 	// å¼¹æ¡†å±‚çº§
 	var dialogIndex = 1050;
@@ -306,13 +307,8 @@
  * @authors H¾ı
  * @date    2017-02-13 15:51:41
  * @version 0.1.6
- * 
- * ·ÖÒ³¹¦ÄÜ
- * @param  {[type]} current   [µ±Ç°Ò³]
- * @return {[type]} showNum   [ÏÔÊ¾ÌõÊı ]
- * @return {[type]} pageCount [×ÜÒ³Êı]
- * @return {[type]} callback  [µ¥»÷»Øµ÷·½·¨£¬·µ»Øµ±Ç°Ò³]
  */
+
 (function (global, factory) {
 
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -478,9 +474,9 @@
 	}
 
 	$.fn.page.defaults={
-		current   : 1,
-		pageCount : 10,
-		callback  : function() {}
+		current   : 1,  //µ±Ç°Ò³
+		pageCount : 10, //×ÜÌõÊı
+		callback  : function(thisPage) {} //»Øµ÷º¯Êı
 	}
 
 }));

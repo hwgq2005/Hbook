@@ -3,13 +3,8 @@
  * @authors H君
  * @date    2017-02-13 15:51:41
  * @version 0.1.6
- * 
- * 分页功能
- * @param  {[type]} current   [当前页]
- * @return {[type]} showNum   [显示条数 ]
- * @return {[type]} pageCount [总页数]
- * @return {[type]} callback  [单击回调方法，返回当前页]
  */
+
 (function (global, factory) {
 
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -175,9 +170,9 @@
 	}
 
 	$.fn.page.defaults={
-		current   : 1,
-		pageCount : 10,
-		callback  : function() {}
+		current   : 1,  //当前页
+		pageCount : 10, //总条数
+		callback  : function(thisPage) {} //回调函数
 	}
 
 }));

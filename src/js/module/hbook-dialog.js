@@ -1,8 +1,9 @@
 /**
  * @authors H君
  * @date    2017-02-09 14:26:44
- * @version 0.1.5
+ * @version 0.1.6
  */
+
 (function (global, factory) {
 
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -15,7 +16,7 @@
 	"use strict";
 
 	// 版本号
-	var Version = '0.1.5';
+	var Version = '0.1.6';
 
 	// 弹框层级
 	var dialogIndex = 1050;
