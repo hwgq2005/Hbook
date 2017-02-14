@@ -45,6 +45,9 @@ gulp.task('copy', function() {
 		
 	gulp.src(['./src/font-awesome/**/*'])
 		.pipe(gulp.dest('./docs/font-awesome'));
+
+	gulp.src(['./Readme.md'])
+		.pipe(gulp.dest('./package/hbook-ui/'));
 });
 
 // 创建Compass任务
@@ -164,7 +167,8 @@ gulp.task('build', function(done) {
 		'./src/sass/**/*.scss',
 		'./src/images/**',
 		'./src/css/**/*.css',
-		'./src/js/**/*.js'
+		'./src/js/**/*.js',
+		'./Readme.md'
 	], function() {
 		livereload.listen();
 		runSequence('clean','copy', 'minicss', 'compass-docs', 'compass-dist','scripts-docs','scripts-dist','imagemin');

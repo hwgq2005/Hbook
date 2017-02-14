@@ -18,6 +18,10 @@ npm install hbook-ui
 ```
 require('hbook-ui') 
 ```
+###CDN
+
+- https://unpkg.com/hbook-ui/dist/css/hbook.min.css
+- https://unpkg.com/hbook-ui/dist/js/hbook.min.js
 
 ###Contact
 Weibo：[@hwgq2005](http://www.weibo.com/hwgq2005) 
