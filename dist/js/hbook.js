@@ -26,16 +26,16 @@
 		var defaults = {
 			id: 'dialog' + new Date().getTime(),
 			type: 0, // 0:有头部和尾部 1:没有头部 2:没有尾部 3：没有头尾 
-			addClass: '',
-			title: '提示',
-			width:500,
+			addClass: '', // 添加样式类名
+			title: '提示',	// 标题
+			width:500,  // 弹框宽度
 			backdrop: true, // 是否出现遮罩
-			confirmButton: true, //确认按钮
-			cancelButton: true, //取消按钮
-			confirmText:'确定',
-			ccancelText:'取消',
-			confirm: function() {},
-			cancel: function() {}
+			confirmButton: true, // 确认按钮
+			cancelButton: true, // 取消按钮
+			confirmText:'确定', // 确认按钮文本
+			ccancelText:'取消', // 取消按钮文本
+			confirm: function() {}, // 确认按钮回调
+			cancel: function() {} // 取消按钮回调
 		}
 
 		var options = extend(defaults, options);
