@@ -3,7 +3,7 @@
   "version": "0.1.6",
   "main": "index.js",
   "author": "hwgq2005",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hwgq2005/Hbook.git"
