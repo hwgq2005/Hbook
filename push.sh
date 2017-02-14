@@ -5,3 +5,4 @@ echo $val
 git add --all
 git commit -m $val
 git push origin gh-pages
+
