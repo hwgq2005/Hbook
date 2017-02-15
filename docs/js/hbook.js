@@ -341,7 +341,7 @@
 	// 创建分页
 	Page.prototype.create = function(element,options){
 
-		element.empty();
+		element.addClass('page').empty();
 			
 		//上一页
 		if (options.current > 1) {

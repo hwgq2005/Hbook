@@ -390,10 +390,18 @@
 	            <h1>分页</h1>
 	        </div>
 	        <div class="docs-example">
-	        	<div class="page"></div>
+	        	<div id="page"></div>
 	         </div>
 <pre class="prettyprint linenums">
-&lt;div class="page"&gt;&lt;/div&gt;
+调用方式：
+$('#page').page({
+	current: 1, //当前页
+	showNum: 10, //当前显示条数
+	pageCount: 100, //后台返回的总数
+	callback: function(currentPage) {
+		//do something ...
+	}
+});
 </pre>
 	    </section>
 
@@ -868,32 +876,32 @@ var dialog = new Dialog({
 	        	<a class="btn btn-large btn-danger"  data-toggle="tip"  data-placement="right" data-title="hello,word">这是个提示</a>
 	        </div>
 <pre class="prettyprint linenums">
-调用方式：$('[data-toggle="tip"]').tip();
+调用方式：$('[data-toggle="tip"]').tip()
 </pre>
 			<h3>参数说明</h3>
 			<div class="docs-example">
 		    	<table class="table table-bordered table-zebra">
-			            <thead>
-			              <tr>
-			                <th>属性</th>
-			                <th>备注说明</th>
-			              </tr>
-			            </thead>
-			            <tbody>
-			              <tr>
-			                <td><code>空</code></td>
-			                <td>默认移入显示、移出隐藏</td>
-			              </tr>
-			              <tr>
-			                <td><code>show</code></td>
-			                <td>显示工具提示，$('[data-toggle="tip"]').tip('show')</td>
-			              </tr>
-			              <tr>
-			                <td><code>hide</code></td>
-			                <td>隐藏工具提示，$('[data-toggle="tip"]').tip('hide')</td>
-			              </tr>
-			            </tbody>
-			          </table>    
+		            <thead>
+		              <tr>
+		                <th>属性</th>
+		                <th>备注说明</th>
+		              </tr>
+		            </thead>
+		            <tbody>
+		              <tr>
+		                <td><code>空</code></td>
+		                <td>默认移入显示、移出隐藏</td>
+		              </tr>
+		              <tr>
+		                <td><code>show</code></td>
+		                <td>显示工具提示，$('[data-toggle="tip"]').tip('show')</td>
+		              </tr>
+		              <tr>
+		                <td><code>hide</code></td>
+		                <td>隐藏工具提示，$('[data-toggle="tip"]').tip('hide')</td>
+		              </tr>
+		            </tbody>
+		        </table>    
 			</div>
 	    </section>
 

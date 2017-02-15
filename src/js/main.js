@@ -22,7 +22,7 @@
 			hbook.bindEvent();
 			hbook.valid();
 			$('[data-toggle="tip"]').tip();
-			hbook.page('.page');
+			hbook.page('#page');
 			prettyPrint();
 
 		},
