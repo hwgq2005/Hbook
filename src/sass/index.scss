@@ -10,7 +10,9 @@
 @import "compass/reset";
 @import "compass/css3";
 @import "config";
-
+a{
+	color:$primaryBg;
+}
 html{
 	font-size:62.5%;
 }
@@ -150,6 +152,7 @@ code {
 	color: #999;
 	border-top: 1px solid #eee;
 	text-align: center;
+	line-height: 22px;
 	font-size: 1.4rem;
 }
 

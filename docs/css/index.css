@@ -52,6 +52,9 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
+a {
+  color: #699FE1; }
+
 html {
   font-size: 62.5%; }
 
@@ -183,6 +186,7 @@ code {
   color: #999;
   border-top: 1px solid #eee;
   text-align: center;
+  line-height: 22px;
   font-size: 1.4rem; }
 
 .box-type {
