@@ -114,6 +114,11 @@
 				},500, 'linear', function() {});
 			});
 
+
+			$('body').click(function(event) {
+				$('#tip1').tip('hide');
+			});
+
 		},
 		
 		//表单验证

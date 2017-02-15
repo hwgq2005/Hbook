@@ -24,13 +24,23 @@
 		this.$element = $(element);
 		this.init(this.$element,options);
 
-
 	}
 	
 	// 初始化
-	Tip.prototype.init = function($element){
+	Tip.prototype.init = function($element,options){
 
-		this.bindEvent($element);
+		var _self = this ;
+		if(typeof options == 'object'){
+			_self.bindEvent($element);
+		}else if(typeof options == 'string'){
+			if (options == 'show') {
+				setTimeout(function(){
+					_self.show($element);
+				},0)
+			}else if (options == 'hide') {
+				_self.hide($element);
+			}
+		}
 
 	}
 
@@ -50,6 +60,8 @@
 			placement = $element.data('placement');
 
 		this.id = 'tip' + new Date().getTime();
+		$element.attr('data-id',this.id);
+
 		$tip = $('<div class="tip '+placement+'" role="tip" id="'+this.id+'">'+
 					  '<div class="tip-arrow"></div>'+
 					  '<div class="tip-inner">'+title+'</div>'+
@@ -59,7 +71,6 @@
 
 		$tipWidth = $tip.outerWidth(); //提示框外部宽度
 		$tipHeight = $tip.outerHeight();  //提示框外部高度
-
 		if (placement == 'top') {
 			style.top = _top - $tipHeight + 'px';
 			style.left = _left + (elementWidth / 2) - ($tipWidth / 2) + 'px';
@@ -74,44 +85,47 @@
 			style.left = _left + elementWidth  + 'px';
 		}
 		$tip.css(style).addClass('in');
+
 	}
 
-
 	// 隐藏提示
-	Tip.prototype.hide = function(){
+	Tip.prototype.hide = function($element){
 
-		var $tip = $('#' + this.id);
-		$tip.remove();
+		var id = $element.attr('data-id');
+		$element.removeAttr('data-id');
+		$('#'+id).remove();
+
 	}
 
 	// 绑定事件
 	Tip.prototype.bindEvent = function($element){
 
 		var _self = this;
-
 		$element.hover(function() {
 			_self.show($element);
 		}, function() {
-			_self.hide();
+			_self.hide($element);
 		});
-
 		
 	}
-
-
 
 	$.fn.tip = function(option) {
 
 		//默认参数
-		var options = $.extend($.fn.tip.defaults, option);
-
+		var options = null;
+		if(typeof option == 'object'){
+			options = $.extend($.fn.tip.defaults, option);
+		}else if(typeof option == 'string'){
+			options = option;
+		}
 		return this.each(function () {
            new Tip(this, options);
 		})
 		
 	}
 
-	$.fn.page.defaults={
+	//默认配置
+	$.fn.page.defaults = {
 		
 	}
 
