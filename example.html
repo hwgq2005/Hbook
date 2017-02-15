@@ -46,7 +46,7 @@
 				 	<li class=""><a href="javascript:;" data-id="h-btn">按钮</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-tip">标签</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-fade">弹出框</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-tooltip">提示工具</a></li>
+				 	<li class=""><a href="javascript:;" data-id="h-tooltip">工具提示</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-scrollbar">进度条</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-list">图文</a></li>
 			    </ul>
@@ -775,42 +775,126 @@
 		<section class="section" id="h-fade">
 			<div class="page-header">
 	            <h1>弹出框</h1>
-	        </div>
-
-	        <!-- <div class="dialog" id="dialog4">
-				<div class="dialog-header">
-					提示
-					<a href="javascript:;" class="dialog-close" data-dialog="hide"><i class="fa fa-close font-16"></i></a>
-				</div>
-				<div class="dialog-body">
-					您觉的Hbook好用吗？
-				</div>
-				<div class="dialog-footer dialog-footer-right">
-					<div class="btn-group">
-						<a href="javascript:;" class="btn btn-primary" id="confirm">确认</a>
-					 	<a href="javascript:;" class="btn " data-dialog="hide">取消</a>
-					</div>
-				</div>
-			</div> -->
-			
+	        </div> 
 	        <div class="docs-example">
 	        	<a href="javascript:;" class="btn btn-primary"  id="dialog-btn">弹框</a>
 	        </div>
+<pre class="prettyprint linenums">
+调用方式：
+var dialog = new Dialog({
+	id:'dialog1',
+	title:'提示',
+	content:_html,
+	confirm:function(){
+		// do something ...
+	},
+	cancel:function(){
+		// do something ...
+	}
+})
+</pre>
+		<h3>参数说明</h3>
+		<div class="docs-example">
+	    	<table class="table table-bordered table-zebra">
+		            <thead>
+		              <tr>
+		                <th>属性</th>
+		                <th>备注说明</th>
+		              </tr>
+		            </thead>
+		            <tbody>
+		              <tr>
+		                <td><code>id</code></td>
+		                <td>自定义，例如："hbook-dialog"</td>
+		              </tr>
+		              <tr>
+		                <td><code>type</code></td>
+		                <td>0：有头部和尾部，1：没有头部，2:没有尾部，3：没有头尾</td>
+		              </tr>
+		              <tr>
+		                <td><code>addClass</code></td>
+		                <td>添加类名，例如：addClass="a"，addClass="b"</td>
+		              </tr>
+		              <tr>
+		                <td><code>title</code></td>
+		                <td>标题</td>
+		              </tr>
+		              <tr>
+		                <td><code>width</code></td>
+		                <td>宽度，例如：width=500</td>
+		              </tr>
+		              <tr>
+		                <td><code>backdrop</code></td>
+		                <td>boolean值，true或者false</td>
+		              </tr>
+					  <tr>
+		                <td><code>confirmButton</code></td>
+		                <td>boolean值，true或者false</td>
+		              </tr>
+		              <tr>
+		                <td><code>cancelButton</code></td>
+		                <td>boolean值，true或者false</td>
+		              </tr>
+		              <tr>
+		                <td><code>confirmText</code></td>
+		                <td>确定按钮名称</td>
+		              </tr>
+		              <tr>
+		                <td><code>cancelText</code></td>
+		                <td>取消按钮名称</td>
+		              </tr>
+		              <tr>
+		                <td><code>confirm</code></td>
+		                <td>function(){}；确定事件回调</td>
+		              </tr>
+		              <tr>
+		                <td><code>cancel</code></td>
+		                <td>function(){}；取消事件回调</td>
+		              </tr>
+		            </tbody>
+		          </table>    
+		</div>
 	    </section>
 
 	     <!-- 提示工具 -->
 		<section class="section" id="h-tooltip">
 			<div class="page-header">
-	            <h1>提示工具</h1>
+	            <h1>工具提示</h1>
 	        </div>
 	        <div class="docs-example">
-		       
-				
 	        	<a class="btn btn-large btn-primary"  data-toggle="tip"  data-placement="top" data-title="hello,word" id="tip1">这是个提示</a>
 	        	<a class="btn btn-large btn-success" data-toggle="tip"  data-placement="bottom" data-title="hello,word">这是个提示</a>
 	        	<a class="btn btn-large btn-warning" data-toggle="tip"  data-placement="left" data-title="hello,word">这是个提示</a>
 	        	<a class="btn btn-large btn-danger"  data-toggle="tip"  data-placement="right" data-title="hello,word">这是个提示</a>
 	        </div>
+<pre class="prettyprint linenums">
+调用方式：$('[data-toggle="tip"]').tip();
+</pre>
+			<h3>参数说明</h3>
+			<div class="docs-example">
+		    	<table class="table table-bordered table-zebra">
+			            <thead>
+			              <tr>
+			                <th>属性</th>
+			                <th>备注说明</th>
+			              </tr>
+			            </thead>
+			            <tbody>
+			              <tr>
+			                <td><code>空</code></td>
+			                <td>默认移入显示、移出隐藏</td>
+			              </tr>
+			              <tr>
+			                <td><code>show</code></td>
+			                <td>显示工具提示，$('[data-toggle="tip"]').tip('show')</td>
+			              </tr>
+			              <tr>
+			                <td><code>hide</code></td>
+			                <td>隐藏工具提示，$('[data-toggle="tip"]').tip('hide')</td>
+			              </tr>
+			            </tbody>
+			          </table>    
+			</div>
 	    </section>
 
 	    <!-- 进度条 -->
