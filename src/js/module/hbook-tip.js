@@ -1,7 +1,7 @@
 /**
  * @authors H君
  * @date    2017-02-14 14:32:34
- * @version 0.1.7
+ * @version 0.1.8
  * 
  */
 
@@ -16,7 +16,7 @@
 	"use strict";
 
 	// 版本号
-	var Version = '0.1.7';
+	var Version = '0.1.8';
 	
 	var Tip = function(element,options) {
 
