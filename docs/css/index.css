@@ -182,6 +182,9 @@ code {
   text-align: center;
   font-size: 1.4rem; }
 
+.footer .footer-content p {
+  margin-bottom: 14px; }
+
 .box-type {
   margin-left: -3px;
   margin-bottom: 10px; }
