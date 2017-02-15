@@ -403,6 +403,31 @@ $('#page').page({
 	}
 });
 </pre>
+			<h3>参数说明</h3>
+			<div class="docs-example">
+		    	<table class="table table-bordered table-zebra">
+		            <thead>
+		              <tr>
+		                <th>属性</th>
+		                <th>备注说明</th>
+		              </tr>
+		            </thead>
+		            <tbody>
+		              <tr>
+		                <td><code>current</code></td>
+		                <td>number，当前页</td>
+		              </tr>
+		              <tr>
+		                <td><code>showNum</code></td>
+		                <td>number，当前显示条数</td>
+		              </tr>
+		              <tr>
+		                <td><code>callback</code></td>
+		                <td>function(){}，回调函数</td>
+		              </tr>
+		            </tbody>
+		        </table>    
+			</div>
 	    </section>
 
 	    <!-- 表单 -->
@@ -813,23 +838,23 @@ var dialog = new Dialog({
 		            <tbody>
 		              <tr>
 		                <td><code>id</code></td>
-		                <td>自定义，例如："hbook-dialog"</td>
+		                <td>string，例如："hbook-dialog"</td>
 		              </tr>
 		              <tr>
 		                <td><code>type</code></td>
-		                <td>0：有头部和尾部，1：没有头部，2:没有尾部，3：没有头尾</td>
+		                <td>number，0：有头部和尾部，1：没有头部，2:没有尾部，3：没有头尾</td>
 		              </tr>
 		              <tr>
 		                <td><code>addClass</code></td>
-		                <td>添加类名，例如：addClass="a"，addClass="b"</td>
+		                <td>string，添加类名，例如：addClass="a"，addClass="b"</td>
 		              </tr>
 		              <tr>
 		                <td><code>title</code></td>
-		                <td>标题</td>
+		                <td>string，标题</td>
 		              </tr>
 		              <tr>
 		                <td><code>width</code></td>
-		                <td>宽度，例如：width=500</td>
+		                <td>nubmer，例如：width=500</td>
 		              </tr>
 		              <tr>
 		                <td><code>backdrop</code></td>
@@ -845,19 +870,19 @@ var dialog = new Dialog({
 		              </tr>
 		              <tr>
 		                <td><code>confirmText</code></td>
-		                <td>确定按钮名称</td>
+		                <td>string，确定按钮名称</td>
 		              </tr>
 		              <tr>
 		                <td><code>cancelText</code></td>
-		                <td>取消按钮名称</td>
+		                <td>string，取消按钮名称</td>
 		              </tr>
 		              <tr>
 		                <td><code>confirm</code></td>
-		                <td>function(){}；确定事件回调</td>
+		                <td>function(){}，确定事件回调</td>
 		              </tr>
 		              <tr>
 		                <td><code>cancel</code></td>
-		                <td>function(){}；取消事件回调</td>
+		                <td>function(){}，取消事件回调</td>
 		              </tr>
 		            </tbody>
 		          </table>    
@@ -894,11 +919,11 @@ var dialog = new Dialog({
 		              </tr>
 		              <tr>
 		                <td><code>show</code></td>
-		                <td>显示工具提示，$('[data-toggle="tip"]').tip('show')</td>
+		                <td>string，显示工具提示，调用：$('[data-toggle="tip"]').tip('show')</td>
 		              </tr>
 		              <tr>
 		                <td><code>hide</code></td>
-		                <td>隐藏工具提示，$('[data-toggle="tip"]').tip('hide')</td>
+		                <td>string，隐藏工具提示，调用：$('[data-toggle="tip"]').tip('hide')</td>
 		              </tr>
 		            </tbody>
 		        </table>    
