@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "description": "demo",
+  "name": "hbook",
+  "description": "Simple, lightweight front-end UI framework",
   "version": "1.1.0",
   "keywords": [
     "css",
@@ -17,21 +17,11 @@
     "*.json"
   ],
   "dependencies": {
-    "jquery": "~2.1.4",
-    "require-css": "~0.1.8",
-    "requirejs": "~2.1.22",
-    "text": "~2.0.14",
-    "jquery.scrollTo": "~2.1.2",
-    "ejs":"~1.0.0"
+    "jquery": "~2.1.4"
   },
   "authors": [
     "hwgq2005 <262281610@qq.com>"
   ],
-  "main": "",
-  "moduleType": [],
   "license": "MIT",
-  "private": true,
-  "devDependencies": {
-    "ejs": "~1.0.0"
-  }
+  "private": true
 }
