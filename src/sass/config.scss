@@ -50,4 +50,8 @@ $formLength:100px;
 	}
 }
 
+/// grid
+@mixin grid-create($number) {
+	width: 100% / 12 * $number;
+}
 

@@ -1,0 +1,109 @@
+
+/*====== Grid ========*/
+
+@import "config";
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    &:before,
+    &:after{
+      display: table;
+      content: '';
+    }
+    &:after{
+      clear:both;
+    }
+    .col-md-1, 
+    .col-md-2, 
+    .col-md-3, 
+    .col-md-4, 
+    .col-md-5, 
+    .col-md-6, 
+    .col-md-7, 
+    .col-md-8, 
+    .col-md-9,
+    .col-md-10, 
+    .col-md-11, 
+    .col-md-12{
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 970px) {
+  .container {
+    width: 970px;
+  }
+  .row {
+      .col-md-1{
+        @include grid-create(1);
+      }
+      .col-md-2{
+        @include grid-create(2);
+      }
+      .col-md-3{
+        @include grid-create(3);
+      }
+      .col-md-4{
+        @include grid-create(4);
+      }
+      .col-md-5{
+        @include grid-create(5);
+      }
+      .col-md-6{
+        @include grid-create(6);
+      }
+      .col-md-7{
+        @include grid-create(7);
+      }
+      .col-md-8{
+        @include grid-create(8);
+      }
+      .col-md-9{
+        @include grid-create(9);
+      }
+      .col-md-10{
+        @include grid-create(10);
+      }
+      .col-md-11{
+        @include grid-create(11);
+      }
+      .col-md-12{
+        @include grid-create(12);
+      }
+      .col-md-1, 
+      .col-md-2, 
+      .col-md-3, 
+      .col-md-4, 
+      .col-md-5, 
+      .col-md-6, 
+      .col-md-7, 
+      .col-md-8, 
+      .col-md-9,
+      .col-md-10, 
+      .col-md-11, 
+      .col-md-12{
+        float: left;
+      }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}

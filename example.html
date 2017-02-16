@@ -38,6 +38,7 @@
 			    <ul class="nav navbar-nav">
 
 			      	<li class=""><a href="javascript:;" data-id="h-index">首页</a></li>
+			      	<li class=""><a href="javascript:;" data-id="h-grid">栅格布局</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-nav">导航</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-table">表格</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-page">分页</a></li>
@@ -80,7 +81,60 @@
 	
 	<!-- content begin -->
 	<div class="container content" id="content">
-	
+
+		<!-- 布局 -->
+		<section class="section" id="h-grid">
+			<div class="page-header" >
+	            <h1>栅格布局</h1>
+			</div>
+			<div class="margin-20">
+        		<div class="row">
+        			<div class="col-md-1">col-md-1</div>
+        			<div class="col-md-1">col-md-1</div>
+        			<div class="col-md-1">col-md-1</div>
+        			<div class="col-md-1">col-md-1</div>
+        			<div class="col-md-1">col-md-1</div>
+        			<div class="col-md-1">col-md-1</div>
+        			<div class="col-md-1">col-md-1</div>
+        			<div class="col-md-1">col-md-1</div>
+        			<div class="col-md-1">col-md-1</div>
+        			<div class="col-md-1">col-md-1</div>
+        			<div class="col-md-1">col-md-1</div>
+        			<div class="col-md-1">col-md-1</div>
+        		</div>
+	        </div>
+            <div class="margin-20">
+        		<div class="row">
+        			<div class="col-md-4">col-md-3</div>
+        			<div class="col-md-4">col-md-4</div>
+        			<div class="col-md-4">col-md-4</div>
+        		</div>
+	        </div>
+	         <div class="margin-20">
+        		
+				<div class="row">
+        			<div class="col-md-6">col-md-6</div>
+        			<div class="col-md-6">col-md-6</div>
+        		</div>
+
+	        </div>
+
+	         <div class="margin-20">
+        		<div class="row">
+        			<div class="col-md-12">col-md-12</div>
+        		</div>
+	        </div>
+<pre class="prettyprint linenums">
+// 所有的 col-md-* 必须放在 .row 内，.row 外层必须包含 .container
+&lt;div class="container">
+  	&lt;div class="row">
+     		&lt;div class="col-md-6">...&lt;/div>
+      		&lt;div class="col-md-6">...&lt;/div>
+  	&lt;/div>
+&lt;/div>
+</pre>
+		</section>
+
 		<!-- 导航 -->
 		<section class="section" id="h-nav">
 			<div class="page-header" >

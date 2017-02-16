@@ -1,15 +1,8 @@
 @charset "utf-8";
-
-/**
- * 
- * @authors H君 (26228161@qq.com)
- * @date    2014-11-28 21:53:45
- * @version $Id$
- */
-
 @import "compass/reset";
 @import "compass/css3";
 @import "config";
+
 a{
 	color:$primaryBg;
 }
@@ -107,7 +100,7 @@ code {
 
 .section {
 	margin: 48px 0 ;
-	overflow:hidden;
+	// overflow:hidden;
 }
 .section > p {
 	margin: 10px 0;
@@ -182,7 +175,18 @@ code {
 .scroll-top.in{
 	display:block;
 }
-/* ---------------------------------code color------------------------------------- */
+
+/*====== Grid ========*/
+
+[class*="col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color:#fff;
+  background-color: $primaryBg;
+  border: 1px solid #fff;
+}
+
+/*====== Code color ========*/
 .com {
 	color: #93a1a1;
 }
@@ -213,7 +217,6 @@ code {
 	font-size: 1.3rem;
 	margin-bottom: 18px;
 }
-
 	
 ol.linenums li {
 	color: #bebec5;

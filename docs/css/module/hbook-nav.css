@@ -233,8 +233,7 @@
   .navbar-fixed-bottom {
     border-radius: 0; } }
 .navbar-fixed-top {
-  top: 0;
-  border-width: 0 0 1px; }
+  top: 0; }
 
 .navbar-fixed-bottom {
   bottom: 0;
