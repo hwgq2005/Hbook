@@ -26,7 +26,9 @@ require('hbook-ui')
 - https://unpkg.com/hbook-ui/dist/js/hbook.min.js
 
 ###Contact
-Weibo：[@hwgq2005](http://www.weibo.com/hwgq2005) 
+
+- Weibo：[@hwgq2005](http://www.weibo.com/hwgq2005) 
+- Email：hbook@bookcss.com
 
 ###License
 MIT
