@@ -600,6 +600,7 @@ $('#page').page({
 </pre>
 			<h3>默认表单</h3>
 	        <div class="docs-example docs-input">
+
 	        	<div class="form-group form-line-input">
                     <input type="text" class="form-control"  id="form-control-1" >
                     <label for="form-control-1">姓名</label>
@@ -636,11 +637,26 @@ $('#page').page({
     &lt;span class="help-block">限制在10字以内&lt;/span>
 &lt;/div>
 </pre>
-			<h3>传统表单</h3>
+			<h3>表单2</h3>
 	        <div class="docs-example docs-input">
-	        	<input class="input-mini" type="text" placeholder=".input-mini">
-				<input class="input-small" type="text" placeholder=".input-small">
-				<input class="input-large" type="text" placeholder=".input-large">
+	        	<div class="form-group form-line-input">
+                    <input  class="form-control" type="text" placeholder="姓名">
+                    <label></label>
+                    <span class="help-block"></span>
+                </div>
+
+                <div class="form-group form-line-input has-success">
+                    <input id="user" class="form-control" type="text" placeholder="性别">
+                    <label ></label>
+                    <span class="help-block"></span>
+                </div>
+				
+				<div class="form-group form-line-input has-warning">
+					<textarea class="form-control " placeholder="简介" rows="3"></textarea>
+                    <label ></label>
+                    <span class="help-block"></span>
+                </div>
+	        	
 	         </div>
 <pre class="prettyprint linenums">
 &lt;input class="input-mini" type="text" placeholder=".input-mini"&gt;
