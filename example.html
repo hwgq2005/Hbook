@@ -125,7 +125,7 @@
         		</div>
 	        </div>
 <pre class="prettyprint linenums">
-// 所有的 col-md-* 必须放在 .row 内，.row 外层必须包含 .container
+// 所有的 .col-md-* 必须放在 .row 内，.row 外层必须包含 .container
 &lt;div class="container">
   	&lt;div class="row">
      		&lt;div class="col-md-6">...&lt;/div>
@@ -641,8 +641,6 @@ $('#page').page({
 	        	<input class="input-mini" type="text" placeholder=".input-mini">
 				<input class="input-small" type="text" placeholder=".input-small">
 				<input class="input-large" type="text" placeholder=".input-large">
-				<input class="input-xlarge" type="text" placeholder=".input-xlarge">
-				<input class="input-xxlarge" type="text" placeholder=".input-xxlarge">
 	         </div>
 <pre class="prettyprint linenums">
 &lt;input class="input-mini" type="text" placeholder=".input-mini"&gt;
@@ -665,53 +663,53 @@ $('#page').page({
 		              <tr>
 		                <th>大按钮</th>
 		                <th>class=""</th>
-		                <th>小按钮</th>
-		                <th>class=""</th>
+		                <th class="m-hide">小按钮</th>
+		                <th class="m-hide">class=""</th>
 		              </tr>
 		            </thead>
 		            <tbody>
 		              <tr>
 		                <td><a class="btn ">默认</a></td>
 		                <td><code>btn</code></td>
-		                <td><a class="btn btn-mini">默认</a></td>
-		                <td><code>btn btn-mini</code></td>
+		                <td class="m-hide"><a class="btn btn-mini">默认</a></td>
+		                <td class="m-hide"><code>btn btn-mini</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn btn-primary">主要</a></td>
 		                <td><code>btn btn-primary</code></td>
-		                <td><a class="btn btn-mini btn-primary">主要</a></td>
-		                <td><code>btn btn-mini btn-primary</code></td>
+		                <td class="m-hide"><a class="btn btn-mini btn-primary">主要</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-primary</code></td>
 		              </tr>
 		             
 		              <tr>
 		                <td><a class="btn btn-success">成功</a></td>
 		                <td><code>btn btn-success</code></td>
-		                <td><a class="btn btn-mini btn-success">成功</a></td>
-		                <td><code>btn btn-mini btn-success</code></td>
+		                <td class="m-hide"><a class="btn btn-mini btn-success">成功</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-success</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn btn-warning">警告</a></td>
 		                <td><code>btn btn-warning</code></td>
-		                 <td><a class="btn btn-mini btn-warning">警告</a></td>
-		                <td><code>btn btn-mini btn-warning</code></td>
+		                <td class="m-hide"><a class="btn btn-mini btn-warning">警告</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-warning</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn btn-danger">危险</a></td>
 		                <td><code>btn btn-danger</code></td>
-		                <td><a class="btn btn-mini btn-danger">危险</a></td>
-		                <td><code>btn btn-mini btn-danger</code></td>
+		                <td class="m-hide"><a class="btn btn-mini btn-danger">危险</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-danger</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn btn-violet">紫色</a></td>
 		                <td><code>btn btn-violet</code></td>
-		                <td><a class="btn btn-mini btn-violet">紫色</a></td>
-		                <td><code>btn btn-mini btn-violet</code></td>
+		                <td class="m-hide"><a class="btn btn-mini btn-violet">紫色</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-violet</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn  btn-grey">灰色</a></td>
 		                <td><code>btn btn-grey</code></td>
-		                <td><a class="btn  btn-mini btn-grey">灰色</a></td>
-		                <td><code>btn btn-mini btn-grey</code></td>
+		                <td class="m-hide"><a class="btn  btn-mini btn-grey">灰色</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-grey</code></td>
 		              </tr>
 		            </tbody>
 		          </table>
@@ -730,8 +728,8 @@ $('#page').page({
 		              <tr>
 		                <th>大按钮</th>
 		                <th>class=""</th>
-		                <th>小按钮</th>
-		                <th>class=""</th>
+		                <th class="m-hide">小按钮</th>
+		                <th class="m-hide">class=""</th>
 		              </tr>
 		            </thead>
 		            <tbody>
@@ -739,39 +737,39 @@ $('#page').page({
 		              <tr>
 		                <td><a class="btn btn-primary-border">主要</a></td>
 		                <td><code>btn btn-primary-border</code></td>
-		                <td><a class="btn btn-mini btn-primary-border">主要</a></td>
-		                <td><code>btn btn-mini btn-primary-border</code></td>
+		                <td class="m-hide"><a class="btn btn-mini btn-primary-border">主要</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-primary-border</code></td>
 		              </tr>
 		             
 		              <tr>
 		                <td><a class="btn btn-success-border">成功</a></td>
 		                <td><code>btn btn-success-border</code></td>
-		                <td><a class="btn btn-mini btn-success-border">成功</a></td>
-		                <td><code>btn btn-mini btn-success-border</code></td>
+		                <td class="m-hide"><a class="btn btn-mini btn-success-border">成功</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-success-border</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn btn-warning-border">警告</a></td>
 		                <td><code>btn btn-warning-border</code></td>
-		                 <td><a class="btn btn-mini btn-warning-border">警告</a></td>
-		                <td><code>btn btn-mini btn-warning-border</code></td>
+		                <td class="m-hide"><a class="btn btn-mini btn-warning-border">警告</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-warning-border</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn btn-danger-border">危险</a></td>
 		                <td><code>btn btn-danger-border</code></td>
-		                <td><a class="btn btn-mini btn-danger-border">危险</a></td>
-		                <td><code>btn btn-mini btn-danger-border</code></td>
+		                <td class="m-hide"><a class="btn btn-mini btn-danger-border">危险</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-danger-border</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="btn btn-violet-border">紫色</a></td>
 		                <td><code>btn btn-violet-border</code></td>
-		                <td><a class="btn btn-mini btn-violet-border">紫色</a></td>
-		                <td><code>btn btn-mini btn-violet-border</code></td>
+		                <td class="m-hide"><a class="btn btn-mini btn-violet-border">紫色</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-violet-border</code></td>
 		              </tr>
 		          	   <tr>
 		                <td><a class="btn  btn-grey-border">灰色</a></td>
 		                <td><code>btn btn-grey-border</code></td>
-		                <td><a class="btn  btn-mini btn-grey-border">灰色</a></td>
-		                <td><code>btn btn-mini btn-grey-border</code></td>
+		                <td class="m-hide"><a class="btn  btn-mini btn-grey-border">灰色</a></td>
+		                <td class="m-hide"><code>btn btn-mini btn-grey-border</code></td>
 		              </tr>
 		            </tbody>
 		          </table>
@@ -789,54 +787,54 @@ $('#page').page({
 		              <tr>
 		                <th>大标签</th>
 		                <th>class=""</th>
-		                <th>小标签</th>
-		                <th>class=""</th>
+		                <th class="m-hide">小标签</th>
+		                <th class="m-hide">class=""</th>
 		              </tr>
 		            </thead>
 		            <tbody>
 		              <tr>
 		                <td><a class="label ">默认</a></td>
 		                <td><code>label</code></td>
-		                <td><a class="label label-mini">默认</a></td>
-		                <td><code>label label-mini</code></td>
+		                <td class="m-hide"><a class="label label-mini">默认</a></td>
+		                <td class="m-hide"><code>label label-mini</code></td>
 		              </tr>
 
 		              <tr>
 		                <td><a class="label label-primary">主要</a></td>
 		                <td><code>label label-primary</code></td>
-		                <td><a class="label label-mini label-primary">主要</a></td>
-		                <td><code>label abel-mini label-primary</code></td>
+		                <td class="m-hide"><a class="label label-mini label-primary">主要</a></td>
+		                <td class="m-hide"><code>label abel-mini label-primary</code></td>
 		              </tr>
 		            
 		              <tr>
 		                <td><a class="label label-success">成功</a></td>
 		                <td><code>label label-success</code></td>
-		                <td><a class="label label-mini label-success">成功</a></td>
-		                <td><code>label label-mini label-success</code></td>
+		                <td class="m-hide"><a class="label label-mini label-success">成功</a></td>
+		                <td class="m-hide"><code>label label-mini label-success</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="label label-warning">警告</a></td>
 		                <td><code>label label-warning</code></td>
-		                <td><a class="label label-mini label-warning">警告</a></td>
-		                <td><code>label label-mini label-warning</code></td>
+		                <td class="m-hide"><a class="label label-mini label-warning">警告</a></td>
+		                <td class="m-hide"><code>label label-mini label-warning</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="label label-danger">危险</a></td>
 		                <td><code>label label-danger</code></td>
-		                <td><a class="label label-mini label-danger">危险</a></td>
-		                <td><code>label label-mini label-danger</code></td>
+		                <td class="m-hide"><a class="label label-mini label-danger">危险</a></td>
+		                <td class="m-hide"><code>label label-mini label-danger</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="label label-violet">紫色</a></td>
 		                <td><code>label label-violet</code></td>
-		                <td><a class="label label-mini label-violet">紫色</a></td>
-		                <td><code>label label-mini label-violet</code></td>
+		                <td class="m-hide"><a class="label label-mini label-violet">紫色</a></td>
+		                <td class="m-hide"><code>label label-mini label-violet</code></td>
 		              </tr>
 		              <tr>
 		                <td><a class="label label-grey">灰色</a></td>
 		                <td><code>label label-grey</code></td>
-		                <td><a class="label label-mini label-grey">灰色</a></td>
-		                <td><code>label label-mini label-grey</code></td>
+		                <td class="m-hide"><a class="label label-mini label-grey">灰色</a></td>
+		                <td class="m-hide"><code>label label-mini label-grey</code></td>
 		              </tr>
 		            
 		            </tbody>
@@ -934,8 +932,9 @@ var dialog = new Dialog({
 			<div class="page-header">
 	            <h1>工具提示</h1>
 	        </div>
-	        <div class="docs-example">
-	        	<a class="btn btn-large btn-primary"  data-toggle="tip"  data-placement="top" data-title="hello,word" id="tip1">这是个提示</a>
+	        <div class="docs-example tip-group">
+
+	        	<a class="btn btn-large btn-primary"  data-toggle="tip"  data-placement="top" data-title="hello,word">这是个提示</a>
 	        	<a class="btn btn-large btn-success" data-toggle="tip"  data-placement="bottom" data-title="hello,word">这是个提示</a>
 	        	<a class="btn btn-large btn-warning" data-toggle="tip"  data-placement="left" data-title="hello,word">这是个提示</a>
 	        	<a class="btn btn-large btn-danger"  data-toggle="tip"  data-placement="right" data-title="hello,word">这是个提示</a>

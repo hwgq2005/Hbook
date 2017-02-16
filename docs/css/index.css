@@ -117,7 +117,7 @@ code {
     display: inline-block;
     margin-bottom: 1.6rem; }
 
-  .example {
+  .m-hide {
     display: none; } }
 .quotations {
   background: #699FE1;
@@ -189,6 +189,7 @@ code {
   width: 20px;
   height: 20px; }
 
+/*====== Scroll ========*/
 .scroll-top {
   display: none;
   position: fixed;
@@ -204,6 +205,10 @@ code {
 .scroll-top.in {
   display: block; }
 
+/*====== Tip ========*/
+@media screen and (max-width: 640px) {
+  .tip-group a {
+    margin: 5px; } }
 /*====== Grid ========*/
 [class*="col-"] {
   padding-top: 15px;

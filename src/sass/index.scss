@@ -79,7 +79,7 @@ code {
 		display: inline-block;
 		margin-bottom: 1.6rem;
 	}
-	.example{
+	.m-hide{
 		display: none;
 	}
 }
@@ -158,8 +158,7 @@ code {
 	height:20px;
 }
 
-
-
+/*====== Scroll ========*/
 .scroll-top{
     display: none;
 	position: fixed;
@@ -174,6 +173,15 @@ code {
 }
 .scroll-top.in{
 	display:block;
+}
+
+/*====== Tip ========*/
+@media screen and (max-width : 640px){
+	.tip-group{
+		a{
+			margin:5px;
+		}
+	}
 }
 
 /*====== Grid ========*/
