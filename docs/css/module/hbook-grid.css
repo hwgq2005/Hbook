@@ -5,6 +5,9 @@
   margin-right: auto;
   margin-left: auto; }
 
+p {
+  margin: 0 0 10px; }
+
 .row {
   margin-right: -15px;
   margin-left: -15px; }
