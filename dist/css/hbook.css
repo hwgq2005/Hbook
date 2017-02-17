@@ -150,7 +150,7 @@ input:-ms-placeholder {
       .nav.nav-tabs li a, .nav.nav-tabs li .page span.current, .page .nav.nav-tabs li span.current, .nav.nav-tabs li .page span.disabled, .page .nav.nav-tabs li span.disabled, .nav.nav-tabs li .page .more, .page .nav.nav-tabs li .more {
         color: #5e5e5e;
         display: block;
-        padding: 8px 20px;
+        padding: 12px 24px;
         background: #EDEDED;
         border: 1px solid #DDDDDD;
         text-align: center; }
