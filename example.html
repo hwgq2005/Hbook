@@ -45,7 +45,8 @@
 				 	<li class=""><a href="javascript:;" data-id="h-input">表单</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-btn">按钮</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-tip">标签</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-fade">弹出框</a></li>
+				 	<li class=""><a href="javascript:;" data-id="h-dialog">弹出框</a></li>
+				 	<li class=""><a href="javascript:;" data-id="h-alert">警告框</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-tooltip">工具提示</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-scrollbar">进度条</a></li>
 				 	<li class=""><a href="javascript:;" data-id="h-list">图文</a></li>
@@ -859,7 +860,7 @@ $('#page').page({
 	    </section>
 
 	    <!-- 弹出框 -->
-		<section class="section" id="h-fade">
+		<section class="section" id="h-dialog">
 			<div class="page-header">
 	            <h1>弹出框</h1>
 	        </div> 
@@ -942,6 +943,47 @@ var dialog = new Dialog({
 		          </table>    
 		</div>
 	    </section>
+
+
+	    <!-- 警告框 -->
+		<section class="section" id="h-alert">
+			<div class="page-header">
+	            <h1>警告框</h1>
+	        </div> 
+	        <div class="docs-example">
+
+	        	<div class="alert alert-primary margin-20" data-toggle="alert">
+	        		<strong>Jone,</strong> welcome to hbook!
+	        		<a href="javascript:;" class="close" data-alert="close">×</a>
+	        	</div>
+	        	<div class="alert alert-success margin-20" data-toggle="alert">
+	        		<strong>Jone,</strong> welcome to hbook!
+	        		<a href="javascript:;" class="close" data-alert="close">×</a>
+	        	</div>
+	        	<div class="alert alert-warning margin-20" data-toggle="alert">
+	        		<strong>Jone,</strong> welcome to hbook!
+	        		<a href="javascript:;" class="close" data-alert="close">×</a>
+	        	</div>
+				<div class="alert alert-danger margin-20" data-toggle="alert">
+	        		<strong>Jone,</strong> welcome to hbook!
+	        		<a href="javascript:;" class="close" data-alert="close">×</a>
+	        	</div>
+	        	<div class="alert alert-violet margin-20" data-toggle="alert">
+	        		<strong>Jone,</strong> welcome to hbook!
+	        		<a href="javascript:;" class="close" data-alert="close">×</a>
+	        	</div>
+	        	<div class="alert alert-grey margin-20" data-toggle="alert">
+	        		<strong>Jone,</strong> welcome to hbook!
+	        		<a href="javascript:;" class="close" data-alert="close">×</a>
+	        	</div>
+
+	        </div>
+<pre class="prettyprint linenums">
+&lt;div class="alert alert-primary">
+	&lt;strong>Jone,</strong> welcome to hbook!
+&lt;/div>
+</pre>
+		</section>
 
 	     <!-- 提示工具 -->
 		<section class="section" id="h-tooltip">

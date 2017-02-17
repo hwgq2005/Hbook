@@ -109,6 +109,9 @@ code {
 .margin-20 {
   margin: 20px 0; }
 
+.margin-10 {
+  margin: 10px 0; }
+
 @media screen and (max-width: 640px) {
   .banner p {
     font-size: 2rem; }

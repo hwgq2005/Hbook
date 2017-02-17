@@ -1,0 +1,36 @@
+/*====== Button ========*/
+.alert {
+  position: relative;
+  padding: 15px;
+  border: 1px solid transparent;
+  color: #fff; }
+  .alert strong {
+    font-weight: 700; }
+  .alert.alert-primary {
+    background: #699FE1;
+    border: 1px solid #699FE1; }
+  .alert.alert-success {
+    background: #50BA5F;
+    border: 1px solid #50BA5F; }
+  .alert.alert-warning {
+    background: #FF9437;
+    border: 1px solid #FF9437; }
+  .alert.alert-danger {
+    background: #EB8B79;
+    border: 1px solid #EB8B79; }
+  .alert.alert-violet {
+    background: #8089C1;
+    border: 1px solid #8089C1; }
+  .alert.alert-grey {
+    background: #666;
+    border: 1px solid #666; }
+  .alert .close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    padding: 5px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700; }
+    .alert .close:hover {
+      color: #eee; }

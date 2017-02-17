@@ -1,0 +1,49 @@
+/*====== Button ========*/
+@import "config";
+
+.alert {
+	position:relative;
+	padding: 15px;
+    border: 1px solid transparent;
+    color:#fff;
+    strong{
+    	font-weight: 700;
+    }
+	&.alert-primary{
+		background: $primaryBg;
+		border:1px solid $primaryBg;
+	}
+	&.alert-success{
+		background: $successBg;
+		border:1px solid $successBg;
+	}
+	&.alert-warning{
+		background: $warningBg;
+		border:1px solid $warningBg;
+	}
+	&.alert-danger{
+		background: $dangerBg;
+		border:1px solid $dangerBg;
+	}
+	&.alert-violet{
+		background: $violetBg;
+		border:1px solid $violetBg;
+	}
+	&.alert-grey{
+		background: $greyBg;
+		border:1px solid $greyBg;
+	}
+	.close{
+		position:absolute;
+		top:8px;
+		right:10px;
+		padding: 5px;
+	    color: #fff;
+	    font-size: 20px;
+	    font-weight: 700;
+	    &:hover{
+	    	color:#eee;
+	    }
+	}
+}
+

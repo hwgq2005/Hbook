@@ -125,7 +125,7 @@
 	}
 
 	//默认配置
-	$.fn.page.defaults = {
+	$.fn.tip.defaults = {
 		
 	}
 
