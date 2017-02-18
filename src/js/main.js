@@ -22,7 +22,6 @@
 			hbook.bindEvent();
 			hbook.valid();
 			$('[data-toggle="tip"]').tip();
-			$('[data-toggle="alert"]').alert();
 			hbook.page('#page');
 			prettyPrint();
 

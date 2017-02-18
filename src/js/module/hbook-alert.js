@@ -40,14 +40,7 @@
 
 	}
 
-	// 显示警告
-	Alert.prototype.show = function($element){
-		
-	
-
-	}
-
-	// 隐藏警告
+	// 隐藏警告框
 	Alert.prototype.hide = function($element){
 		$element.remove();
 	}
@@ -79,6 +72,5 @@
 	$.fn.alert.defaults = {
 		
 	}
-
 
 }));
