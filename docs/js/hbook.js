@@ -380,7 +380,7 @@
 }));
 
 /**
- * @authors H¾ı
+ * @authors Hå›
  * @date    2017-02-13 15:51:41
  * @version 0.1.6
  */
@@ -395,7 +395,7 @@
 
 	"use strict";
 	
-	// °æ±¾ºÅ
+	// ç‰ˆæœ¬å·
 	var Version = '0.1.6';
 
 	var Page = function(element, options){
@@ -406,7 +406,7 @@
 
 	}
 
-	// ³õÊ¼»¯
+	// åˆå§‹åŒ–
 	Page.prototype.init = function(){
 
 		this.create(this.$element, this.options);
@@ -414,12 +414,12 @@
 
 	}
 
-	// ´´½¨·ÖÒ³
+	// åˆ›å»ºåˆ†é¡µ
 	Page.prototype.create = function(element,options){
 
 		element.addClass('page').empty();
 			
-		//ÉÏÒ»Ò³
+		//ä¸Šä¸€é¡µ
 		if (options.current > 1) {
 			element.append('<a href="javascript:;" class="prevPage">&laquo;</a>');
 		} else {
@@ -427,7 +427,7 @@
 			element.append('<span class="disabled">&laquo;</span>');
 		}
 		
-		//ÖĞ¼äÒ³Âë
+		//ä¸­é—´é¡µç 
 		if (options.current != 1 && options.current >= 4 && options.pageCount != 4) {
 			element.append('<a href="javascript:;" class="number">' + 1 + '</a>');
 		}
@@ -460,20 +460,20 @@
 			element.append('<a href="javascript:;" class="number">' + options.pageCount + '</a>');
 		}
 
-		//ÏÂÒ»Ò³
+		//ä¸‹ä¸€é¡µ
 		if (options.current < options.pageCount) {
 			element.append('<a href="javascript:;" class="nextPage">&raquo;</a>');
 			// element.append('<input type="text"  class="gotoInput"/>');
-			// element.append('<a href="javascript:;" class="gotoPage">Ìø×ª</a>');
+			// element.append('<a href="javascript:;" class="gotoPage">è·³è½¬</a>');
 		} else {
 			element.remove('.nextPage');
 			element.append('<span class="disabled">&raquo;</span>');
 			// element.append('<input type="text"  class="gotoInput"/>');
-			// element.append('<a href="javascript:;" class="gotoPage">Ìø×ª</a>');
+			// element.append('<a href="javascript:;" class="gotoPage">è·³è½¬</a>');
 		}
 	}
 
-	// °ó¶¨ÊÂ¼ş
+	// ç»‘å®šäº‹ä»¶
 	Page.prototype.bindEvent = function(){
 
 		var _self=this;
@@ -491,7 +491,7 @@
 			}
 		});
 
-		//ÉÏÒ»Ò³
+		//ä¸Šä¸€é¡µ
 		_self.$element.on("click", "a.prevPage", function() {
 			var current = parseInt(_self.$element.children("span.current").text());
 			_self.create(_self.$element, {
@@ -503,7 +503,7 @@
 			}
 		});
 
-		//ÏÂÒ»Ò³
+		//ä¸‹ä¸€é¡µ
 		_self.$element.on("click", "a.nextPage", function() {
 
 			var current = parseInt(_self.$element.children("span.current").text());
@@ -516,7 +516,7 @@
 			}
 		});
 
-		//Ìø×ªµ½Ä³Ò³
+		//è·³è½¬åˆ°æŸé¡µ
 		_self.$element.on("click", "a.gotoPage", function() {
 			var gotoPage=_self.$element.children("input.gotoInput").val();
 			if (gotoPage != '') {
@@ -539,7 +539,7 @@
 	}
 	
 	$.fn.page = function(option) {
-		//Ä¬ÈÏ²ÎÊı
+		//é»˜è®¤å‚æ•°
 		var element=this;
 		var options = $.extend($.fn.page.defaults, option);
 
@@ -550,9 +550,9 @@
 	}
 
 	$.fn.page.defaults={
-		current   : 1,  //µ±Ç°Ò³
-		pageCount : 10, //×ÜÌõÊı
-		callback  : function(thisPage) {} //»Øµ÷º¯Êı
+		current   : 1,  //å½“å‰é¡µ
+		pageCount : 10, //æ€»æ¡æ•°
+		callback  : function(thisPage) {} //å›è°ƒå‡½æ•°
 	}
 
 }));
