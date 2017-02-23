@@ -98,6 +98,23 @@ gulp.task('compass-dist', function() {
 		//.pipe(gulp.dest('./docs/css'))
 })
 
+
+// 创建Compass任务
+gulp.task('compass-package', function() {
+
+	//生成docs目录
+	return gulp.src(['./src/sass/module/*.scss'])
+		.pipe(compass({
+			comments: false,
+			style: 'nested',
+			css: './package/hbook-ui/src/css/',
+			sass: './src/sass'
+		}))
+		// .pipe(gulp.dest('./package/hbook-ui/src/css/module'))
+		.pipe(livereload())
+
+});
+
 // 压缩样式
 gulp.task('minicss', function() {
 	return gulp.src('./src/css/*.css')
@@ -127,20 +144,32 @@ gulp.task('scripts-docs', function() {
 			.pipe(livereload())
 });
 
+// dist目录
 gulp.task('scripts-dist', function() {
-	//生成dist目录
+
 	return gulp.src(['./src/js/module/*.js'])
 			.pipe(concat('hbook.js'))
 			.pipe(gulp.dest('./dist/js'))
-			.pipe(gulp.dest('./package/hbook-ui/dist/js'))
 			.pipe(gulp.dest('./docs/js'))
 			.pipe(rename({
 				suffix: '.min'
 			}))
 			.pipe(uglify())
 			.pipe(gulp.dest('./dist/js'))
-			.pipe(gulp.dest('./package/hbook-ui/dist/js'))
+			
 			//.pipe(gulp.dest('./docs/js'))
+});
+
+// package目录
+gulp.task('scripts-package', function() {
+
+	return gulp.src(['./src/js/module/*.js'])
+			.pipe(gulp.dest('./package/hbook-ui/src/js/module'))
+			.pipe(rename({
+				suffix: '.min'
+			}))
+			.pipe(uglify())
+			.pipe(gulp.dest('./package/hbook-ui/dist/js/module'))
 });
 
 // 压缩图片
@@ -165,7 +194,7 @@ gulp.task('miniHtml', function() {
 // 正式构建
 gulp.task('build', function(done) {
 
-	runSequence('copy', 'readme', 'minicss', 'compass-docs', 'compass-dist','scripts-docs','scripts-dist','imagemin');
+	runSequence('copy', 'readme', 'minicss', 'compass-docs', 'compass-dist','compass-package','scripts-docs','scripts-dist','scripts-package','imagemin');
 	// 监听文件变化
 	gulp.watch([
 		'./src/**/*.html',
@@ -176,7 +205,7 @@ gulp.task('build', function(done) {
 		'./Readme.md'
 	], function() {
 		livereload.listen();
-		runSequence('readme', 'minicss', 'compass-docs', 'compass-dist','scripts-docs','scripts-dist','imagemin');
+		runSequence('readme', 'minicss', 'compass-docs', 'compass-dist','compass-package','scripts-docs','scripts-dist','scripts-package','imagemin');
 	});
 })
 

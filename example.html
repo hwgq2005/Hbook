@@ -873,6 +873,9 @@ var dialog = new Dialog({
 	id:'dialog1',
 	title:'提示',
 	content:_html,
+	complete:function(){
+		// do something ...				
+	},
 	confirm:function(){
 		// do something ...
 	},
@@ -930,6 +933,10 @@ var dialog = new Dialog({
 		              <tr>
 		                <td><code>cancelText</code></td>
 		                <td>string，取消按钮名称</td>
+		              </tr>
+		              <tr>
+		                <td><code>complete</code></td>
+		                <td>function(){}，打开弹框后回调</td>
 		              </tr>
 		              <tr>
 		                <td><code>confirm</code></td>
