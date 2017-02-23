@@ -111,6 +111,7 @@
 			cancelButton: true, // 取消按钮
 			confirmText:'确定', // 确认按钮文本
 			ccancelText:'取消', // 取消按钮文本
+			complete: function() {}, // 完成打开弹框后
 			confirm: function() {}, // 确认按钮回调
 			cancel: function() {} // 取消按钮回调
 		}
@@ -120,6 +121,7 @@
 		this.options = options;
 		this.confirm = options.confirm;
 		this.cancel = options.cancel;
+		this.complete = options.complete;
 		this.element = document.querySelectorAll('#' + options.id);
 		this.init(this.options, this.element);
 
@@ -192,6 +194,10 @@
 		var body = document.querySelector('body');
 		body.appendChild(dialogHtml);
 		addClass(dialogHtml, 'in');
+
+		if (typeof _self.complete == 'function') {
+			_self.complete();
+		}
 
 		// 判断是否出现遮罩
 		options.backdrop ? _self.backdrop(options) : '';

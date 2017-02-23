@@ -73,6 +73,9 @@
 					type:0,
 					title:'提示',
 					content:_html,
+					complete:function(){
+						
+					},
 					confirm:function(){
 						new Dialog({
 							id:'dialog2',
