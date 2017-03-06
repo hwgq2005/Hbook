@@ -8,7 +8,7 @@
 
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global.Dialog = factory());
+  (global.Modal = factory());
  
 }(this, function () { 
 
@@ -19,13 +19,13 @@
 	var Version = '0.1.6';
 
 	// 弹框层级
-	var dialogIndex = 1050;
+	var modalIndex = 1050;
 
-	var Dialog = function(options) {
+	var Modal = function(options) {
 
 		// 默认配置
 		var defaults = {
-			id: 'dialog' + new Date().getTime(),
+			id: 'modal' + new Date().getTime(),
 			type: 0, // 0:有头部和尾部 1:没有头部 2:没有尾部 3：没有头尾 
 			addClass: '', // 添加样式类名
 			title: '提示',	// 标题
@@ -52,20 +52,20 @@
 	}
 
 	// 初始化
-	Dialog.prototype.init = function(options, element) {
+	Modal.prototype.init = function(options, element) {
 
 		var _self = this;
 
 		//判断id是否存在
 		if (element.length <= 0) {
-			dialogIndex++;
+			modalIndex++;
 			_self.show(options, element);
 		}
 
 	}
 
 	// 显示弹出框
-	Dialog.prototype.show = function() {
+	Modal.prototype.show = function() {
 
 		var _self = this,
 			typeClass = null,
@@ -74,50 +74,50 @@
 
 
 		// 提示类型
-		options.type == 1 ? typeClass = 'dialog-tip' : typeClass = '';
+		options.type == 1 ? typeClass = 'modal-tip' : typeClass = '';
 
 		typeof options.addClass == 'string' ? options.addClass = options.addClass : options.addClass = '';
 
 		// 创建弹框盒子
 		var _html = '',
-			dialogHtml = document.createElement("div");
+			modalHtml = document.createElement("div");
 
-		dialogHtml.id = options.id;
-		dialogHtml.className = 'dialog ' + options.addClass + typeClass;
-		dialogHtml.style.width =  options.width + 'px';
-		dialogHtml.style.marginLeft =  - (options.width / 2) + 'px';
-		dialogHtml.style.zIndex =  dialogIndex - 1;
+		modalHtml.id = options.id;
+		modalHtml.className = 'modal ' + options.addClass + typeClass;
+		modalHtml.style.width =  options.width + 'px';
+		modalHtml.style.marginLeft =  - (options.width / 2) + 'px';
+		modalHtml.style.zIndex =  modalIndex - 1;
 
 		// 弹框头部
 		if ((options.type == 0 || options.type == 2) && options.type != 3) {
-			_html += '<div class="dialog-header">' + options.title + '<a href="javascript:;" class="dialog-close dialog-close-' + options.id + '" >×</a></div>';
+			_html += '<div class="modal-header">' + options.title + '<a href="javascript:;" class="modal-close modal-close-' + options.id + '" >×</a></div>';
 		}
 
 		// 弹框内容区域
-		_html += '<div class="dialog-body">' + options.content + '</div>';
+		_html += '<div class="modal-body">' + options.content + '</div>';
 
 		// 弹框尾部
 		if (options.type != 2 && options.type != 3) {
-			_html += '<div class="dialog-footer dialog-footer-right">' +
+			_html += '<div class="modal-footer modal-footer-right">' +
 				'<div class="btn-group">';
 
 			// 弹框确认按钮				
 			if (options.confirmButton) {
-				_html += '<a href="javascript:;" class="btn btn-primary dialog-confirm-' + options.id + '" >'+options.confirmText+'</a>';
+				_html += '<a href="javascript:;" class="btn btn-primary modal-confirm-' + options.id + '" >'+options.confirmText+'</a>';
 			}
 
 			// 弹框取消按钮
 			if (options.cancelButton) {
-				_html += '<a href="javascript:;" class="btn dialog-cancel-' + options.id + '">'+options.ccancelText+'</a>';
+				_html += '<a href="javascript:;" class="btn modal-cancel-' + options.id + '">'+options.ccancelText+'</a>';
 			}
 			_html += '</div></div>';
 		}
 
-		dialogHtml.innerHTML = _html;
+		modalHtml.innerHTML = _html;
 
 		var body = document.querySelector('body');
-		body.appendChild(dialogHtml);
-		addClass(dialogHtml, 'in');
+		body.appendChild(modalHtml);
+		addClass(modalHtml, 'in');
 
 		if (typeof _self.complete == 'function') {
 			_self.complete();
@@ -132,63 +132,63 @@
 	}
 
 	// 隐藏弹出框
-	Dialog.prototype.hide = function(id) {
+	Modal.prototype.hide = function(id) {
 
 		var elememtId = id || this.options.id,
 			body = document.querySelector('body'),
-			dialogElement = document.querySelector('#' + elememtId);
+			modalElement = document.querySelector('#' + elememtId);
 
-		body.removeChild(dialogElement);
+		body.removeChild(modalElement);
 
-		document.querySelectorAll('.dialog-backdrop-' + elememtId).length > 0 ? this.hideBackDrop(elememtId) : '';
+		document.querySelectorAll('.modal-backdrop-' + elememtId).length > 0 ? this.hideBackDrop(elememtId) : '';
 
 	}
 
 	// 显示遮罩
-	Dialog.prototype.backdrop = function(options) {
+	Modal.prototype.backdrop = function(options) {
 
 		var elememtId = options.id,
 			body = document.querySelector('body');
 
-		if (document.querySelectorAll('.dialog-backdrop-' + elememtId).length <= 0) {
+		if (document.querySelectorAll('.modal-backdrop-' + elememtId).length <= 0) {
 
 			// 创建遮罩盒子
-			var dialogBackdrop = document.createElement("div");
-			dialogBackdrop.className = 'dialog-backdrop dialog-backdrop-' + elememtId;
-			dialogBackdrop.style.zIndex = dialogIndex - 2 ;
+			var modalBackdrop = document.createElement("div");
+			modalBackdrop.className = 'modal-backdrop modal-backdrop-' + elememtId;
+			modalBackdrop.style.zIndex = modalIndex - 2 ;
 			
 			// 追加到body底部
-			body.appendChild(dialogBackdrop);
-			addClass(body, 'dialog-open');
-			addClass(dialogBackdrop, 'in');
+			body.appendChild(modalBackdrop);
+			addClass(body, 'modal-open');
+			addClass(modalBackdrop, 'in');
 
 		}
 
 	}
 
 	// 隐藏遮罩
-	Dialog.prototype.hideBackDrop = function(elememtId) {
+	Modal.prototype.hideBackDrop = function(elememtId) {
 
 		var _self = this,
 			body = document.querySelector('body'),
-			backdropElement = document.querySelector('.dialog-backdrop-' + elememtId);
+			backdropElement = document.querySelector('.modal-backdrop-' + elememtId);
 
 		body.removeChild(backdropElement);
-		if (document.querySelectorAll('.dialog-backdrop').length < 1) {
-			removeClass(body, 'dialog-open');
+		if (document.querySelectorAll('.modal-backdrop').length < 1) {
+			removeClass(body, 'modal-open');
 		}
 
 	}
 
 
 	// 绑定事件
-	Dialog.prototype.bindEvent = function(options) {
+	Modal.prototype.bindEvent = function(options) {
 
 		var _self = this,
 			elememtId = options.id;
 
 		// 点击确认按钮
-		var confirmElement = document.querySelectorAll('.dialog-confirm-' + elememtId);
+		var confirmElement = document.querySelectorAll('.modal-confirm-' + elememtId);
 		confirmElement[0].onclick = function() {
 			if (typeof _self.confirm == 'function') {
 				_self.confirm();
@@ -196,7 +196,7 @@
 		}
 
 		// 点击取消按钮
-		var cancelElement = document.querySelectorAll('.dialog-cancel-' + elememtId);
+		var cancelElement = document.querySelectorAll('.modal-cancel-' + elememtId);
 		if (cancelElement.length > 0) {
 			cancelElement[0].onclick = function() {
 				if (typeof _self.cancel == 'function') {
@@ -207,8 +207,8 @@
 		}
 
 		// 关闭操作
-		var closeElement = document.querySelectorAll('.dialog-close-' + elememtId),
-			backdropElement = document.querySelectorAll('.dialog-backdrop-' + elememtId);
+		var closeElement = document.querySelectorAll('.modal-close-' + elememtId),
+			backdropElement = document.querySelectorAll('.modal-backdrop-' + elememtId);
 		if (closeElement.length > 0) {
 			closeElement[0].onclick = function() {
 				_self.hide(elememtId);
@@ -260,6 +260,6 @@
 		}
 	}
 
-	return  Dialog;
+	return  Modal;
 
 }));

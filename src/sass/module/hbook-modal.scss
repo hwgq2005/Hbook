@@ -1,16 +1,16 @@
 
-/*====== Dialog ========*/
+/*====== modal ========*/
 
 @import "config";
 
 html{
   font-size:62.5%;
 }
-.dialog-open{
+.modal-open{
 	overflow-y:hidden;
 }
 
-.dialog{
+.modal{
 	display: none;
 	position: fixed;
 	top:25%;
@@ -24,7 +24,7 @@ html{
   &.in{
     display:block;
   }
-  .dialog-header {
+  .modal-header {
       position:relative;
       padding:15px;
       border-bottom:1px solid #f8f6f2;
@@ -34,7 +34,7 @@ html{
       font-size: 1.6rem;
 
   }
-  .dialog-close{
+  .modal-close{
       position: absolute;
       top: 8px;
       right: 10px;
@@ -47,7 +47,7 @@ html{
         color:#666;
       }
   }
-  .dialog-body {
+  .modal-body {
       position:relative;
       max-height: 200px;
       padding:20px;
@@ -57,20 +57,20 @@ html{
       overflow-x: hidden;
       word-break: break-all;
   }
-  &.dialog-tip .dialog-body{
+  &.modal-tip .modal-body{
     text-align: center;
   }
-  .dialog-footer {
+  .modal-footer {
       padding:15px ;
       border-top:1px solid #f8f6f2;
       font-size: 0;
-      &.dialog-footer-left{
+      &.modal-footer-left{
         text-align:left;
       }
-      &.dialog-footer-right{
+      &.modal-footer-right{
         text-align:right;
       }
-      &.dialog-footer-center{
+      &.modal-footer-center{
         text-align:center;
       }
       .btn-group{
@@ -85,14 +85,14 @@ html{
           white-space: nowrap;
           border-radius: 2px;
           -webkit-tap-highlight-color: transparent;
-          &[class*="dialog-confirm-"]{
+          &[class*="modal-confirm-"]{
             background: $primaryBg;
             color: #fff;
             &:hover{
                background:darken($primaryBg, 5%);
             }
           }
-          &[class*="dialog-cancel-"]{
+          &[class*="modal-cancel-"]{
              &:hover{
                background-color: #CFCFCF;
              }
@@ -103,28 +103,28 @@ html{
 }
 
 @media screen and (max-width: 600px) {
-  .dialog{
+  .modal{
     width: auto!important;
     left:10%;
     right:10%;
     margin-left:0!important;
-    .dialog-header{
+    .modal-header{
       display: none;
     }
-    .dialog-body{
+    .modal-body{
       padding:36px 20px;
       max-height: 150px;
       text-align: center;
       font-size: 1.8rem;
     }
-    &.dialog-tip{
+    &.modal-tip{
       .btn-group{
-        [class*="dialog-cancel-"]{
+        [class*="modal-cancel-"]{
           display: none;
         }
       }
     }
-    .dialog-footer{
+    .modal-footer{
       .btn-group{
         display: -webkit-box;
         .btn{
@@ -143,7 +143,7 @@ html{
   }
 }
 
-.dialog-backdrop{
+.modal-backdrop{
     position: fixed;
     top:0;
     bottom: 0;

@@ -65,11 +65,11 @@
 			});
 
 			//弹窗
-			var dialog = null;
+			var modal = null;
 			$('#dialog-btn').click(function(event) {
 				var _html = '<div >您觉的Hbook好用吗？</div>';
-				dialog = new Dialog({
-					id:'dialog1',
+				modal = new Modal({
+					id:'modal1',
 					type:0,
 					title:'提示',
 					content:_html,
@@ -77,8 +77,8 @@
 						
 					},
 					confirm:function(){
-						new Dialog({
-							id:'dialog2',
+						new Modal({
+							id:'modal2',
 							title:'提示',
 							content:'感谢您的支持！',
 
@@ -88,8 +88,8 @@
 						})
 					},
 					cancel:function(){
-						new Dialog({
-							id:'dialog3',
+						new Modal({
+							id:'modal3',
 							type:'1',
 							content:'取消成功',
 							cancelButton:false,
