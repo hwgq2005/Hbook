@@ -3,6 +3,19 @@
 @import "compass/css3";
 @import "config";
 
+body {
+    font-family: "Ping Fang SC", "STHeiTi", "arial", "Microsoft YaHei", "SimSun", "Georgia", "Times", "Times New Roman", "serif";
+    font-size: 1.4rem;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
 a{
 	color:$primaryBg;
 }
