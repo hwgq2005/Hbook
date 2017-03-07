@@ -18,7 +18,7 @@ npm install hbook-ui
 
 ###Usage
 ```
-require('hbook-ui') 
+var hbook = require('hbook-ui');
 ```
 ###CDN
 

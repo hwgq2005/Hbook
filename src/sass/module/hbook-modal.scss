@@ -57,9 +57,7 @@ html{
       overflow-x: hidden;
       word-break: break-all;
   }
-  &.modal-tip .modal-body{
-    text-align: center;
-  }
+
   .modal-footer {
       padding:15px ;
       border-top:1px solid #f8f6f2;
@@ -116,13 +114,6 @@ html{
       max-height: 150px;
       text-align: center;
       font-size: 1.8rem;
-    }
-    &.modal-tip{
-      .btn-group{
-        [class*="modal-cancel-"]{
-          display: none;
-        }
-      }
     }
     .modal-footer{
       .btn-group{

@@ -1,7 +1,7 @@
 /**
  * @authors H君
  * @date    2017-02-09 14:26:44
- * @version 0.1.6
+ * @version 0.2.3
  */
 
 (function (global, factory) {
@@ -16,7 +16,7 @@
 	"use strict";
 
 	// 版本号
-	var Version = '0.1.6';
+	var Version = '0.2.3';
 
 	// 弹框层级
 	var modalIndex = 1050;
@@ -26,7 +26,7 @@
 		// 默认配置
 		var defaults = {
 			id: 'modal' + new Date().getTime(),
-			type: 0, // 0:有头部和尾部 1:没有头部 2:没有尾部 3：没有头尾 
+			type: 0, // 0:弹出框 1:提示框 
 			addClass: '', // 添加样式类名
 			title: '提示',	// 标题
 			width:500,  // 弹框宽度
@@ -70,11 +70,6 @@
 		var _self = this,
 			typeClass = null,
 			options = _self.options;
-			
-
-
-		// 提示类型
-		options.type == 1 ? typeClass = 'modal-tip' : typeClass = '';
 
 		typeof options.addClass == 'string' ? options.addClass = options.addClass : options.addClass = '';
 
@@ -83,40 +78,39 @@
 			modalHtml = document.createElement("div");
 
 		modalHtml.id = options.id;
-		modalHtml.className = 'modal ' + options.addClass + typeClass;
+		modalHtml.className = 'modal ' + options.addClass;
 		modalHtml.style.width =  options.width + 'px';
 		modalHtml.style.marginLeft =  - (options.width / 2) + 'px';
 		modalHtml.style.zIndex =  modalIndex - 1;
 
 		// 弹框头部
-		if ((options.type == 0 || options.type == 2) && options.type != 3) {
-			_html += '<div class="modal-header">' + options.title + '<a href="javascript:;" class="modal-close modal-close-' + options.id + '" >×</a></div>';
-		}
+		
+		_html += '<div class="modal-header">' + options.title + '<a href="javascript:;" class="modal-close modal-close-' + options.id + '" >×</a></div>';
+		
 
 		// 弹框内容区域
 		_html += '<div class="modal-body">' + options.content + '</div>';
 
 		// 弹框尾部
-		if (options.type != 2 && options.type != 3) {
-			_html += '<div class="modal-footer modal-footer-right">' +
-				'<div class="btn-group">';
+		
+		_html += '<div class="modal-footer modal-footer-right">' +
+			'<div class="btn-group">';
 
-			// 弹框确认按钮				
-			if (options.confirmButton) {
-				_html += '<a href="javascript:;" class="btn btn-primary modal-confirm-' + options.id + '" >'+options.confirmText+'</a>';
-			}
-
-			// 弹框取消按钮
-			if (options.cancelButton) {
-				_html += '<a href="javascript:;" class="btn modal-cancel-' + options.id + '">'+options.ccancelText+'</a>';
-			}
-			_html += '</div></div>';
+		// 弹框确认按钮				
+		if (options.confirmButton) {
+			_html += '<a href="javascript:;" class="btn btn-primary modal-confirm-' + options.id + '" >'+options.confirmText+'</a>';
 		}
+
+		// 弹框取消按钮
+		if (options.cancelButton && options.type != 1) {
+			_html += '<a href="javascript:;" class="btn modal-cancel-' + options.id + '">'+options.ccancelText+'</a>';
+		}
+		_html += '</div></div>';
+		
 
 		modalHtml.innerHTML = _html;
 
-		var body = document.querySelector('body');
-		body.appendChild(modalHtml);
+		document.body.appendChild(modalHtml);
 		addClass(modalHtml, 'in');
 
 		if (typeof _self.complete == 'function') {
@@ -135,10 +129,9 @@
 	Modal.prototype.hide = function(id) {
 
 		var elememtId = id || this.options.id,
-			body = document.querySelector('body'),
 			modalElement = document.querySelector('#' + elememtId);
 
-		body.removeChild(modalElement);
+		document.body.removeChild(modalElement);
 
 		document.querySelectorAll('.modal-backdrop-' + elememtId).length > 0 ? this.hideBackDrop(elememtId) : '';
 
@@ -147,8 +140,7 @@
 	// 显示遮罩
 	Modal.prototype.backdrop = function(options) {
 
-		var elememtId = options.id,
-			body = document.querySelector('body');
+		var elememtId = options.id;
 
 		if (document.querySelectorAll('.modal-backdrop-' + elememtId).length <= 0) {
 
@@ -158,8 +150,8 @@
 			modalBackdrop.style.zIndex = modalIndex - 2 ;
 			
 			// 追加到body底部
-			body.appendChild(modalBackdrop);
-			addClass(body, 'modal-open');
+			document.body.appendChild(modalBackdrop);
+			addClass(document.body, 'modal-open');
 			addClass(modalBackdrop, 'in');
 
 		}
@@ -170,12 +162,11 @@
 	Modal.prototype.hideBackDrop = function(elememtId) {
 
 		var _self = this,
-			body = document.querySelector('body'),
 			backdropElement = document.querySelector('.modal-backdrop-' + elememtId);
 
-		body.removeChild(backdropElement);
+		document.body.removeChild(backdropElement);
 		if (document.querySelectorAll('.modal-backdrop').length < 1) {
-			removeClass(body, 'modal-open');
+			removeClass(document.body, 'modal-open');
 		}
 
 	}
@@ -189,9 +180,12 @@
 
 		// 点击确认按钮
 		var confirmElement = document.querySelectorAll('.modal-confirm-' + elememtId);
-		confirmElement[0].onclick = function() {
-			if (typeof _self.confirm == 'function') {
-				_self.confirm();
+		if (confirmElement.length > 0) {
+			confirmElement[0].onclick = function() {
+				if (typeof _self.confirm == 'function') {
+					_self.confirm();
+					// _self.hide(elememtId);
+				}
 			}
 		}
 
@@ -260,6 +254,8 @@
 		}
 	}
 
-	return  Modal;
+	return function(option){
+		new Modal(option);
+	};
 
 }));

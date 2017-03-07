@@ -5,7 +5,7 @@ require('./dist/js/module/hbook-tip.min.js');
 require('./dist/js/module/hbook-alert.min.js');
 
 var hbook = {
-	dialog:require('./dist/js/module/hbook-dialog.min.js')
+	modal:require('./dist/js/module/hbook-modal.min.js')
 }
 
 module.exports = hbook;
