@@ -1,3 +1,4 @@
+global.$ = require('jquery');
 
 require('./dist/js/module/hbook-page.min.js');
 require('./dist/js/module/hbook-form.min.js');

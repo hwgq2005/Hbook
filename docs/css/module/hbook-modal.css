@@ -77,7 +77,7 @@ html {
       .modal .modal-footer .btn-group .btn[class*="modal-cancel-"]:hover {
         background-color: #CFCFCF; }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .modal {
     width: auto !important;
     left: 10%;
