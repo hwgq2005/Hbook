@@ -25,6 +25,9 @@ a:visited {
 a:hover {
 	text-decoration: none;
 }
+img{
+	max-width:100%;
+}
 html {
 	font-size: 62.5%;
 }
@@ -211,8 +214,8 @@ ol.linenums li {
 	color: #666;
 }
 .quotations .quotations-tit {
+	margin: 30px 0 10px;
 	font-size: 20px;
-	margin-bottom: 10px;
 }
 .quotations .quotations-sum {
 	font-size: 16px;
