@@ -590,6 +590,9 @@ ol.linenums li {
   display: block; }
 
 /*====== Tip ========*/
+@media screen and (max-width: 1208px) {
+  .content {
+    margin-left: 220px; } }
 @media screen and (max-width: 640px) {
   .tip-group a {
     margin: 5px; }

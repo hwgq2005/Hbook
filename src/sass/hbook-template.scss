@@ -285,6 +285,13 @@ ol.linenums li {
 }
 
 /*====== Tip ========*/
+
+@media screen and (max-width:1208px) {
+	
+	.content{
+		margin-left: 220px;
+	}
+}
 @media screen and (max-width:640px) {
 	.tip-group {
 		a {
@@ -298,7 +305,6 @@ ol.linenums li {
 		margin:0;
 	}
 }
-
 /*====== Grid ========*/
 [class*="col-"] {
 	padding-top: 15px;
