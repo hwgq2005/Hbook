@@ -171,7 +171,7 @@ ol.linenums li {
 	bottom:0;
 	z-index: 999;
 	width:220px;
-	padding: 40px 0 40px 40px;
+	padding: 24px 0 40px 40px;
 	border-right:1px solid #eee;
 	background-color:#F9FAFB;
 
@@ -199,26 +199,28 @@ ol.linenums li {
 	
 }
 .content{
-	max-width:968px;
-	margin-left:220px;
+	max-width:768px;
+	// margin-left:220px;
+	margin:0 auto;
 	padding:0 20px;
 	overflow:hidden;
 }
 
 .quotations {
-	padding: 50px 0 0;
+	padding: 40px 0 0;
 	color: #666;
 }
 .quotations .quotations-tit {
-	font-size: 4rem;
-	margin-bottom: 20px;
+	font-size: 20px;
+	margin-bottom: 10px;
 }
 .quotations .quotations-sum {
-	font-size: 2rem;
-	line-height: 2.6rem;
+	font-size: 16px;
+    line-height: 22px;
+
 }
 .section {
-	margin: 48px 0;
+	margin: 32px 0;
 }
 .section > p {
 	margin: 10px 0;
