@@ -353,7 +353,7 @@ button[type="button"] {
 
 body {
   font-family: "Ping Fang SC", "STHeiTi", "arial", "Microsoft YaHei", "SimSun", "Georgia", "Times", "Times New Roman", "serif";
-  font-size: 1.4rem; }
+  font-size: 14px; }
 
 a {
   color: #699FE1; }
@@ -382,7 +382,7 @@ code {
   white-space: nowrap;
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
-  font-size: 1.4rem;
+  font-size: 14px;
   font-weight: normal; }
 
 .w-768 {
@@ -405,18 +405,18 @@ code {
   color: #699FE1;
   background: #d8e6f7; }
   .template-header .template-header-tit {
-    font-size: 8rem;
+    font-size: 80px;
     margin-bottom: 10px; }
   .template-header .template-header-sum {
     margin-bottom: 20px;
-    font-size: 3rem; }
+    font-size: 30px; }
   .template-header .btn-group {
     margin-top: 40px; }
     .template-header .btn-group .btn {
       margin: 0 10px;
       padding: 15px 30px;
       min-width: 180px;
-      font-size: 1.8rem; }
+      font-size: 18px; }
 
 .template-content {
   padding: 50px 20px; }
@@ -424,12 +424,12 @@ code {
     margin: 40px 0; }
   .template-content .template-module-tit {
     margin-bottom: 30px;
-    font-size: 2rem;
+    font-size: 20px;
     text-align: center; }
   .template-content .template-module-sum {
     margin-bottom: 30px;
-    font-size: 2.2rem;
-    line-height: 3.4rem; }
+    font-size: 22px;
+    line-height: 34px; }
 
 .template-footer .template-footer-content {
   margin: 0 20px;
@@ -438,12 +438,12 @@ code {
   border-top: 1px solid #eee;
   text-align: center;
   line-height: 22px;
-  font-size: 1.4rem; }
+  font-size: 14px; }
 
 @media screen and (max-width: 640px) {
   .template-header .btn-group .btn {
     display: inline-block;
-    margin-bottom: 1.6rem; } }
+    margin-bottom: 16px; } }
 /*====== Code color ========*/
 .com {
   color: #93a1a1; }
@@ -472,7 +472,7 @@ code {
 .prettyprint {
   padding: 16px;
   background-color: #f7f7f7;
-  font-size: 1.3rem;
+  font-size: 13px;
   margin-bottom: 18px; }
 
 ol.linenums li {
@@ -483,11 +483,11 @@ ol.linenums li {
 
 @media screen and (max-width: 640px) {
   .banner p {
-    font-size: 2rem; }
+    font-size: 20px; }
 
   .banner .btn-group .btn {
     display: inline-block;
-    margin-bottom: 1.6rem; }
+    margin-bottom: 16px; }
 
   .m-hide {
     display: none; } }
@@ -543,7 +543,7 @@ ol.linenums li {
   border-bottom: 1px solid #eee; }
 
 .page-header h1 {
-  font-size: 2rem;
+  font-size: 20px;
   font-weight: normal;
   color: #699FE1;
   overflow: hidden;
