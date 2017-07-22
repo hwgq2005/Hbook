@@ -47,6 +47,7 @@ code {
 }
 .margin-20 {
 	margin: 20px 0;
+	padding: 0 15px;
 }
 .margin-10 {
 	margin: 10px 0;
@@ -161,22 +162,59 @@ ol.linenums li {
 	}
 }
 
-.header{
-	height:50px;
+
+// 侧边栏
+.sidebar{
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	z-index: 999;
+	width:220px;
+	padding: 40px 0 40px 40px;
+	border-right:1px solid #eee;
+	background-color:#F9FAFB;
+
+	overflow:auto;
+	.navbar{
+		ul{
+			li{
+				a{
+					display: block;
+					padding: 15px 0;
+					color:#666;
+					&:hover,&.active{
+						color:#699FE1;
+					}
+					strong{
+						font-weight: 700;
+					}
+				}
+				&.sub{
+					padding-left: 10px;
+				}
+			}
+		}
+	}
+	
 }
+.content{
+	margin-left:220px;
+	padding:0 20px;
+	overflow:hidden;
+}
+
 .quotations {
-	background: #699FE1;
-	padding: 60px 0;
+	padding: 50px 0 0;
+	color: #666;
 }
 .quotations .quotations-tit {
 	font-size: 4rem;
 	margin-bottom: 20px;
-	color: #fff;
 }
 .quotations .quotations-sum {
 	font-size: 2rem;
 	line-height: 2.6rem;
-	color: #f7f7f7;
 }
 .section {
 	margin: 48px 0;
@@ -246,6 +284,12 @@ ol.linenums li {
 		a {
 			margin: 5px;
 		}
+	}
+	.sidebar{
+		display: none;
+	}
+	.content{
+		margin:0;
 	}
 }
 

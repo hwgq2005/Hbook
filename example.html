@@ -1,131 +1,100 @@
 <!doctype html>
-<html  lang="en">
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="cleartype" content="on">
-	<meta name="description" content="Hbook,致力于前端开发推广">
-	<meta name="keywords" content="前端,前端开发,前端框架,css,html,js,jquery,ui,设计,hbook">
-	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<title>简洁、轻量的前端UI框架－Hbook</title>
-	<link rel="Shortcut Icon" href="docs/images/hbook.ico">
-	<link rel="stylesheet" href="docs/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="docs/css/hbook-template.css">
-	<link rel="stylesheet" href="docs/css/hbook.css">
- </head>
- <body >
- 
-	<div style="display: none;">
-		<img src="docs/images/hbook.jpg" alt="简洁、直观的前端UI框架－Hbook">
-	</div>
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="description" content="Hbook,致力于前端开发推广">
+    <meta name="keywords" content="前端,前端开发,前端框架,css,html,js,jquery,ui,设计,hbook">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>简洁、轻量的前端UI框架－Hbook</title>
+    <link rel="Shortcut Icon" href="docs/images/hbook.ico">
+    <link rel="stylesheet" href="docs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="docs/css/hbook-template.css">
+    <link rel="stylesheet" href="docs/css/hbook.css">
+</head>
 
-	<!-- header begin -->
+<body>
+    <div style="display: none;">
+        <img src="docs/images/hbook.jpg" alt="简洁、直观的前端UI框架－Hbook">
+    </div>
+   
+    <div class="main clearfix" >
+        <div class="sidebar">
+         	<!-- nav begin -->
+            <nav class="navbar " id="header">
+                <ul class="nav navbar-nav">
+                	<li ><a href="javascript:;" class="active" data-id="h-index"><strong>Hbook</strong> </a></li>
+                    <li class="sub"><a href="javascript:;" data-id="h-grid"> 栅格布局</a></li>
+                    <li class="sub"><a href="javascript:;" data-id="h-table">表格</a></li>
+                    <li class="sub"><a href="javascript:;" data-id="h-page">分页</a></li>
+                    <li class="sub"><a href="javascript:;" data-id="h-input">表单</a></li>
+                    <li class="sub"><a href="javascript:;" data-id="h-btn">按钮</a></li>
+                    <li class="sub"><a href="javascript:;" data-id="h-tip">标签</a></li>
+                    <li class="sub"><a href="javascript:;" data-id="h-dialog">弹出框</a></li>
+                    <li class="sub"><a href="javascript:;" data-id="h-alert">警告框</a></li>
+                    <li class="sub"><a href="javascript:;" data-id="h-tooltip">工具提示</a></li>
+                    <li class="sub"><a href="javascript:;" data-id="h-scrollbar">进度条</a></li>
+                    <li class="sub"><a href="javascript:;" data-id="h-list">图文</a></li>
+                    <li ><a href="http://blog.bookcss.com"  class="active" target="_blank"><strong>博客</strong></a></li>
+                    
+                </ul>     
+            </nav>
+            <!-- nav end -->
+		
+        </div>
+        <!-- content begin -->
+        <div class=" content" id="content">
 
-	<header class="header">
-		<nav class="navbar navbar-fixed-top" id="header">
-			<div class="container">
-			  <div class="navbar-header clearfix">
-			    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-			      <span class="sr-only">Toggle navigation</span>
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			    </button>
-			    <a class="navbar-brand" href="/">Hbook</a>
-			  </div>
-			  <div id="navbar" class="collapse navbar-collapse ">
-			    <ul class="nav navbar-nav">
-
-			      	<li class=""><a href="javascript:;" data-id="h-index">首页</a></li>
-			      	<li class=""><a href="javascript:;" data-id="h-grid">栅格布局</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-nav">导航</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-table">表格</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-page">分页</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-input">表单</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-btn">按钮</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-tip">标签</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-dialog">弹出框</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-alert">警告框</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-tooltip">工具提示</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-scrollbar">进度条</a></li>
-				 	<li class=""><a href="javascript:;" data-id="h-list">图文</a></li>
-			    </ul>
-
-			    <ul class="nav navbar-nav navbar-right">
-			        <li class="dropdown">
-			          <a href="http://blog.bookcss.com" class="dropdown-toggle" data-toggle="dropdown" target="_blank">博客</a>
-			       <!--    <ul class="dropdown-menu" role="menu">
-			            <li><a href="javascript:;">我的账户</a></li>
-			            <li><a href="javascript:;">个人设置</a></li>
-			            <li class="divider"></li>
-			            <li class="dropdown-header">Nav header</li> 
-			            <li><a href="/account/logOut">退出</a></li>
-			          </ul> -->
-			        </li>
-			    </ul>
-			     
-			  </div>
+        	<!-- quotations begin -->
+		    <div class="quotations"  id="h-index">
+					<h1 class="quotations-tit">简洁、轻量、快速</h1>
+					<p class="quotations-sum">Hbook专注于前端开发推广，坚持分享、开放的互联网精神；如果你和我有相同的目标，我乐意一起携手前行。</p>
 			</div>
-		</nav>
-	</header>
-	<!-- header end -->
+		    <!-- quotations end -->
 
-	<!-- quotations begin -->
-	<div class="quotations"  id="h-index">
-		<div class="container">
-			<h1 class="quotations-tit">简洁、轻量、快速</h1>
-			<p class="quotations-sum">Hbook专注于前端开发推广，坚持分享、开放的互联网精神；如果你和我有相同的目标，我乐意一起携手前行。</p>
-		</div>
-	</div>
-	<!-- quotations end -->
-	
-	<!-- content begin -->
-	<div class="container content" id="content">
-
-		<!-- 布局 -->
-		<section class="section" id="h-grid">
-			<div class="page-header" >
-	            <h1>栅格布局</h1>
-			</div>
-			<div class="margin-20">
-        		<div class="row">
-        			<div class="col-md-1">col-md-1</div>
-        			<div class="col-md-1">col-md-1</div>
-        			<div class="col-md-1">col-md-1</div>
-        			<div class="col-md-1">col-md-1</div>
-        			<div class="col-md-1">col-md-1</div>
-        			<div class="col-md-1">col-md-1</div>
-        			<div class="col-md-1">col-md-1</div>
-        			<div class="col-md-1">col-md-1</div>
-        			<div class="col-md-1">col-md-1</div>
-        			<div class="col-md-1">col-md-1</div>
-        			<div class="col-md-1">col-md-1</div>
-        			<div class="col-md-1">col-md-1</div>
-        		</div>
-	        </div>
-            <div class="margin-20">
-        		<div class="row">
-        			<div class="col-md-4">col-md-3</div>
-        			<div class="col-md-4">col-md-4</div>
-        			<div class="col-md-4">col-md-4</div>
-        		</div>
-	        </div>
-	         <div class="margin-20">
-        		
-				<div class="row">
-        			<div class="col-md-6">col-md-6</div>
-        			<div class="col-md-6">col-md-6</div>
-        		</div>
-
-	        </div>
-
-	         <div class="margin-20">
-        		<div class="row">
-        			<div class="col-md-12">col-md-12</div>
-        		</div>
-	        </div>
-<pre class="prettyprint linenums">
+            <!-- 布局 -->
+            <section class="section" id="h-grid">
+                <div class="page-header">
+                    <h1>栅格布局</h1>
+                </div>
+                <div class="margin-20">
+                    <div class="row">
+                        <div class="col-md-1">col-md-1</div>
+                        <div class="col-md-1">col-md-1</div>
+                        <div class="col-md-1">col-md-1</div>
+                        <div class="col-md-1">col-md-1</div>
+                        <div class="col-md-1">col-md-1</div>
+                        <div class="col-md-1">col-md-1</div>
+                        <div class="col-md-1">col-md-1</div>
+                        <div class="col-md-1">col-md-1</div>
+                        <div class="col-md-1">col-md-1</div>
+                        <div class="col-md-1">col-md-1</div>
+                        <div class="col-md-1">col-md-1</div>
+                        <div class="col-md-1">col-md-1</div>
+                    </div>
+                </div>
+                <div class="margin-20">
+                    <div class="row">
+                        <div class="col-md-4">col-md-3</div>
+                        <div class="col-md-4">col-md-4</div>
+                        <div class="col-md-4">col-md-4</div>
+                    </div>
+                </div>
+                <div class="margin-20">
+                    <div class="row">
+                        <div class="col-md-6">col-md-6</div>
+                        <div class="col-md-6">col-md-6</div>
+                    </div>
+                </div>
+                <div class="margin-20">
+                    <div class="row">
+                        <div class="col-md-12">col-md-12</div>
+                    </div>
+                </div>
+                <pre class="prettyprint linenums">
 // 所有的 .col-md-* 必须放在 .row 内，.row 外层必须包含 .container
 &lt;div class="container">
   	&lt;div class="row">
@@ -134,136 +103,44 @@
   	&lt;/div>
 &lt;/div>
 </pre>
-		</section>
-
-		<!-- 导航 -->
-		<section class="section" id="h-nav">
-			<div class="page-header" >
-	            <h1>导航</h1>
-	        </div>
-	        <h3>默认导航</h3>
-	        <div class="docs-example">
-	        	<header class="header"  >
-					<nav class="navbar navbar-fixed-top" style="position:static;">
-						
-						  <div class="navbar-header clearfix">
-						    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						      <span class="sr-only">Toggle navigation</span>
-						      <span class="icon-bar"></span>
-						      <span class="icon-bar"></span>
-						      <span class="icon-bar"></span>
-						    </button>
-						    <a class="navbar-brand" href="javascript:;">Hbook</a>
-						  </div>
-						  <div class="collapse navbar-collapse ">
-						    <ul class="nav navbar-nav">
-						      	<li class=""><a href="javascript:;" >首页</a></li>
-							 	<li class=""><a href="javascript:;" >产品展示</a></li>
-							 	<li class=""><a href="javascript:;" >关于我们</a></li>
-							 	<li class=""><a href="javascript:;" >联系我们</a></li>
-						    </ul>
-						    <ul class="nav navbar-nav navbar-right">
-						        <li class="dropdown">
-						          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" target="_blank">登录</a>
-						        </li>
-						        <li class="dropdown">
-						          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" target="_blank">注册</a>
-						        </li>
-						    </ul>
-						     
-						  </div>
-					</nav>
-				</header>
-	         </div>
-<pre class="prettyprint linenums">
-&lt;header class="header"  >
-	&lt;nav class="navbar navbar-fixed-top" style="position:static;">
-		  &lt;div class="navbar-header clearfix">
-		    &lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-		      &lt;span class="sr-only">Toggle navigation&lt;/span>
-		      &lt;span class="icon-bar">&lt;/span>
-		      &lt;span class="icon-bar">&lt;/span>
-		      &lt;span class="icon-bar">&lt;/span>
-		    &lt;/button>
-		    &lt;a class="navbar-brand" href="javascript:;">Hbook&lt;/a>
-		  &lt;/div>
-		  &lt;div class="collapse navbar-collapse ">
-		    &lt;ul class="nav navbar-nav">
-		      	&lt;li class="">&lt;a href="javascript:;" >首页&lt;/a>&lt;/li>
-			 	&lt;li class="">&lt;a href="javascript:;" >产品展示&lt;/a>&lt;/li>
-			 	&lt;li class="">&lt;a href="javascript:;" >关于我们&lt;/a>&lt;/li>
-			 	&lt;li class="">&lt;a href="javascript:;" >联系我们&lt;/a>&lt;/li>
-		    &lt;/ul>
-		    &lt;ul class="nav navbar-nav navbar-right">
-		        &lt;li class="dropdown">
-		          &lt;a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" target="_blank">登录&lt;/a>
-		        &lt;/li>
-		        &lt;li class="dropdown">
-		          &lt;a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" target="_blank">注册&lt;/a>
-		        &lt;/li>
-		    &lt;/ul>
-		  &lt;/div>
-	&lt;/nav>
-&lt;/header>
-</pre>
-
-	         <h3>选项卡</h3>
-	        <div class="docs-example">
-				<div class="nav nav-tabs">
-					<ul class="clearfix">
-						<li ><a href="#" class="active">首页</a></li>
-						<li><a href="#" >简介</a></li>
-						<li><a href="#">产品</a></li>
-					</ul>
-				</div>
-	         </div>
-<pre class="prettyprint linenums">
-&lt;div class="nav nav-tabs"&gt;
-	&lt;ul class="clearfix"&gt;
-		&lt;li&gt;&lt;a href="javascript:;" class="active"&gt;首页&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="javascript:;" &gt;简介&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="javascript:;"&gt;产品&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/div>
-</pre>
-	    </section>
-
-	    <!-- 表格 -->
-	    <section class="section" id="h-table">
-			<div class="page-header" >
-	            <h1>表格</h1>
-	        </div>
-	        <h3>默认表格</h3>
-	        <div class="docs-example">
-	        	<table class="table " >
-					  <thead>
-						<tr>
-						  <th>项目名</th>
-						  <th >发起人</th>
-						  <th >回报</th>
-						  <th >支付金额</th>
-						  <th >配送信息</th>
-						</tr>
-					  </thead>
-					  <tbody>
-						<tr>
-						  	<td>项目一</td>
-						  	<td >张三</td>
-						  	<td >赠品T恤</td>
-							<td >¥100</td>
-							<td >详情见公告</td>
-						</tr>
-						<tr>
-						  	<td>项目二</td>
-						  	<td >李四</td>
-						  	<td >赠品卡片</td>
-							<td >¥50</td>
-							<td >详情见公告</td>
-						</tr>
-					  </tbody>
-				</table>
-	         </div>
-<pre class="prettyprint linenums">
+            </section>
+           
+            <!-- 表格 -->
+            <section class="section" id="h-table">
+                <div class="page-header">
+                    <h1>表格</h1>
+                </div>
+                <h3>默认表格</h3>
+                <div class="docs-example">
+                    <table class="table ">
+                        <thead>
+                            <tr>
+                                <th>项目名</th>
+                                <th>发起人</th>
+                                <th>回报</th>
+                                <th>支付金额</th>
+                                <th>配送信息</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>项目一</td>
+                                <td>张三</td>
+                                <td>赠品T恤</td>
+                                <td>¥100</td>
+                                <td>详情见公告</td>
+                            </tr>
+                            <tr>
+                                <td>项目二</td>
+                                <td>李四</td>
+                                <td>赠品卡片</td>
+                                <td>¥50</td>
+                                <td>详情见公告</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;table class="table " &gt;
 	&lt;thead&gt;
 		&lt;tr&gt;
@@ -279,38 +156,38 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 </pre>
-	        <h3 ><code >.table-bordered</code></h3>
-	        <p>为表格增加边框</p>
-	        <div class="docs-example">
-	        	<table class="table table-bordered" >
-					  <thead>
-						<tr>
-						  <th>项目名</th>
-						  <th >发起人</th>
-						  <th >回报</th>
-						  <th >支付金额</th>
-						  <th >配送信息</th>
-						</tr>
-					  </thead>
-					  <tbody>
-						<tr>
-						  	<td>项目一</td>
-						  	<td >张三</td>
-						  	<td >赠品T恤</td>
-							<td >¥100</td>
-							<td >详情见公告</td>
-						</tr>
-						<tr>
-						  	<td>项目二</td>
-						  	<td >李四</td>
-						  	<td >赠品卡片</td>
-							<td >¥50</td>
-							<td >详情见公告</td>
-						</tr>
-					  </tbody>
-				</table>
-	         </div>
-<pre class="prettyprint linenums">
+                <h3><code >.table-bordered</code></h3>
+                <p>为表格增加边框</p>
+                <div class="docs-example">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>项目名</th>
+                                <th>发起人</th>
+                                <th>回报</th>
+                                <th>支付金额</th>
+                                <th>配送信息</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>项目一</td>
+                                <td>张三</td>
+                                <td>赠品T恤</td>
+                                <td>¥100</td>
+                                <td>详情见公告</td>
+                            </tr>
+                            <tr>
+                                <td>项目二</td>
+                                <td>李四</td>
+                                <td>赠品卡片</td>
+                                <td>¥50</td>
+                                <td>详情见公告</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;table class="table table-bordered" &gt;
 	&lt;thead&gt;
 		&lt;tr&gt;
@@ -326,38 +203,38 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 </pre>
-	        <h3 ><code >.table-hover</code></h3>
-	        <p>为每一行给予鼠标移上高亮</p>
-	        <div class="docs-example">
-	        	<table class="table table-hover" >
-					  <thead>
-						<tr>
-						  <th>项目名</th>
-						  <th >发起人</th>
-						  <th >回报</th>
-						  <th >支付金额</th>
-						  <th >配送信息</th>
-						</tr>
-					  </thead>
-					  <tbody>
-						<tr>
-						  	<td>项目一</td>
-						  	<td >张三</td>
-						  	<td >赠品T恤</td>
-							<td >¥100</td>
-							<td >详情见公告</td>
-						</tr>
-						<tr>
-						  	<td>项目二</td>
-						  	<td >李四</td>
-						  	<td >赠品卡片</td>
-							<td >¥50</td>
-							<td >详情见公告</td>
-						</tr>
-					  </tbody>
-				</table>
-	         </div>
-<pre class="prettyprint linenums">
+                <h3><code >.table-hover</code></h3>
+                <p>为每一行给予鼠标移上高亮</p>
+                <div class="docs-example">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>项目名</th>
+                                <th>发起人</th>
+                                <th>回报</th>
+                                <th>支付金额</th>
+                                <th>配送信息</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>项目一</td>
+                                <td>张三</td>
+                                <td>赠品T恤</td>
+                                <td>¥100</td>
+                                <td>详情见公告</td>
+                            </tr>
+                            <tr>
+                                <td>项目二</td>
+                                <td>李四</td>
+                                <td>赠品卡片</td>
+                                <td>¥50</td>
+                                <td>详情见公告</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;table class="table table-hover" &gt;
 	&lt;thead&gt;
 		&lt;tr&gt;
@@ -373,38 +250,38 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 </pre>
-				<h3 ><code >.table-zebra</code></h3>
-	        <p>添加斑马纹样式</p>
-	        <div class="docs-example">
-	        	<table class="table table-zebra" >
-					  <thead>
-						<tr>
-						  <th>项目名</th>
-						  <th >发起人</th>
-						  <th >回报</th>
-						  <th  >支付金额</th>
-						  <th >配送信息</th>
-						</tr>
-					  </thead>
-					  <tbody>
-						<tr>
-						  	<td>项目一</td>
-						  	<td >张三</td>
-						  	<td >赠品T恤</td>
-							<td >¥100</td>
-							<td >详情见公告</td>
-						</tr>
-						<tr>
-						  	<td>项目二</td>
-						  	<td >李四</td>
-						  	<td >赠品卡片</td>
-							<td >¥50</td>
-							<td >详情见公告</td>
-						</tr>
-					  </tbody>
-				</table>
-	         </div>
-<pre class="prettyprint linenums">
+                <h3><code >.table-zebra</code></h3>
+                <p>添加斑马纹样式</p>
+                <div class="docs-example">
+                    <table class="table table-zebra">
+                        <thead>
+                            <tr>
+                                <th>项目名</th>
+                                <th>发起人</th>
+                                <th>回报</th>
+                                <th>支付金额</th>
+                                <th>配送信息</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>项目一</td>
+                                <td>张三</td>
+                                <td>赠品T恤</td>
+                                <td>¥100</td>
+                                <td>详情见公告</td>
+                            </tr>
+                            <tr>
+                                <td>项目二</td>
+                                <td>李四</td>
+                                <td>赠品卡片</td>
+                                <td>¥50</td>
+                                <td>详情见公告</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;table class="table table-zebra" &gt;
 	&lt;thead&gt;
 		&lt;tr&gt;
@@ -420,20 +297,19 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 </pre>
-	    </section>
-
-		<!-- 分页 -->
-		<section class="section" id="h-page">
-			<div class="page-header" >
-	            <h1>分页</h1>
-	        </div>
-	        <div class="docs-example">
-	        	<div id="page"></div>
-	         </div>
-<pre class="prettyprint linenums">
+            </section>
+            <!-- 分页 -->
+            <section class="section" id="h-page">
+                <div class="page-header">
+                    <h1>分页</h1>
+                </div>
+                <div class="docs-example">
+                    <div id="page"></div>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;div id="page">&lt;/div>
 </pre>
-<pre class="prettyprint linenums">
+                <pre class="prettyprint linenums">
 调用方式：
 $('#page').page({
 	current: 1, //当前页
@@ -444,56 +320,54 @@ $('#page').page({
 	}
 });
 </pre>
-			<h3>参数说明</h3>
-			<div class="margin-20">
-		    	<table class="table table-bordered table-zebra">
-		            <thead>
-		              <tr>
-		                <th>属性</th>
-		                <th>备注说明</th>
-		              </tr>
-		            </thead>
-		            <tbody>
-		              <tr>
-		                <td><code>current</code></td>
-		                <td>number，当前页</td>
-		              </tr>
-		              <tr>
-		                <td><code>showNum</code></td>
-		                <td>number，当前显示条数</td>
-		              </tr>
-		              <tr>
-		                <td><code>callback</code></td>
-		                <td>function(){}，回调函数</td>
-		              </tr>
-		            </tbody>
-		        </table>    
-			</div>
-	    </section>
-
-	    <!-- 表单 -->
-		<section class="section" id="h-input">
-			<div class="page-header" >
-	            <h1 >表单</h1>
-	        </div>
-	        <h3>登录样例</h3>
-	        <div class="docs-example docs-example-mt">
-	        	<form class="form-horizontal" id="login-form">
-				  <div class="form-group form-line-input">
-                    <input id="user" class="form-control" name="user" type="text" >
-                    <label for="user">账号</label>
-                    <span class="help-block"></span>
-                  </div>
-				  <div class="form-group form-line-input">
-                    <input id="pass" class="form-control" name="password" type="text"  >
-                    <label for="pass">密码</label>
-                     <span class="help-block"></span>
-                  </div>
-
-                  <a href="javascript:;" class="btn btn-primary" id="login-btn">登录</a>
-				</form>
-	        </div>
-<pre class="prettyprint linenums">
+                <h3>参数说明</h3>
+                <div class="margin-20">
+                    <table class="table table-bordered table-zebra">
+                        <thead>
+                            <tr>
+                                <th>属性</th>
+                                <th>备注说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>current</code></td>
+                                <td>number，当前页</td>
+                            </tr>
+                            <tr>
+                                <td><code>showNum</code></td>
+                                <td>number，当前显示条数</td>
+                            </tr>
+                            <tr>
+                                <td><code>callback</code></td>
+                                <td>function(){}，回调函数</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- 表单 -->
+            <section class="section" id="h-input">
+                <div class="page-header">
+                    <h1>表单</h1>
+                </div>
+                <h3>登录样例</h3>
+                <div class="docs-example docs-example-mt">
+                    <form class="form-horizontal" id="login-form">
+                        <div class="form-group form-line-input">
+                            <input id="user" class="form-control" name="user" type="text">
+                            <label for="user">账号</label>
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group form-line-input">
+                            <input id="pass" class="form-control" name="password" type="text">
+                            <label for="pass">密码</label>
+                            <span class="help-block"></span>
+                        </div>
+                        <a href="javascript:;" class="btn btn-primary" id="login-btn">登录</a>
+                    </form>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;form class="form-horizontal"&gt;
 	&lt;div class="form-group form-line-input"&gt;
 	   &lt;input type="text" class="form-control"  id="user" &gt;
@@ -508,24 +382,21 @@ $('#page').page({
 	&lt;a href="#" class="btn btn-mini btn-primary"&gt;登录&lt;/a&gt;
 &lt;/form&gt;
 </pre>
-			<h3>复选框和单选框</h3>
-			<p>默认排列</p>
-	        <div class="docs-example" >
-	        	<label class="checkbox ">
-				  <input type="checkbox" value="">
-				  <span>Option one is this and that—be sure to include why it's great</span>
-				</label>
-
-				<label class="radio active">
-				  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-				  Option one is this and that—be sure to include why it's great
-				</label>
-				<label class="radio">
-				  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-				  Option two can be something else and selecting it will deselect option one
-				</label>
-	         </div>
-<pre class="prettyprint linenums">
+                <h3>复选框和单选框</h3>
+                <p>默认排列</p>
+                <div class="docs-example">
+                    <label class="checkbox ">
+                        <input type="checkbox" value="">
+                        <span>Option one is this and that—be sure to include why it's great</span>
+                    </label>
+                    <label class="radio active">
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Option one is this and that—be sure to include why it's great
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Option two can be something else and selecting it will deselect option one
+                    </label>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;label class="checkbox"&gt;
 	&lt;input type="checkbox" value=""&gt;
 	Option one is this and that—be sure to include why it's great
@@ -539,57 +410,55 @@ $('#page').page({
 	Option two can be something else and selecting it will deselect option one
 &lt;/label&gt;
 </pre>
-			<h3><code>.inline</code></h3>
-			<p>行内单复选框</p>
-	        <div class="docs-example" id="check-box">
-	        	<div class="box-type">
-	        		<a href="javascript:;" class="btn btn-mini btn-primary" data-color="box-primary">&nbsp;</a>
-	        		<a href="javascript:;" class="btn btn-mini btn-success" data-color="box-success">&nbsp;</a>
-	        		<a href="javascript:;" class="btn btn-mini btn-warning" data-color="box-warning">&nbsp;</a>
-	        		<a href="javascript:;" class="btn btn-mini btn-danger" data-color="box-danger">&nbsp;</a>
-	        		<a href="javascript:;" class="btn btn-mini btn-violet" data-color="box-violet">&nbsp;</a>
-	        		<a href="javascript:;" class="btn btn-mini btn-grey" data-color="box-grey">&nbsp;</a>
-	        	</div>
-	        	<div>
-		        	<label class="checkbox active inline ">
-					  <input type="checkbox" value="1" checked="checked">
-					  <span>选项一</span>
-					</label>
-					<label class="checkbox inline ">
-					  <input type="checkbox" value="2" >
-					  <span>选项二</span>
-					</label>
-					<label class="checkbox inline">
-					  <input type="checkbox" value="3">
-					  <span>选项三</span>
-					</label>
-					<label class="checkbox inline">
-					  <input type="checkbox" value="4">
-					  <span>选项四</span>
-					</label>
-				</div>
-
-				<div>
-					<label class="radio active inline">
-					  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="checked" >
-					  <span>选项一</span>
-					</label>
-					<label class="radio inline">
-					  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-					   <span>选项二</span>
-					</label>
-					<label class="radio inline">
-					  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option3" >
-					  <span>选项三</span>
-					</label>
-					<label class="radio inline">
-					  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option4">
-					  <span>选项四</span>
-					</label>
-				</div>
-				
-	         </div>
-<pre class="prettyprint linenums">
+                <h3><code>.inline</code></h3>
+                <p>行内单复选框</p>
+                <div class="docs-example" id="check-box">
+                    <div class="box-type">
+                        <a href="javascript:;" class="btn btn-mini btn-primary" data-color="box-primary">&nbsp;</a>
+                        <a href="javascript:;" class="btn btn-mini btn-success" data-color="box-success">&nbsp;</a>
+                        <a href="javascript:;" class="btn btn-mini btn-warning" data-color="box-warning">&nbsp;</a>
+                        <a href="javascript:;" class="btn btn-mini btn-danger" data-color="box-danger">&nbsp;</a>
+                        <a href="javascript:;" class="btn btn-mini btn-violet" data-color="box-violet">&nbsp;</a>
+                        <a href="javascript:;" class="btn btn-mini btn-grey" data-color="box-grey">&nbsp;</a>
+                    </div>
+                    <div>
+                        <label class="checkbox active inline ">
+                            <input type="checkbox" value="1" checked="checked">
+                            <span>选项一</span>
+                        </label>
+                        <label class="checkbox inline ">
+                            <input type="checkbox" value="2">
+                            <span>选项二</span>
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="3">
+                            <span>选项三</span>
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="4">
+                            <span>选项四</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="radio active inline">
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="checked">
+                            <span>选项一</span>
+                        </label>
+                        <label class="radio inline">
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            <span>选项二</span>
+                        </label>
+                        <label class="radio inline">
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option3">
+                            <span>选项三</span>
+                        </label>
+                        <label class="radio inline">
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option4">
+                            <span>选项四</span>
+                        </label>
+                    </div>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;label class="checkbox active inline"&gt;
 	&lt;input type="checkbox" value=""&gt;
 	1
@@ -599,275 +468,257 @@ $('#page').page({
 	2
 &lt;/label&gt;
 </pre>
-			<h3>默认表单</h3>
-	        <div class="docs-example docs-input">
-
-	        	<div class="form-group form-line-input">
-                    <input type="text" class="form-control"  id="form-control-1" >
-                    <label for="form-control-1">姓名</label>
-                    <span class="help-block">限制在10字以内</span>
+                <h3>默认表单</h3>
+                <div class="docs-example docs-input">
+                    <div class="form-group form-line-input">
+                        <input type="text" class="form-control" id="form-control-1">
+                        <label for="form-control-1">姓名</label>
+                        <span class="help-block">限制在10字以内</span>
+                    </div>
+                    <div class="form-group form-line-input  has-success">
+                        <input type="text" class="form-control" id="form-control-2">
+                        <label for="form-control-2">年龄</label>
+                    </div>
+                    <div class="form-group form-line-input has-warning">
+                        <select class="form-control " name="" id="form-control-3">
+                            <option value=" "></option>
+                            <option value="1">男</option>
+                            <option value="2">女</option>
+                        </select>
+                        <label for="form-control-3">性别</label>
+                    </div>
+                    <div class="form-group form-line-input has-error">
+                        <textarea class="form-control " name="" id="form-control-4" rows="3"></textarea>
+                        <label for="form-control-4">描述</label>
+                        <span class="help-block">限制在100字以内</span>
+                    </div>
+                    <div class="form-group form-line-input ">
+                        <input type="text" class="form-control" id="form-control-5" disabled="disabled" value="禁止点击">
+                        <label for="form-control-5">编号</label>
+                    </div>
                 </div>
-                <div class="form-group form-line-input  has-success">
-                    <input type="text" class="form-control"  id="form-control-2" >
-                    <label for="form-control-2">年龄</label>
-                </div>
-                <div class="form-group form-line-input has-warning">
-                	<select class="form-control " name="" id="form-control-3">
-                		<option value=" "></option>
-                		<option value="1">男</option>
-                		<option value="2">女</option>
-                	</select>
-                    <label for="form-control-3">性别</label>
-                </div>
-               
-                <div class="form-group form-line-input has-error">
-                	<textarea class="form-control " name="" id="form-control-4" rows="3"></textarea>
-                    <label for="form-control-4">描述</label>
-                     <span class="help-block">限制在100字以内</span>
-                </div>
-
-                <div class="form-group form-line-input ">
-                	<input type="text" class="form-control"  id="form-control-5"  disabled="disabled" value="禁止点击">
-                    <label for="form-control-5">编号</label>
-                </div>
-	        </div>
-<pre class="prettyprint linenums">
+                <pre class="prettyprint linenums">
 &lt;div class="form-group form-line-input">
     &lt;input type="text" class="form-control"  id="form-control-1" >
     &lt;label for="form-control-1">姓名&lt;/label>
     &lt;span class="help-block">限制在10字以内&lt;/span>
 &lt;/div>
 </pre>
-			<h3>表单2</h3>
-	        <div class="docs-example docs-input">
-	        	<div class="form-group form-line-input">
-                    <input  class="form-control" type="text" placeholder="姓名">
-                    <label></label>
-                    <span class="help-block"></span>
+                <h3>表单2</h3>
+                <div class="docs-example docs-input">
+                    <div class="form-group form-line-input">
+                        <input class="form-control" type="text" placeholder="姓名">
+                        <label></label>
+                        <span class="help-block"></span>
+                    </div>
+                    <div class="form-group form-line-input has-success">
+                        <input id="user" class="form-control" type="text" placeholder="性别">
+                        <label></label>
+                        <span class="help-block"></span>
+                    </div>
+                    <div class="form-group form-line-input has-warning">
+                        <textarea class="form-control " placeholder="简介" rows="3"></textarea>
+                        <label></label>
+                        <span class="help-block"></span>
+                    </div>
                 </div>
-
-                <div class="form-group form-line-input has-success">
-                    <input id="user" class="form-control" type="text" placeholder="性别">
-                    <label ></label>
-                    <span class="help-block"></span>
-                </div>
-				
-				<div class="form-group form-line-input has-warning">
-					<textarea class="form-control " placeholder="简介" rows="3"></textarea>
-                    <label ></label>
-                    <span class="help-block"></span>
-                </div>
-	        	
-	         </div>
-<pre class="prettyprint linenums">
+                <pre class="prettyprint linenums">
 &lt;div class="form-group form-line-input">
     &lt;input  class="form-control" type="text" placeholder="姓名">
     &lt;label>&lt;/label>
     &lt;span class="help-block">&lt;/span>
 &lt;/div>
 </pre>
-		    
-	    </section>
-
-	    <!-- 按钮 -->
-		<section class="section" id="h-btn">
-			<div class="page-header">
-	            <h1>默认按钮</h1>
-	        </div>
-	        <div class="margin-20">
-	        	<table class="table table-bordered table-zebra">
-		            <thead>
-		              <tr>
-		                <th>大按钮</th>
-		                <th>class=""</th>
-		                <th class="m-hide">小按钮</th>
-		                <th class="m-hide">class=""</th>
-		              </tr>
-		            </thead>
-		            <tbody>
-		              <tr>
-		                <td><a class="btn ">默认</a></td>
-		                <td><code>btn</code></td>
-		                <td class="m-hide"><a class="btn btn-mini">默认</a></td>
-		                <td class="m-hide"><code>btn btn-mini</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="btn btn-primary">主要</a></td>
-		                <td><code>btn btn-primary</code></td>
-		                <td class="m-hide"><a class="btn btn-mini btn-primary">主要</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-primary</code></td>
-		              </tr>
-		             
-		              <tr>
-		                <td><a class="btn btn-success">成功</a></td>
-		                <td><code>btn btn-success</code></td>
-		                <td class="m-hide"><a class="btn btn-mini btn-success">成功</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-success</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="btn btn-warning">警告</a></td>
-		                <td><code>btn btn-warning</code></td>
-		                <td class="m-hide"><a class="btn btn-mini btn-warning">警告</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-warning</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="btn btn-danger">危险</a></td>
-		                <td><code>btn btn-danger</code></td>
-		                <td class="m-hide"><a class="btn btn-mini btn-danger">危险</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-danger</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="btn btn-violet">紫色</a></td>
-		                <td><code>btn btn-violet</code></td>
-		                <td class="m-hide"><a class="btn btn-mini btn-violet">紫色</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-violet</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="btn  btn-grey">灰色</a></td>
-		                <td><code>btn btn-grey</code></td>
-		                <td class="m-hide"><a class="btn  btn-mini btn-grey">灰色</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-grey</code></td>
-		              </tr>
-		            </tbody>
-		          </table>
-	         </div>
-	    </section>
-
-
-	    <!-- 按钮风格2-->
-		<section class="section" id="h-btn">
-			<div class="page-header">
-	            <h1>按钮风格2</h1>
-	        </div>
-	        <div class="margin-20">
-	        	<table class="table table-bordered table-zebra">
-		            <thead>
-		              <tr>
-		                <th>大按钮</th>
-		                <th>class=""</th>
-		                <th class="m-hide">小按钮</th>
-		                <th class="m-hide">class=""</th>
-		              </tr>
-		            </thead>
-		            <tbody>
-		             
-		              <tr>
-		                <td><a class="btn btn-primary-border">主要</a></td>
-		                <td><code>btn btn-primary-border</code></td>
-		                <td class="m-hide"><a class="btn btn-mini btn-primary-border">主要</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-primary-border</code></td>
-		              </tr>
-		             
-		              <tr>
-		                <td><a class="btn btn-success-border">成功</a></td>
-		                <td><code>btn btn-success-border</code></td>
-		                <td class="m-hide"><a class="btn btn-mini btn-success-border">成功</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-success-border</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="btn btn-warning-border">警告</a></td>
-		                <td><code>btn btn-warning-border</code></td>
-		                <td class="m-hide"><a class="btn btn-mini btn-warning-border">警告</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-warning-border</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="btn btn-danger-border">危险</a></td>
-		                <td><code>btn btn-danger-border</code></td>
-		                <td class="m-hide"><a class="btn btn-mini btn-danger-border">危险</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-danger-border</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="btn btn-violet-border">紫色</a></td>
-		                <td><code>btn btn-violet-border</code></td>
-		                <td class="m-hide"><a class="btn btn-mini btn-violet-border">紫色</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-violet-border</code></td>
-		              </tr>
-		          	   <tr>
-		                <td><a class="btn  btn-grey-border">灰色</a></td>
-		                <td><code>btn btn-grey-border</code></td>
-		                <td class="m-hide"><a class="btn  btn-mini btn-grey-border">灰色</a></td>
-		                <td class="m-hide"><code>btn btn-mini btn-grey-border</code></td>
-		              </tr>
-		            </tbody>
-		          </table>
-	         </div>
-	    </section>
-
-	    <!-- 标签 -->
-		<section class="section" id="h-tip">
-			<div class="page-header">
-	            <h1>标签</h1>
-	        </div>
-	        <div class="margin-20">
-	        	<table class="table table-bordered table-zebra">
-		            <thead>
-		              <tr>
-		                <th>大标签</th>
-		                <th>class=""</th>
-		                <th class="m-hide">小标签</th>
-		                <th class="m-hide">class=""</th>
-		              </tr>
-		            </thead>
-		            <tbody>
-		              <tr>
-		                <td><a class="label ">默认</a></td>
-		                <td><code>label</code></td>
-		                <td class="m-hide"><a class="label label-mini">默认</a></td>
-		                <td class="m-hide"><code>label label-mini</code></td>
-		              </tr>
-
-		              <tr>
-		                <td><a class="label label-primary">主要</a></td>
-		                <td><code>label label-primary</code></td>
-		                <td class="m-hide"><a class="label label-mini label-primary">主要</a></td>
-		                <td class="m-hide"><code>label abel-mini label-primary</code></td>
-		              </tr>
-		            
-		              <tr>
-		                <td><a class="label label-success">成功</a></td>
-		                <td><code>label label-success</code></td>
-		                <td class="m-hide"><a class="label label-mini label-success">成功</a></td>
-		                <td class="m-hide"><code>label label-mini label-success</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="label label-warning">警告</a></td>
-		                <td><code>label label-warning</code></td>
-		                <td class="m-hide"><a class="label label-mini label-warning">警告</a></td>
-		                <td class="m-hide"><code>label label-mini label-warning</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="label label-danger">危险</a></td>
-		                <td><code>label label-danger</code></td>
-		                <td class="m-hide"><a class="label label-mini label-danger">危险</a></td>
-		                <td class="m-hide"><code>label label-mini label-danger</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="label label-violet">紫色</a></td>
-		                <td><code>label label-violet</code></td>
-		                <td class="m-hide"><a class="label label-mini label-violet">紫色</a></td>
-		                <td class="m-hide"><code>label label-mini label-violet</code></td>
-		              </tr>
-		              <tr>
-		                <td><a class="label label-grey">灰色</a></td>
-		                <td><code>label label-grey</code></td>
-		                <td class="m-hide"><a class="label label-mini label-grey">灰色</a></td>
-		                <td class="m-hide"><code>label label-mini label-grey</code></td>
-		              </tr>
-		            
-		            </tbody>
-		          </table>
-	         </div>
-	    </section>
-
-	    <!-- 弹出框 -->
-		<section class="section" id="h-dialog">
-			<div class="page-header">
-	            <h1>弹出框</h1>
-	        </div> 
-	        <div class="docs-example">
-	        	<a href="javascript:;" class="btn btn-primary"  id="dialog-btn">弹框</a>
-	        </div>
-<pre class="prettyprint linenums">
+            </section>
+            <!-- 按钮 -->
+            <section class="section" id="h-btn">
+                <div class="page-header">
+                    <h1>默认按钮</h1>
+                </div>
+                <div class="margin-20">
+                    <table class="table table-bordered table-zebra">
+                        <thead>
+                            <tr>
+                                <th>大按钮</th>
+                                <th>class=""</th>
+                                <th class="m-hide">小按钮</th>
+                                <th class="m-hide">class=""</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a class="btn ">默认</a></td>
+                                <td><code>btn</code></td>
+                                <td class="m-hide"><a class="btn btn-mini">默认</a></td>
+                                <td class="m-hide"><code>btn btn-mini</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn btn-primary">主要</a></td>
+                                <td><code>btn btn-primary</code></td>
+                                <td class="m-hide"><a class="btn btn-mini btn-primary">主要</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-primary</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn btn-success">成功</a></td>
+                                <td><code>btn btn-success</code></td>
+                                <td class="m-hide"><a class="btn btn-mini btn-success">成功</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-success</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn btn-warning">警告</a></td>
+                                <td><code>btn btn-warning</code></td>
+                                <td class="m-hide"><a class="btn btn-mini btn-warning">警告</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-warning</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn btn-danger">危险</a></td>
+                                <td><code>btn btn-danger</code></td>
+                                <td class="m-hide"><a class="btn btn-mini btn-danger">危险</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-danger</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn btn-violet">紫色</a></td>
+                                <td><code>btn btn-violet</code></td>
+                                <td class="m-hide"><a class="btn btn-mini btn-violet">紫色</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-violet</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn  btn-grey">灰色</a></td>
+                                <td><code>btn btn-grey</code></td>
+                                <td class="m-hide"><a class="btn  btn-mini btn-grey">灰色</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-grey</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- 按钮风格2-->
+            <section class="section" id="h-btn">
+                <div class="page-header">
+                    <h1>按钮风格2</h1>
+                </div>
+                <div class="margin-20">
+                    <table class="table table-bordered table-zebra">
+                        <thead>
+                            <tr>
+                                <th>大按钮</th>
+                                <th>class=""</th>
+                                <th class="m-hide">小按钮</th>
+                                <th class="m-hide">class=""</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a class="btn btn-primary-border">主要</a></td>
+                                <td><code>btn btn-primary-border</code></td>
+                                <td class="m-hide"><a class="btn btn-mini btn-primary-border">主要</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-primary-border</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn btn-success-border">成功</a></td>
+                                <td><code>btn btn-success-border</code></td>
+                                <td class="m-hide"><a class="btn btn-mini btn-success-border">成功</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-success-border</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn btn-warning-border">警告</a></td>
+                                <td><code>btn btn-warning-border</code></td>
+                                <td class="m-hide"><a class="btn btn-mini btn-warning-border">警告</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-warning-border</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn btn-danger-border">危险</a></td>
+                                <td><code>btn btn-danger-border</code></td>
+                                <td class="m-hide"><a class="btn btn-mini btn-danger-border">危险</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-danger-border</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn btn-violet-border">紫色</a></td>
+                                <td><code>btn btn-violet-border</code></td>
+                                <td class="m-hide"><a class="btn btn-mini btn-violet-border">紫色</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-violet-border</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="btn  btn-grey-border">灰色</a></td>
+                                <td><code>btn btn-grey-border</code></td>
+                                <td class="m-hide"><a class="btn  btn-mini btn-grey-border">灰色</a></td>
+                                <td class="m-hide"><code>btn btn-mini btn-grey-border</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- 标签 -->
+            <section class="section" id="h-tip">
+                <div class="page-header">
+                    <h1>标签</h1>
+                </div>
+                <div class="margin-20">
+                    <table class="table table-bordered table-zebra">
+                        <thead>
+                            <tr>
+                                <th>大标签</th>
+                                <th>class=""</th>
+                                <th class="m-hide">小标签</th>
+                                <th class="m-hide">class=""</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a class="label ">默认</a></td>
+                                <td><code>label</code></td>
+                                <td class="m-hide"><a class="label label-mini">默认</a></td>
+                                <td class="m-hide"><code>label label-mini</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="label label-primary">主要</a></td>
+                                <td><code>label label-primary</code></td>
+                                <td class="m-hide"><a class="label label-mini label-primary">主要</a></td>
+                                <td class="m-hide"><code>label abel-mini label-primary</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="label label-success">成功</a></td>
+                                <td><code>label label-success</code></td>
+                                <td class="m-hide"><a class="label label-mini label-success">成功</a></td>
+                                <td class="m-hide"><code>label label-mini label-success</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="label label-warning">警告</a></td>
+                                <td><code>label label-warning</code></td>
+                                <td class="m-hide"><a class="label label-mini label-warning">警告</a></td>
+                                <td class="m-hide"><code>label label-mini label-warning</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="label label-danger">危险</a></td>
+                                <td><code>label label-danger</code></td>
+                                <td class="m-hide"><a class="label label-mini label-danger">危险</a></td>
+                                <td class="m-hide"><code>label label-mini label-danger</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="label label-violet">紫色</a></td>
+                                <td><code>label label-violet</code></td>
+                                <td class="m-hide"><a class="label label-mini label-violet">紫色</a></td>
+                                <td class="m-hide"><code>label label-mini label-violet</code></td>
+                            </tr>
+                            <tr>
+                                <td><a class="label label-grey">灰色</a></td>
+                                <td><code>label label-grey</code></td>
+                                <td class="m-hide"><a class="label label-mini label-grey">灰色</a></td>
+                                <td class="m-hide"><code>label label-mini label-grey</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- 弹出框 -->
+            <section class="section" id="h-dialog">
+                <div class="page-header">
+                    <h1>弹出框</h1>
+                </div>
+                <div class="docs-example">
+                    <a href="javascript:;" class="btn btn-primary" id="dialog-btn">弹框</a>
+                </div>
+                <pre class="prettyprint linenums">
 调用方式：
 var modal = Modal({
 	id:'modal',
@@ -884,316 +735,305 @@ var modal = Modal({
 	}
 })
 </pre>
-		<h3>参数说明</h3>
-		<div class="margin-20">
-	    	<table class="table table-bordered table-zebra">
-		            <thead>
-		              <tr>
-		                <th>属性</th>
-		                <th>备注说明</th>
-		              </tr>
-		            </thead>
-		            <tbody>
-		              <tr>
-		                <td><code>id</code></td>
-		                <td>string，例如："hbook-modal"</td>
-		              </tr>
-		              <tr>
-		                <td><code>type</code></td>
-		                <td>number，0：弹出框，1：提示框</td>
-		              </tr>
-		              <tr>
-		                <td><code>addClass</code></td>
-		                <td>string，添加类名，例如：addClass="a"，addClass="b"</td>
-		              </tr>
-		              <tr>
-		                <td><code>title</code></td>
-		                <td>string，标题</td>
-		              </tr>
-		              <tr>
-		                <td><code>width</code></td>
-		                <td>nubmer，例如：width=500</td>
-		              </tr>
-		              <tr>
-		                <td><code>backdrop</code></td>
-		                <td>boolean值，true或者false</td>
-		              </tr>
-					  <tr>
-		                <td><code>confirmButton</code></td>
-		                <td>boolean值，true或者false</td>
-		              </tr>
-		              <tr>
-		                <td><code>cancelButton</code></td>
-		                <td>boolean值，true或者false</td>
-		              </tr>
-		              <tr>
-		                <td><code>confirmText</code></td>
-		                <td>string，确定按钮名称</td>
-		              </tr>
-		              <tr>
-		                <td><code>cancelText</code></td>
-		                <td>string，取消按钮名称</td>
-		              </tr>
-		              <tr>
-		                <td><code>complete</code></td>
-		                <td>function(){}，打开弹框后回调</td>
-		              </tr>
-		              <tr>
-		                <td><code>confirm</code></td>
-		                <td>function(){}，确定事件回调</td>
-		              </tr>
-		              <tr>
-		                <td><code>cancel</code></td>
-		                <td>function(){}，取消事件回调</td>
-		              </tr>
-		            </tbody>
-		          </table>    
-		</div>
-	    </section>
-
-
-	    <!-- 警告框 -->
-		<section class="section" id="h-alert">
-			<div class="page-header">
-	            <h1>警告框</h1>
-	        </div> 
-	        <div class="docs-example">
-
-	        	<div class="alert alert-primary margin-20" data-toggle="alert">
-	        		<strong>Jone,</strong> welcome to hbook!
-	        		<a href="javascript:;" class="close" data-alert="close">×</a>
-	        	</div>
-	        	<div class="alert alert-success margin-20" data-toggle="alert">
-	        		<strong>Jone,</strong> welcome to hbook!
-	        		<a href="javascript:;" class="close" data-alert="close">×</a>
-	        	</div>
-	        	<div class="alert alert-warning margin-20" data-toggle="alert">
-	        		<strong>Jone,</strong> welcome to hbook!
-	        		<a href="javascript:;" class="close" data-alert="close">×</a>
-	        	</div>
-				<div class="alert alert-danger margin-20" data-toggle="alert">
-	        		<strong>Jone,</strong> welcome to hbook!
-	        		<a href="javascript:;" class="close" data-alert="close">×</a>
-	        	</div>
-	        	<div class="alert alert-violet margin-20" data-toggle="alert">
-	        		<strong>Jone,</strong> welcome to hbook!
-	        		<a href="javascript:;" class="close" data-alert="close">×</a>
-	        	</div>
-	        	<div class="alert alert-grey margin-20" data-toggle="alert">
-	        		<strong>Jone,</strong> welcome to hbook!
-	        		<a href="javascript:;" class="close" data-alert="close">×</a>
-	        	</div>
-
-	        </div>
-<pre class="prettyprint linenums">
+                <h3>参数说明</h3>
+                <div class="margin-20">
+                    <table class="table table-bordered table-zebra">
+                        <thead>
+                            <tr>
+                                <th>属性</th>
+                                <th>备注说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>id</code></td>
+                                <td>string，例如："hbook-modal"</td>
+                            </tr>
+                            <tr>
+                                <td><code>type</code></td>
+                                <td>number，0：弹出框，1：提示框</td>
+                            </tr>
+                            <tr>
+                                <td><code>addClass</code></td>
+                                <td>string，添加类名，例如：addClass="a"，addClass="b"</td>
+                            </tr>
+                            <tr>
+                                <td><code>title</code></td>
+                                <td>string，标题</td>
+                            </tr>
+                            <tr>
+                                <td><code>width</code></td>
+                                <td>nubmer，例如：width=500</td>
+                            </tr>
+                            <tr>
+                                <td><code>backdrop</code></td>
+                                <td>boolean值，true或者false</td>
+                            </tr>
+                            <tr>
+                                <td><code>confirmButton</code></td>
+                                <td>boolean值，true或者false</td>
+                            </tr>
+                            <tr>
+                                <td><code>cancelButton</code></td>
+                                <td>boolean值，true或者false</td>
+                            </tr>
+                            <tr>
+                                <td><code>confirmText</code></td>
+                                <td>string，确定按钮名称</td>
+                            </tr>
+                            <tr>
+                                <td><code>cancelText</code></td>
+                                <td>string，取消按钮名称</td>
+                            </tr>
+                            <tr>
+                                <td><code>complete</code></td>
+                                <td>function(){}，打开弹框后回调</td>
+                            </tr>
+                            <tr>
+                                <td><code>confirm</code></td>
+                                <td>function(){}，确定事件回调</td>
+                            </tr>
+                            <tr>
+                                <td><code>cancel</code></td>
+                                <td>function(){}，取消事件回调</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- 警告框 -->
+            <section class="section" id="h-alert">
+                <div class="page-header">
+                    <h1>警告框</h1>
+                </div>
+                <div class="docs-example">
+                    <div class="alert alert-primary margin-20" data-toggle="alert">
+                        <strong>Jone,</strong> welcome to hbook!
+                        <a href="javascript:;" class="close" data-alert="close">×</a>
+                    </div>
+                    <div class="alert alert-success margin-20" data-toggle="alert">
+                        <strong>Jone,</strong> welcome to hbook!
+                        <a href="javascript:;" class="close" data-alert="close">×</a>
+                    </div>
+                    <div class="alert alert-warning margin-20" data-toggle="alert">
+                        <strong>Jone,</strong> welcome to hbook!
+                        <a href="javascript:;" class="close" data-alert="close">×</a>
+                    </div>
+                    <div class="alert alert-danger margin-20" data-toggle="alert">
+                        <strong>Jone,</strong> welcome to hbook!
+                        <a href="javascript:;" class="close" data-alert="close">×</a>
+                    </div>
+                    <div class="alert alert-violet margin-20" data-toggle="alert">
+                        <strong>Jone,</strong> welcome to hbook!
+                        <a href="javascript:;" class="close" data-alert="close">×</a>
+                    </div>
+                    <div class="alert alert-grey margin-20" data-toggle="alert">
+                        <strong>Jone,</strong> welcome to hbook!
+                        <a href="javascript:;" class="close" data-alert="close">×</a>
+                    </div>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;div class="alert alert-primary" data-toggle="alert">
 	&lt;strong>Jone,</strong> welcome to hbook!
 	&lt;a href="javascript:;" class="close" data-alert="close">×&lt;/a>
 &lt;/div>
 </pre>
-<pre class="prettyprint linenums">
+                <pre class="prettyprint linenums">
 调用方式：$('[data-toggle="alert"]').alert()
 </pre>
-			<h3>参数说明</h3>
-			<div class="margin-20">
-		    	<table class="table table-bordered table-zebra">
-		            <thead>
-		              <tr>
-		                <th>属性</th>
-		                <th>备注说明</th>
-		              </tr>
-		            </thead>
-		            <tbody>
-		              <tr>
-		                <td><code>hide</code></td>
-		                <td>string，隐藏警告框，调用：$('[data-toggle="alert"]').alert('hide')</td>
-		              </tr>
-		            </tbody>
-		        </table>    
-			</div>
-		</section>
-
-	     <!-- 提示工具 -->
-		<section class="section" id="h-tooltip">
-			<div class="page-header">
-	            <h1>工具提示</h1>
-	        </div>
-	        <div class="docs-example tip-group">
-
-	        	<a class="btn btn-large btn-primary"  data-toggle="tip"  data-placement="top" data-title="hello,word">这是个提示</a>
-	        	<a class="btn btn-large btn-success" data-toggle="tip"  data-placement="bottom" data-title="hello,word">这是个提示</a>
-	        	<a class="btn btn-large btn-warning" data-toggle="tip"  data-placement="left" data-title="hello,word">这是个提示</a>
-	        	<a class="btn btn-large btn-danger"  data-toggle="tip"  data-placement="right" data-title="hello,word">这是个提示</a>
-	        </div>
-<pre class="prettyprint linenums">
+                <h3>参数说明</h3>
+                <div class="margin-20">
+                    <table class="table table-bordered table-zebra">
+                        <thead>
+                            <tr>
+                                <th>属性</th>
+                                <th>备注说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>hide</code></td>
+                                <td>string，隐藏警告框，调用：$('[data-toggle="alert"]').alert('hide')</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- 提示工具 -->
+            <section class="section" id="h-tooltip">
+                <div class="page-header">
+                    <h1>工具提示</h1>
+                </div>
+                <div class="docs-example tip-group">
+                    <a class="btn btn-large btn-primary" data-toggle="tip" data-placement="top" data-title="hello,word">这是个提示</a>
+                    <a class="btn btn-large btn-success" data-toggle="tip" data-placement="bottom" data-title="hello,word">这是个提示</a>
+                    <a class="btn btn-large btn-warning" data-toggle="tip" data-placement="left" data-title="hello,word">这是个提示</a>
+                    <a class="btn btn-large btn-danger" data-toggle="tip" data-placement="right" data-title="hello,word">这是个提示</a>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;a class="btn btn-large btn-primary"  data-toggle="tip"  data-placement="top" data-title="hello,word">这是个提示&lt;/a>
 </pre>
-<pre class="prettyprint linenums">
+                <pre class="prettyprint linenums">
 调用方式：$('[data-toggle="tip"]').tip()
 </pre>
-			<h3>参数说明</h3>
-			<div class="margin-20">
-		    	<table class="table table-bordered table-zebra">
-		            <thead>
-		              <tr>
-		                <th>属性</th>
-		                <th>备注说明</th>
-		              </tr>
-		            </thead>
-		            <tbody>
-		              <tr>
-		                <td><code>空</code></td>
-		                <td>默认移入显示、移出隐藏</td>
-		              </tr>
-		              <tr>
-		                <td><code>show</code></td>
-		                <td>string，显示工具提示，调用：$('[data-toggle="tip"]').tip('show')</td>
-		              </tr>
-		              <tr>
-		                <td><code>hide</code></td>
-		                <td>string，隐藏工具提示，调用：$('[data-toggle="tip"]').tip('hide')</td>
-		              </tr>
-		            </tbody>
-		        </table>    
-			</div>
-	    </section>
-
-	    <!-- 进度条 -->
-		<section class="section" id="h-scrollbar">
-			<div class="page-header" >
-	            <h1>进度条</h1>
-	        </div>
-	        <div class="docs-example docs-example-scrollbar">
-	        	<div class="progress">
-					<div class="bar bar-primary" style="width: 20%;"></div>
-				</div>
-				<div class="progress">
-					<div class="bar bar-success" style="width: 30%;"></div>
-				</div>
-				<div class="progress">
-					<div class="bar bar-warning" style="width: 40%;"></div>
-				</div>
-				<div class="progress">
-					<div class="bar bar-danger" style="width: 50%;"></div>
-				</div>
-				<div class="progress">
-					<div class="bar bar-violet" style="width: 60%;"></div>
-				</div>
-				<div class="progress">
-					<div class="bar bar-grey" style="width: 80%;"></div>
-				</div>
-			</div>
-				<pre class="prettyprint linenums">
+                <h3>参数说明</h3>
+                <div class="margin-20">
+                    <table class="table table-bordered table-zebra">
+                        <thead>
+                            <tr>
+                                <th>属性</th>
+                                <th>备注说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>空</code></td>
+                                <td>默认移入显示、移出隐藏</td>
+                            </tr>
+                            <tr>
+                                <td><code>show</code></td>
+                                <td>string，显示工具提示，调用：$('[data-toggle="tip"]').tip('show')</td>
+                            </tr>
+                            <tr>
+                                <td><code>hide</code></td>
+                                <td>string，隐藏工具提示，调用：$('[data-toggle="tip"]').tip('hide')</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- 进度条 -->
+            <section class="section" id="h-scrollbar">
+                <div class="page-header">
+                    <h1>进度条</h1>
+                </div>
+                <div class="docs-example docs-example-scrollbar">
+                    <div class="progress">
+                        <div class="bar bar-primary" style="width: 20%;"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="bar bar-success" style="width: 30%;"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="bar bar-warning" style="width: 40%;"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="bar bar-danger" style="width: 50%;"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="bar bar-violet" style="width: 60%;"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="bar bar-grey" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;div class="progress">
 	&lt;div class="bar bar-primary" style="width: 80%;">&lt;/div>
 &lt;/div>
-</pre>	
-				<table class="table table-bordered table-zebra">
-		            <thead>
-		              <tr>
-		                <th>进度条</th>
-		                <th>class=""</th>
-		              </tr>
-		            </thead>
-		            <tbody>
-		              <tr>
-		                <td>
-							<div class="progress">
-								<div class="bar bar-primary" style="width: 50%;"></div>
-							</div>
-		                </td>
-		                <td><code>bar bar-primary</code></td>
-		              </tr>
-		              <tr>
-		                <td>
-							<div class="progress">
-								<div class="bar bar-success" style="width: 50%;"></div>
-							</div>
-		                </td>
-		                <td><code>bar bar-success</code></td>
-		              </tr>
-		              <tr>
-		                <td>
-							<div class="progress">
-								<div class="bar bar-warning" style="width: 50%;"></div>
-							</div>
-		                </td>
-		                <td><code>bar bar-warning</code></td>
-		              </tr>
-		               <tr>
-		                <td>
-							<div class="progress">
-								<div class="bar bar-danger" style="width: 50%;"></div>
-							</div>
-		                </td>
-		                <td><code>bar bar-danger</code></td>
-		              </tr>
-		              <tr>
-		              <td>
-							<div class="progress">
-								<div class="bar bar-violet" style="width: 50%;"></div>
-							</div>
-		                </td>
-		                <td><code>bar bar-violet</code></td>
-		              </tr>
-		              <td>
-							<div class="progress">
-								<div class="bar bar-grey" style="width: 50%;"></div>
-							</div>
-		                </td>
-		                <td><code>bar bar-grey</code></td>
-		              </tr>
-
-		            </tbody>
-		          </table>
-	         
-	    </section>
-
-	   <!-- 图文列表 -->
-		<section class="section" id="h-list">
-			<div class="page-header" >
-	            <h1>图文</h1>
-	        </div>
-
-	        <h3>风格一</h3>
-	        <div class="docs-example">
-        		<ul class="table-view table-view-one">
-			        <li class="table-view-cell table-view-hover">
-			          <div class="media-object pull-left ">
-			              <a href="javascript:;" class="media-view label-primary">Hbook</a>
-			          </div>
-			          <div class="media-body">
-			            <div class="media-tit">
-			              标题一
-			            </div>
-			            <div class="media-sum">欢迎来到Hbook！</div>
-			          </div>
-			        </li>
-			        <li class="table-view-cell table-view-hover">
-			          <div class="media-object pull-left ">
-			              <a href="javascript:;" class="media-view label-primary">Hbook</a>
-			          </div>
-			          <div class="media-body">
-			            <div class="media-tit">
-			              标题二
-			            </div>
-			            <div class="media-sum">欢迎来到Hbook！</div>
-			          </div>
-			        </li>
-			        <li class="table-view-cell table-view-hover">
-			          <div class="media-object pull-left ">
-			              <a href="javascript:;" class="media-view label-primary">Hbook</a>
-			          </div>
-			          <div class="media-body">
-			            <div class="media-tit">
-			              标题三
-			            </div>
-			            <div class="media-sum">欢迎来到Hbook！</div>
-			          </div>
-			        </li>
-				</ul>
-	        </div>
-<pre class="prettyprint linenums">
+</pre>
+                <table class="table table-bordered table-zebra">
+                    <thead>
+                        <tr>
+                            <th>进度条</th>
+                            <th>class=""</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="progress">
+                                    <div class="bar bar-primary" style="width: 50%;"></div>
+                                </div>
+                            </td>
+                            <td><code>bar bar-primary</code></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="progress">
+                                    <div class="bar bar-success" style="width: 50%;"></div>
+                                </div>
+                            </td>
+                            <td><code>bar bar-success</code></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="progress">
+                                    <div class="bar bar-warning" style="width: 50%;"></div>
+                                </div>
+                            </td>
+                            <td><code>bar bar-warning</code></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="progress">
+                                    <div class="bar bar-danger" style="width: 50%;"></div>
+                                </div>
+                            </td>
+                            <td><code>bar bar-danger</code></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="progress">
+                                    <div class="bar bar-violet" style="width: 50%;"></div>
+                                </div>
+                            </td>
+                            <td><code>bar bar-violet</code></td>
+                        </tr>
+                        <td>
+                            <div class="progress">
+                                <div class="bar bar-grey" style="width: 50%;"></div>
+                            </div>
+                        </td>
+                        <td><code>bar bar-grey</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!-- 图文列表 -->
+            <section class="section" id="h-list">
+                <div class="page-header">
+                    <h1>图文</h1>
+                </div>
+                <h3>风格一</h3>
+                <div class="docs-example">
+                    <ul class="table-view table-view-one">
+                        <li class="table-view-cell table-view-hover">
+                            <div class="media-object pull-left ">
+                                <a href="javascript:;" class="media-view label-primary">Hbook</a>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-tit">
+                                    标题一
+                                </div>
+                                <div class="media-sum">欢迎来到Hbook！</div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell table-view-hover">
+                            <div class="media-object pull-left ">
+                                <a href="javascript:;" class="media-view label-primary">Hbook</a>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-tit">
+                                    标题二
+                                </div>
+                                <div class="media-sum">欢迎来到Hbook！</div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell table-view-hover">
+                            <div class="media-object pull-left ">
+                                <a href="javascript:;" class="media-view label-primary">Hbook</a>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-tit">
+                                    标题三
+                                </div>
+                                <div class="media-sum">欢迎来到Hbook！</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;ul class="table-view table-view-one"&gt;
 	&lt;li class="table-view-cell table-view-hover"&gt;
 	    &lt;div class="media-object pull-left"&gt;
@@ -1208,58 +1048,54 @@ var modal = Modal({
 	&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-
-	        <h3>风格二</h3>
-	        <div class="docs-example">
-        		<ul class="table-view table-view-two">
-        			<li class="table-view-cell ">
-					    <div class="media-object pull-left">
-					     	<a href="#" class="media-view label-primary">Hbook</a>
-					    </div>
-					    <div class="media-body">
-					      <div class="media-tit">
-					      		<a href="#" >列表一</a> 
-					      </div>
-					      <div class="media-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
-					      <div class="media-footer">
-				      		  <span class="media-time">2015-12-02 21:21:24</span>
-					      </div>
-					    </div>
-					</li>
-
-					<li class="table-view-cell ">
-					    <div class="media-object pull-left">
-					     	<a href="#" class="media-view label-primary">Hbook</a>
-					    </div>
-					    <div class="media-body">
-					      <div class="media-tit">
-					      		<a href="#" >列表一</a> 
-					      </div>
-					      <div class="media-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
-					      <div class="media-footer">
-				      		  <span class="media-time">2015-12-02 21:21:24</span>
-					      </div>
-					    </div>
-					</li>
-
-					<li class="table-view-cell ">
-					    <div class="media-object pull-left">
-					     	<a href="#" class="media-view label-primary">Hbook</a>
-					    </div>
-					    <div class="media-body">
-					      <div class="media-tit">
-					      		<a href="#" >列表一</a> 
-					      </div>
-					      <div class="media-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
-					      <div class="media-footer">
-				      		  <span class="media-time">2015-12-02 21:21:24</span>
-					      </div>
-					    </div>
-					</li>
-					
-        		</ul>
-	        </div>
-<pre class="prettyprint linenums">
+                <h3>风格二</h3>
+                <div class="docs-example">
+                    <ul class="table-view table-view-two">
+                        <li class="table-view-cell ">
+                            <div class="media-object pull-left">
+                                <a href="#" class="media-view label-primary">Hbook</a>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-tit">
+                                    <a href="#">列表一</a>
+                                </div>
+                                <div class="media-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
+                                <div class="media-footer">
+                                    <span class="media-time">2015-12-02 21:21:24</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell ">
+                            <div class="media-object pull-left">
+                                <a href="#" class="media-view label-primary">Hbook</a>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-tit">
+                                    <a href="#">列表一</a>
+                                </div>
+                                <div class="media-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
+                                <div class="media-footer">
+                                    <span class="media-time">2015-12-02 21:21:24</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell ">
+                            <div class="media-object pull-left">
+                                <a href="#" class="media-view label-primary">Hbook</a>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-tit">
+                                    <a href="#">列表一</a>
+                                </div>
+                                <div class="media-sum"> <a href="#">Hbook致力于前端开发推广，坚持分享、开放的互联网精神，旨在为广大前端攻城师、设计师提供交流的平台，如果你和我们有相同的目标，我们乐意一起携手前行。</a> </div>
+                                <div class="media-footer">
+                                    <span class="media-time">2015-12-02 21:21:24</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <pre class="prettyprint linenums">
 &lt;ul class="table-view table-view-two"&gt;
 	&lt;li class="table-view-cell"&gt;
 	    &lt;div class="media-object pull-left"&gt;
@@ -1278,44 +1114,41 @@ var modal = Modal({
 	&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-			
-	    </section>
-	</div>
-	<!-- content end -->
+            </section>
 
-	<!-- template-footer begin -->
-	<footer class="template-footer container ">
-		<div class="template-footer-content">
-			<p>© Hbook 2016-2017 All right reserved By <a href="http://www.weibo.com/hwgq2005" target="_blank" title="微博">@hwgq2005</a> </p>
-			<p>Email：<a href="mailto:hbook@bookcss.com" title="邮箱">hbook@bookcss.com</a></p>
-		</div>
-	</footer>
-	<!-- template-footer end -->
 
-	<a href="javascript:;" class="scroll-top " id="backToTop">
+             <footer class="template-footer  ">
+		        <div class="template-footer-content">
+		            <p>© Hbook 2016-2017 All right reserved By <a href="http://www.weibo.com/hwgq2005" target="_blank" title="微博">@hwgq2005</a> </p>
+		            <p>Email：<a href="mailto:hbook@bookcss.com" title="邮箱">hbook@bookcss.com</a></p>
+		        </div>
+		    </footer>
+        </div>
+        <!-- content end -->
+    </div>
+    
+
+    <a href="javascript:;" class="scroll-top " id="backToTop">
 		<i class="fa fa-arrow-up font-16"></i>
 	</a>
-
-	<script src="docs/js/lib/jquery/dist/jquery.min.js"></script>
-	<script src="docs/js/lib/jquery.validate.min.js"></script>
-	<script src="docs/js/lib/message.js"></script>
+    <script src="docs/js/lib/jquery/dist/jquery.min.js"></script>
+    <script src="docs/js/lib/jquery.validate.min.js"></script>
+    <script src="docs/js/lib/message.js"></script>
     <script src="docs/js/lib/prettify.js"></script>
     <script src="docs/js/hbook.js"></script>
-    <script src="docs/js/main.min.js"></script>	
-   <script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "https://hm.baidu.com/hm.js?73725330b036bc901ea2153f89f4e68f";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
-	
+    <script src="docs/js/main.min.js"></script>
     <script>
-    	hbook();
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?73725330b036bc901ea2153f89f4e68f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
     </script>
-
- </body>
+    <script>
+    hbook();
+    </script>
+</body>
 
 </html>

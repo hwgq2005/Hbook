@@ -388,7 +388,8 @@ code {
   margin-right: auto; }
 
 .margin-20 {
-  margin: 20px 0; }
+  margin: 20px 0;
+  padding: 0 15px; }
 
 .margin-10 {
   margin: 10px 0; }
@@ -485,22 +486,44 @@ ol.linenums li {
 
   .m-hide {
     display: none; } }
-.header {
-  height: 50px; }
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 220px;
+  padding: 40px 0 40px 40px;
+  border-right: 1px solid #eee;
+  background-color: #F9FAFB;
+  overflow: auto; }
+  .sidebar .navbar ul li a {
+    display: block;
+    padding: 15px 0;
+    color: #666; }
+    .sidebar .navbar ul li a:hover, .sidebar .navbar ul li a.active {
+      color: #699FE1; }
+    .sidebar .navbar ul li a strong {
+      font-weight: 700; }
+  .sidebar .navbar ul li.sub {
+    padding-left: 10px; }
+
+.content {
+  margin-left: 220px;
+  padding: 0 20px;
+  overflow: hidden; }
 
 .quotations {
-  background: #699FE1;
-  padding: 60px 0; }
+  padding: 50px 0 0;
+  color: #666; }
 
 .quotations .quotations-tit {
   font-size: 4rem;
-  margin-bottom: 20px;
-  color: #fff; }
+  margin-bottom: 20px; }
 
 .quotations .quotations-sum {
   font-size: 2rem;
-  line-height: 2.6rem;
-  color: #f7f7f7; }
+  line-height: 2.6rem; }
 
 .section {
   margin: 48px 0; }
@@ -565,7 +588,13 @@ ol.linenums li {
 /*====== Tip ========*/
 @media screen and (max-width: 640px) {
   .tip-group a {
-    margin: 5px; } }
+    margin: 5px; }
+
+  .sidebar {
+    display: none; }
+
+  .content {
+    margin: 0; } }
 /*====== Grid ========*/
 [class*="col-"] {
   padding-top: 15px;

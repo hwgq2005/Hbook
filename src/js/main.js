@@ -36,9 +36,9 @@
 					  T = $('#'+_id).offset().top;
 
 				$('body,html').stop().animate({
-					scrollTop: T - 60
+					scrollTop: T - 15
 				},500, 'linear', function() {
-					$('#navbar').removeClass('in');
+					// $('#navbar').removeClass('in');
 				});
 			})
 
@@ -58,11 +58,7 @@
 				});
 			});
 
-			// 导航下拉
-			$('.navbar-toggle').click(function(event) {
-				$(this).toggleClass('collapsed');
-				$(this).parent().next('.collapse').toggleClass('in');
-			});
+			
 
 			//弹窗
 			var modal = null;
