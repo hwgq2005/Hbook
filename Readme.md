@@ -1,6 +1,6 @@
 Simple, lightweight front-end UI framework
 
-[![Hbook](http://www.bookcss.com/docs/images/banner.jpg)](http://www.bookcss.com)
+[![Hbook](http://hbook.bookcss.com/docs/images/banner.jpg)](http://hbook.bookcss.com)
 
 <p align="left">
 <a href="https://www.npmjs.com/package/hbook-ui"><img src="https://img.shields.io/npm/dt/hbook-ui.svg" alt="Downloads"> </a><a href="https://www.npmjs.com/package/hbook-ui"><img src="https://img.shields.io/npm/v/hbook-ui.svg" alt="Version"></a> <a href="https://www.npmjs.com/package/hbook-ui"><img src="https://img.shields.io/npm/l/hbook-ui.svg" alt="License"></a>
@@ -27,7 +27,6 @@ var hbook = require('hbook-ui');
 
 ### Contact
 
-- Weibo：[@hwgq2005](http://www.weibo.com/hwgq2005) 
 - Email：hbook@bookcss.com
 
 ### License
